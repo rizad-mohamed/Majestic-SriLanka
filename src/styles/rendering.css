@@ -1,0 +1,64 @@
+/* Full-width boundaries leave room for the original floating artwork.
+   The remembered intrinsic sizes keep offscreen sections in the document flow. */
+.deferred-section {
+  content-visibility: auto;
+  width: 100%;
+}
+.deferred-story {
+  contain-intrinsic-block-size: auto 505px;
+}
+.deferred-featured {
+  contain-intrinsic-block-size: auto 617px;
+}
+.deferred-experience {
+  contain-intrinsic-block-size: auto 512px;
+}
+.deferred-why {
+  contain-intrinsic-block-size: auto 426px;
+}
+.deferred-testimonials {
+  contain-intrinsic-block-size: auto 341px;
+}
+.deferred-cta {
+  contain-intrinsic-block-size: auto 365px;
+}
+@media (max-width: 1000px) {
+  .deferred-story {
+    contain-intrinsic-block-size: auto 439px;
+  }
+  .deferred-featured {
+    contain-intrinsic-block-size: auto 584px;
+  }
+  .deferred-experience {
+    contain-intrinsic-block-size: auto 410px;
+  }
+  .deferred-why {
+    contain-intrinsic-block-size: auto 429px;
+  }
+  .deferred-testimonials {
+    contain-intrinsic-block-size: auto 328px;
+  }
+  .deferred-cta {
+    contain-intrinsic-block-size: auto 340px;
+  }
+}
+@media (max-width: 700px) {
+  .deferred-story {
+    contain-intrinsic-block-size: auto 846px;
+  }
+  .deferred-featured {
+    contain-intrinsic-block-size: auto 684px;
+  }
+  .deferred-experience {
+    contain-intrinsic-block-size: auto 915px;
+  }
+  .deferred-why {
+    contain-intrinsic-block-size: auto 820px;
+  }
+  .deferred-testimonials {
+    contain-intrinsic-block-size: auto 734px;
+  }
+  .deferred-cta {
+    contain-intrinsic-block-size: auto 420px;
+  }
+}

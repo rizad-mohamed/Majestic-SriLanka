@@ -1,0 +1,11 @@
+---
+import manifest from '../../public/assets/majestic-sri-lanka/manifest.json';
+interface Props { name: string; alt: string; class?: string; eager?: boolean; sizes?: string; width?: number; height?: number }
+const { name, alt, class: className, eager = false, sizes = '(max-width: 700px) 100vw, 50vw', width = 1600, height = 1000 } = Astro.props;
+const base = `/assets/majestic-sri-lanka/photography/${name}`;
+const asset = manifest.assets.find(asset => asset.name === name && 'variants' in asset);
+const variants = asset && 'variants' in asset ? asset.variants : [];
+const uniqueWidths = new Map(variants?.map(variant => [variant.width, variant]));
+const srcset = [...uniqueWidths.values()].map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
+---
+<img src={`${base}-720.webp`} srcset={srcset} sizes={sizes} alt={alt} width={width} height={height} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" class={className} />

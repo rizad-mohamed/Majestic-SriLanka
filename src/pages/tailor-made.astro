@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import Photo from '../components/Photo.astro';
+import Button from '../components/Button.astro';
+import Icon from '../components/Icon.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+---
+<Layout title="Tailor-Made Sri Lanka Holidays" description="Discover a more personal way to explore Sri Lanka. Shape your route, pace and experiences around what matters to you with a tailor-made journey." image="reservoir-travellers">
+  <PageHero title="Your Sri Lanka.<br />Your Story." eyebrow="TAILOR-MADE JOURNEYS" description="The places you dream of. The pace that feels right. A journey as individual as you are." image="reservoir-travellers" label="Tailor-Made" />
+  <section class="container page-section editorial-split" aria-labelledby="tailor-title"><Photo name="hill-country" alt="Tea terraces and misty mountains in Sri Lanka’s hill country" /><div class="editorial-copy"><p class="eyebrow">THOUGHTFULLY PERSONAL</p><h2 id="tailor-title">Follow your curiosity.<br />We’ll shape the journey.</h2><p>Perhaps it’s the tea hills at sunrise. Perhaps it’s a few extra days beside the ocean. Your journey starts with the experiences you want to make time for.</p><p>Combine culture, nature, food and the coast in a route that suits your interests and travel pace. Use a featured tour as a starting point, or begin with a blank page.</p><Button href="/plan-your-trip/">Plan Your Trip</Button></div></section>
+  <section class="soft-section page-section" aria-labelledby="tailor-process"><div class="container"><p class="eyebrow">FROM FIRST IDEA TO ISLAND MOMENTS</p><h2 id="tailor-process">A personal approach,<br />from the very beginning.</h2><div class="values-grid"><div class="value-item"><Icon name="heart" size={35} /><h3>Begin with you</h3><p>Share your dates, group, interests and dietary or accessibility requirements. Tell us what a perfect day looks like.</p></div><div class="value-item"><Icon name="compass" size={35} /><h3>Find your rhythm</h3><p>Balance the places you want to see with time to enjoy them. Make room for meaningful local moments.</p></div><div class="value-item"><Icon name="people" size={35} /><h3>Consider the details</h3><p>Discuss the arrangements before booking. Your final proposal confirms availability, accommodation, inclusions and price.</p></div></div></div></section>
+  <section class="container page-section"><div class="page-intro"><p class="eyebrow">MAKE A START</p><h2>What would you love<br />to discover?</h2><p>Our trip planner helps you turn a first idea into a travel brief. Review it, download it and keep it ready for a planning conversation.</p></div><Button href="/plan-your-trip/">Create My Travel Brief</Button></section><ClosingCTA />
+</Layout>

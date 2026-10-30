@@ -1,0 +1,723 @@
+{
+  "generatedBy": "Majestic Sri Lanka asset preparation",
+  "photographyCount": 14,
+  "sourceCount": 11,
+  "assets": [
+    {
+      "name": "hero-sigiriya",
+      "description": "Hero; misty rock fortress sunrise",
+      "source": "source/hero-sigiriya.png",
+      "provenance": "AI-generated approximate recreation",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 2,
+      "originalDimensions": [
+        1774,
+        887
+      ],
+      "variants": [
+        {
+          "file": "photography/hero-sigiriya-240.webp",
+          "width": 240,
+          "height": 120,
+          "bytes": 4638
+        },
+        {
+          "file": "photography/hero-sigiriya-480.webp",
+          "width": 480,
+          "height": 240,
+          "bytes": 15394
+        },
+        {
+          "file": "photography/hero-sigiriya-720.webp",
+          "width": 720,
+          "height": 360,
+          "bytes": 32580
+        },
+        {
+          "file": "photography/hero-sigiriya-960.webp",
+          "width": 960,
+          "height": 480,
+          "bytes": 53614
+        },
+        {
+          "file": "photography/hero-sigiriya-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "bytes": 124990
+        }
+      ]
+    },
+    {
+      "name": "elephant",
+      "description": "Story; frontal elephant among foliage",
+      "source": "source/elephant.png",
+      "provenance": "AI-generated approximate recreation",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 0.8,
+      "originalDimensions": [
+        1122,
+        1402
+      ],
+      "variants": [
+        {
+          "file": "photography/elephant-240.webp",
+          "width": 240,
+          "height": 300,
+          "bytes": 17150
+        },
+        {
+          "file": "photography/elephant-480.webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 54624
+        },
+        {
+          "file": "photography/elephant-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 103822
+        },
+        {
+          "file": "photography/elephant-960.webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 156816
+        },
+        {
+          "file": "photography/elephant-1600.webp",
+          "width": 1121,
+          "height": 1401,
+          "bytes": 189694
+        }
+      ]
+    },
+    {
+      "name": "hill-country",
+      "description": "Story inset; tea terraces and mountain layers",
+      "source": "source/hill-country.png",
+      "provenance": "AI-generated approximate recreation",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 1.3333333333333333,
+      "originalDimensions": [
+        1448,
+        1086
+      ],
+      "variants": [
+        {
+          "file": "photography/hill-country-240.webp",
+          "width": 240,
+          "height": 180,
+          "bytes": 11458
+        },
+        {
+          "file": "photography/hill-country-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 42326
+        },
+        {
+          "file": "photography/hill-country-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 88926
+        },
+        {
+          "file": "photography/hill-country-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 146984
+        },
+        {
+          "file": "photography/hill-country-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 273658
+        }
+      ]
+    },
+    {
+      "name": "cultural-triangle",
+      "description": "Tour; Sigiriya hero crop",
+      "source": "source/hero-sigiriya.png",
+      "provenance": "Crop of generated hero-sigiriya",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 1.6666666666666667,
+      "originalDimensions": [
+        1774,
+        887
+      ],
+      "variants": [
+        {
+          "file": "photography/cultural-triangle-240.webp",
+          "width": 240,
+          "height": 144,
+          "bytes": 5138
+        },
+        {
+          "file": "photography/cultural-triangle-480.webp",
+          "width": 480,
+          "height": 288,
+          "bytes": 18050
+        },
+        {
+          "file": "photography/cultural-triangle-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 38084
+        },
+        {
+          "file": "photography/cultural-triangle-960.webp",
+          "width": 960,
+          "height": 576,
+          "bytes": 63556
+        },
+        {
+          "file": "photography/cultural-triangle-1600.webp",
+          "width": 1478,
+          "height": 887,
+          "bytes": 127134
+        }
+      ]
+    },
+    {
+      "name": "blue-train",
+      "description": "Tour; blue train on a stone viaduct",
+      "source": "source/blue-train.png",
+      "provenance": "AI-generated approximate recreation",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 1.6666666666666667,
+      "originalDimensions": [
+        1619,
+        971
+      ],
+      "variants": [
+        {
+          "file": "photography/blue-train-240.webp",
+          "width": 240,
+          "height": 144,
+          "bytes": 10410
+        },
+        {
+          "file": "photography/blue-train-480.webp",
+          "width": 480,
+          "height": 288,
+          "bytes": 38556
+        },
+        {
+          "file": "photography/blue-train-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 81912
+        },
+        {
+          "file": "photography/blue-train-960.webp",
+          "width": 960,
+          "height": 576,
+          "bytes": 135934
+        },
+        {
+          "file": "photography/blue-train-1600.webp",
+          "width": 1600,
+          "height": 960,
+          "bytes": 304718
+        }
+      ]
+    },
+    {
+      "name": "southern-coast",
+      "description": "Tour; palm-fringed sunset beach",
+      "source": "source/southern-coast.png",
+      "provenance": "AI-generated approximate recreation",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 1.6666666666666667,
+      "originalDimensions": [
+        1619,
+        971
+      ],
+      "variants": [
+        {
+          "file": "photography/southern-coast-240.webp",
+          "width": 240,
+          "height": 144,
+          "bytes": 7960
+        },
+        {
+          "file": "photography/southern-coast-480.webp",
+          "width": 480,
+          "height": 288,
+          "bytes": 28090
+        },
+        {
+          "file": "photography/southern-coast-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 59568
+        },
+        {
+          "file": "photography/southern-coast-960.webp",
+          "width": 960,
+          "height": 576,
+          "bytes": 101072
+        },
+        {
+          "file": "photography/southern-coast-1600.webp",
+          "width": 1600,
+          "height": 960,
+          "bytes": 232180
+        }
+      ]
+    },
+    {
+      "name": "reservoir-travellers",
+      "description": "Experiences; two travellers at a reservoir viewpoint",
+      "source": "source/reservoir-travellers.png",
+      "provenance": "AI-generated approximate recreation",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 1.3333333333333333,
+      "originalDimensions": [
+        1448,
+        1086
+      ],
+      "variants": [
+        {
+          "file": "photography/reservoir-travellers-240.webp",
+          "width": 240,
+          "height": 180,
+          "bytes": 9544
+        },
+        {
+          "file": "photography/reservoir-travellers-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 33574
+        },
+        {
+          "file": "photography/reservoir-travellers-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 68150
+        },
+        {
+          "file": "photography/reservoir-travellers-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 109002
+        },
+        {
+          "file": "photography/reservoir-travellers-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 194318
+        }
+      ]
+    },
+    {
+      "name": "wildlife",
+      "description": "Experience; elephant portrait crop",
+      "source": "source/elephant.png",
+      "provenance": "Crop of generated elephant",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 0.6,
+      "originalDimensions": [
+        1122,
+        1402
+      ],
+      "variants": [
+        {
+          "file": "photography/wildlife-240.webp",
+          "width": 240,
+          "height": 400,
+          "bytes": 20064
+        },
+        {
+          "file": "photography/wildlife-480.webp",
+          "width": 480,
+          "height": 800,
+          "bytes": 67296
+        },
+        {
+          "file": "photography/wildlife-720.webp",
+          "width": 720,
+          "height": 1200,
+          "bytes": 123326
+        },
+        {
+          "file": "photography/wildlife-960.webp",
+          "width": 841,
+          "height": 1402,
+          "bytes": 153624
+        },
+        {
+          "file": "photography/wildlife-1600.webp",
+          "width": 841,
+          "height": 1402,
+          "bytes": 153624
+        }
+      ]
+    },
+    {
+      "name": "culture",
+      "description": "Experience; ancient temple and Buddha",
+      "source": "source/culture.png",
+      "provenance": "AI-generated approximate recreation",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 0.6,
+      "originalDimensions": [
+        971,
+        1619
+      ],
+      "variants": [
+        {
+          "file": "photography/culture-240.webp",
+          "width": 240,
+          "height": 400,
+          "bytes": 24368
+        },
+        {
+          "file": "photography/culture-480.webp",
+          "width": 480,
+          "height": 800,
+          "bytes": 91442
+        },
+        {
+          "file": "photography/culture-720.webp",
+          "width": 720,
+          "height": 1200,
+          "bytes": 182374
+        },
+        {
+          "file": "photography/culture-960.webp",
+          "width": 960,
+          "height": 1600,
+          "bytes": 275050
+        },
+        {
+          "file": "photography/culture-1600.webp",
+          "width": 971,
+          "height": 1618,
+          "bytes": 281830
+        }
+      ]
+    },
+    {
+      "name": "beaches",
+      "description": "Experience; palms and turquoise ocean",
+      "source": "source/beaches.png",
+      "provenance": "AI-generated approximate recreation",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 0.6,
+      "originalDimensions": [
+        971,
+        1619
+      ],
+      "variants": [
+        {
+          "file": "photography/beaches-240.webp",
+          "width": 240,
+          "height": 400,
+          "bytes": 19472
+        },
+        {
+          "file": "photography/beaches-480.webp",
+          "width": 480,
+          "height": 800,
+          "bytes": 73422
+        },
+        {
+          "file": "photography/beaches-720.webp",
+          "width": 720,
+          "height": 1200,
+          "bytes": 151656
+        },
+        {
+          "file": "photography/beaches-960.webp",
+          "width": 960,
+          "height": 1600,
+          "bytes": 239798
+        },
+        {
+          "file": "photography/beaches-1600.webp",
+          "width": 971,
+          "height": 1618,
+          "bytes": 245794
+        }
+      ]
+    },
+    {
+      "name": "tea-country",
+      "description": "Experience; tea-terrace crop",
+      "source": "source/hill-country.png",
+      "provenance": "Crop of generated hill-country",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 0.6,
+      "originalDimensions": [
+        1448,
+        1086
+      ],
+      "variants": [
+        {
+          "file": "photography/tea-country-240.webp",
+          "width": 240,
+          "height": 400,
+          "bytes": 21416
+        },
+        {
+          "file": "photography/tea-country-480.webp",
+          "width": 480,
+          "height": 800,
+          "bytes": 75536
+        },
+        {
+          "file": "photography/tea-country-720.webp",
+          "width": 651,
+          "height": 1085,
+          "bytes": 119994
+        },
+        {
+          "file": "photography/tea-country-960.webp",
+          "width": 651,
+          "height": 1085,
+          "bytes": 119994
+        },
+        {
+          "file": "photography/tea-country-1600.webp",
+          "width": 651,
+          "height": 1085,
+          "bytes": 119994
+        }
+      ]
+    },
+    {
+      "name": "sri-lankan-food",
+      "description": "Experience; rice and curry",
+      "source": "source/sri-lankan-food.png",
+      "provenance": "AI-generated approximate recreation",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 0.6,
+      "originalDimensions": [
+        971,
+        1619
+      ],
+      "variants": [
+        {
+          "file": "photography/sri-lankan-food-240.webp",
+          "width": 240,
+          "height": 400,
+          "bytes": 23798
+        },
+        {
+          "file": "photography/sri-lankan-food-480.webp",
+          "width": 480,
+          "height": 800,
+          "bytes": 68050
+        },
+        {
+          "file": "photography/sri-lankan-food-720.webp",
+          "width": 720,
+          "height": 1200,
+          "bytes": 118898
+        },
+        {
+          "file": "photography/sri-lankan-food-960.webp",
+          "width": 960,
+          "height": 1600,
+          "bytes": 172754
+        },
+        {
+          "file": "photography/sri-lankan-food-1600.webp",
+          "width": 971,
+          "height": 1618,
+          "bytes": 176072
+        }
+      ]
+    },
+    {
+      "name": "tea-pickers",
+      "description": "Why us; tea pickers at work",
+      "source": "source/tea-pickers.png",
+      "provenance": "AI-generated approximate recreation",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 2,
+      "originalDimensions": [
+        1774,
+        887
+      ],
+      "variants": [
+        {
+          "file": "photography/tea-pickers-240.webp",
+          "width": 240,
+          "height": 120,
+          "bytes": 9682
+        },
+        {
+          "file": "photography/tea-pickers-480.webp",
+          "width": 480,
+          "height": 240,
+          "bytes": 30518
+        },
+        {
+          "file": "photography/tea-pickers-720.webp",
+          "width": 720,
+          "height": 360,
+          "bytes": 55274
+        },
+        {
+          "file": "photography/tea-pickers-960.webp",
+          "width": 960,
+          "height": 480,
+          "bytes": 81082
+        },
+        {
+          "file": "photography/tea-pickers-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "bytes": 156270
+        }
+      ]
+    },
+    {
+      "name": "tropical-cta",
+      "description": "CTA; turquoise tropical bay",
+      "source": "source/tropical-cta.png",
+      "provenance": "AI-generated approximate recreation",
+      "tool": "built-in image_gen",
+      "alpha": false,
+      "intendedAspectRatio": 3,
+      "originalDimensions": [
+        2172,
+        724
+      ],
+      "variants": [
+        {
+          "file": "photography/tropical-cta-240.webp",
+          "width": 240,
+          "height": 80,
+          "bytes": 5110
+        },
+        {
+          "file": "photography/tropical-cta-480.webp",
+          "width": 480,
+          "height": 160,
+          "bytes": 18444
+        },
+        {
+          "file": "photography/tropical-cta-720.webp",
+          "width": 720,
+          "height": 240,
+          "bytes": 39682
+        },
+        {
+          "file": "photography/tropical-cta-960.webp",
+          "width": 960,
+          "height": 320,
+          "bytes": 68790
+        },
+        {
+          "file": "photography/tropical-cta-1600.webp",
+          "width": 1600,
+          "height": 533,
+          "bytes": 173064
+        }
+      ]
+    },
+    {
+      "name": "botanical-leaves.svg",
+      "description": "Independently positioned authored decorative SVG",
+      "provenance": "Original code-authored SVG approximation of reference",
+      "alpha": true,
+      "dimensions": [
+        190,
+        330
+      ],
+      "transparentPixels": 50214
+    },
+    {
+      "name": "botanical-branch.svg",
+      "description": "Independently positioned authored decorative SVG",
+      "provenance": "Original code-authored SVG approximation of reference",
+      "alpha": true,
+      "dimensions": [
+        200,
+        300
+      ],
+      "transparentPixels": 55866
+    },
+    {
+      "name": "floating-leaf.svg",
+      "description": "Independently positioned authored decorative SVG",
+      "provenance": "Original code-authored SVG approximation of reference",
+      "alpha": true,
+      "dimensions": [
+        90,
+        110
+      ],
+      "transparentPixels": 9036
+    },
+    {
+      "name": "locally-curated-stamp.svg",
+      "description": "Independently positioned authored decorative SVG",
+      "provenance": "Original code-authored SVG approximation of reference",
+      "alpha": true,
+      "dimensions": [
+        146,
+        146
+      ],
+      "transparentPixels": 20744
+    },
+    {
+      "name": "sticky-note-local.svg",
+      "description": "Independently positioned authored decorative SVG",
+      "provenance": "Original code-authored SVG approximation of reference",
+      "alpha": true,
+      "dimensions": [
+        210,
+        150
+      ],
+      "transparentPixels": 3182
+    },
+    {
+      "name": "sticky-note-people.svg",
+      "description": "Independently positioned authored decorative SVG",
+      "provenance": "Original code-authored SVG approximation of reference",
+      "alpha": true,
+      "dimensions": [
+        160,
+        180
+      ],
+      "transparentPixels": 3109
+    },
+    {
+      "name": "handwritten-annotations.svg",
+      "description": "Independently positioned authored decorative SVG",
+      "provenance": "Original code-authored SVG approximation of reference",
+      "alpha": true,
+      "dimensions": [
+        300,
+        120
+      ],
+      "transparentPixels": 32842
+    },
+    {
+      "name": "branding/logo.svg",
+      "provenance": "Authored approximate recreation; original brand vector not supplied",
+      "alpha": true,
+      "dimensions": [
+        340,
+        92
+      ]
+    }
+  ]
+}

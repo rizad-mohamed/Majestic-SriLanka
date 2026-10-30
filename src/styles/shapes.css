@@ -1,0 +1,15 @@
+.shape-definitions {
+  position: absolute;
+  pointer-events: none;
+}
+.experience-picture {
+  clip-path: url(#experience-shape);
+}
+.why-picture > img:first-child {
+  clip-path: url(#tea-picker-shape);
+}
+@media (max-width: 700px) {
+  .experience-picture {
+    clip-path: url(#experience-shape);
+  }
+}

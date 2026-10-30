@@ -1,0 +1,6 @@
+---
+import Icon from './Icon.astro';
+import Button from './Button.astro';
+import { faqs } from '../data/content';
+---
+<section class="container page-section faq-layout" id="travel-faq" aria-labelledby="faq-heading"><div class="faq-aside"><p class="eyebrow">TRAVEL FAQ</p><h2 id="faq-heading">Good questions.<br />Thoughtful answers.</h2><p>Every journey is personal. For anything specific to your dates, interests or requirements, start with a travel brief.</p><Button href="/plan-your-trip/">Plan My Trip</Button></div><div class="faq-list">{faqs.map((faq, index) => <details name="travel-faq" open={index === 0}><summary>{faq.question}<Icon name="down" size={23} /></summary><p>{faq.answer}</p></details>)}</div></section>

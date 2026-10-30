@@ -1,0 +1,20 @@
+:root {
+  --green: #073e33;
+  --green-ink: #173b32;
+  --green-hover: #155747;
+  --ink: #263f36;
+  --muted: #617068;
+  --bronze: #b28b66;
+  --bronze-dark: #8d643b;
+  --background: #fdfdfb;
+  --white: #fff;
+  --ivory: #f7f6f1;
+  --line: #e5e8df;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Majestic Sans", Arial, sans-serif;
+  --font-script: "Caveat Travel", cursive;
+  --text-section: 52px;
+  --container: 1240px;
+  --radius-card: 12px;
+  --shadow: 0 9px 28px #273c2410;
+}

@@ -1,0 +1,12 @@
+---
+import Photo from './Photo.astro';
+import Button from './Button.astro';
+import Icon from './Icon.astro';
+import { brand } from '../data/content';
+---
+<section class="closing-cta" aria-labelledby="closing-title">
+  <Photo name="tropical-cta" alt="Turquoise water and palm-fringed sand on Sri Lanka’s southern coast" sizes="100vw" />
+  <div class="cta-shade"></div>
+  <div class="container cta-inner"><div class="cta-copy"><p class="eyebrow">LET’S PLAN YOUR JOURNEY</p><h2 id="closing-title">Your Sri Lankan<br />Adventure Starts Here.</h2><p>Tell us about your travel plans and we’ll create<br class="desktop-break" /> a personalised itinerary just for you.</p><div class="button-row"><Button href="/plan-your-trip/" variant="light">Plan My Trip</Button><a class="button button--outline-light" href={brand.whatsapp ? `https://wa.me/${brand.whatsapp}` : '/contact-us/#contact-options'}><Icon name="whatsapp" size={20} />{brand.whatsapp ? 'Contact on WhatsApp' : 'Let’s Talk Travel'}</a></div></div></div>
+  <div class="cta-paper" aria-hidden="true"><span class="script">Island<br />Moments,<br />for a Lifetime</span></div>
+</section>

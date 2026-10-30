@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import Photo from '../components/Photo.astro';
+import Icon from '../components/Icon.astro';
+import Button from '../components/Button.astro';
+import { brand } from '../data/content';
+import FAQSection from '../components/FAQSection.astro';
+---
+<Layout title="Contact Us" description="Start planning your personal Sri Lankan journey. Prepare a travel brief and explore practical travel questions with Majestic Sri Lanka." image="southern-coast">
+  <PageHero title="Let’s Talk<br />Sri Lanka." eyebrow="A JOURNEY STARTS WITH A CONVERSATION" description="A first idea, a long-held dream or a question about the island. There’s a place to begin." image="southern-coast" label="Contact Us" />
+  <section class="container page-section contact-grid" id="contact-options" aria-labelledby="contact-title"><div><p class="eyebrow">LET’S CONNECT</p><h2 id="contact-title">Your next adventure<br />starts here.</h2><p>Bring your ideas together in a personal travel brief, ready for your planning conversation.</p><div class="contact-options">
+    <div class="contact-option"><Icon name="compass" size={29} /><div><h3>Create your travel brief</h3><p>Dates, interests, travel pace and the people coming along.</p><a href="/plan-your-trip/">Open the trip planner →</a></div></div>
+    <div class="contact-option"><Icon name="mail" size={29} /><div><h3>Email us</h3>{brand.email ? <a href={`mailto:${brand.email}`}>{brand.email}</a> : <><p><strong>{brand.proposedEmail}</strong></p><p class="placeholder-note">Proposed enquiry email · placeholder, not yet confirmed or active.</p></>}</div></div>
+    <div class="contact-option"><Icon name="whatsapp" size={29} /><div><h3>A conversation on WhatsApp</h3>{brand.whatsapp ? <a href={`https://wa.me/${brand.whatsapp}`}>Open WhatsApp →</a> : <p>WhatsApp number · placeholder, to be confirmed.</p>}</div></div>
+    <div class="contact-option"><Icon name="compass" size={29} /><div><h3>Our home online</h3><p><strong>{brand.proposedDomain}</strong></p><p class="placeholder-note">Proposed production domain · placeholder, ownership and launch configuration to be confirmed.</p></div></div>
+    <div class="contact-option"><Icon name="people" size={29} /><div><h3>Social connections</h3><p>Instagram · Facebook · YouTube · LinkedIn</p><p class="placeholder-note">Social profile links · placeholders, to be confirmed.</p></div></div>
+  </div><div style="margin-top:25px"><Button href="#travel-faq" variant="outline">Explore Travel FAQ</Button></div></div><Photo class="contact-image" name="beaches" alt="Coconut palms above clear turquoise ocean in Sri Lanka" sizes="(max-width: 700px) 100vw, 45vw" /></section><FAQSection />
+</Layout>

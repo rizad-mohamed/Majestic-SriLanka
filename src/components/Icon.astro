@@ -1,0 +1,8 @@
+---
+import { ArrowRight, ArrowLeft, Search, Menu, X, Play, Leaf, Sun, WavesHorizontal, Mountain, Users, Gem, Headphones, HeartHandshake, Utensils, Landmark, PawPrint, Compass, Mouse, Check, Download, Mail, MessageCircle, MapPin, CalendarDays, ChevronDown } from '@lucide/astro';
+interface Props { name: string; size?: number; class?: string }
+const { name, size = 24, class: className } = Astro.props;
+const icons: Record<string, typeof Leaf> = { arrow: ArrowRight, back: ArrowLeft, search: Search, menu: Menu, close: X, play: Play, leaf: Leaf, sun: Sun, beach: WavesHorizontal, mountain: Mountain, people: Users, gem: Gem, support: Headphones, heart: HeartHandshake, food: Utensils, culture: Landmark, wildlife: PawPrint, compass: Compass, mouse: Mouse, check: Check, download: Download, mail: Mail, whatsapp: MessageCircle, pin: MapPin, calendar: CalendarDays, down: ChevronDown };
+const Component = icons[name] || Compass;
+---
+<Component size={size} stroke-width={1.5} class={className} aria-hidden="true" />

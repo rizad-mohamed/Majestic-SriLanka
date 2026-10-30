@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import TourCard from '../components/TourCard.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import { tours } from '../data/content';
+---
+<Layout title="Private Sri Lanka Tours" description="Explore suggested Sri Lankan journeys through the Cultural Triangle, green tea country and the southern coast. Make each itinerary your own."><PageHero title="Journeys to<br />Remember" eyebrow="OUR PRIVATE TOURS" description="A few thoughtfully crafted starting points. A world of possibilities to make them yours." image="hero-sigiriya" label="Tours" /><section class="container page-section" aria-labelledby="tour-list-title"><div class="page-intro"><p class="eyebrow">FIND YOUR JOURNEY</p><h2 id="tour-list-title">An island. Your way.</h2><p>Culture, nature or time by the sea — choose what calls to you. Every journey can be shaped around your interests and pace.</p></div><div class="filter-row" aria-label="Filter journeys">{['All', 'Culture', 'Nature', 'Coast'].map(filter => <button class="filter-button" data-filter={filter} aria-pressed={filter === 'All'}>{filter === 'All' ? 'All Journeys' : filter}</button>)}</div><div class="tour-grid listing">{tours.map(tour => <TourCard tour={tour} />)}</div><p class="filter-status" data-filter-status aria-live="polite">3 journeys to explore</p><p class="journey-note">These are suggested itineraries to inspire your planning. Your final route, inclusions, accommodation and pricing are confirmed in a personal proposal. No booking or payment is taken here.</p></section><ClosingCTA /></Layout>

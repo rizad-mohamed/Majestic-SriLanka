@@ -1,0 +1,7 @@
+---
+import { benefits } from '../data/content';
+import Icon from './Icon.astro';
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+---
+<div class:list={['benefits-list', { compact }]}>{benefits.map(item => <div class="benefit"><span class="benefit-icon"><Icon name={item.icon} size={29} /></span><div><h3>{item.title}</h3>{!compact && <p>{item.description}</p>}</div></div>)}</div>

@@ -1,0 +1,23 @@
+---
+import { navigation } from '../data/content';
+import Icon from './Icon.astro';
+import Button from './Button.astro';
+const current = Astro.url.pathname;
+---
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Majestic Sri Lanka home"><img src="/assets/majestic-sri-lanka/branding/logo.svg" alt="Majestic Sri Lanka" width="218" height="62" /></a>
+    <nav class="desktop-nav" aria-label="Main navigation">{navigation.map(item => <a href={item.href} aria-current={current === item.href ? 'page' : undefined}>{item.label}</a>)}</nav>
+    <div class="header-actions">
+      <button class="icon-button search-trigger" data-dialog="search-dialog" aria-label="Search journeys"><Icon name="search" size={21} /></button>
+      <Button href="/plan-your-trip/" class="header-plan">Plan My Trip</Button>
+      <button class="icon-button menu-trigger" data-dialog="menu-dialog" aria-label="Open navigation menu"><Icon name="menu" size={26} /></button>
+    </div>
+  </div>
+</header>
+<dialog id="menu-dialog" class="dialog menu-dialog" aria-labelledby="menu-title">
+  <div class="dialog-heading"><h2 id="menu-title">Your next chapter</h2><button class="icon-button" data-close aria-label="Close navigation"><Icon name="close" /></button></div>
+  <nav aria-label="Expanded navigation">{[...navigation, { label: 'Plan Your Trip', href: '/plan-your-trip/' }, { label: 'Contact Us', href: '/contact-us/' }].map(item => <a href={item.href} aria-current={current === item.href ? 'page' : undefined}>{item.label}<Icon name="arrow" /></a>)}</nav>
+  <p class="script">A little island. Endless possibilities.</p>
+</dialog>
