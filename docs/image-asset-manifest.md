@@ -1,6 +1,6 @@
 # Asset plan and provenance
 
-No individual original source assets were supplied. The full homepage reference is never used as a flattened page. Photography is generated as independent approximate recreations with the built-in image tool; it is not recovered original photography or a verified documentary record. Prompts and production dimensions are recorded in `public/assets/majestic-sri-lanka/manifest.json` after preparation.
+No individual original photographic assets were supplied. The full homepage reference is never used as a flattened page. Photography is generated as independent approximate recreations with the built-in image tool; it is not recovered original photography or a verified documentary record. Prompts and production dimensions are recorded in `public/assets/majestic-sri-lanka/manifest.json` after preparation.
 
 | Asset | Scene / placement | Intended aspect | Alpha | Source |
 |---|---|---|---|---|
@@ -25,7 +25,9 @@ No individual original source assets were supplied. The full homepage reference 
 | sticky-note-local | Ivory paper and annotation / story | square | yes around paper | authored SVG |
 | sticky-note-people | Ivory paper and annotation / why us | portrait | yes around paper | authored SVG |
 | handwritten-annotations | Independent travel annotation / hero | landscape | yes | authored SVG |
-| logo | Elephant symbol and Majestic Sri Lanka wordmark / shared | landscape | yes | authored approximate SVG |
+| logo | Elephant symbol and Majestic Sri Lanka wordmark / shared header and footer | landscape display frame | yes | user-supplied PNG; resized lossless WebP delivery |
+
+The supplied logo is preserved unchanged at `assets/source/majestic-logo.png` (1254 × 1254, 252,041 bytes). Run `npm run assets:logo` to regenerate `public/assets/majestic-sri-lanka/branding/logo.webp` (436 × 436, 26,208 bytes), sized for twice the largest rendered width. WebP encoding is lossless after resizing; CSS frames the transparent margins without stretching the artwork. The earlier approximate `logo.svg` is no longer used by the site.
 
 Additional portraits are deliberately illustrated monograms rather than fabricated client photographs. Original sample names/quotes from the supplied design are labelled illustrative in preview and excluded from structured data. Production photography has 240/480/720/960/1600px WebP variants where relevant, without enlarging source images. Responsive descriptors use actual dimensions from the generated manifest. Source PNGs remain in the archive. Organic silhouettes are application masks, documented in the CSS, not destroyed source backgrounds.
 

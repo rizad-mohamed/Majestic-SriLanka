@@ -7,7 +7,7 @@ const current = Astro.url.pathname;
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="/" aria-label="Majestic Sri Lanka home"><img src="/assets/majestic-sri-lanka/branding/logo.svg" alt="Majestic Sri Lanka" width="218" height="62" /></a>
+    <a class="brand" href="/" aria-label="Majestic Sri Lanka home"><img src="/assets/majestic-sri-lanka/branding/logo.webp" alt="Majestic Sri Lanka" width="218" height="78" /></a>
     <nav class="desktop-nav" aria-label="Main navigation">{navigation.map(item => <a href={item.href} aria-current={current === item.href ? 'page' : undefined}>{item.label}</a>)}</nav>
     <div class="header-actions">
       <button class="icon-button search-trigger" data-dialog="search-dialog" aria-label="Search journeys"><Icon name="search" size={21} /></button>
