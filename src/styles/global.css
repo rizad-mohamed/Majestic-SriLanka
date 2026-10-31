@@ -279,7 +279,14 @@ main:focus {
 }
 .brand img {
   width: 218px;
-  height: 62px;
+  height: auto;
+}
+/* Frame the supplied square artwork without stretching it or showing its large transparent margins. */
+.brand img,
+.footer-brand img {
+  aspect-ratio: 2.8;
+  object-fit: cover;
+  object-position: 50% 52%;
 }
 .desktop-nav {
   display: flex;
