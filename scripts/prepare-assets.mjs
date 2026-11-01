@@ -37,7 +37,7 @@ for (const [name, [source, ratio, description]] of Object.entries(photos)) {
   const input = `assets/source/${source}.png`;
   const original = await sharp(input).metadata();
   const variants = [];
-  for (const width of [240, 480, 720, 960, 1600]) {
+  for (const width of [240, 360, 480, 720, 960, 1600]) {
     // Smaller source photos retain their real resolution; no artificial upscaling.
     const actualWidth = Math.min(
       width,
@@ -52,7 +52,7 @@ for (const [name, [source, ratio, description]] of Object.entries(photos)) {
         position: name === "cultural-triangle" ? "right" : "centre",
         withoutEnlargement: true,
       })
-      .webp({ quality: 70, effort: 6 })
+      .webp({ quality: width <= 480 ? 60 : 70, effort: 6 })
       .toFile(output);
     variants.push({
       file: `photography/${name}-${width}.webp`,
@@ -75,6 +75,17 @@ for (const [name, [source, ratio, description]] of Object.entries(photos)) {
     originalDimensions: [original.width, original.height],
     variants,
   });
+}
+
+// Rebuild photographic delivery without touching the approved branding/artwork.
+if (process.argv.includes("--photography-only")) {
+  const path = join(root, "manifest.json");
+  const previous = JSON.parse(await readFile(path, "utf8"));
+  previous.assets = [...manifest, ...previous.assets.filter(asset => !asset.variants)];
+  await writeFile(path, JSON.stringify(previous, null, 2));
+  await writeFile(join(root, "manifest.md"), await readFile("docs/image-asset-manifest.md"));
+  console.log(`Prepared ${manifest.length} scenes with six responsive widths.`);
+  process.exit(0);
 }
 
 const wrap = (w, h, body) =>

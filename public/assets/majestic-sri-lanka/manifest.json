@@ -20,13 +20,19 @@
           "file": "photography/hero-sigiriya-240.webp",
           "width": 240,
           "height": 120,
-          "bytes": 4638
+          "bytes": 4060
+        },
+        {
+          "file": "photography/hero-sigiriya-360.webp",
+          "width": 360,
+          "height": 180,
+          "bytes": 8364
         },
         {
           "file": "photography/hero-sigiriya-480.webp",
           "width": 480,
           "height": 240,
-          "bytes": 15394
+          "bytes": 13364
         },
         {
           "file": "photography/hero-sigiriya-720.webp",
@@ -65,13 +71,19 @@
           "file": "photography/elephant-240.webp",
           "width": 240,
           "height": 300,
-          "bytes": 17150
+          "bytes": 15184
+        },
+        {
+          "file": "photography/elephant-360.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 30296
         },
         {
           "file": "photography/elephant-480.webp",
           "width": 480,
           "height": 600,
-          "bytes": 54624
+          "bytes": 48340
         },
         {
           "file": "photography/elephant-720.webp",
@@ -110,13 +122,19 @@
           "file": "photography/hill-country-240.webp",
           "width": 240,
           "height": 180,
-          "bytes": 11458
+          "bytes": 10246
+        },
+        {
+          "file": "photography/hill-country-360.webp",
+          "width": 360,
+          "height": 270,
+          "bytes": 21736
         },
         {
           "file": "photography/hill-country-480.webp",
           "width": 480,
           "height": 360,
-          "bytes": 42326
+          "bytes": 37842
         },
         {
           "file": "photography/hill-country-720.webp",
@@ -155,13 +173,19 @@
           "file": "photography/cultural-triangle-240.webp",
           "width": 240,
           "height": 144,
-          "bytes": 5138
+          "bytes": 4478
+        },
+        {
+          "file": "photography/cultural-triangle-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 9852
         },
         {
           "file": "photography/cultural-triangle-480.webp",
           "width": 480,
           "height": 288,
-          "bytes": 18050
+          "bytes": 15762
         },
         {
           "file": "photography/cultural-triangle-720.webp",
@@ -200,13 +224,19 @@
           "file": "photography/blue-train-240.webp",
           "width": 240,
           "height": 144,
-          "bytes": 10410
+          "bytes": 9522
+        },
+        {
+          "file": "photography/blue-train-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 20784
         },
         {
           "file": "photography/blue-train-480.webp",
           "width": 480,
           "height": 288,
-          "bytes": 38556
+          "bytes": 34540
         },
         {
           "file": "photography/blue-train-720.webp",
@@ -245,13 +275,19 @@
           "file": "photography/southern-coast-240.webp",
           "width": 240,
           "height": 144,
-          "bytes": 7960
+          "bytes": 7056
+        },
+        {
+          "file": "photography/southern-coast-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 14592
         },
         {
           "file": "photography/southern-coast-480.webp",
           "width": 480,
           "height": 288,
-          "bytes": 28090
+          "bytes": 24940
         },
         {
           "file": "photography/southern-coast-720.webp",
@@ -290,13 +326,19 @@
           "file": "photography/reservoir-travellers-240.webp",
           "width": 240,
           "height": 180,
-          "bytes": 9544
+          "bytes": 8524
+        },
+        {
+          "file": "photography/reservoir-travellers-360.webp",
+          "width": 360,
+          "height": 270,
+          "bytes": 17520
         },
         {
           "file": "photography/reservoir-travellers-480.webp",
           "width": 480,
           "height": 360,
-          "bytes": 33574
+          "bytes": 30068
         },
         {
           "file": "photography/reservoir-travellers-720.webp",
@@ -335,13 +377,19 @@
           "file": "photography/wildlife-240.webp",
           "width": 240,
           "height": 400,
-          "bytes": 20064
+          "bytes": 17720
+        },
+        {
+          "file": "photography/wildlife-360.webp",
+          "width": 360,
+          "height": 600,
+          "bytes": 36130
         },
         {
           "file": "photography/wildlife-480.webp",
           "width": 480,
           "height": 800,
-          "bytes": 67296
+          "bytes": 58542
         },
         {
           "file": "photography/wildlife-720.webp",
@@ -380,13 +428,19 @@
           "file": "photography/culture-240.webp",
           "width": 240,
           "height": 400,
-          "bytes": 24368
+          "bytes": 21518
+        },
+        {
+          "file": "photography/culture-360.webp",
+          "width": 360,
+          "height": 600,
+          "bytes": 48084
         },
         {
           "file": "photography/culture-480.webp",
           "width": 480,
           "height": 800,
-          "bytes": 91442
+          "bytes": 81026
         },
         {
           "file": "photography/culture-720.webp",
@@ -425,13 +479,19 @@
           "file": "photography/beaches-240.webp",
           "width": 240,
           "height": 400,
-          "bytes": 19472
+          "bytes": 17120
+        },
+        {
+          "file": "photography/beaches-360.webp",
+          "width": 360,
+          "height": 600,
+          "bytes": 37584
         },
         {
           "file": "photography/beaches-480.webp",
           "width": 480,
           "height": 800,
-          "bytes": 73422
+          "bytes": 64784
         },
         {
           "file": "photography/beaches-720.webp",
@@ -470,13 +530,19 @@
           "file": "photography/tea-country-240.webp",
           "width": 240,
           "height": 400,
-          "bytes": 21416
+          "bytes": 19274
+        },
+        {
+          "file": "photography/tea-country-360.webp",
+          "width": 360,
+          "height": 600,
+          "bytes": 41704
         },
         {
           "file": "photography/tea-country-480.webp",
           "width": 480,
           "height": 800,
-          "bytes": 75536
+          "bytes": 67402
         },
         {
           "file": "photography/tea-country-720.webp",
@@ -515,13 +581,19 @@
           "file": "photography/sri-lankan-food-240.webp",
           "width": 240,
           "height": 400,
-          "bytes": 23798
+          "bytes": 21370
+        },
+        {
+          "file": "photography/sri-lankan-food-360.webp",
+          "width": 360,
+          "height": 600,
+          "bytes": 40402
         },
         {
           "file": "photography/sri-lankan-food-480.webp",
           "width": 480,
           "height": 800,
-          "bytes": 68050
+          "bytes": 60610
         },
         {
           "file": "photography/sri-lankan-food-720.webp",
@@ -560,13 +632,19 @@
           "file": "photography/tea-pickers-240.webp",
           "width": 240,
           "height": 120,
-          "bytes": 9682
+          "bytes": 8868
+        },
+        {
+          "file": "photography/tea-pickers-360.webp",
+          "width": 360,
+          "height": 180,
+          "bytes": 17560
         },
         {
           "file": "photography/tea-pickers-480.webp",
           "width": 480,
           "height": 240,
-          "bytes": 30518
+          "bytes": 27230
         },
         {
           "file": "photography/tea-pickers-720.webp",
@@ -605,13 +683,19 @@
           "file": "photography/tropical-cta-240.webp",
           "width": 240,
           "height": 80,
-          "bytes": 5110
+          "bytes": 4582
+        },
+        {
+          "file": "photography/tropical-cta-360.webp",
+          "width": 360,
+          "height": 120,
+          "bytes": 10036
         },
         {
           "file": "photography/tropical-cta-480.webp",
           "width": 480,
           "height": 160,
-          "bytes": 18444
+          "bytes": 16504
         },
         {
           "file": "photography/tropical-cta-720.webp",
