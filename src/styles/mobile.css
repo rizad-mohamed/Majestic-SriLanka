@@ -1,0 +1,186 @@
+.planner-process { margin-top: 20px; }
+.planner-process summary {
+  display: list-item;
+  width: fit-content;
+  cursor: pointer;
+  padding-block: 12px;
+  min-height: 44px;
+  font-weight: 600;
+}
+.planner-process .planning-steps { margin-top: 16px; }
+
+/* Keep small tablets readable before switching to the desktop composition. */
+@media (min-width: 701px) and (max-width: 1000px) {
+  .story-copy > p:not(.eyebrow), .experience-content > p:not(.eyebrow),
+  .tour-content p, .why-copy > p:not(.eyebrow) { font-size: 16px; line-height: 1.55; }
+  .story-perks { grid-template-columns: 1fr 1fr; margin: 24px 0 0; width: 100%; gap: 16px; }
+  .story-perks > div { border: 0; padding: 0; font-size: 13px; }
+  .story-stamp { width: 64px; right: 0; top: -28px; }
+  .experience-section { grid-template-columns: minmax(0, 1fr); height: auto; min-height: 0; }
+  .experience-picture { height: 400px; min-height: 0; }
+  .experience-content { padding: 28px 40px; min-width: 0; }
+  .experience-content h2 { font-size: 42px; }
+  .experience-cards {
+    grid-template-columns: repeat(5, 148px);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding-bottom: 12px;
+    gap: 12px;
+  }
+  .experience-card { min-height: 215px; scroll-snap-align: start; }
+  .experience-card-copy { left: 12px; right: 12px; bottom: 16px; }
+  .experience-card-copy > strong { font-size: 14px; max-width: 110px; }
+  .tour-grid[data-tour-track] { display: flex; overflow-x: auto; scroll-snap-type: x proximity; padding-block: 8px 20px; }
+  [data-tour-track] .tour-card { flex: 0 0 300px; scroll-snap-align: start; }
+  .tour-grid.listing { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tour-content h3 { min-height: 0; }
+  .carousel-side { display: none; }
+  .circle-button { width: 44px; height: 44px; }
+  .tour-link, .filter-button { min-height: 44px; font-size: 14px; }
+  .benefits-list { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .benefit { display: flex; gap: 12px; }
+  .benefit h3 { font-size: 15px; }
+  .benefit p { font-size: 14px; }
+  .benefit:last-child { grid-column: 1 / -1; }
+  .review-grid { grid-template-columns: 1fr; }
+  .review-card blockquote { font-size: 16px; min-height: 0; }
+  .review-card figcaption { flex-wrap: nowrap; }
+  .site-footer nav a { min-height: 44px; font-size: 14px; }
+}
+
+/* Phone composition follows the approved artwork, with room to read and tap. */
+@media (max-width: 700px) {
+  .header-actions { margin-left: 0; gap: 4px; }
+  .search-trigger, .menu-trigger, .circle-button {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+  .header-inner { gap: 8px; }
+  .brand img { width: clamp(145px, 42vw, 180px); }
+
+  .hero { height: auto; min-height: 740px; }
+  .hero-inner { padding-block: 36px 220px; }
+  .hero h1 { font-size: clamp(39px, 10.8vw, 66px); }
+  .hero-description { font-size: 16px; line-height: 1.55; max-width: 360px; }
+  .hero .eyebrow { font-size: 11px; letter-spacing: .12em; }
+  .hero .button { min-width: 0; font-size: 14px; padding-inline: 20px; }
+  .hero-trust { gap: 10px; flex-wrap: wrap; }
+  .hero-trust p { font-size: 12px; }
+  .hero-slides { height: 44px; margin-top: 16px; gap: 8px; }
+  .hero-slides button { min-width: 44px; font-size: 14px; }
+  .watch-story { font-size: 14px; bottom: 60px; }
+  .scroll-cue { display: none; }
+
+  .category-strip {
+    grid-template-columns: repeat(5, 132px);
+    justify-content: start;
+    overflow-x: auto;
+    height: 136px;
+    padding-inline: 20px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
+  }
+  .category-strip > a { font-size: 13px; min-height: 88px; scroll-snap-align: center; }
+  .category-strip svg { width: 34px; height: 34px; }
+
+  .story-collage { height: clamp(355px, 103vw, 430px); }
+  .story-note { left: auto; right: 0; max-width: 46%; }
+  .story-copy { padding-top: 20px; }
+  .story-stamp { width: 64px; top: 0; }
+  .story-copy h2 { margin-top: 30px; }
+  .story-copy > p:not(.eyebrow),
+  .section-header p:not(.eyebrow),
+  .experience-content > p:not(.eyebrow),
+  .why-copy > p:not(.eyebrow),
+  .page-intro p, .editorial-copy p, .value-item p,
+  .experience-detail p, .faq-aside p, .faq-list details p,
+  .contact-grid p, .planner-aside > p, .cta-copy > p:not(.eyebrow) {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .story-perks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
+  .story-perks > div { font-size: 13px; padding: 0; gap: 10px; border: 0; }
+  .story-perks svg { width: 28px; height: 28px; }
+  .story-copy h2, .featured-section h2, .experience-content h2,
+  .why-copy h2, .testimonials-section h2, .editorial-copy h2,
+  .experience-detail h2, .contact-grid h2, .planner-aside h2,
+  .page-intro h2, .faq-aside h2, .cta-copy h2 {
+    font-size: clamp(34px, 9vw, 46px);
+    overflow-wrap: break-word;
+  }
+  .page-hero { padding-block: 30px 48px; min-height: 440px; }
+  .page-hero h1 { font-size: clamp(42px, 12vw, 60px); }
+  .page-hero p:not(.eyebrow) { font-size: 16px; line-height: 1.6; color: var(--ink); }
+  .page-hero:after { background: linear-gradient(180deg, #fff, #fffffff5 30%, #ffffffd9 65%, #ffffff40); }
+  .planner-page .page-hero { min-height: 0; padding-block: 20px 28px; }
+  .planner-page .page-hero h1 { font-size: clamp(38px, 10vw, 46px); }
+  .planner-page .page-hero .eyebrow { display: none; }
+  .planner-page .page-hero .breadcrumb { margin-bottom: 16px; }
+  .planner-page .page-hero p:not(.eyebrow) { margin-top: 12px; max-width: 100%; }
+  .planner-page .planner-layout { padding-top: 24px; gap: 20px; }
+  .planner-page .planner-aside h2 { font-size: 32px; }
+  .planner-page .planner-aside > p:not(.eyebrow) { margin-top: 12px; }
+  .planner-process { margin-top: 8px; }
+  .breadcrumb { font-size: 13px; flex-wrap: wrap; }
+
+  .tour-card { flex: 0 0 88%; min-width: 0; }
+  .tour-grid.listing .tour-card { flex-basis: auto; }
+  .tour-content p { font-size: 16px; line-height: 1.5; }
+  .tour-link, .filter-button { min-height: 44px; font-size: 14px; }
+  .section-actions .text-link, .experience-content > .text-link,
+  .testimonials-section .text-link { font-size: 14px; }
+  .experience-cards { grid-template-columns: repeat(5, 148px); }
+  .experience-card-copy > strong { font-size: 14px; max-width: 100px; }
+  .benefits-list { grid-template-columns: 1fr; gap: 22px; }
+  .why-picture > img:last-child { right: -16px; }
+  .benefit { gap: 14px; }
+  .benefit h3 { font-size: 16px; }
+  .benefit p { font-size: 14px; line-height: 1.5; }
+  .benefit:last-child { max-width: none; }
+  .review-card blockquote { font-size: 16px; }
+  .review-card figcaption strong { font-size: 14px; }
+  .review-card figcaption small, .review-notice { font-size: 12px; }
+  .closing-cta { height: auto; min-height: 470px; }
+  .cta-copy { padding-block: 48px 72px; min-width: 0; width: 100%; }
+  .cta-copy h2 { max-width: 100%; }
+  .cta-paper { max-width: 110px; }
+
+  .site-footer nav a { min-height: 44px; font-size: 14px; }
+  .site-footer h2 { font-size: 16px; }
+  .footer-brand p, .footer-contact, .footer-connect .small { font-size: 14px; }
+  .footer-bottom p, .footer-bottom button { font-size: 12px; }
+  .footer-bottom button { min-height: 44px; }
+
+  .dialog { width: calc(100% - 24px); max-height: calc(100dvh - 24px); padding: 20px; }
+  .dialog-heading { align-items: flex-start; }
+  .dialog-heading .icon-button { flex-shrink: 0; }
+  .menu-dialog nav a { min-height: 52px; }
+  .menu-dialog .script { font-size: 28px; }
+  .story-dialog, .tour-dialog { padding: 0; }
+  .dialog-body { padding: 24px 20px; }
+  .dialog-body p { font-size: 16px; }
+  .search-input input, .field input, .field select, .field textarea {
+    font-size: 16px;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .field input, .field select { min-height: 48px; }
+  .field label, .trip-form legend { font-size: 14px; }
+  .interest-option span { font-size: 14px; min-height: 44px; }
+  .consent-field { padding-block: 8px; }
+  .form-notice, .field-error { font-size: 13px; }
+  .trip-form .button { white-space: normal; }
+  .form-summary { padding: 16px; overflow-wrap: anywhere; }
+  /* Avoid section height estimates shifting the scroll position on phones. */
+  .deferred-section { content-visibility: visible; }
+}
+
+@media (max-width: 370px) {
+  .hero .button-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .hero .button { padding-inline: 12px; font-size: 13px; }
+  .hero-annotation { font-size: 25px; left: 16px; }
+  .watch-story { right: 16px; gap: 8px; }
+  .footer-grid { gap: 24px 16px; }
+}
