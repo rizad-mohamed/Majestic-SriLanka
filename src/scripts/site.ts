@@ -134,7 +134,13 @@ if (form) {
   const now = new Date();
   const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
   if (dateInput) dateInput.min = today;
-  const journey = new URLSearchParams(location.search).get("journey");
+  const selections = new URLSearchParams(location.search);
+  const selectedInterests = new Set(selections.getAll("interest"));
+  form.querySelectorAll<HTMLInputElement>("[data-interest]").forEach((input) => {
+    if (input.dataset.interest && selectedInterests.has(input.dataset.interest))
+      input.checked = true;
+  });
+  const journey = selections.get("journey");
   const journeySelect = form.querySelector<HTMLSelectElement>("[name=journey]");
   if (
     journeySelect &&

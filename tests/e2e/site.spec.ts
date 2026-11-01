@@ -197,14 +197,40 @@ for (const route of routes)
 
 test("navigation retains essential content without JavaScript", async ({
   browser,
+  baseURL,
 }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false });
+  const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
   const page = await context.newPage();
-  await page.goto("http://127.0.0.1:4321/");
+  await page.goto("/");
   await expect(page.locator("h1")).toContainText("Extraordinary");
   await page.getByRole("link", { name: "Explore Tours", exact: true }).click();
   await expect(page.locator("h1")).toContainText("Journeys to");
   await context.close();
+});
+
+test("homepage experience shortcuts reach their named sections", async ({ page }) => {
+  for (const [label, id] of [
+    ["Unique Wildlife Encounters", "wildlife"],
+    ["Stunning Beaches & Coastlines", "beaches"],
+    ["Scenic Hill Country & Tea Trails", "tea"],
+  ]) {
+    await page.goto("/");
+    await page.locator(".category-strip").getByRole("link", { name: label }).click();
+    await expect(page).toHaveURL(new RegExp(`/experiences/#${id}$`));
+    await expect(page.locator(`#${id} h2`)).toBeInViewport();
+  }
+});
+
+test("an experience is carried into the planner and can be changed", async ({ page }) => {
+  await page.goto("/experiences/#tea");
+  await page.locator("#tea").getByRole("link", { name: "Add to My Journey" }).click();
+  const interest = page.getByLabel("Hill Country & Tea", { exact: true });
+  await expect(interest).toBeChecked();
+  await interest.uncheck();
+  await expect(interest).not.toBeChecked();
+  await page.goto("/plan-your-trip/?interest=tea&interest=food&interest=unknown");
+  await expect(page.locator("[name=interests]:checked")).toHaveCount(2);
+  await expect(page.getByLabel("Food & Cuisine", { exact: true })).toBeChecked();
 });
 
 test("all seven pages reflow at 320px", async ({ page }) => {
