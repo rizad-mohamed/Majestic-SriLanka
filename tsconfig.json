@@ -2,5 +2,5 @@
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist", "node_modules", ".agents", ".local"],
-  "compilerOptions": { "baseUrl": ".", "paths": { "@/*": ["src/*"] } }
+  "compilerOptions": { "paths": { "@/*": ["./src/*"] } }
 }
