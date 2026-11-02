@@ -4,6 +4,7 @@ import {
   validateBrief,
   formatBrief,
   createEmailLink,
+  createEmailDraft,
 } from "../../src/lib/planner.mjs";
 const valid = {
   name: "Sam Taylor",
@@ -15,6 +16,16 @@ const valid = {
   notes: "A quiet pace",
   consent: true,
 };
+test("email draft includes the complete Unicode brief as a document attachment", () => {
+  const brief = formatBrief({ ...valid, notes: "Tea & coast — සිංහල" });
+  const draft = createEmailDraft("travel@example.com", brief);
+  assert.match(draft, /To: travel@example.com\r\n/);
+  assert.match(draft, /X-Unsent: 1/);
+  assert.match(draft, /Content-Disposition: attachment; filename="travel-brief.txt"/);
+  const attachment = draft.split('Content-Disposition: attachment; filename="travel-brief.txt"\r\nContent-Transfer-Encoding: base64\r\n\r\n')[1].split("\r\n--")[0];
+  assert.equal(Buffer.from(attachment, "base64").toString("utf8"), brief);
+  assert.doesNotMatch(createEmailDraft("bad\r\nBcc: other@example.com", brief), /^To:|^Bcc:/m);
+});
 test("accepts a complete travel brief", () =>
   assert.deepEqual(validateBrief(valid, "2026-10-31"), {}));
 test("reports missing identity, invalid email, past dates and absent consent", () => {
