@@ -260,9 +260,9 @@ test("hero selectors and featured tour controls respond", async ({ page }) => {
   await page
     .getByRole("button", { name: "Show hill country landscape" })
     .click();
-  await expect(page.locator("[data-hero-image] img")).toHaveAttribute(
-    "src",
-    /hill-country-1600/,
+  await expect(page.locator("[data-hero-current]")).toHaveAttribute(
+    "data-photo",
+    "hill-country",
   );
   await expect(
     page.getByRole("button", { name: "Show hill country landscape" }),

@@ -1,21 +1,21 @@
 {
-  "measuredAt": "2026-11-02T19:52:38.460Z",
+  "measuredAt": "2026-11-02T23:21:57.509Z",
   "directory": "dist",
   "summary": {
     "html": {
       "count": 8,
-      "bytes": 365482,
-      "gzipBytes": 69294
+      "bytes": 381020,
+      "gzipBytes": 73789
     },
     "js": {
       "count": 1,
-      "bytes": 10711,
-      "gzipBytes": 4198
+      "bytes": 10041,
+      "gzipBytes": 3949
     },
     "css": {
-      "count": 1,
-      "bytes": 65313,
-      "gzipBytes": 13986
+      "count": 3,
+      "bytes": 70682,
+      "gzipBytes": 15520
     },
     "woff2": {
       "count": 14,
@@ -23,70 +23,133 @@
       "gzipBytes": 233574
     },
     "webp": {
-      "count": 85,
-      "bytes": 7026984,
-      "gzipBytes": 7030872
+      "count": 111,
+      "bytes": 8303714,
+      "gzipBytes": 8308505
     },
     "avif": {
       "count": 4,
       "bytes": 345993,
       "gzipBytes": 346073
+    },
+    "mp4": {
+      "count": 1,
+      "bytes": 2684234,
+      "gzipBytes": 2681679
     }
+  },
+  "routes": [
+    {
+      "path": "404.html",
+      "cssGzipBytes": 13886,
+      "javaScriptGzipBytes": 3949
+    },
+    {
+      "path": "about-us/index.html",
+      "cssGzipBytes": 13886,
+      "javaScriptGzipBytes": 3949
+    },
+    {
+      "path": "contact-us/index.html",
+      "cssGzipBytes": 13886,
+      "javaScriptGzipBytes": 3949
+    },
+    {
+      "path": "experiences/index.html",
+      "cssGzipBytes": 15079,
+      "javaScriptGzipBytes": 4581
+    },
+    {
+      "path": "index.html",
+      "cssGzipBytes": 14327,
+      "javaScriptGzipBytes": 5013
+    },
+    {
+      "path": "plan-your-trip/index.html",
+      "cssGzipBytes": 13886,
+      "javaScriptGzipBytes": 4314
+    },
+    {
+      "path": "tailor-made/index.html",
+      "cssGzipBytes": 13886,
+      "javaScriptGzipBytes": 3949
+    },
+    {
+      "path": "tours/index.html",
+      "cssGzipBytes": 13886,
+      "javaScriptGzipBytes": 3949
+    }
+  ],
+  "mediaInventories": {
+    "existingWebPBytes": 7026984,
+    "experienceWebPBytes": 1240206,
+    "filmPosterBytes": 36524,
+    "filmBytes": 2684234
   },
   "documents": [
     {
       "path": "404.html",
-      "bytes": 29939,
-      "gzipBytes": 5906
+      "bytes": 29844,
+      "gzipBytes": 6002
     },
     {
       "path": "about-us/index.html",
-      "bytes": 45852,
-      "gzipBytes": 8748
+      "bytes": 45757,
+      "gzipBytes": 8952
     },
     {
       "path": "contact-us/index.html",
-      "bytes": 43584,
-      "gzipBytes": 8237
+      "bytes": 43489,
+      "gzipBytes": 8393
     },
     {
       "path": "experiences/index.html",
-      "bytes": 45581,
-      "gzipBytes": 8305
+      "bytes": 56546,
+      "gzipBytes": 10458
     },
     {
       "path": "index.html",
-      "bytes": 66859,
-      "gzipBytes": 11306
+      "bytes": 72002,
+      "gzipBytes": 12768
     },
     {
       "path": "plan-your-trip/index.html",
-      "bytes": 46603,
-      "gzipBytes": 9916
+      "bytes": 46508,
+      "gzipBytes": 10075
     },
     {
       "path": "tailor-made/index.html",
-      "bytes": 46155,
-      "gzipBytes": 9391
+      "bytes": 46060,
+      "gzipBytes": 9555
     },
     {
       "path": "tours/index.html",
-      "bytes": 40909,
-      "gzipBytes": 7485
+      "bytes": 40814,
+      "gzipBytes": 7586
     }
   ],
   "scripts": [
     {
-      "path": "_astro/Layout.astro_astro_type_script_index_0_lang.BAiENLdM.js",
-      "bytes": 10711,
-      "gzipBytes": 4198
+      "path": "_astro/Layout.astro_astro_type_script_index_0_lang.D4YFT_tg.js",
+      "bytes": 10041,
+      "gzipBytes": 3949
     }
   ],
   "styles": [
     {
-      "path": "_astro/Layout.BnfzVtZG.css",
-      "bytes": 65313,
-      "gzipBytes": 13986
+      "path": "_astro/experiences.z1AvYlwR.css",
+      "bytes": 3820,
+      "gzipBytes": 1193
+    },
+    {
+      "path": "_astro/index.DsN10KVP.css",
+      "bytes": 1181,
+      "gzipBytes": 441
+    },
+    {
+      "path": "_astro/Layout.DcoTq-PX.css",
+      "bytes": 65681,
+      "gzipBytes": 13886
     }
   ]
 }
