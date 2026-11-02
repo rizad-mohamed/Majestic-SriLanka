@@ -104,6 +104,7 @@ Final review: the corrected composition retains the approved visual character. R
 | `npm test` | 11 passed |
 | `npm run build` | Passed: eight pre-rendered HTML pages including 404 |
 | `npm run test:seo` | Passed: all seven preview routes, metadata, canonicals, schema, links/anchors, image metadata, sitemap, robots and 404 |
+| `npm run measure:build` | Passed unchanged budgets: compressed CSS 13,986 bytes; JS 4,198 bytes; largest HTML 11,306 bytes |
 | Initial full Playwright run | 165 successful Chromium/WebKit cases; all 33 Firefox cases crashed before opening pages inside the Windows sandbox. Runner cleanup stalled after cases finished; stopped only this task's runner and preview |
 | Firefox full-suite rerun outside sandbox | 33 passed, including all seven automated accessibility audits and existing functional journeys |
 | Final regression after the tablet leaf fix | **72 passed, zero failures/skips/flakes**, all six projects: desktop, tablet, mobile, small-mobile, Firefox, WebKit. All seven settled route captures plus map keyboard/touch targets, no-script behavior, reduced motion, selected interests, consistent photo frames and carousel focal positioning |
@@ -127,6 +128,8 @@ One local audit per device, Lighthouse 13.6.0, using the existing script and its
 The raw SEO failure is the deliberate preview `noindex` directive, retained and asserted by the existing quality gate. Scores have not been adjusted. The local focused audit covers the modified planner; the unchanged GitHub workflow audits every primary route on mobile and desktop, three times per combination. Its status is available on the PR; a pending CI run is not a passed check.
 
 All seven routes have automated WCAG 2/2.1/2.2 A/AA axe coverage in the full suite; the new map's open interaction state also receives an axe scan. This does not establish complete WCAG conformance or replace manual screen-reader testing.
+
+The first GitHub run caught the stylesheet 239 compressed bytes over the established 14,000-byte budget. Removed superseded fixed-height/organic-corner image rules and replaced duplicate editorial layout declarations with the shared stylesheet's existing rules. The budget was not increased. Rebuilt, remeasured, reran static/SEO checks and captured all 21 route/width combinations again. Twenty captures were pixel-identical; the remaining tablet Contact comparison revealed a late-loading inset in the earlier capture, so the capture helper now explicitly waits for every image to finish loading. The final evidence includes that inset and unchanged document geometry.
 
 ## Review and launch boundaries
 
