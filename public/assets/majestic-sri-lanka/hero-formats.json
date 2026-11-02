@@ -1,0 +1,28 @@
+{
+  "hill-country": [
+    {
+      "file": "photography/hill-country-480.avif",
+      "width": 480,
+      "height": 360,
+      "bytes": 26026
+    },
+    {
+      "file": "photography/hill-country-720.avif",
+      "width": 720,
+      "height": 540,
+      "bytes": 56367
+    },
+    {
+      "file": "photography/hill-country-960.avif",
+      "width": 960,
+      "height": 720,
+      "bytes": 92784
+    },
+    {
+      "file": "photography/hill-country-1448.avif",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 170816
+    }
+  ]
+}

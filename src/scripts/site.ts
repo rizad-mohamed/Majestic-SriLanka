@@ -4,6 +4,7 @@ import {
   createEmailLink,
   createEmailDraft,
 } from "../lib/planner.mjs";
+import "./analytics";
 
 let lastDialogTrigger: HTMLElement | null = null;
 document.querySelectorAll<HTMLElement>("[data-dialog]").forEach((trigger) => {
@@ -22,6 +23,25 @@ document.querySelectorAll<HTMLDialogElement>("dialog").forEach((dialog) => {
     if (event.key === "Escape") {
       event.preventDefault();
       dialog.close();
+    }
+    if (event.key === "Tab") {
+      const controls = [
+        ...dialog.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), summary, [tabindex]:not([tabindex="-1"])',
+        ),
+      ].filter(
+        (control) => !control.hidden && control.getClientRects().length > 0,
+      );
+      if (controls.length) {
+        event.preventDefault();
+        const current = controls.indexOf(document.activeElement as HTMLElement);
+        const next = event.shiftKey
+          ? current <= 0
+            ? controls.length - 1
+            : current - 1
+          : (current + 1) % controls.length;
+        controls[next].focus();
+      }
     }
   });
   dialog
@@ -137,10 +157,15 @@ if (form) {
   if (dateInput) dateInput.min = today;
   const selections = new URLSearchParams(location.search);
   const selectedInterests = new Set(selections.getAll("interest"));
-  form.querySelectorAll<HTMLInputElement>("[data-interest]").forEach((input) => {
-    if (input.dataset.interest && selectedInterests.has(input.dataset.interest))
-      input.checked = true;
-  });
+  form
+    .querySelectorAll<HTMLInputElement>("[data-interest]")
+    .forEach((input) => {
+      if (
+        input.dataset.interest &&
+        selectedInterests.has(input.dataset.interest)
+      )
+        input.checked = true;
+    });
   const journey = selections.get("journey");
   const journeySelect = form.querySelector<HTMLSelectElement>("[name=journey]");
   if (
@@ -208,6 +233,7 @@ if (form) {
       return;
     }
     const brief = formatBrief(values);
+    document.dispatchEvent(new Event("majestic:brief-created"));
     const summary = document.querySelector<HTMLElement>("#brief-summary");
     const summaryText = document.getElementById("brief-text");
     if (summary) summary.hidden = false;
@@ -229,13 +255,16 @@ if (form) {
         setTimeout(() => URL.revokeObjectURL(url), 1000);
       };
     const email = document.querySelector<HTMLAnchorElement>("#email-brief");
-    const draft = document.querySelector<HTMLButtonElement>("#download-email-draft");
+    const draft = document.querySelector<HTMLButtonElement>(
+      "#download-email-draft",
+    );
     if (draft)
       draft.onclick = () => {
-        const url = URL.createObjectURL(new Blob(
-          [createEmailDraft(form.dataset.email || "", brief)],
-          { type: "message/rfc822" },
-        ));
+        const url = URL.createObjectURL(
+          new Blob([createEmailDraft(form.dataset.email || "", brief)], {
+            type: "message/rfc822",
+          }),
+        );
         const link = document.createElement("a");
         link.href = url;
         link.download = "my-majestic-sri-lanka-enquiry.eml";

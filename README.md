@@ -2,6 +2,8 @@
 
 A seven-page, statically rendered travel website built from the supplied approved homepage reference. Astro, TypeScript, self-hosted fonts, responsive WebP photography and small progressive-enhancement scripts keep the site portable and lightweight.
 
+The current production-readiness review, evidence and launch requirements are in [docs/seo/SEO-IMPLEMENTATION-REPORT.md](docs/seo/SEO-IMPLEMENTATION-REPORT.md) and [the runbook](docs/seo/SEO-RUNBOOK.md).
+
 ## Development
 
 Use Node 24 and npm. On Windows PowerShell with script execution restricted, use `npm.cmd` in place of `npm`.
@@ -24,25 +26,28 @@ The local address is `http://127.0.0.1:4321`. Build with `npm run build`; inspec
 - `assets/source`: 11 original generated PNGs. `public/assets/majestic-sri-lanka`: 14 scene crops, responsive production images and transparent SVGs.
 - `docs`: design evidence, provenance, UAT and delivery results.
 
-Copy `.env.example` to `.env` locally and set verified contact details. These are public build-time values, not secrets. `info@majesticsrilanka.com` and `majesticsrilanka.com` are user-requested proposed placeholders, not verified or active services. Keep `PUBLIC_CONTACTS_CONFIRMED=false` until verified; WhatsApp and social links remain labelled placeholders. No form backend, database, tracking, payment or artificial booking confirmation is included. The planner creates a downloadable brief; verified email/WhatsApp handoffs appear only when explicitly configured and confirmed. Unsent input remains in page memory, never browser storage. No entry is posted to a server.
+Copy `.env.example` to `.env` locally and set verified contact details. These are public build-time values, not secrets. `info@majesticsrilanka.com` and `majesticsrilanka.com` are user-requested proposed placeholders, not verified or active services. Keep `PUBLIC_CONTACTS_CONFIRMED=false` until the email is verified. The owner-supplied WhatsApp channel is preserved; social profiles remain placeholders. No form backend, database, payment or artificial booking confirmation is included. Optional GA4 transport stays disabled without a real Measurement ID and explicit consent from an approved consent manager. The planner creates a downloadable brief and offers deliberate handoffs. Unsent input remains in page memory, never browser storage. No entry is posted to a server.
 
-The preview is deliberately `noindex` with robots disallow. Set the correct `PUBLIC_SITE_URL` and enable `PUBLIC_ALLOW_INDEXING` only after content and launch approval. Sitemap and canonical links are generated from the build origin. No fabricated LocalBusiness, review or offer schema is emitted.
+The preview is deliberately `noindex`; robots permits crawling so that directive can be read, and its sitemap is empty. After domain/content approval, set a verified HTTPS `PUBLIC_SITE_URL`, `PUBLIC_DEPLOYMENT_ENV=production` and `PUBLIC_ALLOW_INDEXING=true` for the public build. Canonicals and the seven-page production sitemap share one validated origin. No fabricated LocalBusiness, review or offer schema is emitted.
 
 ## Validation
 
 ```sh
+npm run format:check
 npm run lint
 npm run check
 npm test
 npm run build
 npm run test:seo
-npx playwright install chromium
+npx playwright install chromium firefox webkit
 npm run test:e2e
+npm run test:production
+npm run measure:build
 npm run test:lighthouse
-npm audit --omit=dev
+npm audit --audit-level=moderate
 ```
 
-Playwright covers all seven routes at desktop, tablet and mobile widths, accessibility scanning, navigation, filters, dialogs and form/download behavior. Screenshots and traces appear in ignored test output. Lighthouse runs three independent audits per page/device and evaluates the median performance run, retaining every result. Its thresholds remain performance 90 and accessibility/best practices/SEO 95. Crawlability is excluded during preview because indexing is intentionally disabled. Human review, real-device checks and assistive-technology testing remain distinct acceptance steps.
+Playwright covers all seven routes at four viewport sizes, accessibility scanning, navigation, filters, dialogs and form/download behavior. Set `CROSS_BROWSER=true` for Firefox and WebKit in addition to Chromium (enabled in CI). Screenshots and traces appear in ignored test output. Lighthouse runs three independent audits per page/device and evaluates the median performance run, retaining every result. Performance is gated at 90 and accessibility/best practices at 95. All standard audits run: the raw preview SEO score includes the intentional noindex failure. Every other weighted SEO audit must pass. The isolated production fixture verifies indexable HTML, canonical URLs, robots, sitemap, redirects, 404 and mocked consent-based analytics; it is never published. Human review, real-device checks and assistive-technology testing remain distinct acceptance steps.
 
 ## Assets
 

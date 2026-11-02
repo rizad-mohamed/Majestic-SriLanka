@@ -14,5 +14,5 @@ deliverables/*.tar.gz
 deliverables/*.zip
 deliverables/screenshots/
 deliverables/delivery-status.json
-deliverables/lighthouse/*.report.html
-deliverables/lighthouse/*.report.json
+deliverables/lighthouse/**/*.report.html
+deliverables/lighthouse/**/*.report.json

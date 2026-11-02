@@ -1402,7 +1402,11 @@ body.dialog-is-open {
   align-items: center;
   overflow: hidden;
 }
-.page-hero > img {
+.page-hero > picture {
+  display: contents;
+}
+.page-hero > img,
+.page-hero > picture > img {
   position: absolute;
   inset: 0;
   width: 100%;

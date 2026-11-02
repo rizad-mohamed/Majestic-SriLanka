@@ -111,6 +111,7 @@ export const tours = [
 export const experiences = [
   {
     id: "wildlife",
+    alt: "An elephant among dense tropical greenery",
     title: "Wildlife & Nature",
     image: "wildlife",
     icon: "wildlife",
@@ -121,6 +122,7 @@ export const experiences = [
   },
   {
     id: "culture",
+    alt: "An ancient brick temple surrounded by green trees",
     title: "Culture & Heritage",
     image: "culture",
     icon: "culture",
@@ -131,6 +133,7 @@ export const experiences = [
   },
   {
     id: "beaches",
+    alt: "Coconut palms above a beach and turquoise sea",
     title: "Beaches & Coast",
     image: "beaches",
     icon: "beach",
@@ -141,6 +144,7 @@ export const experiences = [
   },
   {
     id: "tea",
+    alt: "Green tea terraces beneath layered mountains",
     title: "Hill Country & Tea",
     image: "tea-country",
     icon: "mountain",
@@ -151,6 +155,7 @@ export const experiences = [
   },
   {
     id: "food",
+    alt: "Rice, curries and colourful side dishes served in earthenware bowls",
     title: "Food & Cuisine",
     image: "sri-lankan-food",
     icon: "food",
@@ -198,7 +203,7 @@ export const faqs = [
   {
     question: "How do I begin planning my trip?",
     answer:
-      "Use the trip planner to put together your dates, group size and interests. You can download your brief and keep it for your planning conversation. Enquiry delivery becomes available when the business contact details are confirmed.",
+      "Use the trip planner to put together your dates, group size and interests. You can download your brief and keep it for your planning conversation. You can also choose to share it through the available WhatsApp handoff; nothing is sent automatically.",
   },
   {
     question: "Are the displayed itineraries confirmed packages?",

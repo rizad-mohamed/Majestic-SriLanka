@@ -21,13 +21,31 @@ test("email draft includes the complete Unicode brief as a document attachment",
   const draft = createEmailDraft("travel@example.com", brief);
   assert.match(draft, /To: travel@example.com\r\n/);
   assert.match(draft, /X-Unsent: 1/);
-  assert.match(draft, /Content-Disposition: attachment; filename="travel-brief.txt"/);
-  const attachment = draft.split('Content-Disposition: attachment; filename="travel-brief.txt"\r\nContent-Transfer-Encoding: base64\r\n\r\n')[1].split("\r\n--")[0];
+  assert.match(
+    draft,
+    /Content-Disposition: attachment; filename="travel-brief.txt"/,
+  );
+  const attachment = draft
+    .split(
+      'Content-Disposition: attachment; filename="travel-brief.txt"\r\nContent-Transfer-Encoding: base64\r\n\r\n',
+    )[1]
+    .split("\r\n--")[0];
   assert.equal(Buffer.from(attachment, "base64").toString("utf8"), brief);
-  assert.doesNotMatch(createEmailDraft("bad\r\nBcc: other@example.com", brief), /^To:|^Bcc:/m);
+  assert.doesNotMatch(
+    createEmailDraft("bad\r\nBcc: other@example.com", brief),
+    /^To:|^Bcc:/m,
+  );
 });
 test("accepts a complete travel brief", () =>
   assert.deepEqual(validateBrief(valid, "2026-10-31"), {}));
+test("rejects impossible calendar dates rather than normalizing them", () => {
+  for (const date of ["2027-02-29", "2028-02-30", "2027-04-31", "2027-13-01"])
+    assert.ok(validateBrief({ ...valid, date }, "2026-11-02").date);
+  assert.deepEqual(
+    validateBrief({ ...valid, date: "2028-02-29" }, "2026-11-02"),
+    {},
+  );
+});
 test("reports missing identity, invalid email, past dates and absent consent", () => {
   const errors = validateBrief(
     {

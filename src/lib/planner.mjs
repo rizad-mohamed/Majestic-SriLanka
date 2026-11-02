@@ -14,6 +14,7 @@ export function validateBrief(
   else if (
     !/^\d{4}-\d{2}-\d{2}$/.test(values.date) ||
     Number.isNaN(Date.parse(values.date)) ||
+    new Date(values.date).toISOString().slice(0, 10) !== values.date ||
     values.date < today
   )
     errors.date = "Please choose today or a future arrival date.";

@@ -1,0 +1,26 @@
+# SEO and production readiness implementation
+
+Base: `7e0d57a4eca45a7202feac52e8a76e15a673f334` from fetched GitHub main. Work isolated on `seo/production-readiness-2026-11-02`. The owner subsequently authorized a merge after testing and CI; original restrictions against direct main commits and history rewriting remain honored.
+
+## Delivered behavior
+
+All seven approved routes remain prerendered Astro pages. Approved typography, forest-green/bronze colors, imagery, masks, paper notes, botanical artwork, scene chooser, filters, story/search/policy/itinerary dialogs, downloads and WhatsApp channel are retained. No framework migration, new primary route, fabricated business proof, booking API or production deployment is introduced.
+
+- Central route metadata now names each page's actual travel intent, with unique title/description, self-canonical, Open Graph and complete Twitter cards, relevant image dimensions and ALT.
+- One validated HTTPS origin drives Astro, rendered metadata and endpoints. Production requires an explicit public domain and deployment environment. Preview indexing fails closed; noindex pages are excluded from its empty sitemap. The production fixture has exactly seven indexable URLs. No fabricated lastmod values.
+- Crawlers can read preview HTML's noindex directive. 404 stays noindex, has no canonical and returns a true local 404. Six slash-normalization rules are supplied in public/_redirects. Astro static preview does not apply host redirects: slashless paths return 404 locally. Source rules are tested; actual hosting enforcement, HTTPS and preferred-host redirects remain external launch checks.
+- Linked Organization/WebSite/page/ImageObject/BreadcrumbList schema describes only supported content. AboutPage, ContactPage and collections match visible pages. No unsupported ratings, offers, LocalBusiness or FAQ-rich-result claims.
+- Contextual links support itinerary/experience/custom-planning research within existing sections. Experience ALT text describes scenes; default intrinsic image dimensions follow the manifest. Original PNG/WebP files and crops remain unchanged. The measured Experiences hero adds native AVIF negotiation from the same source/crop with a WebP fallback. Expanded Lighthouse coverage exposed slow Experiences rendering; lower rows now defer offscreen layout using the existing rendering pattern, and responsive sizes match the actual contained image widths. Fragment entry materializes the short experience list before native anchor scrolling/hit testing, addressing the intermittent WebKit handoff failure exposed by CI.
+- Browser validation rejects impossible calendar dates. Explicit dialog Tab wrapping fixes the keyboard-boundary regression found by the new tests; Escape and focus restoration remain supported.
+- Optional GA4 event transport requires both a real configured ID and an explicit consent-manager grant. Explicit events exclude form values, query strings and referrers, deduplicate form start/page grant and stop on revocation. Local brief creation uses travel_brief_created, never generate_lead. No tracking is enabled in the normal build.
+- CSP retains existing restrictions and allows exact optional Google transport hosts. Patched minimatch/glob overrides remove all 19 initial moderate development dependency findings. Clean npm ci and full audit report zero vulnerabilities. Direct application dependencies and stack versions remain stable.
+- Build validation checks all seven routes, metadata relationships, schema IDs, links/anchors, images, sitemap/robots and 404 in both build modes. Browser coverage adds four viewports, Firefox/WebKit, keyboard/reduced motion, form states and isolated production/analytics tests.
+- CI uses immutable verified action revisions, least permissions, npm ci, formatting, lint/types/units, full dependency audit, production build, SEO/budgets, browser/axe, production fixtures and fourteen Lighthouse combinations. Dependabot checks npm/actions weekly. Generated reports/results/deliverables are excluded from source type checking. Test servers explicitly run in the foreground, avoiding Astro's agent-aware background lock and Windows cleanup hangs.
+
+## Evidence and constraints
+
+See BASELINE-AUDIT, KEYWORD-AND-PAGE-MAPPING, STRUCTURED-DATA-INVENTORY, MEDIA-OPTIMISATION-REPORT, ACCESSIBILITY-AUDIT, SECURITY-REVIEW, PERFORMANCE-REPORT, TEST-AND-UAT-REPORT, SEO-RUNBOOK and EXTERNAL-DEPENDENCIES in this folder. Machine results are in build-metrics.json, deliverables/dependency-audit.json and deliverables/lighthouse/summary.json; raw browser/Lighthouse evidence is retained by CI artifacts.
+
+Initial defects were distinguished from implementation/debugging failures, which are corrected and rerun before delivery. Historical handover's preview SEO 100 excluded crawlability and is not comparable to the new complete raw scores. No universal agentic-browsing score, field INP, WCAG certification, live email delivery, domain ownership or successful deployment is claimed.
+
+Public launch still needs approved domain/hosting, verified email and policies, client evidence/content sign-off, consent/property configuration if analytics is enabled, real-device/assistive-technology review and field measurements. The repository can pass its engineering gates while these business and infrastructure requirements remain open.
