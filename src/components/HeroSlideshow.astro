@@ -1,0 +1,13 @@
+---
+import Photo from './Photo.astro';
+import { heroSlides } from '../data/hero-slides';
+---
+<div class="hero-photograph" data-hero-image aria-live="off"><Photo name="hero-sigiriya" alt={heroSlides[0].alt} eager sizes="100vw" width={1774} height={887} /></div>
+{heroSlides.map(slide => <template data-hero-template={slide.id}><Photo name={slide.id} alt={slide.alt} sizes="100vw" /></template>)}
+<script>import '../scripts/hero-slideshow';</script>
+<style>
+  .hero-photograph :global(img) { position: absolute; inset: 0; opacity: 1; }
+  .hero-photograph :global(.hero-frame) { opacity: 0; transition: opacity 800ms ease; }
+  .hero-photograph :global(.hero-frame.is-visible) { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) { .hero-photograph :global(.hero-frame) { transition: none; } }
+</style>

@@ -99,30 +99,6 @@ document
     });
   });
 
-document.querySelectorAll<HTMLButtonElement>("[data-slide]").forEach((button) =>
-  button.addEventListener("click", () => {
-    const photo = document.querySelector<HTMLImageElement>(
-      "[data-hero-image] img",
-    );
-    if (!photo || !button.dataset.slide) return;
-    const name = button.dataset.slide;
-    const base = `/assets/majestic-sri-lanka/photography/${name}`;
-    photo.srcset = `${base}-480.webp 480w, ${base}-960.webp 960w, ${base}-1600.webp 1600w`;
-    photo.src = `${base}-1600.webp`;
-    const alts: Record<string, string> = {
-      "hero-sigiriya": "Sigiriya above a misty Sri Lankan jungle at sunrise",
-      "hill-country": "Green tea terraces and distant Sri Lankan mountains",
-      "southern-coast": "Palm-fringed Sri Lankan beach at sunset",
-    };
-    photo.alt = alts[name] || "Sri Lankan landscape";
-    document
-      .querySelectorAll("[data-slide]")
-      .forEach((item) =>
-        item.setAttribute("aria-pressed", String(item === button)),
-      );
-  }),
-);
-
 document
   .querySelectorAll<HTMLButtonElement>("[data-filter]")
   .forEach((button) =>
