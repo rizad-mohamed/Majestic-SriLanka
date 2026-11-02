@@ -1,0 +1,284 @@
+{
+  "assets": [
+    {
+      "key": "wildlife",
+      "title": "Elephant Herd Yala National Park.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Elephant_Herd_Yala_National_Park.jpg",
+      "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Elephant_Herd_Yala_National_Park.jpg/1280px-Elephant_Herd_Yala_National_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "creator": "Adbar",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "changes": "Resized, cropped and encoded as WebP; no generated content.",
+      "sourceSha256": "cd77d6ed92b566b54ba578a54cb46cdc7b604083d5ff3d9557e5dbfd8f8f28b5",
+      "variants": [
+        {
+          "file": "experiences/wildlife-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 14466
+        },
+        {
+          "file": "experiences/wildlife-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 80368
+        },
+        {
+          "file": "experiences/wildlife-960.webp",
+          "width": 960,
+          "height": 576,
+          "bytes": 159568
+        }
+      ]
+    },
+    {
+      "key": "wildlifeInset",
+      "title": "Sri Lankan leopard (Panthera pardus kotiya) female 5.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Sri_Lankan_leopard_(Panthera_pardus_kotiya)_female_5.jpg",
+      "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Sri_Lankan_leopard_%28Panthera_pardus_kotiya%29_female_5.jpg/1280px-Sri_Lankan_leopard_%28Panthera_pardus_kotiya%29_female_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "creator": "Charles J. Sharp",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "changes": "Resized, cropped and encoded as WebP; no generated content.",
+      "sourceSha256": "b38f05f122a84619b215309cd7dd6d86b7a42ee5dc52d4faffffe2fab143dac6",
+      "variants": [
+        {
+          "file": "experiences/wildlifeInset-320.webp",
+          "width": 320,
+          "height": 240,
+          "bytes": 26684
+        },
+        {
+          "file": "experiences/wildlifeInset-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 96070
+        }
+      ]
+    },
+    {
+      "key": "culture",
+      "title": "Sigiriya lion rock aerial (29448590113).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Sigiriya_lion_rock_aerial_(29448590113).jpg",
+      "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Sigiriya_lion_rock_aerial_%2829448590113%29.jpg/1280px-Sigiriya_lion_rock_aerial_%2829448590113%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "creator": "dronepicr",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "changes": "Resized, cropped and encoded as WebP; no generated content.",
+      "sourceSha256": "e157a220c8b2d079ead7f4032df12cb3c0cd7226ffb73c85647bde19b455ae3c",
+      "variants": [
+        {
+          "file": "experiences/culture-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 14984
+        },
+        {
+          "file": "experiences/culture-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 65284
+        },
+        {
+          "file": "experiences/culture-960.webp",
+          "width": 960,
+          "height": 576,
+          "bytes": 120600
+        }
+      ]
+    },
+    {
+      "key": "cultureInset",
+      "title": "Polonnaruwa Vatadage Sri Lanka.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Polonnaruwa_Vatadage_Sri_Lanka.jpg",
+      "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Polonnaruwa_Vatadage_Sri_Lanka.jpg/1280px-Polonnaruwa_Vatadage_Sri_Lanka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "creator": "Philip Nalangan",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "changes": "Resized, cropped and encoded as WebP; no generated content.",
+      "sourceSha256": "b54d31eb5408868ff7cffc9d14048d5192d82005c8a47e42aa38cebacf37bf58",
+      "variants": [
+        {
+          "file": "experiences/cultureInset-320.webp",
+          "width": 320,
+          "height": 240,
+          "bytes": 14034
+        },
+        {
+          "file": "experiences/cultureInset-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 63620
+        }
+      ]
+    },
+    {
+      "key": "beaches",
+      "title": "Mirissa sea 1.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Mirissa_sea_1.jpg",
+      "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Mirissa_sea_1.jpg/1280px-Mirissa_sea_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "creator": "Thedani Karasnagoda",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "changes": "Resized, cropped and encoded as WebP; no generated content.",
+      "sourceSha256": "dbf08cc950888ba2fcbacdfd852f382f18ef90307def0f98077a5db6ccaae084",
+      "variants": [
+        {
+          "file": "experiences/beaches-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 10688
+        },
+        {
+          "file": "experiences/beaches-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 38016
+        },
+        {
+          "file": "experiences/beaches-960.webp",
+          "width": 960,
+          "height": 576,
+          "bytes": 65694
+        }
+      ]
+    },
+    {
+      "key": "beachesInset",
+      "title": "Galle Fort -Srilanka.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Galle_Fort_-Srilanka.jpg",
+      "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Galle_Fort_-Srilanka.jpg/1280px-Galle_Fort_-Srilanka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "creator": "Shenal Sadurshan",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "changes": "Resized, cropped and encoded as WebP; no generated content.",
+      "sourceSha256": "4d683d367fc804be6dc60ee118879af8b554174d5e7a000a577269a88651bed2",
+      "variants": [
+        {
+          "file": "experiences/beachesInset-320.webp",
+          "width": 320,
+          "height": 240,
+          "bytes": 10044
+        },
+        {
+          "file": "experiences/beachesInset-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 39924
+        }
+      ]
+    },
+    {
+      "key": "tea",
+      "title": "Sri Lanka, Tea plantations near Nuwara Eliya, Tea estate.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Sri_Lanka,_Tea_plantations_near_Nuwara_Eliya,_Tea_estate.jpg",
+      "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Sri_Lanka%2C_Tea_plantations_near_Nuwara_Eliya%2C_Tea_estate.jpg/1280px-Sri_Lanka%2C_Tea_plantations_near_Nuwara_Eliya%2C_Tea_estate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "creator": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "changes": "Resized, cropped and encoded as WebP; no generated content.",
+      "sourceSha256": "33644ca11dd9ddb02f9454746501fc310180b56f92821cd95ca4fe6e30c512c5",
+      "variants": [
+        {
+          "file": "experiences/tea-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 13058
+        },
+        {
+          "file": "experiences/tea-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 48414
+        },
+        {
+          "file": "experiences/tea-960.webp",
+          "width": 960,
+          "height": 576,
+          "bytes": 81460
+        }
+      ]
+    },
+    {
+      "key": "teaInset",
+      "title": "SL Demodara near Ella asv2020-01 img02.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:SL_Demodara_near_Ella_asv2020-01_img02.jpg",
+      "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/SL_Demodara_near_Ella_asv2020-01_img02.jpg/1280px-SL_Demodara_near_Ella_asv2020-01_img02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "creator": "A.Savin, Wikipedia",
+      "license": "FAL",
+      "licenseUrl": "https://artlibre.org/licence/lal/en",
+      "changes": "Resized, cropped and encoded as WebP; no generated content.",
+      "sourceSha256": "d70a94e8405635e5ca06f22a56dce15dc65bb897e9ebf689c24e22af789b2f9d",
+      "variants": [
+        {
+          "file": "experiences/teaInset-320.webp",
+          "width": 320,
+          "height": 240,
+          "bytes": 14686
+        },
+        {
+          "file": "experiences/teaInset-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 71700
+        }
+      ]
+    },
+    {
+      "key": "food",
+      "title": "Sri Lankan Rice and Curry.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Sri_Lankan_Rice_and_Curry.jpg",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Sri_Lankan_Rice_and_Curry.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "creator": "Lankan Foodie",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "changes": "Resized, cropped and encoded as WebP; no generated content.",
+      "sourceSha256": "2eb5fb2da3cee18db5d9b0dbd283ce599829d0932581c9716bdffd8bf0928674",
+      "variants": [
+        {
+          "file": "experiences/food-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 17164
+        },
+        {
+          "file": "experiences/food-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 52888
+        },
+        {
+          "file": "experiences/food-960.webp",
+          "width": 960,
+          "height": 576,
+          "bytes": 79524
+        }
+      ]
+    },
+    {
+      "key": "foodInset",
+      "title": "Egg hoppers sri Lanka.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Egg_hoppers_sri_Lanka.jpg",
+      "download": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Egg_hoppers_sri_Lanka.jpg/1280px-Egg_hoppers_sri_Lanka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "creator": "Z thomas",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "changes": "Resized, cropped and encoded as WebP; no generated content.",
+      "sourceSha256": "0ec555d482c15077f16f956d3d5fdf10e6d4659d0f7d26fab836938f134fa3b0",
+      "variants": [
+        {
+          "file": "experiences/foodInset-320.webp",
+          "width": 320,
+          "height": 240,
+          "bytes": 9764
+        },
+        {
+          "file": "experiences/foodInset-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 31504
+        }
+      ]
+    }
+  ]
+}
