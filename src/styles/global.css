@@ -710,7 +710,6 @@ main:focus {
   scroll-margin-top: 30px;
 }
 .tour-image {
-  height: 244px;
   position: relative;
   overflow: hidden;
 }
@@ -722,9 +721,6 @@ main:focus {
 }
 .tour-card:hover .tour-image img {
   transform: scale(1.035);
-}
-.tour-card:first-child .tour-image img {
-  object-position: 74% center;
 }
 .duration {
   position: absolute;
@@ -1495,18 +1491,7 @@ body.dialog-is-open {
   border-left: 3px solid var(--bronze);
   font-size: 14px;
 }
-.editorial-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.editorial-split > img {
-  width: 100%;
-  height: 450px;
-  object-fit: cover;
-  border-radius: 43% 12% 42% 7% / 25% 20% 23% 12%;
-}
+
 .editorial-copy h2 {
   margin-bottom: 22px;
 }
@@ -1519,25 +1504,12 @@ body.dialog-is-open {
 }
 .experience-detail {
   display: grid;
-  grid-template-columns: 40% 1fr;
-  gap: 75px;
   align-items: center;
   padding-block: 48px;
   border-bottom: 1px solid var(--line);
   scroll-margin-top: 30px;
 }
-.experience-detail:nth-child(even) {
-  grid-template-columns: 1fr 40%;
-}
-.experience-detail:nth-child(even) > img {
-  order: 2;
-}
-.experience-detail > img {
-  height: 350px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 6px 60px 6px 60px;
-}
+
 .experience-detail h2 {
   margin-bottom: 20px;
 }
@@ -1612,8 +1584,6 @@ body.dialog-is-open {
 }
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 85px;
 }
 .contact-grid h2 {
   margin-bottom: 20px;
@@ -1647,13 +1617,7 @@ body.dialog-is-open {
   font-size: 14px;
   text-decoration: underline;
 }
-.contact-image {
-  height: 100%;
-  min-height: 480px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 45% 4% 45% 4% / 20% 4% 20% 4%;
-}
+
 .planner-layout {
   display: grid;
   grid-template-columns: 0.85fr 1.5fr;
@@ -1936,9 +1900,6 @@ body.dialog-is-open {
   .story-section {
     min-height: 465px;
   }
-  .tour-image {
-    height: 205px;
-  }
   .tour-content {
     padding: 16px 20px;
   }
@@ -2038,10 +1999,8 @@ body.dialog-is-open {
   .cta-paper .script {
     font-size: 36px;
   }
-  .editorial-split,
   .planner-layout,
-  .faq-layout,
-  .contact-grid {
+  .faq-layout {
     gap: 50px;
   }
 }
@@ -2169,9 +2128,6 @@ body.dialog-is-open {
   }
   .tour-grid {
     gap: 15px;
-  }
-  .tour-image {
-    height: 175px;
   }
   .tour-content {
     padding: 15px;
@@ -2330,9 +2286,6 @@ body.dialog-is-open {
   .page-hero {
     min-height: 380px;
   }
-  .experience-detail {
-    gap: 40px;
-  }
   .planner-layout {
     grid-template-columns: 0.8fr 1.3fr;
     gap: 35px;
@@ -2350,12 +2303,6 @@ body.dialog-is-open {
   .faq-layout {
     grid-template-columns: 0.8fr 1.4fr;
     gap: 40px;
-  }
-  .editorial-split {
-    gap: 40px;
-  }
-  .editorial-split > img {
-    height: 390px;
   }
 }
 @media (max-width: 700px) {
@@ -2616,9 +2563,6 @@ body.dialog-is-open {
   .tour-card {
     min-width: 85%;
     scroll-snap-align: start;
-  }
-  .tour-image {
-    height: 216px;
   }
   .tour-content {
     padding: 19px 21px;
@@ -3018,13 +2962,7 @@ body.dialog-is-open {
     font-size: 13px;
     padding: 21px;
   }
-  .editorial-split {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .editorial-split > img {
-    height: 330px;
-  }
+
   .editorial-copy h2 {
     font-size: 43px;
   }
@@ -3044,18 +2982,8 @@ body.dialog-is-open {
   .value-item p {
     font-size: 14px;
   }
-  .experience-detail,
-  .experience-detail:nth-child(even) {
-    grid-template-columns: 1fr;
-    gap: 25px;
+  .experience-detail {
     padding-block: 30px;
-  }
-  .experience-detail:nth-child(even) > img {
-    order: 0;
-  }
-  .experience-detail > img {
-    height: 310px;
-    object-position: center 40%;
   }
   .experience-detail h2 {
     font-size: 42px;
@@ -3080,20 +3008,13 @@ body.dialog-is-open {
   .faq-list details p {
     font-size: 14px;
   }
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
   .contact-grid h2 {
     font-size: 43px;
   }
   .contact-grid p {
     font-size: 14px;
   }
-  .contact-image {
-    min-height: 320px;
-    height: 320px;
-  }
+
   .planner-layout {
     grid-template-columns: 1fr;
     gap: 30px;

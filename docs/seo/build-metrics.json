@@ -1,11 +1,11 @@
 {
-  "measuredAt": "2026-11-02T15:16:01.375Z",
+  "measuredAt": "2026-11-02T19:52:38.460Z",
   "directory": "dist",
   "summary": {
     "html": {
       "count": 8,
-      "bytes": 348238,
-      "gzipBytes": 65268
+      "bytes": 365482,
+      "gzipBytes": 69294
     },
     "js": {
       "count": 1,
@@ -14,8 +14,8 @@
     },
     "css": {
       "count": 1,
-      "bytes": 56570,
-      "gzipBytes": 12269
+      "bytes": 65313,
+      "gzipBytes": 13986
     },
     "woff2": {
       "count": 14,
@@ -36,43 +36,43 @@
   "documents": [
     {
       "path": "404.html",
-      "bytes": 29822,
-      "gzipBytes": 5882
+      "bytes": 29939,
+      "gzipBytes": 5906
     },
     {
       "path": "about-us/index.html",
-      "bytes": 43314,
-      "gzipBytes": 8423
+      "bytes": 45852,
+      "gzipBytes": 8748
     },
     {
       "path": "contact-us/index.html",
-      "bytes": 42279,
-      "gzipBytes": 8057
+      "bytes": 43584,
+      "gzipBytes": 8237
     },
     {
       "path": "experiences/index.html",
-      "bytes": 45358,
-      "gzipBytes": 8238
+      "bytes": 45581,
+      "gzipBytes": 8305
     },
     {
       "path": "index.html",
-      "bytes": 66356,
-      "gzipBytes": 11238
+      "bytes": 66859,
+      "gzipBytes": 11306
     },
     {
       "path": "plan-your-trip/index.html",
-      "bytes": 40677,
-      "gzipBytes": 8159
+      "bytes": 46603,
+      "gzipBytes": 9916
     },
     {
       "path": "tailor-made/index.html",
-      "bytes": 39966,
-      "gzipBytes": 7866
+      "bytes": 46155,
+      "gzipBytes": 9391
     },
     {
       "path": "tours/index.html",
-      "bytes": 40466,
-      "gzipBytes": 7405
+      "bytes": 40909,
+      "gzipBytes": 7485
     }
   ],
   "scripts": [
@@ -84,9 +84,9 @@
   ],
   "styles": [
     {
-      "path": "_astro/Layout.DQmXvL4g.css",
-      "bytes": 56570,
-      "gzipBytes": 12269
+      "path": "_astro/Layout.BnfzVtZG.css",
+      "bytes": 65313,
+      "gzipBytes": 13986
     }
   ]
 }
