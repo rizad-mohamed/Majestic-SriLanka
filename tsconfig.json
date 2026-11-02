@@ -1,6 +1,20 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist", "node_modules", ".agents", ".local"],
-  "compilerOptions": { "paths": { "@/*": ["./src/*"] } }
+  "exclude": [
+    "dist",
+    "node_modules",
+    ".agents",
+    ".local",
+    ".taste-skill",
+    ".lighthouseci",
+    "playwright-report",
+    "test-results",
+    "deliverables"
+  ],
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
 }

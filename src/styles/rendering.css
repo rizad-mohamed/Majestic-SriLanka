@@ -22,6 +22,12 @@
 .deferred-cta {
   contain-intrinsic-block-size: auto 365px;
 }
+/* These self-contained rows have no artwork extending beyond their padding.
+   Defer lower rows while preserving real HTML and their remembered scroll size. */
+.experience-detail:not(:first-child) {
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 350px;
+}
 @media (max-width: 1000px) {
   .deferred-story {
     contain-intrinsic-block-size: auto 439px;
@@ -43,6 +49,9 @@
   }
 }
 @media (max-width: 700px) {
+  .experience-detail:not(:first-child) {
+    contain-intrinsic-block-size: auto 750px;
+  }
   .deferred-story {
     contain-intrinsic-block-size: auto 846px;
   }

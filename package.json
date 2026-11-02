@@ -19,7 +19,11 @@
     "test:lighthouse": "node scripts/lighthouse.mjs",
     "assets:prepare": "node scripts/prepare-assets.mjs",
     "assets:logo": "node scripts/prepare-logo.mjs",
-    "assets:archive": "node scripts/archive-assets.mjs"
+    "assets:archive": "node scripts/archive-assets.mjs",
+    "format:check": "prettier --check astro.config.mjs tsconfig.json package.json playwright*.ts scripts/validate-build.mjs scripts/lighthouse.mjs scripts/test-production.mjs scripts/measure-build.mjs scripts/prepare-hero-avif.mjs src/data/seo.ts src/lib/schema.ts src/lib/site-config.mjs src/lib/site-config.d.mts \"src/scripts/*.ts\" \"tests/**/*.ts\" \"tests/**/*.mjs\" \"docs/seo/*.md\" \".github/**/*.yml\"",
+    "test:production": "node scripts/test-production.mjs",
+    "measure:build": "node scripts/measure-build.mjs",
+    "assets:hero": "node scripts/prepare-hero-avif.mjs"
   },
   "dependencies": {
     "@lucide/astro": "^1.65.0",
@@ -40,6 +44,11 @@
     "lighthouse": "^13.6.0",
     "sharp": "^0.35.5",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.2"
+    "typescript-eslint": "^8.46.2",
+    "prettier": "3.9.10"
+  },
+  "overrides": {
+    "minimatch": "11.0.4",
+    "glob": "14.0.3"
   }
 }

@@ -1,8 +1,14 @@
 import { defineConfig } from "astro/config";
+import { loadEnv } from "vite";
+import { getSiteConfig } from "./src/lib/site-config.mjs";
 
-const site = process.env.PUBLIC_SITE_URL;
+const env = {
+  ...loadEnv(process.env.NODE_ENV || "production", process.cwd(), "PUBLIC_"),
+  ...process.env,
+};
+const { siteUrl } = getSiteConfig(env);
 export default defineConfig({
-  site: site || "https://majestic-sri-lanka-journeys.palecoati256.chatgpt.site",
+  site: siteUrl,
   output: "static",
   trailingSlash: "always",
   build: { inlineStylesheets: "never" },

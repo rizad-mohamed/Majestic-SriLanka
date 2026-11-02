@@ -1,0 +1,3699 @@
+[
+  {
+    "route": "/",
+    "mode": "mobile",
+    "scores": {
+      "performance": 91,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 2585.777,
+      "cls": 0.001373527517724349,
+      "tbt": 262
+    },
+    "failed": [
+      {
+        "id": "first-contentful-paint",
+        "title": "First Contentful Paint",
+        "score": 0.98
+      },
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.88
+      },
+      {
+        "id": "speed-index",
+        "title": "Speed Index",
+        "score": 0.9
+      },
+      {
+        "id": "total-blocking-time",
+        "title": "Total Blocking Time",
+        "score": 0.83
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.33
+      },
+      {
+        "id": "interactive",
+        "title": "Time to Interactive",
+        "score": 0.98
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names.",
+        "score": 0
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0
+      }
+    ],
+    "report": "current/home-mobile-run1.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 91,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2585.777,
+          "cls": 0.001373527517724349,
+          "tbt": 262
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.88
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.9
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.83
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.33
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.98
+          },
+          {
+            "id": "label-content-name-mismatch",
+            "title": "Elements with visible text labels do not have matching accessible names.",
+            "score": 0
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/home-mobile-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 87,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2582.6320000000005,
+          "cls": 0,
+          "tbt": 325.0000000000002
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.97
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.88
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.71
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.76
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.21
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.98
+          },
+          {
+            "id": "label-content-name-mismatch",
+            "title": "Elements with visible text labels do not have matching accessible names.",
+            "score": 0
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "lcp-breakdown-insight",
+            "title": "LCP breakdown",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/home-mobile-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 94,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2528.2173,
+          "cls": 0,
+          "tbt": 100
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.89
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.74
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.98
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.29
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.98
+          },
+          {
+            "id": "label-content-name-mismatch",
+            "title": "Elements with visible text labels do not have matching accessible names.",
+            "score": 0
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "lcp-breakdown-insight",
+            "title": "LCP breakdown",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/home-mobile-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:08:02.214Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  },
+  {
+    "route": "/tours/",
+    "mode": "mobile",
+    "scores": {
+      "performance": 94,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 2495.824,
+      "cls": 0,
+      "tbt": 167.41200000000003
+    },
+    "failed": [
+      {
+        "id": "first-contentful-paint",
+        "title": "First Contentful Paint",
+        "score": 0.99
+      },
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.9
+      },
+      {
+        "id": "speed-index",
+        "title": "Speed Index",
+        "score": 0.83
+      },
+      {
+        "id": "total-blocking-time",
+        "title": "Total Blocking Time",
+        "score": 0.93
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.55
+      },
+      {
+        "id": "interactive",
+        "title": "Time to Interactive",
+        "score": 0.98
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "forced-reflow-insight",
+        "title": "Forced reflow",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0
+      }
+    ],
+    "report": "current/tours-mobile-run3.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 93,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2500.8775,
+          "cls": 0,
+          "tbt": 174
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.89
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.83
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.92
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.58
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.98
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/tours-mobile-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 96,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2507.666,
+          "cls": 0.0001682855427688144,
+          "tbt": 124
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.89
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.98
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.97
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.76
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.98
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/tours-mobile-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 94,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2495.824,
+          "cls": 0,
+          "tbt": 167.41200000000003
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.9
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.83
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.93
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.55
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.98
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/tours-mobile-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:09:01.801Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  },
+  {
+    "route": "/tailor-made/",
+    "mode": "mobile",
+    "scores": {
+      "performance": 92,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 2957.7542000000003,
+      "cls": 0,
+      "tbt": 184.37709999999993
+    },
+    "failed": [
+      {
+        "id": "first-contentful-paint",
+        "title": "First Contentful Paint",
+        "score": 0.98
+      },
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.79
+      },
+      {
+        "id": "speed-index",
+        "title": "Speed Index",
+        "score": 0.98
+      },
+      {
+        "id": "total-blocking-time",
+        "title": "Total Blocking Time",
+        "score": 0.91
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.51
+      },
+      {
+        "id": "interactive",
+        "title": "Time to Interactive",
+        "score": 0.96
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0
+      }
+    ],
+    "report": "current/tailor-made-mobile-run1.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 92,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2957.7542000000003,
+          "cls": 0,
+          "tbt": 184.37709999999993
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.79
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.98
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.91
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.51
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.96
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/tailor-made-mobile-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 92,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2948.79,
+          "cls": 0,
+          "tbt": 185.89499999999998
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.79
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.98
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.91
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.47
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.96
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/tailor-made-mobile-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 90,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 3546.59,
+          "cls": 0,
+          "tbt": 100
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.62
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.98
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.35
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.91
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/tailor-made-mobile-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:09:57.362Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  },
+  {
+    "route": "/experiences/",
+    "mode": "mobile",
+    "scores": {
+      "performance": 83,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 3923.9326,
+      "cls": 0,
+      "tbt": 182.96630000000005
+    },
+    "failed": [
+      {
+        "id": "first-contentful-paint",
+        "title": "First Contentful Paint",
+        "score": 0.99
+      },
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.52
+      },
+      {
+        "id": "speed-index",
+        "title": "Speed Index",
+        "score": 0.81
+      },
+      {
+        "id": "total-blocking-time",
+        "title": "Total Blocking Time",
+        "score": 0.91
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.51
+      },
+      {
+        "id": "interactive",
+        "title": "Time to Interactive",
+        "score": 0.87
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "forced-reflow-insight",
+        "title": "Forced reflow",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0
+      }
+    ],
+    "report": "current/experiences-mobile-run1.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 83,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 3923.9326,
+          "cls": 0,
+          "tbt": 182.96630000000005
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.52
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.81
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.91
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.51
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.87
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/experiences-mobile-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 81,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 4625.556,
+          "cls": 0,
+          "tbt": 166
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.34
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.97
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.93
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.61
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.8
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/experiences-mobile-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 86,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 3844.0640000000003,
+          "cls": 0,
+          "tbt": 100
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.54
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.8
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.98
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.42
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.88
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/experiences-mobile-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:10:55.659Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  },
+  {
+    "route": "/about-us/",
+    "mode": "mobile",
+    "scores": {
+      "performance": 92,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 2643.9939999999997,
+      "cls": 0,
+      "tbt": 183
+    },
+    "failed": [
+      {
+        "id": "first-contentful-paint",
+        "title": "First Contentful Paint",
+        "score": 0.99
+      },
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.87
+      },
+      {
+        "id": "speed-index",
+        "title": "Speed Index",
+        "score": 0.82
+      },
+      {
+        "id": "total-blocking-time",
+        "title": "Total Blocking Time",
+        "score": 0.91
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.55
+      },
+      {
+        "id": "interactive",
+        "title": "Time to Interactive",
+        "score": 0.97
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0
+      }
+    ],
+    "report": "current/about-us-mobile-run3.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 94,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2652.0960000000005,
+          "cls": 0,
+          "tbt": 100
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.86
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.82
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.98
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.46
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.97
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/about-us-mobile-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 92,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2646.5383,
+          "cls": 0,
+          "tbt": 199.76914999999985
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.86
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.82
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.9
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.46
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.97
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/about-us-mobile-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 92,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2643.9939999999997,
+          "cls": 0,
+          "tbt": 183
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.87
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.82
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.91
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.55
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.97
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/about-us-mobile-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:11:54.335Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  },
+  {
+    "route": "/plan-your-trip/",
+    "mode": "mobile",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 2295.0562,
+      "cls": 0,
+      "tbt": 195
+    },
+    "failed": [
+      {
+        "id": "first-contentful-paint",
+        "title": "First Contentful Paint",
+        "score": 0.98
+      },
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.93
+      },
+      {
+        "id": "speed-index",
+        "title": "Speed Index",
+        "score": 0.98
+      },
+      {
+        "id": "total-blocking-time",
+        "title": "Total Blocking Time",
+        "score": 0.9
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.51
+      },
+      {
+        "id": "interactive",
+        "title": "Time to Interactive",
+        "score": 0.99
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0
+      }
+    ],
+    "report": "current/plan-your-trip-mobile-run3.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 95,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2278.6983,
+          "cls": 0,
+          "tbt": 182.34915
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.93
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.98
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.91
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.54
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.99
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/plan-your-trip-mobile-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 97,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2281.3876999999998,
+          "cls": 0,
+          "tbt": 99
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.93
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.99
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.98
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.84
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.99
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/plan-your-trip-mobile-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 95,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2295.0562,
+          "cls": 0,
+          "tbt": 195
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.93
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.98
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.9
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.51
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.99
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/plan-your-trip-mobile-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:12:49.049Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  },
+  {
+    "route": "/contact-us/",
+    "mode": "mobile",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 2493.6279999999997,
+      "cls": 0,
+      "tbt": 100
+    },
+    "failed": [
+      {
+        "id": "first-contentful-paint",
+        "title": "First Contentful Paint",
+        "score": 0.99
+      },
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.9
+      },
+      {
+        "id": "speed-index",
+        "title": "Speed Index",
+        "score": 0.84
+      },
+      {
+        "id": "total-blocking-time",
+        "title": "Total Blocking Time",
+        "score": 0.98
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.57
+      },
+      {
+        "id": "interactive",
+        "title": "Time to Interactive",
+        "score": 0.98
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0
+      }
+    ],
+    "report": "current/contact-us-mobile-run3.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 96,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2583.924,
+          "cls": 0,
+          "tbt": 100
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.88
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.98
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.33
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.98
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/contact-us-mobile-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 95,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2501.502,
+          "cls": 0,
+          "tbt": 177.25099999999998
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.89
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.98
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.92
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.56
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.98
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/contact-us-mobile-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 95,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2493.6279999999997,
+          "cls": 0,
+          "tbt": 100
+        },
+        "failed": [
+          {
+            "id": "first-contentful-paint",
+            "title": "First Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.9
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.84
+          },
+          {
+            "id": "total-blocking-time",
+            "title": "Total Blocking Time",
+            "score": 0.98
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.57
+          },
+          {
+            "id": "interactive",
+            "title": "Time to Interactive",
+            "score": 0.98
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/contact-us-mobile-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:13:48.952Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  },
+  {
+    "route": "/",
+    "mode": "desktop",
+    "scores": {
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 751.3981,
+      "cls": 0.001817627464273801,
+      "tbt": 29.000000000000057
+    },
+    "failed": [
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.98
+      },
+      {
+        "id": "speed-index",
+        "title": "Speed Index",
+        "score": 0.97
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.99
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names.",
+        "score": 0
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0
+      }
+    ],
+    "report": "current/home-desktop-run2.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 99,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 795.5459999999998,
+          "cls": 0.001817627464273801,
+          "tbt": 15
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.98
+          },
+          {
+            "id": "label-content-name-mismatch",
+            "title": "Elements with visible text labels do not have matching accessible names.",
+            "score": 0
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0.5
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/home-desktop-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 99,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 751.3981,
+          "cls": 0.001817627464273801,
+          "tbt": 29.000000000000057
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.97
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.99
+          },
+          {
+            "id": "label-content-name-mismatch",
+            "title": "Elements with visible text labels do not have matching accessible names.",
+            "score": 0
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/home-desktop-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 99,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 778.5439999999999,
+          "cls": 0.001817627464273801,
+          "tbt": 0
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "speed-index",
+            "title": "Speed Index",
+            "score": 0.99
+          },
+          {
+            "id": "label-content-name-mismatch",
+            "title": "Elements with visible text labels do not have matching accessible names.",
+            "score": 0
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/home-desktop-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:14:44.314Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  },
+  {
+    "route": "/tours/",
+    "mode": "desktop",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 641.096,
+      "cls": 0,
+      "tbt": 12.725999999999999
+    },
+    "failed": [
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.99
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0.5
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0.5
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0
+      }
+    ],
+    "report": "current/tours-desktop-run2.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 694.184,
+          "cls": 0,
+          "tbt": 0
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/tours-desktop-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 641.096,
+          "cls": 0,
+          "tbt": 12.725999999999999
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0.5
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/tours-desktop-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 688.038,
+          "cls": 0,
+          "tbt": 22
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/tours-desktop-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:15:38.246Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  },
+  {
+    "route": "/tailor-made/",
+    "mode": "desktop",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 758.832,
+      "cls": 0,
+      "tbt": 20
+    },
+    "failed": [
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.98
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.99
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0.5
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0.5
+      }
+    ],
+    "report": "current/tailor-made-desktop-run2.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 781.394,
+          "cls": 0,
+          "tbt": 0
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/tailor-made-desktop-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 758.832,
+          "cls": 0,
+          "tbt": 20
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0.5
+          }
+        ],
+        "report": "current/tailor-made-desktop-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 761.22,
+          "cls": 0,
+          "tbt": 28
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/tailor-made-desktop-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:16:30.080Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  },
+  {
+    "route": "/experiences/",
+    "mode": "desktop",
+    "scores": {
+      "performance": 98,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 1186.8219999999997,
+      "cls": 0,
+      "tbt": 26.999999999999943
+    },
+    "failed": [
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.9
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.99
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0.5
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0
+      }
+    ],
+    "report": "current/experiences-desktop-run2.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 1151.3719999999998,
+          "cls": 0,
+          "tbt": 25.999999999999943
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/experiences-desktop-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 1186.8219999999997,
+          "cls": 0,
+          "tbt": 26.999999999999943
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.9
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/experiences-desktop-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 1157.1571000000004,
+          "cls": 0,
+          "tbt": 21.000000000000057
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.91
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/experiences-desktop-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:17:24.427Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  },
+  {
+    "route": "/about-us/",
+    "mode": "desktop",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 705.824,
+      "cls": 0,
+      "tbt": 18
+    },
+    "failed": [
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.99
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.99
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0.5
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "forced-reflow-insight",
+        "title": "Forced reflow",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0
+      }
+    ],
+    "report": "current/about-us-desktop-run2.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 684.299,
+          "cls": 0,
+          "tbt": 0
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/about-us-desktop-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 705.824,
+          "cls": 0,
+          "tbt": 18
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/about-us-desktop-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 682.528,
+          "cls": 0,
+          "tbt": 0
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/about-us-desktop-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:18:17.205Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  },
+  {
+    "route": "/plan-your-trip/",
+    "mode": "desktop",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 592.998,
+      "cls": 0.00005041885621099373,
+      "tbt": 0
+    },
+    "failed": [
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.99
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.99
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0.5
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0
+      }
+    ],
+    "report": "current/plan-your-trip-desktop-run2.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 594.119,
+          "cls": 0.00005041885621099373,
+          "tbt": 6
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/plan-your-trip-desktop-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 592.998,
+          "cls": 0.00005041885621099373,
+          "tbt": 0
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.99
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/plan-your-trip-desktop-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 590.169,
+          "cls": 0.00005041885621099373,
+          "tbt": 0
+        },
+        "failed": [
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.98
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/plan-your-trip-desktop-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:19:10.523Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  },
+  {
+    "route": "/contact-us/",
+    "mode": "desktop",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 750.144,
+      "cls": 0,
+      "tbt": 27
+    },
+    "failed": [
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.98
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.99
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0.5
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "score": 0
+      },
+      {
+        "id": "forced-reflow-insight",
+        "title": "Forced reflow",
+        "score": 0
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0
+      }
+    ],
+    "report": "current/contact-us-desktop-run2.report.html",
+    "crawlability": 0,
+    "seoFailures": [
+      "is-crawlable"
+    ],
+    "runs": [
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 737.616,
+          "cls": 0,
+          "tbt": 48
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.97
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0.5
+          }
+        ],
+        "report": "current/contact-us-desktop-run1.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 750.144,
+          "cls": 0,
+          "tbt": 27
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/contact-us-desktop-run2.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      },
+      {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 742.144,
+          "cls": 0,
+          "tbt": 22
+        },
+        "failed": [
+          {
+            "id": "largest-contentful-paint",
+            "title": "Largest Contentful Paint",
+            "score": 0.98
+          },
+          {
+            "id": "max-potential-fid",
+            "title": "Max Potential First Input Delay",
+            "score": 0.99
+          },
+          {
+            "id": "unused-css-rules",
+            "title": "Reduce unused CSS",
+            "score": 0.5
+          },
+          {
+            "id": "is-crawlable",
+            "title": "Page is blocked from indexing",
+            "score": 0
+          },
+          {
+            "id": "forced-reflow-insight",
+            "title": "Forced reflow",
+            "score": 0
+          },
+          {
+            "id": "image-delivery-insight",
+            "title": "Improve image delivery",
+            "score": 0
+          },
+          {
+            "id": "network-dependency-tree-insight",
+            "title": "Network dependency tree",
+            "score": 0
+          },
+          {
+            "id": "render-blocking-insight",
+            "title": "Render-blocking requests",
+            "score": 0
+          }
+        ],
+        "report": "current/contact-us-desktop-run3.report.html",
+        "crawlability": 0,
+        "seoFailures": [
+          "is-crawlable"
+        ]
+      }
+    ],
+    "measuredAt": "2026-11-02T14:20:04.111Z",
+    "lighthouseVersion": "13.6.0",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  }
+]
