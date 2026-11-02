@@ -8,9 +8,7 @@ export const brand = {
       ? import.meta.env.PUBLIC_CONTACT_EMAIL || ""
       : "",
   whatsapp:
-    import.meta.env.PUBLIC_CONTACTS_CONFIRMED === "true"
-      ? (import.meta.env.PUBLIC_WHATSAPP_NUMBER || "").replace(/\D/g, "")
-      : "",
+    (import.meta.env.PUBLIC_WHATSAPP_NUMBER || "94740485072").replace(/\D/g, ""),
 };
 
 export const navigation = [
