@@ -1,0 +1,31 @@
+---
+import { brand } from '../data/content';
+const message = 'Hello Majestic Sri Lanka! I would like to plan a trip to Sri Lanka.';
+---
+{brand.whatsapp && <a class="whatsapp-float" href={`https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(message)}`} target="_blank" rel="noopener noreferrer" aria-label="Chat with Majestic Sri Lanka on WhatsApp (opens in a new tab)" title="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="none" aria-hidden="true"><path d="M27 15.5a11.5 11.5 0 0 1-17.1 10L4 27l1.6-5.6A11.5 11.5 0 1 1 27 15.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m11 9 2.4 4-1.6 1.8c1.1 2.4 2.7 4 5.1 5.1l1.8-1.6 4 2.4c-.6 2-2 2.6-3.8 2-5.9-1.9-9.3-5.3-11.2-11.2C7.1 9.7 9 8.6 11 9Z" fill="currentColor" transform="translate(1 -1) scale(.95)"/></svg>
+</a>}
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    right: max(24px, env(safe-area-inset-right));
+    bottom: calc(24px + env(safe-area-inset-bottom));
+    z-index: 40;
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #075e54;
+    color: #fff;
+    transition: background-color .2s;
+  }
+  .whatsapp-float:hover { background: #064b43; }
+  .whatsapp-float:focus-visible { outline: 3px solid var(--bronze); outline-offset: 4px; }
+  :global(.site-footer) { padding-bottom: 96px; }
+  @media (max-width: 700px) {
+    .whatsapp-float { right: max(20px, env(safe-area-inset-right)); bottom: calc(20px + env(safe-area-inset-bottom)); }
+  }
+  @media (prefers-reduced-motion: reduce) { .whatsapp-float { transition: none; } }
+</style>
