@@ -16,5 +16,7 @@
   --text-section: 52px;
   --container: 1240px;
   --radius-card: 12px;
+  --photo-landscape: 5 / 3;
+  --photo-inset: 4 / 3;
   --shadow: 0 9px 28px #273c2410;
 }
