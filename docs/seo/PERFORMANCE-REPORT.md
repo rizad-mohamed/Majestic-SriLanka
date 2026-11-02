@@ -15,14 +15,14 @@ These are actual file sizes and consistent gzip estimates, not measured HTTP tra
 | Asset class                 |     Baseline |                                              Final reviewed build |                                Enforced budget |
 | --------------------------- | -----------: | ----------------------------------------------------------------: | ---------------------------------------------: |
 | Client JS, gzip             |      3,389 B |                                                           4,198 B |                                        6,000 B |
-| CSS, gzip                   |     12,207 B |                                                          12,248 B |                                       14,000 B |
+| CSS, gzip                   |     12,207 B |                                                          12,269 B |                                       14,000 B |
 | Largest HTML, gzip (home)   |     10,975 B |                                                          11,238 B |                          15,000 B per document |
 | All WOFF2 sources           |    233,320 B |                                                         233,320 B |                            240,000 B inventory |
 | All WebP variants + logo    |  7,026,984 B |                                                       7,026,984 B |                          7,400,000 B inventory |
 | Optional AVIF hero variants |          0 B |                                                         345,993 B |                            400,000 B inventory |
 | Automatic external requests | No analytics | None in default build; browser assertions enforce local resources | Zero until explicitly configured and consented |
 
-The added 809 gzip bytes of JS provide consent-gated event handling and robust dialog keyboard behavior. HTML grows to carry linked schema and complete sharing metadata. CSS gains 41 gzip bytes for deferred row rendering and native picture support. Original WebP files and fonts are unchanged; four AVIF variants add 345,993 bytes to the deployable inventory while reducing the selected hero request. Budgets allow modest reviewed growth from the measured baseline without forcing removal of the approved design. Network, font and image diagnostics remain available in raw Lighthouse reports.
+The added 809 gzip bytes of JS provide consent-gated event handling and robust dialog keyboard behavior. HTML grows to carry linked schema and complete sharing metadata. CSS gains 62 gzip bytes for deferred row rendering and native picture support. Original WebP files and fonts are unchanged; four AVIF variants add 345,993 bytes to the deployable inventory while reducing the selected hero request. Budgets allow modest reviewed growth from the measured baseline without forcing removal of the approved design. Network, font and image diagnostics remain available in raw Lighthouse reports.
 
 LCP uses existing high-priority responsive hero media, local critical font preloads and static HTML; below-fold images remain lazy. Existing content-visibility boundaries and reduced-motion behavior are retained. There is no decorative video, React hydration, animation framework or third-party script in the default load. Default image intrinsic ratios now follow actual crops.
 
@@ -68,3 +68,5 @@ Homepage diagnostic comparison: baseline and final median LCP are similar (2.557
 ## Core Web Vitals limits
 
 Good thresholds are p75 LCP <=2.5s, INP <=200ms and CLS <=0.1, per [Google's Web Vitals guidance](https://web.dev/articles/vitals). Local LCP/CLS are lab observations only. TBT is a laboratory diagnostic and is not INP. No CrUX/RUM dataset or verified live production domain was supplied, so field compliance and real-user INP remain unverified. Confirm the domain, launch approved content, then gather sufficient real traffic and inspect Search Console/CrUX or approved RUM.
+
+A later fragment-entry robustness fix adds 21 gzip CSS bytes over the measured sweep: a targeted fragment renders the short experience list before native anchor scrolling/hit testing, while ordinary route visits retain the measured deferral behavior. CI re-audits the resulting build. The saved local 42-audit table remains the actual earlier measurement, not a fabricated rerun of the CSS change.

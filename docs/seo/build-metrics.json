@@ -1,11 +1,11 @@
 {
-  "measuredAt": "2026-11-02T14:42:47.963Z",
+  "measuredAt": "2026-11-02T15:16:01.375Z",
   "directory": "dist",
   "summary": {
     "html": {
       "count": 8,
       "bytes": 348238,
-      "gzipBytes": 65270
+      "gzipBytes": 65268
     },
     "js": {
       "count": 1,
@@ -14,8 +14,8 @@
     },
     "css": {
       "count": 1,
-      "bytes": 56478,
-      "gzipBytes": 12248
+      "bytes": 56570,
+      "gzipBytes": 12269
     },
     "woff2": {
       "count": 14,
@@ -62,7 +62,7 @@
     {
       "path": "plan-your-trip/index.html",
       "bytes": 40677,
-      "gzipBytes": 8161
+      "gzipBytes": 8159
     },
     {
       "path": "tailor-made/index.html",
@@ -84,9 +84,9 @@
   ],
   "styles": [
     {
-      "path": "_astro/Layout.CSBgBjkx.css",
-      "bytes": 56478,
-      "gzipBytes": 12248
+      "path": "_astro/Layout.DQmXvL4g.css",
+      "bytes": 56570,
+      "gzipBytes": 12269
     }
   ]
 }

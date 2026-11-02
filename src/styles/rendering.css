@@ -71,3 +71,9 @@
     contain-intrinsic-block-size: auto 420px;
   }
 }
+
+/* Fragment entry needs actual row geometry before native scrolling/hit testing.
+   Keep deferral on the ordinary page, and render the short list for deep links. */
+.page-section:has(> .experience-detail:target) > .experience-detail {
+  content-visibility: visible;
+}

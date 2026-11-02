@@ -382,6 +382,7 @@ test("an experience is carried into the planner and can be changed", async ({
   page,
 }) => {
   await page.goto("/experiences/#tea");
+  await expect(page.locator("#tea h2")).toBeInViewport();
   await page
     .locator("#tea")
     .getByRole("link", { name: "Add to My Journey" })
