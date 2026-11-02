@@ -50,6 +50,57 @@
 
 /* Phone composition follows the approved artwork, with room to read and tap. */
 @media (max-width: 700px) {
+  /* One balanced reading frame for the header, sections and footer. */
+  body { --mobile-gutter: clamp(20px, 6.15vw, 24px); }
+  .container,
+  .header-inner {
+    width: calc(100% - var(--mobile-gutter) * 2);
+    margin-inline: auto;
+  }
+  .page-hero h1,
+  .page-hero p:not(.eyebrow),
+  .hero-description,
+  .cta-copy > p:not(.eyebrow),
+  .value-item {
+    max-width: 100%;
+  }
+  .experience-content { padding-inline: var(--mobile-gutter); }
+  /* Centre the mobile editorial composition, including its actions and icons. */
+  .editorial-copy,
+  .soft-section,
+  .page-intro,
+  .experience-detail > div {
+    text-align: center;
+  }
+  .page-intro,
+  .value-item {
+    margin-inline: auto;
+  }
+  .soft-section h2 {
+    font-size: clamp(34px, 9vw, 46px);
+    text-wrap: balance;
+  }
+  .value-item > svg {
+    display: block;
+    margin-inline: auto;
+  }
+  .page-intro + .button {
+    display: flex;
+    width: fit-content;
+    margin-inline: auto;
+  }
+  /* Shared phone crop; the approved organic desktop masks remain above 700px. */
+  .editorial-split > img,
+  .experience-detail > img,
+  .contact-image {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 24px;
+  }
   .header-actions { margin-left: 0; gap: 4px; }
   .search-trigger, .menu-trigger, .circle-button {
     width: 44px;
@@ -77,7 +128,7 @@
     justify-content: start;
     overflow-x: auto;
     height: 136px;
-    padding-inline: 20px;
+    padding-inline: var(--mobile-gutter);
     scroll-snap-type: x proximity;
     scrollbar-width: thin;
     scrollbar-color: var(--line) transparent;
