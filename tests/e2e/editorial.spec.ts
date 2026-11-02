@@ -97,14 +97,22 @@ test("map exploration still works without JavaScript and respects reduced motion
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/tailor-made/");
   await page.locator('[data-place="ella"] summary').click();
-  const animations = await page
-    .locator(".travel-map")
-    .evaluate((element) =>
-      element
-        .getAnimations({ subtree: true })
-        .map((animation) => animation.playState),
-    );
-  expect(animations.filter((state) => state === "running")).toEqual([]);
+  const motion = await page.locator(".travel-map").evaluate((element) => ({
+    names: Array.from(element.querySelectorAll(".map-pin, .map-route")).map(
+      (node) => getComputedStyle(node).animationName,
+    ),
+    // WebKit can report the global 0.01ms reduced-motion transition as
+    // running until its next frame. Check its duration, not that frame's timing.
+    runningDurations: element
+      .getAnimations({ subtree: true })
+      .filter((animation) => animation.playState === "running")
+      .map((animation) => animation.effect?.getComputedTiming().duration),
+  }));
+  expect(motion.names.every((name) => name === "none")).toBe(true);
+  for (const duration of motion.runningDurations) {
+    expect(typeof duration).toBe("number");
+    expect(duration).toBeLessThanOrEqual(1);
+  }
 });
 
 test("content photographs keep a consistent landscape frame across routes", async ({

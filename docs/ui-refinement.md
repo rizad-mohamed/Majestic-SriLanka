@@ -131,6 +131,24 @@ All seven routes have automated WCAG 2/2.1/2.2 A/AA axe coverage in the full sui
 
 The first GitHub run caught the stylesheet 239 compressed bytes over the established 14,000-byte budget. Removed superseded fixed-height/organic-corner image rules and replaced duplicate editorial layout declarations with the shared stylesheet's existing rules. The budget was not increased. Rebuilt, remeasured, reran static/SEO checks and captured all 21 route/width combinations again. Twenty captures were pixel-identical; the remaining tablet Contact comparison revealed a late-loading inset in the earlier capture, so the capture helper now explicitly waits for every image to finish loading. The final evidence includes that inset and unchanged document geometry.
 
+### GitHub verification
+
+[The quality run on application commit `213dadf`](https://github.com/rizad-mohamed/Majestic-SriLanka/actions/runs/41516438046) passed lint, type checks, formatting, unit tests, the dependency audit, build, SEO, unchanged transfer budgets, full cross-browser Playwright, production-fixture tests and all 42 Lighthouse audits. Its Playwright result was 197 direct passes and one successful WebKit retry. The retry came from sampling the universal 0.01ms reduced-motion transition before the browser's next frame. The regression now asserts that map animations are absent and any remaining transition duration is at most 1ms, rather than requiring a particular frame to have completed. That updated WebKit check passed ten consecutive local repeats; the PR check shows the final run after this test-only correction.
+
+Three-run median Lighthouse performance for that unchanged application artifact:
+
+| Route | Mobile | Desktop |
+| --- | ---: | ---: |
+| Home | 98 | 100 |
+| Tours | 98 | 100 |
+| Tailor-Made | 95 | 100 |
+| Experiences | 90 | 99 |
+| About Us | 96 | 100 |
+| Plan Your Trip | 98 | 100 |
+| Contact Us | 96 | 100 |
+
+Accessibility and best practices scored 100 in every route/device combination; raw SEO remained 69 because of intentional noindex. Mobile Experiences LCP was 3603ms and Tailor-Made LCP 3005ms in this lab run; these remain performance improvement opportunities despite passing the existing performance gate. The planner's CI mobile LCP was 2405ms with zero CLS/TBT. No field-performance claim is made. Raw reports are in the workflow's `website-quality-evidence` artifact.
+
 ## Review and launch boundaries
 
 This task prepares a feature branch and PR for review; it does not authorise merging, changing the hosting project or a production launch. All previews retain `noindex, nofollow`. Existing confirmations for the domain, email delivery, social links, customer testimonials and related launch details remain governed by the existing handover documentation. No new reviews, prices, policies or contact details were invented.
