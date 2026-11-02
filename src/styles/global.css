@@ -778,28 +778,6 @@ main:focus {
   position: relative;
   height: 490px;
   overflow: hidden;
-  clip-path: polygon(
-    0 2%,
-    8% 1%,
-    18% 0,
-    30% 1%,
-    40% 3%,
-    57% 2%,
-    72% 4%,
-    88% 3%,
-    100% 5%,
-    100% 93%,
-    90% 94%,
-    80% 98%,
-    68% 99%,
-    58% 97%,
-    48% 92%,
-    40% 89%,
-    31% 88%,
-    22% 90%,
-    12% 94%,
-    0 98%
-  );
 }
 .experience-picture > img {
   width: 100%;
@@ -892,9 +870,6 @@ main:focus {
 .experience-card:nth-child(2):after {
   background: linear-gradient(0deg, #3f3218e8, transparent 75%);
 }
-.experience-card:nth-child(3):after {
-  background: linear-gradient(0deg, #a48b67e8, transparent 75%);
-}
 .experience-card:last-child:after {
   background: linear-gradient(0deg, #201b14e8, transparent 75%);
 }
@@ -931,24 +906,6 @@ main:focus {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  clip-path: polygon(
-    0 40%,
-    4% 25%,
-    15% 12%,
-    29% 4%,
-    43% 0,
-    60% 2%,
-    75% 9%,
-    88% 22%,
-    97% 42%,
-    100% 62%,
-    94% 80%,
-    80% 94%,
-    58% 100%,
-    35% 96%,
-    18% 85%,
-    8% 69%
-  );
 }
 .why-picture > img:last-child {
   position: absolute;
@@ -1060,7 +1017,6 @@ main:focus {
 }
 .stars {
   margin-left: auto;
-  color: #e79026;
   letter-spacing: 1px;
   font-size: 16px;
 }
@@ -1186,7 +1142,6 @@ main:focus {
   margin: 0 0 6px;
 }
 .site-footer nav a {
-  display: block;
   font-size: 12px;
   line-height: 1.5;
   color: var(--muted);
@@ -1620,7 +1575,6 @@ body.dialog-is-open {
 
 .planner-layout {
   display: grid;
-  grid-template-columns: 0.85fr 1.5fr;
   gap: 80px;
   align-items: start;
 }
@@ -1631,9 +1585,6 @@ body.dialog-is-open {
 .planner-aside h2 {
   font-size: 44px;
   margin-bottom: 20px;
-}
-.planner-aside > p {
-  margin-bottom: 30px;
 }
 .planning-steps {
   padding-left: 20px;
@@ -2314,14 +2265,9 @@ body.dialog-is-open {
   }
   .header-inner {
     width: calc(100% - 36px);
-    gap: 12px;
   }
   .brand img {
-    width: 167px;
     height: auto;
-  }
-  .header-actions {
-    gap: 9px;
   }
   .header-plan {
     display: none;
@@ -2334,25 +2280,14 @@ body.dialog-is-open {
     width: 34px;
     height: 40px;
   }
-  .hero {
-    height: 730px;
-  }
   .hero-inner {
     align-items: flex-start;
     padding-top: 47px;
   }
   .hero h1 {
-    font-size: clamp(47px, 10vw, 66px);
     line-height: 0.97;
   }
-  .hero .eyebrow {
-    font-size: 9px;
-    letter-spacing: 0.18em;
-  }
   .hero-description {
-    font-size: 14px;
-    max-width: 335px;
-    line-height: 1.45;
     margin-top: 21px;
     margin-bottom: 22px;
   }
@@ -2376,10 +2311,7 @@ body.dialog-is-open {
       linear-gradient(90deg, #ffffff60, #fff0);
   }
   .hero .button {
-    min-width: 149px;
     min-height: 48px;
-    font-size: 12px;
-    padding-inline: 20px;
   }
   .button-row {
     gap: 12px;
@@ -2387,17 +2319,10 @@ body.dialog-is-open {
   .hero-trust {
     margin-top: 23px;
   }
-  .hero-trust p {
-    font-size: 10px;
-  }
   .avatar-stack span {
     width: 29px;
     height: 31px;
     font-size: 18px;
-  }
-  .hero-slides {
-    margin-top: 23px;
-    gap: 9px;
   }
   .hero-slides i {
     width: 60px;
@@ -2413,9 +2338,7 @@ body.dialog-is-open {
   }
   .watch-story {
     top: auto;
-    bottom: 100px;
     right: 25px;
-    font-size: 11px;
     gap: 10px;
   }
   .play-circle {
@@ -2430,32 +2353,23 @@ body.dialog-is-open {
     bottom: 19px;
   }
   .category-strip {
-    height: 125px;
     width: 100%;
-    padding-inline: 15px;
     gap: 4px;
   }
   .category-strip > a {
-    font-size: 9px;
     gap: 7px;
     padding: 0 5px;
-  }
-  .category-strip svg {
-    width: 29px;
-    height: 29px;
   }
   .category-strip > a:not(:last-child):after {
     height: 62px;
     top: 4px;
   }
   .story-section {
-    grid-template-columns: 1fr;
     padding-top: 20px;
     padding-bottom: 35px;
     min-height: 0;
   }
   .story-collage {
-    height: 405px;
     width: min(420px, 100%);
     margin-inline: auto;
   }
@@ -2473,7 +2387,6 @@ body.dialog-is-open {
   }
   .story-note {
     width: 165px;
-    left: 52%;
     top: 250px;
   }
   .story-leaves {
@@ -2496,8 +2409,6 @@ body.dialog-is-open {
   }
   .story-stamp {
     right: 0;
-    top: 9px;
-    width: 89px;
   }
   .story-branch {
     display: none;
@@ -2506,20 +2417,12 @@ body.dialog-is-open {
     margin-left: 0;
     margin-top: 30px;
     width: 100%;
-    gap: 4px;
   }
   .story-perks > div {
-    padding: 0 6px;
     display: flex;
-    gap: 7px;
-    font-size: 9px;
   }
   .story-perks > div:first-child {
     padding-left: 0;
-  }
-  .story-perks svg {
-    width: 23px;
-    height: 23px;
   }
   .featured-section {
     padding-top: 24px;
@@ -2561,7 +2464,6 @@ body.dialog-is-open {
     scrollbar-color: #c2cfc4 transparent;
   }
   .tour-card {
-    min-width: 85%;
     scroll-snap-align: start;
   }
   .tour-content {
@@ -2572,7 +2474,6 @@ body.dialog-is-open {
     min-height: 0;
   }
   .tour-content p {
-    font-size: 14px;
     min-height: 0;
   }
   .tour-link {
@@ -2594,22 +2495,6 @@ body.dialog-is-open {
   .experience-picture {
     height: 390px;
     min-height: 0;
-    clip-path: polygon(
-      0 2%,
-      17% 0,
-      38% 2%,
-      58% 1%,
-      81% 4%,
-      100% 2%,
-      100% 92%,
-      88% 95%,
-      73% 99%,
-      58% 97%,
-      43% 90%,
-      28% 89%,
-      13% 94%,
-      0 98%
-    );
   }
   .experience-picture > img {
     object-position: 46% center;
@@ -2630,7 +2515,6 @@ body.dialog-is-open {
     margin-top: 16px;
   }
   .experience-cards {
-    grid-template-columns: repeat(5, 124px);
     overflow-x: auto;
     gap: 12px;
     padding-bottom: 12px;
@@ -2650,10 +2534,6 @@ body.dialog-is-open {
   .experience-card-copy > svg {
     width: 25px;
     height: 25px;
-  }
-  .experience-card-copy > strong {
-    font-size: 12px;
-    max-width: 83px;
   }
   .tiny-arrow {
     display: flex;
@@ -2691,16 +2571,12 @@ body.dialog-is-open {
   .why-picture > img:last-child {
     width: 120px;
     top: 58px;
-    right: -24px;
   }
   .benefits-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 23px 16px;
     margin-top: 30px;
   }
   .benefit {
     display: flex;
-    gap: 10px;
   }
   .benefit-icon {
     width: 42px;
@@ -2710,15 +2586,10 @@ body.dialog-is-open {
     width: 25px;
   }
   .benefit h3 {
-    font-size: 11px;
     margin-top: 4px;
-  }
-  .benefit p {
-    font-size: 11px;
   }
   .benefit:last-child {
     grid-column: 1/-1;
-    max-width: 210px;
   }
   .testimonials-section {
     padding-top: 12px;
@@ -2741,7 +2612,6 @@ body.dialog-is-open {
     padding: 22px 23px;
   }
   .review-card blockquote {
-    font-size: 14px;
     min-height: 0;
     line-height: 1.5;
     padding-left: 29px;
@@ -2758,9 +2628,6 @@ body.dialog-is-open {
     height: 36px;
     font-size: 11px;
   }
-  .review-card figcaption strong {
-    font-size: 12px;
-  }
   .review-card figcaption small {
     font-size: 11px;
   }
@@ -2773,7 +2640,6 @@ body.dialog-is-open {
     max-width: 290px;
   }
   .closing-cta {
-    height: 420px;
     clip-path: polygon(
       0 2%,
       18% 1%,
@@ -2840,11 +2706,7 @@ body.dialog-is-open {
     font-size: 11px;
     margin-top: 15px;
   }
-  .site-footer h2 {
-    font-size: 13px;
-  }
   .site-footer nav a {
-    font-size: 12px;
     line-height: 1.7;
   }
   .footer-connect {
@@ -2862,13 +2724,7 @@ body.dialog-is-open {
     padding-block: 15px;
     gap: 6px;
   }
-  .footer-bottom p,
-  .footer-bottom button {
-    font-size: 10px;
-  }
   .dialog {
-    padding: 23px;
-    max-height: 88dvh;
     border-radius: 12px;
   }
   .dialog h2 {
@@ -2881,22 +2737,12 @@ body.dialog-is-open {
   .menu-dialog {
     margin: auto;
   }
-  .story-dialog,
-  .tour-dialog {
-    padding: 0;
-  }
   .story-dialog > img,
   .tour-dialog > img {
     height: 210px;
   }
-  .dialog-body {
-    padding: 25px;
-  }
   .dialog-body h2 {
     font-size: 36px;
-  }
-  .dialog-body p {
-    font-size: 14px;
   }
   .search-input {
     padding: 10px;
@@ -2908,31 +2754,18 @@ body.dialog-is-open {
     font-size: 12px;
   }
   .page-hero {
-    min-height: 440px;
     align-items: flex-start;
     padding-top: 35px;
   }
   .page-hero h1 {
-    font-size: 56px;
     max-width: 360px;
   }
   .page-hero p:not(.eyebrow) {
-    font-size: 15px;
     max-width: 310px;
     margin-top: 18px;
   }
-  .page-hero:after {
-    background: linear-gradient(
-      180deg,
-      #fff,
-      #fffffff2 23%,
-      #ffffffbc 50%,
-      #fff2 100%
-    );
-  }
   .breadcrumb {
     margin-bottom: 24px;
-    font-size: 11px;
   }
   .page-section {
     padding-block: 45px;
@@ -3044,9 +2877,6 @@ body.dialog-is-open {
   .trip-form .button {
     width: 100%;
   }
-  .form-summary {
-    padding: 20px;
-  }
   .form-summary .button-row {
     flex-direction: column;
     align-items: stretch;
@@ -3070,7 +2900,6 @@ body.dialog-is-open {
   }
   .hero .button {
     min-width: 136px;
-    font-size: 11px;
   }
   .hero {
     height: 700px;
@@ -3100,7 +2929,6 @@ body.dialog-is-open {
   }
   .story-perks > div {
     gap: 4px;
-    font-size: 8px;
   }
   .story-perks svg {
     width: 20px;
