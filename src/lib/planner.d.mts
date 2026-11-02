@@ -2,3 +2,4 @@ export interface BriefValues { name: string; email: string; date: string; travel
 export function validateBrief(values: BriefValues, today?: string): Record<string, string>;
 export function formatBrief(values: BriefValues): string;
 export function createEmailLink(email: string, brief: string): string | null;
+export function createEmailDraft(email: string, brief: string): string;

@@ -2,6 +2,7 @@ import {
   validateBrief,
   formatBrief,
   createEmailLink,
+  createEmailDraft,
 } from "../lib/planner.mjs";
 
 let lastDialogTrigger: HTMLElement | null = null;
@@ -228,6 +229,19 @@ if (form) {
         setTimeout(() => URL.revokeObjectURL(url), 1000);
       };
     const email = document.querySelector<HTMLAnchorElement>("#email-brief");
+    const draft = document.querySelector<HTMLButtonElement>("#download-email-draft");
+    if (draft)
+      draft.onclick = () => {
+        const url = URL.createObjectURL(new Blob(
+          [createEmailDraft(form.dataset.email || "", brief)],
+          { type: "message/rfc822" },
+        ));
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "my-majestic-sri-lanka-enquiry.eml";
+        link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      };
     const emailHref = createEmailLink(form.dataset.email || "", brief);
     if (email && emailHref) {
       email.href = emailHref;

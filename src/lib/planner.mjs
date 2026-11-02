@@ -50,3 +50,35 @@ export function createEmailLink(email, brief) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
   return `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent("My Sri Lankan journey — travel enquiry")}&body=${encodeURIComponent(brief)}`;
 }
+
+// RFC 5322 draft with a UTF-8 document attachment. No network request is made.
+export function createEmailDraft(email, brief) {
+  const recipient = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? email : "";
+  const encode = (text) => {
+    const bytes = new TextEncoder().encode(text);
+    const encoded = btoa(Array.from(bytes, (byte) => String.fromCharCode(byte)).join(""));
+    return encoded.match(/.{1,76}/g)?.join("\r\n") || "";
+  };
+  const boundary = "majestic_travel_brief_mime";
+  return [
+    "X-Unsent: 1",
+    ...(recipient ? [`To: ${recipient}`] : []),
+    "Subject: My Sri Lankan journey - travel enquiry",
+    "MIME-Version: 1.0",
+    `Content-Type: multipart/mixed; boundary="${boundary}"`,
+    "",
+    `--${boundary}`,
+    "Content-Type: text/plain; charset=UTF-8",
+    "Content-Transfer-Encoding: base64",
+    "",
+    encode("Hello Majestic Sri Lanka,\n\nPlease find my completed travel brief attached. I would like to discuss a journey based on these details."),
+    `--${boundary}`,
+    'Content-Type: text/plain; charset=UTF-8; name="travel-brief.txt"',
+    'Content-Disposition: attachment; filename="travel-brief.txt"',
+    "Content-Transfer-Encoding: base64",
+    "",
+    encode(brief),
+    `--${boundary}--`,
+    "",
+  ].join("\r\n");
+}
