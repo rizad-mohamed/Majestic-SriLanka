@@ -292,7 +292,9 @@ test("planner validates, creates and downloads a brief without sending it", asyn
   await page
     .getByLabel("Approximate arrival")
     .fill(future.toISOString().slice(0, 10));
-  await page.getByLabel("Food & Cuisine", { exact: true }).check();
+  await page
+    .getByRole("checkbox", { name: "Food & Cuisine", exact: true })
+    .check();
   await page.locator("#consent").check();
   await page.getByRole("button", { name: "Create My Travel Brief" }).click();
   await expect(page.locator("#brief-summary")).toBeVisible();
@@ -384,7 +386,11 @@ test("an experience is carried into the planner and can be changed", async ({
     .locator("#tea")
     .getByRole("link", { name: "Add to My Journey" })
     .click();
-  const interest = page.getByLabel("Hill Country & Tea", { exact: true });
+  await expect(page).toHaveURL(/\/plan-your-trip\/\?interest=tea#trip-form$/);
+  const interest = page.getByRole("checkbox", {
+    name: "Hill Country & Tea",
+    exact: true,
+  });
   await expect(interest).toBeChecked();
   await interest.uncheck();
   await expect(interest).not.toBeChecked();
@@ -393,7 +399,7 @@ test("an experience is carried into the planner and can be changed", async ({
   );
   await expect(page.locator('input[name="interests"]:checked')).toHaveCount(2);
   await expect(
-    page.getByLabel("Food & Cuisine", { exact: true }),
+    page.getByRole("checkbox", { name: "Food & Cuisine", exact: true }),
   ).toBeChecked();
 });
 
