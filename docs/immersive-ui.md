@@ -1,5 +1,7 @@
 # Experiences, motion and responsive refinement
 
+Historical foundation report. The [final refinement report](final-ui-refinements.md) supersedes the hero, mobile journey and planner behaviours described below.
+
 Reviewed 3 November 2026 (Asia/Colombo). Branch: `feat/immersive-experiences-hero-2026-11-03`.
 
 ## Scope and foundation
