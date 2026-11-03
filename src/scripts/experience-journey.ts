@@ -11,6 +11,7 @@ if (navigation) {
   ];
   const spine = document.querySelector<HTMLElement>(".journey-spine")!;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const compact = window.matchMedia("(max-width: 1100px)");
   let positions: number[] = [];
   let stops: number[] = [];
   let frame = 0;
@@ -66,8 +67,29 @@ if (navigation) {
     positions = sections.map(
       (section) => section.getBoundingClientRect().top + window.scrollY,
     );
-    navigation.style.setProperty("--journey-distance", "256px");
-    {
+    if (compact.matches) {
+      const origin = navigation.getBoundingClientRect();
+      const first = links[0]
+        .querySelector(".journey-stop")!
+        .getBoundingClientRect();
+      const last = links
+        .at(-1)!
+        .querySelector(".journey-stop")!
+        .getBoundingClientRect();
+      navigation.style.setProperty(
+        "--journey-track-start",
+        `${first.left + first.width / 2 - origin.left}px`,
+      );
+      navigation.style.setProperty(
+        "--journey-track-top",
+        `${first.top + first.height / 2 - origin.top}px`,
+      );
+      navigation.style.setProperty(
+        "--journey-distance",
+        `${last.left + last.width / 2 - first.left - first.width / 2}px`,
+      );
+      stops = positions;
+    } else {
       const origin =
         spine.parentElement!.getBoundingClientRect().top + window.scrollY;
       stops = sections.map((section) => {
