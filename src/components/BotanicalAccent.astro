@@ -1,0 +1,5 @@
+---
+interface Props { leaf?: boolean }
+const { leaf = false } = Astro.props;
+---
+<img class:list={['botanical-accent', { 'botanical-accent--leaf': leaf }]} src={`/assets/majestic-sri-lanka/decorative/${leaf ? 'floating-leaf' : 'botanical-branch'}.svg`} width={leaf ? 90 : 200} height={leaf ? 110 : 300} alt="" aria-hidden="true" loading="lazy" />

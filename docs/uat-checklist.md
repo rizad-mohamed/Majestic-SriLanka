@@ -11,7 +11,8 @@ Automated validation is recorded separately in the handover report. These boxes 
 - [ ] Confirm all copy, proposed tour outlines and durations; specify real inclusions, availability and pricing before accepting bookings.
 - [ ] Replace or verify reference guest quotations; obtain permission before displaying real guest names/images.
 - [ ] Supply verified email, WhatsApp number and social profile URLs. No invented links are used.
-- [ ] Supply story film if a video is intended; current control opens a clearly described written story.
+- [x] Supplied hero film is present and provenance-verified; see the [final refinement report](final-ui-refinements.md).
+- [ ] Review video-first autoplay, poster fallback and image handoff on physical iOS/Android devices.
 - [ ] Confirm production domain; approve privacy and booking terms. Current notices explain the development behavior.
 - [ ] Exercise desktop and mobile menus, search, carousel, hero selectors, tour filters and itinerary dialogs.
 - [ ] Create and download a travel brief. Confirm no false delivery message appears.

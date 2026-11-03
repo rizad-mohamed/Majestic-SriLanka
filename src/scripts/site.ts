@@ -27,12 +27,26 @@ document.querySelectorAll<HTMLDialogElement>("dialog").forEach((dialog) => {
     if (event.key === "Tab") {
       const controls = [
         ...dialog.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), summary, [tabindex]:not([tabindex="-1"])',
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), video[controls], summary, [tabindex]:not([tabindex="-1"])',
         ),
       ].filter(
         (control) => !control.hidden && control.getClientRects().length > 0,
       );
       if (controls.length) {
+        if (dialog.classList.contains("film-dialog")) {
+          // Let the browser traverse the video's native control tree.
+          // Wrap only at this dialog's outer boundaries.
+          const first = controls[0];
+          const last = controls.at(-1)!;
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+          return;
+        }
         event.preventDefault();
         const current = controls.indexOf(document.activeElement as HTMLElement);
         const next = event.shiftKey
@@ -99,30 +113,6 @@ document
     });
   });
 
-document.querySelectorAll<HTMLButtonElement>("[data-slide]").forEach((button) =>
-  button.addEventListener("click", () => {
-    const photo = document.querySelector<HTMLImageElement>(
-      "[data-hero-image] img",
-    );
-    if (!photo || !button.dataset.slide) return;
-    const name = button.dataset.slide;
-    const base = `/assets/majestic-sri-lanka/photography/${name}`;
-    photo.srcset = `${base}-480.webp 480w, ${base}-960.webp 960w, ${base}-1600.webp 1600w`;
-    photo.src = `${base}-1600.webp`;
-    const alts: Record<string, string> = {
-      "hero-sigiriya": "Sigiriya above a misty Sri Lankan jungle at sunrise",
-      "hill-country": "Green tea terraces and distant Sri Lankan mountains",
-      "southern-coast": "Palm-fringed Sri Lankan beach at sunset",
-    };
-    photo.alt = alts[name] || "Sri Lankan landscape";
-    document
-      .querySelectorAll("[data-slide]")
-      .forEach((item) =>
-        item.setAttribute("aria-pressed", String(item === button)),
-      );
-  }),
-);
-
 document
   .querySelectorAll<HTMLButtonElement>("[data-filter]")
   .forEach((button) =>
@@ -160,11 +150,7 @@ if (form) {
   form
     .querySelectorAll<HTMLInputElement>("[data-interest]")
     .forEach((input) => {
-      if (
-        input.dataset.interest &&
-        selectedInterests.has(input.dataset.interest)
-      )
-        input.checked = true;
+      input.disabled = !selectedInterests.has(input.dataset.interest || "");
     });
   const journey = selections.get("journey");
   const journeySelect = form.querySelector<HTMLSelectElement>("[name=journey]");

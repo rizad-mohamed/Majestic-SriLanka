@@ -1,0 +1,24 @@
+{
+  "source": "assets/source/hero-sigiriya.png",
+  "sourceSha256": "33882ae1bdab6a8c803b8a8861dc37dc2302da6ac04de41fbad6fb189692f090",
+  "crop": {
+    "width": 467,
+    "height": 887,
+    "top": 0,
+    "left": 1098
+  },
+  "variants": [
+    {
+      "file": "hero-mobile/hero-sigiriya-360.webp",
+      "width": 360,
+      "height": 684,
+      "bytes": 37262
+    },
+    {
+      "file": "hero-mobile/hero-sigiriya-467.webp",
+      "width": 467,
+      "height": 887,
+      "bytes": 55556
+    }
+  ]
+}

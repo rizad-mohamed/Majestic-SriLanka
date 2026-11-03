@@ -107,23 +107,40 @@ test("analytics requires consent, removes query/private data, deduplicates and r
 test("responsive AVIF hero retains a working native WebP fallback", async ({
   page,
 }) => {
-  await page.goto("/experiences/");
-  const hero = page.locator(".page-hero picture img");
-  await expect
-    .poll(() =>
-      hero.evaluate((image) => (image as HTMLImageElement).currentSrc),
-    )
-    .toMatch(/\.avif$/);
-  await hero.evaluate((image) => (image as HTMLImageElement).decode());
-  await expect(hero).not.toHaveJSProperty("naturalWidth", 0);
-  await page.locator(".page-hero source").evaluate((source) => {
-    (source as HTMLSourceElement).type = "image/unsupported";
-  });
-  await expect
-    .poll(() =>
-      hero.evaluate((image) => (image as HTMLImageElement).currentSrc),
-    )
-    .toMatch(/\.webp$/);
-  await hero.evaluate((image) => (image as HTMLImageElement).decode());
-  await expect(hero).not.toHaveJSProperty("naturalWidth", 0);
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const route of ["/experiences/", "/tailor-made/", "/plan-your-trip/"]) {
+    await page.goto(route);
+    const hero = page.locator(".page-hero picture img");
+    await expect
+      .poll(() =>
+        hero.evaluate((image) => (image as HTMLImageElement).currentSrc),
+      )
+      .toMatch(/\.avif$/);
+    await hero.evaluate((image) => (image as HTMLImageElement).decode());
+    await expect(hero).not.toHaveJSProperty("naturalWidth", 0);
+    if (route !== "/experiences/") {
+      await page.setViewportSize({ width: 1440, height: 900 });
+      await expect
+        .poll(() =>
+          hero.evaluate((image: HTMLImageElement) => image.currentSrc),
+        )
+        .toMatch(/\.webp$/);
+      await page.setViewportSize({ width: 390, height: 844 });
+      await expect
+        .poll(() =>
+          hero.evaluate((image: HTMLImageElement) => image.currentSrc),
+        )
+        .toMatch(/\.avif$/);
+    }
+    await page.locator(".page-hero source").evaluate((source) => {
+      (source as HTMLSourceElement).type = "image/unsupported";
+    });
+    await expect
+      .poll(() =>
+        hero.evaluate((image) => (image as HTMLImageElement).currentSrc),
+      )
+      .toMatch(/\.webp$/);
+    await hero.evaluate((image) => (image as HTMLImageElement).decode());
+    await expect(hero).not.toHaveJSProperty("naturalWidth", 0);
+  }
 });

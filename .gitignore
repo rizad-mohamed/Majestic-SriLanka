@@ -16,3 +16,4 @@ deliverables/screenshots/
 deliverables/delivery-status.json
 deliverables/lighthouse/**/*.report.html
 deliverables/lighthouse/**/*.report.json
+deliverables/lighthouse-immersive/

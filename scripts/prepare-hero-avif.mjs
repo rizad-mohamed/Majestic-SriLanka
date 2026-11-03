@@ -28,10 +28,36 @@ for (const requested of [480, 720, 960, 1600]) {
     bytes: info.size,
   });
 }
+// Preserve the existing 4:3 crop. A phone-only source reduces the reservoir
+// hero transfer while keeping the approved desktop WebP selection unchanged.
+const reservoirFile = "photography/reservoir-travellers-960.avif";
+const reservoir = await sharp("assets/source/reservoir-travellers.png")
+  .resize(960, 720, {
+    fit: "cover",
+    position: "centre",
+    withoutEnlargement: true,
+  })
+  .avif({ quality: 42, effort: 5 })
+  .toFile(`public/assets/majestic-sri-lanka/${reservoirFile}`);
 await writeFile(
   "public/assets/majestic-sri-lanka/hero-formats.json",
-  JSON.stringify({ "hill-country": variants }, null, 2) + "\n",
+  JSON.stringify(
+    {
+      "hill-country": variants,
+      "reservoir-travellers": [
+        {
+          file: reservoirFile,
+          width: reservoir.width,
+          height: reservoir.height,
+          bytes: reservoir.size,
+          media: "(max-width: 700px)",
+        },
+      ],
+    },
+    null,
+    2,
+  ) + "\n",
 );
 console.log(
-  `Prepared ${variants.length} AVIF hero widths from the existing source; WebP fallback preserved.`,
+  `Prepared ${variants.length} existing hill-country AVIF widths and a ${reservoir.size}-byte phone reservoir hero; native WebP fallbacks preserved.`,
 );

@@ -3,7 +3,7 @@ import Photo from './Photo.astro';
 import formats from '../../public/assets/majestic-sri-lanka/hero-formats.json';
 interface Props { title: string; eyebrow: string; description: string; image: string; label: string }
 const { title, eyebrow, description, image, label } = Astro.props;
-const variants = (formats as Record<string, { file: string; width: number }[]>)[image] || [];
+const variants = (formats as Record<string, { file: string; width: number; media?: string }[]>)[image] || [];
 const avifSrcset = variants.map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
 ---
-<section class="page-hero" aria-labelledby="page-title">{variants.length ? <picture><source type="image/avif" srcset={avifSrcset} sizes="100vw" /><Photo name={image} alt="" eager sizes="100vw" /></picture> : <Photo name={image} alt="" eager sizes="100vw" />}<div class="container"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">{label}</span></nav><p class="eyebrow">{eyebrow}</p><h1 id="page-title" set:html={title} /><p>{description}</p></div></section>
+<section class="page-hero" aria-labelledby="page-title">{variants.length ? <picture><source type="image/avif" media={variants[0].media} srcset={avifSrcset} sizes="100vw" /><Photo name={image} alt="" eager sizes="100vw" /></picture> : <Photo name={image} alt="" eager sizes="100vw" />}<div class="container"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">{label}</span></nav><p class="eyebrow">{eyebrow}</p><h1 id="page-title" set:html={title} /><p>{description}</p></div></section>
