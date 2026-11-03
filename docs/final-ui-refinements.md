@@ -1,5 +1,7 @@
 # Final hero, journey and planner refinements
 
+> Historical delivery record. The subsequent [production journey refinement](production-journey.md) supersedes this document's desktop/mobile Experiences navigation and branch/merge status. Measurements below describe that earlier implementation.
+
 Reviewed 3 November 2026 (Asia/Colombo). Branch: `feat/final-journey-video-refinements-2026-11-03`.
 
 ## Scope and Git foundation

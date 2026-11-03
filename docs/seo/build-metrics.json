@@ -1,11 +1,11 @@
 {
-  "measuredAt": "2026-11-03T08:42:10.379Z",
+  "measuredAt": "2026-11-03T14:01:19.880Z",
   "directory": "dist",
   "summary": {
     "html": {
       "count": 8,
-      "bytes": 380969,
-      "gzipBytes": 73216
+      "bytes": 381440,
+      "gzipBytes": 73306
     },
     "js": {
       "count": 1,
@@ -14,8 +14,8 @@
     },
     "css": {
       "count": 3,
-      "bytes": 72654,
-      "gzipBytes": 16129
+      "bytes": 73698,
+      "gzipBytes": 16296
     },
     "woff2": {
       "count": 14,
@@ -56,8 +56,8 @@
     },
     {
       "path": "experiences/index.html",
-      "cssGzipBytes": 15169,
-      "javaScriptGzipBytes": 4783
+      "cssGzipBytes": 15336,
+      "javaScriptGzipBytes": 4850
     },
     {
       "path": "index.html",
@@ -105,8 +105,8 @@
     },
     {
       "path": "experiences/index.html",
-      "bytes": 60656,
-      "gzipBytes": 10894
+      "bytes": 61127,
+      "gzipBytes": 10984
     },
     {
       "path": "index.html",
@@ -138,9 +138,9 @@
   ],
   "styles": [
     {
-      "path": "_astro/experiences.BcqEanAk.css",
-      "bytes": 5373,
-      "gzipBytes": 1570
+      "path": "_astro/experiences.SY_7QB6d.css",
+      "bytes": 6417,
+      "gzipBytes": 1737
     },
     {
       "path": "_astro/index.DKnWLVI7.css",
