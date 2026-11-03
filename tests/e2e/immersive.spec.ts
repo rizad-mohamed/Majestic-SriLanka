@@ -243,7 +243,7 @@ test("journey navigation tracks scrolling and links to all five experiences", as
   await page.goto("/experiences/");
   const compact = page.viewportSize()!.width <= 1100;
   const navigation = page.locator(
-    compact ? ".experience-list" : "[data-journey-nav]",
+    compact ? "[data-journey-nav]" : ".experience-list",
   );
   const progressElement = page.locator("[data-journey-nav]");
   await expect(navigation.locator('[aria-current="location"]')).toHaveAttribute(
@@ -268,7 +268,7 @@ test("journey navigation tracks scrolling and links to all five experiences", as
     )
     .toBe(1);
   await expect(navigation.locator('[data-complete="true"]')).toHaveCount(4);
-  const links = navigation.getByRole("link");
+  const links = navigation.locator("[data-journey-link]");
   for (const link of await links.all()) {
     const box = await link.boundingBox();
     expect(box!.width).toBeGreaterThanOrEqual(44);
@@ -293,6 +293,19 @@ test("journey navigation tracks scrolling and links to all five experiences", as
     );
   await expect.poll(progress).toBeGreaterThan(0.3);
   expect(await progress()).toBeLessThan(0.45);
+  const track = page.locator(
+    compact ? ".journey-nav .journey-track" : ".journey-spine",
+  );
+  const axisDeviation = await track.evaluate((element, horizontal) => {
+    const line = element.getBoundingClientRect();
+    const icon = element
+      .querySelector(".journey-traveller")!
+      .getBoundingClientRect();
+    return horizontal
+      ? Math.abs(line.y + line.height / 2 - icon.y - icon.height / 2)
+      : Math.abs(line.x + line.width / 2 - icon.x - icon.width / 2);
+  }, compact);
+  expect(axisDeviation).toBeLessThan(1);
   await page.emulateMedia({ reducedMotion: "reduce" });
   for (const traveller of await page.locator(".journey-traveller").all())
     await expect(traveller).toBeHidden();

@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test("requested widths preserve alternating columns, a central timeline and centred homepage content", async ({
+test("requested widths use a desktop spine and compact horizontal navigation without changing alternation", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
@@ -17,7 +17,7 @@ test("requested widths preserve alternating columns, a central timeline and cent
       expect(photo.width).toBeGreaterThan(100);
       expect(copy.width).toBeGreaterThan(100);
       expect(index % 2 === 0 ? photo.x < copy.x : photo.x > copy.x).toBe(true);
-      if (width <= 1100) {
+      if (width > 1100) {
         const marker = row.locator(".journey-marker");
         const box = (await marker.boundingBox())!;
         expect(Math.abs(box.x + box.width / 2 - width / 2)).toBeLessThan(1);
@@ -31,6 +31,11 @@ test("requested widths preserve alternating columns, a central timeline and cent
         expect(
           Math.abs(box.y + box.height / 2 - rowBox.y - rowBox.height / 2),
         ).toBeLessThan(1);
+      } else {
+        await expect(row.locator(".journey-marker")).toBeHidden();
+        expect(
+          await row.evaluate((el) => getComputedStyle(el, "::before").display),
+        ).toBe("none");
         if (width <= 700)
           await expect(row.locator(".experience-copy > p").nth(1)).toHaveCSS(
             "font-size",
@@ -38,8 +43,42 @@ test("requested widths preserve alternating columns, a central timeline and cent
           );
       }
     }
-    if (width <= 1100)
-      await expect(page.locator("[data-journey-nav]")).toBeHidden();
+    const navigation = page.locator("[data-journey-nav]");
+    if (width > 1100) {
+      await expect(navigation).toBeHidden();
+      await expect(page.locator(".journey-spine")).toBeVisible();
+    } else {
+      await expect(navigation).toBeVisible();
+      await expect(page.locator(".journey-spine")).toBeHidden();
+      await expect(navigation).toHaveCSS("position", "sticky");
+      const links = navigation.locator("[data-journey-link]");
+      await expect(links).toHaveCount(5);
+      const boxes = await links.evaluateAll((els) =>
+        els.map((el) => {
+          const b = el.getBoundingClientRect();
+          return { x: b.x, y: b.y, width: b.width, height: b.height };
+        }),
+      );
+      for (const box of boxes) {
+        expect(box.width).toBeGreaterThanOrEqual(44);
+        expect(box.height).toBeGreaterThanOrEqual(44);
+        expect(Math.abs(box.y - boxes[0].y)).toBeLessThan(1);
+      }
+      const track = (await navigation.locator(".journey-track").boundingBox())!;
+      expect(track.height).toBe(2);
+      expect(track.width).toBeGreaterThan(width * 0.5);
+      const stops = await navigation
+        .locator(".journey-stop")
+        .evaluateAll((els) =>
+          els.map((el) => {
+            const b = el.getBoundingClientRect();
+            return { x: b.x + b.width / 2, y: b.y + b.height / 2 };
+          }),
+        );
+      expect(Math.abs(track.x - stops[0].x)).toBeLessThan(1);
+      expect(Math.abs(track.x + track.width - stops[4].x)).toBeLessThan(1);
+      expect(Math.abs(track.y - stops[0].y)).toBeLessThan(1);
+    }
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth),
     ).toBeLessThanOrEqual(width);

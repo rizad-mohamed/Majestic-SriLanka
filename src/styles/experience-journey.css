@@ -137,8 +137,12 @@
 }
 .journey-traveller {
   position: absolute;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
   left: -8px;
-  top: -9px;
+  top: -8px;
   color: var(--bronze-dark);
   background: var(--background);
   border-radius: 50%;
