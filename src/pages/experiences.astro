@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import ExperienceCollage from '../components/ExperienceCollage.astro';
 import JourneyNavigation from '../components/JourneyNavigation.astro';
+import JourneyMarker from '../components/JourneyMarker.astro';
 import Button from '../components/Button.astro';
 import Icon from '../components/Icon.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
@@ -14,8 +15,10 @@ import '../styles/experience-journey.css';
   <div class="container experience-journey">
     <JourneyNavigation />
     <div class="page-section experience-list">
-      {experiences.map(item => <section id={item.id} class="experience-detail" aria-labelledby={`${item.id}-title`}>
+      <div class="journey-spine" aria-hidden="true"><span class="journey-fill"></span><span class="journey-traveller"><Icon name="compass" size={18} /></span></div>
+      {experiences.map(item => <section id={item.id} class="experience-detail" tabindex="-1" aria-labelledby={`${item.id}-title`}>
         <ExperienceCollage id={item.id} />
+        <JourneyMarker id={item.id} title={item.title} icon={item.icon} />
         <div class="experience-copy"><p class="eyebrow"><Icon name={item.icon} size={29} /></p><h2 id={`${item.id}-title`}>{item.title}</h2><p>{item.description}</p><p class="detail-tip">{item.detail}</p><Button href={`/plan-your-trip/?interest=${item.id}#trip-form`}>Add to My Journey</Button></div>
       </section>)}
       <p class="journey-note">Build these interests into <a class="text-link" href="/tours/">a suggested Sri Lanka itinerary</a>, or explore <a class="text-link" href="/tailor-made/">tailor-made planning</a>.</p>
