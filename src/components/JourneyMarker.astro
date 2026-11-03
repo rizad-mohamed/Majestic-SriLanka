@@ -1,0 +1,6 @@
+---
+import Icon from './Icon.astro';
+interface Props { id: string; title: string; icon: string }
+const { id, title, icon } = Astro.props;
+---
+<a class="journey-marker" href={`#${id}`} data-journey-link={id} aria-label={`Go to ${title}`}><span class="journey-stop"><Icon name={icon} size={19} /></span></a>

@@ -3,3 +3,5 @@
 *.webp -text
 *.woff2 -text
 *.zip -text
+*.ico -text
+*.mp4 -text

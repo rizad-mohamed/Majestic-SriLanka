@@ -1,0 +1,1196 @@
+[
+  {
+    "route": "/",
+    "width": 320,
+    "scrollWidth": 320,
+    "height": 7053,
+    "images": [
+      {
+        "src": "/assets/majestic-sri-lanka/photography/hill-country-720.webp",
+        "width": 132.03065490722656,
+        "height": 179.290771484375,
+        "fit": "cover",
+        "radius": "3px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/elephant-720.webp",
+        "width": 173.44512939453125,
+        "height": 343.93438720703125,
+        "fit": "cover",
+        "radius": "3px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/sticky-note-local.svg",
+        "width": 145.10699462890625,
+        "height": 116.752685546875,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/locally-curated-stamp.svg",
+        "width": 64.04719543457031,
+        "height": 64.047119140625,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/cultural-triangle-720.webp",
+        "width": 246.390625,
+        "height": 147.828125,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "74% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/blue-train-720.webp",
+        "width": 246.390625,
+        "height": 147.828125,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 56%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/southern-coast-720.webp",
+        "width": 246.390625,
+        "height": 147.828125,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/reservoir-travellers-720.webp",
+        "width": 320,
+        "height": 390,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "46% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tea-pickers-720.webp",
+        "width": 263.1875,
+        "height": 245,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/sticky-note-people.svg",
+        "width": 139.64125061035156,
+        "height": 152.10986328125,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tropical-cta-720.webp",
+        "width": 320,
+        "height": 470,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "60% 50%"
+      }
+    ]
+  },
+  {
+    "route": "/experiences/",
+    "width": 320,
+    "scrollWidth": 320,
+    "height": 5876,
+    "images": [
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/wildlife-720.webp",
+        "width": 110,
+        "height": 66,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/wildlifeInset-640.webp",
+        "width": 98.17669677734375,
+        "height": 75.7908935546875,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/culture-720.webp",
+        "width": 110,
+        "height": 66,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/cultureInset-640.webp",
+        "width": 98.17669677734375,
+        "height": 75.791015625,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/beaches-720.webp",
+        "width": 110,
+        "height": 66,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/beachesInset-640.webp",
+        "width": 98.17669677734375,
+        "height": 75.791015625,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/tea-720.webp",
+        "width": 110,
+        "height": 66,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/teaInset-640.webp",
+        "width": 98.17669677734375,
+        "height": 75.791015625,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/food-720.webp",
+        "width": 110,
+        "height": 66,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/foodInset-640.webp",
+        "width": 98.17669677734375,
+        "height": 75.791015625,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tropical-cta-720.webp",
+        "width": 320,
+        "height": 470,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "60% 50%"
+      }
+    ]
+  },
+  {
+    "route": "/plan-your-trip/",
+    "width": 320,
+    "scrollWidth": 320,
+    "height": 3096,
+    "images": []
+  },
+  {
+    "route": "/",
+    "width": 375,
+    "scrollWidth": 375,
+    "height": 6989,
+    "images": [
+      {
+        "src": "/assets/majestic-sri-lanka/photography/hill-country-720.webp",
+        "width": 154.87413024902344,
+        "height": 205.042724609375,
+        "fit": "cover",
+        "radius": "3px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/elephant-720.webp",
+        "width": 203.257568359375,
+        "height": 384.627197265625,
+        "fit": "cover",
+        "radius": "3px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/sticky-note-local.svg",
+        "width": 170.43959045410156,
+        "height": 137.138916015625,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/locally-curated-stamp.svg",
+        "width": 64.04718017578125,
+        "height": 64.047119140625,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/cultural-triangle-720.webp",
+        "width": 289.40625,
+        "height": 173.640625,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "74% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/blue-train-720.webp",
+        "width": 289.40625,
+        "height": 173.640625,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 56%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/southern-coast-720.webp",
+        "width": 289.40625,
+        "height": 173.640625,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/reservoir-travellers-720.webp",
+        "width": 375,
+        "height": 390,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "46% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tea-pickers-720.webp",
+        "width": 309.140625,
+        "height": 245,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/sticky-note-people.svg",
+        "width": 139.64125061035156,
+        "height": 152.10986328125,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tropical-cta-720.webp",
+        "width": 375,
+        "height": 470,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "60% 50%"
+      }
+    ]
+  },
+  {
+    "route": "/experiences/",
+    "width": 375,
+    "scrollWidth": 375,
+    "height": 5201,
+    "images": [
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/wildlife-720.webp",
+        "width": 137.5,
+        "height": 82.5,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/wildlifeInset-640.webp",
+        "width": 122.7294921875,
+        "height": 94.754638671875,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/culture-720.webp",
+        "width": 137.5,
+        "height": 82.5,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/cultureInset-640.webp",
+        "width": 122.7294921875,
+        "height": 94.754638671875,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/beaches-720.webp",
+        "width": 137.5,
+        "height": 82.5,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/beachesInset-640.webp",
+        "width": 122.7294921875,
+        "height": 94.7547607421875,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/tea-720.webp",
+        "width": 137.5,
+        "height": 82.5,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/teaInset-640.webp",
+        "width": 122.7294921875,
+        "height": 94.7548828125,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/food-720.webp",
+        "width": 137.5,
+        "height": 82.5,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/foodInset-640.webp",
+        "width": 122.7294921875,
+        "height": 94.7548828125,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tropical-cta-720.webp",
+        "width": 375,
+        "height": 470,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "60% 50%"
+      }
+    ]
+  },
+  {
+    "route": "/plan-your-trip/",
+    "width": 375,
+    "scrollWidth": 375,
+    "height": 2991,
+    "images": []
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 6922,
+    "images": [
+      {
+        "src": "/assets/majestic-sri-lanka/photography/hill-country-720.webp",
+        "width": 160.7924041748047,
+        "height": 205.24945068359375,
+        "fit": "cover",
+        "radius": "3px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/elephant-720.webp",
+        "width": 211.0052490234375,
+        "height": 384.81646728515625,
+        "fit": "cover",
+        "radius": "3px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/sticky-note-local.svg",
+        "width": 177.2356719970703,
+        "height": 142.611083984375,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/locally-curated-stamp.svg",
+        "width": 64.04718017578125,
+        "height": 64.047119140625,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/cultural-triangle-720.webp",
+        "width": 300.96875,
+        "height": 180.578125,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "74% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/blue-train-720.webp",
+        "width": 300.96875,
+        "height": 180.578125,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 56%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/southern-coast-720.webp",
+        "width": 300.96875,
+        "height": 180.578125,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/reservoir-travellers-720.webp",
+        "width": 390,
+        "height": 390,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "46% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tea-pickers-720.webp",
+        "width": 321.484375,
+        "height": 245,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/sticky-note-people.svg",
+        "width": 139.64125061035156,
+        "height": 152.10986328125,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tropical-cta-720.webp",
+        "width": 390,
+        "height": 470,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "60% 50%"
+      }
+    ]
+  },
+  {
+    "route": "/experiences/",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 5129,
+    "images": [
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/wildlife-720.webp",
+        "width": 145,
+        "height": 87,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/wildlifeInset-640.webp",
+        "width": 129.41085815429688,
+        "height": 99.9130859375,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/culture-720.webp",
+        "width": 145,
+        "height": 87,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/cultureInset-640.webp",
+        "width": 129.41087341308594,
+        "height": 99.9130859375,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/beaches-720.webp",
+        "width": 145,
+        "height": 87,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/beachesInset-640.webp",
+        "width": 129.41085815429688,
+        "height": 99.9130859375,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/tea-720.webp",
+        "width": 145,
+        "height": 87,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/teaInset-640.webp",
+        "width": 129.41087341308594,
+        "height": 99.9130859375,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/food-720.webp",
+        "width": 145,
+        "height": 87,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/foodInset-640.webp",
+        "width": 129.41085815429688,
+        "height": 99.9130859375,
+        "fit": "cover",
+        "radius": "8px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tropical-cta-720.webp",
+        "width": 390,
+        "height": 470,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "60% 50%"
+      }
+    ]
+  },
+  {
+    "route": "/plan-your-trip/",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 2991,
+    "images": []
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "scrollWidth": 768,
+    "height": 4752,
+    "images": [
+      {
+        "src": "/assets/majestic-sri-lanka/photography/hill-country-720.webp",
+        "width": 160.2532958984375,
+        "height": 190.258056640625,
+        "fit": "cover",
+        "radius": "3px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/elephant-720.webp",
+        "width": 224.78053283691406,
+        "height": 365.85748291015625,
+        "fit": "cover",
+        "radius": "3px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/sticky-note-local.svg",
+        "width": 172.37744140625,
+        "height": 138.70361328125,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/locally-curated-stamp.svg",
+        "width": 75.90771484375,
+        "height": 75.9078369140625,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/cultural-triangle-720.webp",
+        "width": 300,
+        "height": 180,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "74% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/blue-train-720.webp",
+        "width": 300,
+        "height": 180,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 56%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/southern-coast-720.webp",
+        "width": 300,
+        "height": 180,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/reservoir-travellers-720.webp",
+        "width": 768,
+        "height": 400,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "40% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tea-pickers-720.webp",
+        "width": 320.625,
+        "height": 220,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/sticky-note-people.svg",
+        "width": 139.6412353515625,
+        "height": 152.10986328125,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tropical-cta-720.webp",
+        "width": 768,
+        "height": 340,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      }
+    ]
+  },
+  {
+    "route": "/experiences/",
+    "width": 768,
+    "scrollWidth": 768,
+    "height": 3772,
+    "images": [
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/wildlife-720.webp",
+        "width": 262,
+        "height": 157.1875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/wildlifeInset-640.webp",
+        "width": 125.14714050292969,
+        "height": 98.3447265625,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/culture-720.webp",
+        "width": 262,
+        "height": 157.1875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/cultureInset-640.webp",
+        "width": 125.14715576171875,
+        "height": 98.3447265625,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/beaches-720.webp",
+        "width": 262,
+        "height": 157.1875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/beachesInset-640.webp",
+        "width": 125.14714050292969,
+        "height": 98.3447265625,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/tea-720.webp",
+        "width": 262,
+        "height": 157.1875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/teaInset-640.webp",
+        "width": 125.14715576171875,
+        "height": 98.3447265625,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/food-720.webp",
+        "width": 262,
+        "height": 157.1875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/foodInset-640.webp",
+        "width": 125.14714050292969,
+        "height": 98.3447265625,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tropical-cta-720.webp",
+        "width": 768,
+        "height": 340,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      }
+    ]
+  },
+  {
+    "route": "/plan-your-trip/",
+    "width": 768,
+    "scrollWidth": 768,
+    "height": 2281,
+    "images": []
+  },
+  {
+    "route": "/",
+    "width": 1024,
+    "scrollWidth": 1024,
+    "height": 3797,
+    "images": [
+      {
+        "src": "/assets/majestic-sri-lanka/photography/hill-country-720.webp",
+        "width": 219.89971923828125,
+        "height": 212.30426025390625,
+        "fit": "cover",
+        "radius": "3px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/elephant-720.webp",
+        "width": 294.62249755859375,
+        "height": 397.77337646484375,
+        "fit": "cover",
+        "radius": "3px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/sticky-note-local.svg",
+        "width": 191.53012084960938,
+        "height": 154.113525390625,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/locally-curated-stamp.svg",
+        "width": 130.466552734375,
+        "height": 130.466552734375,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/cultural-triangle-720.webp",
+        "width": 293.328125,
+        "height": 175.984375,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "74% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/blue-train-720.webp",
+        "width": 293.328125,
+        "height": 175.984375,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 56%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/southern-coast-720.webp",
+        "width": 293.34375,
+        "height": 176,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/reservoir-travellers-720.webp",
+        "width": 512,
+        "height": 450,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "40% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tea-pickers-720.webp",
+        "width": 443.515625,
+        "height": 245,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/sticky-note-people.svg",
+        "width": 174.551513671875,
+        "height": 190.1376953125,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tropical-cta-720.webp",
+        "width": 1024,
+        "height": 340,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      }
+    ]
+  },
+  {
+    "route": "/experiences/",
+    "width": 1024,
+    "scrollWidth": 1024,
+    "height": 3661,
+    "images": [
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/wildlife-720.webp",
+        "width": 394,
+        "height": 236.390625,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/wildlifeInset-640.webp",
+        "width": 188.211181640625,
+        "height": 147.91522216796875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/culture-720.webp",
+        "width": 394,
+        "height": 236.390625,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/cultureInset-640.webp",
+        "width": 188.211181640625,
+        "height": 147.915283203125,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/beaches-720.webp",
+        "width": 394,
+        "height": 236.390625,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/beachesInset-640.webp",
+        "width": 188.211181640625,
+        "height": 147.915283203125,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/tea-720.webp",
+        "width": 394,
+        "height": 236.390625,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/teaInset-640.webp",
+        "width": 188.211181640625,
+        "height": 147.9150390625,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/food-720.webp",
+        "width": 394,
+        "height": 236.390625,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/foodInset-640.webp",
+        "width": 188.211181640625,
+        "height": 147.9150390625,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tropical-cta-720.webp",
+        "width": 1024,
+        "height": 340,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      }
+    ]
+  },
+  {
+    "route": "/plan-your-trip/",
+    "width": 1024,
+    "scrollWidth": 1024,
+    "height": 2239,
+    "images": []
+  },
+  {
+    "route": "/",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "height": 4051,
+    "images": [
+      {
+        "src": "/assets/majestic-sri-lanka/photography/hill-country-720.webp",
+        "width": 293.5403747558594,
+        "height": 239.830322265625,
+        "fit": "cover",
+        "radius": "3px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/elephant-720.webp",
+        "width": 393.04327392578125,
+        "height": 450.46392822265625,
+        "fit": "cover",
+        "radius": "3px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/sticky-note-local.svg",
+        "width": 227.58358764648438,
+        "height": 183.12646484375,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/locally-curated-stamp.svg",
+        "width": 156.559814453125,
+        "height": 156.559814453125,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/cultural-triangle-720.webp",
+        "width": 398.65625,
+        "height": 239.1875,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "74% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/blue-train-720.webp",
+        "width": 398.671875,
+        "height": 239.203125,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 56%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/southern-coast-720.webp",
+        "width": 398.65625,
+        "height": 239.1875,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/reservoir-travellers-720.webp",
+        "width": 720,
+        "height": 490,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "40% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tea-pickers-720.webp",
+        "width": 595.1875,
+        "height": 270,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/decorative/sticky-note-people.svg",
+        "width": 174.551513671875,
+        "height": 190.1376953125,
+        "fit": "fill",
+        "radius": "0px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tropical-cta-720.webp",
+        "width": 1440,
+        "height": 365,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      }
+    ]
+  },
+  {
+    "route": "/experiences/",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "height": 4161,
+    "images": [
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/wildlife-720.webp",
+        "width": 468,
+        "height": 280.796875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/wildlifeInset-640.webp",
+        "width": 223.5576171875,
+        "height": 175.69091796875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/culture-720.webp",
+        "width": 468,
+        "height": 280.796875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/cultureInset-640.webp",
+        "width": 223.5576171875,
+        "height": 175.69091796875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/beaches-720.webp",
+        "width": 468,
+        "height": 280.796875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/beachesInset-640.webp",
+        "width": 223.5576171875,
+        "height": 175.69091796875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/tea-720.webp",
+        "width": 468,
+        "height": 280.796875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/teaInset-640.webp",
+        "width": 223.5576171875,
+        "height": 175.69091796875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/food-720.webp",
+        "width": 468,
+        "height": 280.796875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/experiences/foodInset-640.webp",
+        "width": 223.5576171875,
+        "height": 175.69091796875,
+        "fit": "cover",
+        "radius": "12px",
+        "position": "50% 50%"
+      },
+      {
+        "src": "/assets/majestic-sri-lanka/photography/tropical-cta-720.webp",
+        "width": 1440,
+        "height": 365,
+        "fit": "cover",
+        "radius": "0px",
+        "position": "50% 50%"
+      }
+    ]
+  },
+  {
+    "route": "/plan-your-trip/",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "height": 1730,
+    "images": []
+  }
+]

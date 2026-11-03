@@ -1,0 +1,149 @@
+[
+  {
+    "route": "/",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "pageHeightBefore": 4055,
+    "pageHeightAfter": 4051
+  },
+  {
+    "route": "/tours/",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "pageHeightBefore": 2306,
+    "pageHeightAfter": 2301
+  },
+  {
+    "route": "/tailor-made/",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "pageHeightBefore": 2842,
+    "pageHeightAfter": 2991
+  },
+  {
+    "route": "/experiences/",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "pageHeightBefore": 3716,
+    "pageHeightAfter": 3673
+  },
+  {
+    "route": "/about-us/",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "pageHeightBefore": 3128,
+    "pageHeightAfter": 3032
+  },
+  {
+    "route": "/plan-your-trip/",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "pageHeightBefore": 1845,
+    "pageHeightAfter": 2299
+  },
+  {
+    "route": "/contact-us/",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "pageHeightBefore": 2753,
+    "pageHeightAfter": 2476
+  },
+  {
+    "route": "/",
+    "width": 768,
+    "scrollWidth": 768,
+    "pageHeightBefore": 4747,
+    "pageHeightAfter": 4752
+  },
+  {
+    "route": "/tours/",
+    "width": 768,
+    "scrollWidth": 768,
+    "pageHeightBefore": 2626,
+    "pageHeightAfter": 2668
+  },
+  {
+    "route": "/tailor-made/",
+    "width": 768,
+    "scrollWidth": 768,
+    "pageHeightBefore": 3025,
+    "pageHeightAfter": 3890
+  },
+  {
+    "route": "/experiences/",
+    "width": 768,
+    "scrollWidth": 768,
+    "pageHeightBefore": 3884,
+    "pageHeightAfter": 3807
+  },
+  {
+    "route": "/about-us/",
+    "width": 768,
+    "scrollWidth": 768,
+    "pageHeightBefore": 3592,
+    "pageHeightAfter": 3786
+  },
+  {
+    "route": "/plan-your-trip/",
+    "width": 768,
+    "scrollWidth": 768,
+    "pageHeightBefore": 1923,
+    "pageHeightAfter": 2265
+  },
+  {
+    "route": "/contact-us/",
+    "width": 768,
+    "scrollWidth": 768,
+    "pageHeightBefore": 3212,
+    "pageHeightAfter": 3149
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "scrollWidth": 390,
+    "pageHeightBefore": 6478,
+    "pageHeightAfter": 6442
+  },
+  {
+    "route": "/tours/",
+    "width": 390,
+    "scrollWidth": 390,
+    "pageHeightBefore": 3747,
+    "pageHeightAfter": 3715
+  },
+  {
+    "route": "/tailor-made/",
+    "width": 390,
+    "scrollWidth": 390,
+    "pageHeightBefore": 3935,
+    "pageHeightAfter": 4393
+  },
+  {
+    "route": "/experiences/",
+    "width": 390,
+    "scrollWidth": 390,
+    "pageHeightBefore": 5998,
+    "pageHeightAfter": 5279
+  },
+  {
+    "route": "/about-us/",
+    "width": 390,
+    "scrollWidth": 390,
+    "pageHeightBefore": 4600,
+    "pageHeightAfter": 4695
+  },
+  {
+    "route": "/plan-your-trip/",
+    "width": 390,
+    "scrollWidth": 390,
+    "pageHeightBefore": 2825,
+    "pageHeightAfter": 2873
+  },
+  {
+    "route": "/contact-us/",
+    "width": 390,
+    "scrollWidth": 390,
+    "pageHeightBefore": 4047,
+    "pageHeightAfter": 3951
+  }
+]

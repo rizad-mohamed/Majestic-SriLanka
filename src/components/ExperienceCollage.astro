@@ -1,0 +1,20 @@
+---
+import media from '../../public/assets/majestic-sri-lanka/experiences/manifest.json';
+import { experienceMedia } from '../data/experience-media';
+interface Props { id: string }
+const { id } = Astro.props;
+const story = experienceMedia[id];
+const photos = [id, `${id}Inset`].map(key => media.assets.find(asset => asset.key === key)!);
+---
+<figure class={`experience-collage experience-collage--${id}`}>
+  <div class="editorial-photo editorial-photo--layered">
+    <img class="editorial-photo-leaves" src="/assets/majestic-sri-lanka/decorative/botanical-leaves.svg" width="190" height="330" alt="" aria-hidden="true" loading="lazy" />
+    {photos.map((photo, index) => {
+      const fallback = photo.variants[1];
+      return <img class={index ? 'editorial-photo-inset' : 'editorial-photo-main'} src={`/assets/majestic-sri-lanka/${fallback.file}`} srcset={photo.variants.map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ')} sizes={index ? '(max-width: 700px) calc(43vw - 43px), 20vw' : '(max-width: 700px) calc(50vw - 50px), (max-width: 1100px) calc(50vw - 110px), 35vw'} width={fallback.width} height={fallback.height} alt={index ? story.insetAlt : story.alt} loading="lazy" decoding="async" />;
+    })}
+    <span class="editorial-photo-note script" aria-hidden="true">{story.note}</span>
+  </div>
+  <figcaption>{story.caption}</figcaption>
+  <details class="photo-credits"><summary>Photography credits</summary><ul>{photos.map(photo => <li><a href={photo.source}>{photo.title}</a> — {photo.creator}, <a href={photo.licenseUrl}>{photo.license}</a>. Cropped and resized; derivative retains this licence.</li>)}</ul></details>
+</figure>
