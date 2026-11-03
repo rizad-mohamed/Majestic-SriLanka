@@ -1,12 +1,5 @@
 .planner-process { margin-top: 20px; }
-.planner-process summary {
-  display: list-item;
-  width: fit-content;
-  cursor: pointer;
-  padding-block: 12px;
-  min-height: 44px;
-  font-weight: 600;
-}
+.planner-process h3 { font: 600 16px/1.5 var(--font-body); margin: 0; }
 .planner-process .planning-steps { margin-top: 16px; }
 
 /* Keep small tablets readable before switching to the desktop composition. */
@@ -206,8 +199,7 @@
     max-width: 100%;
   }
   .field input, .field select { min-height: 48px; }
-  .field label, .trip-form legend { font-size: 14px; }
-  .interest-option span { font-size: 14px; min-height: 44px; }
+  .field label { font-size: 14px; }
   .consent-field { padding-block: 8px; }
   .form-notice, .field-error { font-size: 13px; }
   .trip-form .button { white-space: normal; }

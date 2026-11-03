@@ -293,9 +293,7 @@ test("planner validates, creates and downloads a brief without sending it", asyn
   await page
     .getByLabel("Approximate arrival")
     .fill(future.toISOString().slice(0, 10));
-  await page
-    .getByRole("checkbox", { name: "Food & Cuisine", exact: true })
-    .check();
+  await page.locator("#notes").fill("Food & Cuisine");
   await page.locator("#consent").check();
   await page.getByRole("button", { name: "Create My Travel Brief" }).click();
   await expect(page.locator("#brief-summary")).toBeVisible();
@@ -379,7 +377,7 @@ test("homepage experience shortcuts reach their named sections", async ({
   }
 });
 
-test("an experience is carried into the planner and can be changed", async ({
+test("experience links retain verified context without restoring visible interest choices", async ({
   page,
 }) => {
   await page.goto("/experiences/#tea");
@@ -389,20 +387,18 @@ test("an experience is carried into the planner and can be changed", async ({
     .getByRole("link", { name: "Add to My Journey" })
     .click();
   await expect(page).toHaveURL(/\/plan-your-trip\/\?interest=tea#trip-form$/);
-  const interest = page.getByRole("checkbox", {
-    name: "Hill Country & Tea",
-    exact: true,
-  });
-  await expect(interest).toBeChecked();
-  await interest.uncheck();
-  await expect(interest).not.toBeChecked();
+  await expect(page.locator('input[data-interest="tea"]')).toBeEnabled();
+  await expect(page.locator('input[data-interest="tea"]')).toHaveAttribute(
+    "type",
+    "hidden",
+  );
   await page.goto(
     "/plan-your-trip/?interest=tea&interest=food&interest=unknown",
   );
-  await expect(page.locator('input[name="interests"]:checked')).toHaveCount(2);
-  await expect(
-    page.getByRole("checkbox", { name: "Food & Cuisine", exact: true }),
-  ).toBeChecked();
+  await expect(page.locator('input[name="interests"]:enabled')).toHaveCount(2);
+  await expect(page.locator('input[data-interest="food"]')).toBeEnabled();
+  await expect(page.locator('input[data-interest="unknown"]')).toHaveCount(0);
+  await expect(page.getByRole("checkbox")).toHaveCount(1);
 });
 
 test("all seven pages reflow at 320px", async ({ page }) => {

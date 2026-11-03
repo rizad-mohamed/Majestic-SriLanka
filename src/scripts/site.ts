@@ -150,11 +150,7 @@ if (form) {
   form
     .querySelectorAll<HTMLInputElement>("[data-interest]")
     .forEach((input) => {
-      if (
-        input.dataset.interest &&
-        selectedInterests.has(input.dataset.interest)
-      )
-        input.checked = true;
+      input.disabled = !selectedInterests.has(input.dataset.interest || "");
     });
   const journey = selections.get("journey");
   const journeySelect = form.querySelector<HTMLSelectElement>("[name=journey]");

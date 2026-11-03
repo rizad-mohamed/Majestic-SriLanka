@@ -1,7 +1,7 @@
 ---
 import { islandPath, mapPlaces } from '../data/travel-map';
-interface Props { id: string; planner?: boolean }
-const { id, planner = false } = Astro.props;
+interface Props { id: string }
+const { id } = Astro.props;
 ---
 <figure class="travel-map" aria-labelledby={`${id}-caption`}>
   <div class="map-canvas">
@@ -16,7 +16,7 @@ const { id, planner = false } = Astro.props;
     </svg>
     {mapPlaces.map((place, index) => <details class="map-place" name={`${id}-places`} data-place={place.id} open={index === 0}>
       <summary class:list={['map-marker', `map-marker--${place.side}`]} style={`--pin-x:${place.x / 4}%;--pin-y:${place.y / 4.3}%`}><span class="map-pin" aria-hidden="true"></span><span class="map-marker-label">{place.name}</span></summary>
-      <div class="map-place-panel"><h3>{place.title}</h3><p>{place.description}</p><a class="text-link" href={planner ? `/plan-your-trip/?interest=${place.interest}#trip-form` : `/experiences/#${place.interest}`} data-map-interest={planner ? place.interest : undefined}>{planner ? 'Add this interest' : 'Explore this experience'} <span aria-hidden="true">→</span></a></div>
+      <div class="map-place-panel"><h3>{place.title}</h3><p>{place.description}</p><a class="text-link" href={`/experiences/#${place.interest}`}>Explore this experience <span aria-hidden="true">→</span></a></div>
     </details>)}
   </div>
   <figcaption id={`${id}-caption`}>Select a place to explore.<span>Illustrative connections. Your route is tailored to you.</span></figcaption>

@@ -32,44 +32,33 @@ test("destination map supports keyboard exploration and experience links", async
   await expect(page.locator("#tea-title")).toBeInViewport();
 });
 
-test("planner map adds interests without losing the traveller's form details", async ({
+test("planner process stays expanded and form works without interest choices or a duplicate map", async ({
   page,
 }) => {
   await page.goto("/plan-your-trip/");
+  await expect(page.locator(".planner-process")).toHaveJSProperty(
+    "tagName",
+    "SECTION",
+  );
+  await expect(page.locator(".planner-process li")).toHaveCount(3);
+  for (const step of await page.locator(".planner-process li").all())
+    await expect(step).toBeVisible();
+  await expect(
+    page.locator(
+      ".trip-form .travel-map, .interest-options, .planner-map-disclosure",
+    ),
+  ).toHaveCount(0);
+  await expect(page.getByRole("checkbox")).toHaveCount(1);
   await page.getByLabel("Your name").fill("Alex Traveller");
   await page.getByLabel("Email address").fill("alex@example.com");
   await page.getByLabel("Approximate arrival").fill("2099-02-28");
   await page.locator("#notes").fill("Slow mornings and local food.");
-  const disclosure = page.locator(".planner-map-disclosure");
-  const compact = (page.viewportSize()?.width || 0) <= 1100;
-  await expect(disclosure).toHaveJSProperty("open", !compact);
-  if (compact) await disclosure.locator(":scope > summary").click();
-  await disclosure.locator('[data-place="galle"] summary').click();
-  await disclosure
-    .locator('[data-place="galle"]')
-    .getByRole("link", { name: "Add this interest" })
-    .click();
-  await expect(page).toHaveURL("/plan-your-trip/");
-  await expect(
-    page.getByRole("checkbox", { name: "Beaches & Coast", exact: true }),
-  ).toBeChecked();
-  await expect(page.locator("#map-interest-status")).toHaveText(
-    "Beaches & Coast added to your interests.",
-  );
-  await expect(page.getByLabel("Your name")).toHaveValue("Alex Traveller");
-  await expect(page.getByLabel("Email address")).toHaveValue(
-    "alex@example.com",
-  );
-  await expect(page.locator("#notes")).toHaveValue(
-    "Slow mornings and local food.",
-  );
-  await expect(page.locator("#consent")).not.toBeChecked();
   await page.locator("#consent").check();
   await page.getByRole("button", { name: "Create My Travel Brief" }).click();
-  await expect(page.locator("#brief-text")).toContainText("Beaches & Coast");
   await expect(page.locator("#brief-text")).toContainText(
     "Slow mornings and local food.",
   );
+  await expect(page.locator("#brief-text")).toContainText("Open to ideas");
 });
 
 test("map exploration still works without JavaScript and respects reduced motion", async ({

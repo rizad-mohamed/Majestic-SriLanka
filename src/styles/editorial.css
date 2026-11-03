@@ -213,34 +213,6 @@
   right: 14%;
   width: 84px;
 }
-.interest-discovery {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 18px;
-  align-items: start;
-}
-.interest-discovery .interest-options {
-  flex-direction: column;
-  align-items: flex-start;
-  padding-top: 16px;
-}
-.interest-discovery .interest-option {
-  max-width: 100%;
-}
-.planner-map-disclosure {
-  min-width: 0;
-}
-.planner-map-disclosure > summary {
-  cursor: pointer;
-  min-height: 44px;
-  padding-block: 10px;
-  font-size: 13px;
-  color: var(--green);
-}
-.planner-map-disclosure .travel-map {
-  margin-top: 0;
-  max-width: 240px;
-}
 
 /* Native details keep destination exploration available without JavaScript. */
 .travel-map {
@@ -386,24 +358,6 @@
   stroke: var(--green);
   stroke-width: 3;
 }
-.planner-map-disclosure .map-place-panel {
-  min-height: 150px;
-}
-.planner-map-disclosure .map-place-panel h3 {
-  font-size: 23px;
-}
-.planner-map-disclosure .travel-map figcaption {
-  margin-top: 170px;
-}
-.planner-map-disclosure .map-marker-label {
-  font-size: 11px;
-  left: 30px;
-  padding-inline: 3px;
-}
-.planner-map-disclosure .map-marker--left .map-marker-label {
-  left: auto;
-  right: 30px;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .map-place[open] .map-pin {
@@ -468,16 +422,6 @@
     right: 0;
     width: 54px;
     opacity: 0.3;
-  }
-  .interest-discovery {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .interest-discovery .interest-options {
-    flex-direction: row;
-    padding-top: 0;
-  }
-  .planner-map-disclosure .travel-map {
-    max-width: 340px;
   }
 }
 @media (min-width: 701px) and (max-width: 1000px) {
@@ -627,14 +571,5 @@
   }
   .map-marker-label {
     font-size: 12px;
-  }
-  .planner-map-disclosure .map-marker-label {
-    font-size: 12px;
-  }
-  .planner-map-disclosure .map-place-panel {
-    min-height: 140px;
-  }
-  .planner-map-disclosure .travel-map figcaption {
-    margin-top: 160px;
   }
 }
