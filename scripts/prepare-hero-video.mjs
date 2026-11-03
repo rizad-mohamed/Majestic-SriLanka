@@ -74,7 +74,7 @@ await writeFile(
       sourceBytes: original.length,
       sourceSha256: createHash("sha256").update(original).digest("hex"),
       provenance:
-        "User-supplied silent film; full sequence retained, resized and re-encoded for on-demand playback.",
+        "User-supplied silent film; full sequence retained, resized and re-encoded for video-first hero and optional story playback.",
       output: "island-film.mp4",
       bytes: output.size,
       width: 960,
@@ -83,12 +83,13 @@ await writeFile(
       codec: "H.264",
       fastStart: true,
       audio: false,
-      loading: "No source or poster assigned until the visitor opens the film.",
+      loading:
+        "Hero poster is pre-rendered; muted inline autoplay plays once before three image slides. Reduced motion and Save-Data keep the poster until Play. The optional story dialog loads on opening.",
     },
     null,
     2,
   ) + "\n",
 );
 console.log(
-  `Prepared on-demand film: ${output.size} bytes from ${original.length} supplied bytes.`,
+  `Prepared hero film: ${output.size} bytes from ${original.length} supplied bytes.`,
 );

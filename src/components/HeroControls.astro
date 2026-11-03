@@ -2,8 +2,8 @@
 import { heroSlides } from '../data/hero-slides';
 ---
 <div class="hero-playback" data-hero-controls hidden>
-  <div class="hero-slides" aria-label="Choose a landscape">{heroSlides.map((slide, index) => <button type="button" data-slide={slide.id} aria-label={`Show ${slide.label} landscape`} aria-pressed={index === 0}>{String(index + 1).padStart(2, '0')}</button>)}</div>
-  <button type="button" class="slideshow-toggle" data-slideshow-toggle>Pause slideshow</button>
+  <div class="hero-slides" aria-label="Choose a hero slide"><button type="button" data-slide="film" aria-label="Show Sri Lanka film" aria-pressed="true">01</button>{heroSlides.map((slide, index) => <button type="button" data-slide={slide.id} aria-label={`Show ${slide.label} landscape`} aria-pressed="false">{String(index + 2).padStart(2, '0')}</button>)}</div>
+  <button type="button" class="slideshow-toggle" data-slideshow-toggle>Pause hero playback</button>
   <p class="sr-only" data-hero-status role="status"></p>
 </div>
 <style>
@@ -12,5 +12,5 @@ import { heroSlides } from '../data/hero-slides';
   .hero-playback .hero-slides button { min-width: 44px; min-height: 44px; font-size: 14px; border-bottom: 2px solid transparent; }
   .hero-playback .hero-slides button[aria-pressed="true"] { border-color: var(--bronze-dark); }
   .slideshow-toggle { min-height: 44px; padding: 8px 12px; font-size: 12px; color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
-  @media (max-width: 700px) { .hero-playback { justify-content: center; gap: 8px; } }
+  @media (max-width: 700px) { .hero-playback { justify-content: center; flex-direction: column; gap: 0; margin-top: 14px; } }
 </style>
