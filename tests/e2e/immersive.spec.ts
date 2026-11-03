@@ -12,18 +12,16 @@ test("hero selection supports keyboard, touch and reduced motion", async ({
   await page.goto("/");
   const controls = page.locator("[data-hero-controls]");
   await expect(
-    controls.getByRole("button", { name: "Play slideshow" }),
+    controls.getByRole("button", { name: "Play hero playback" }),
   ).toBeVisible();
-  if (page.viewportSize()!.width <= 700) {
-    await expect
-      .poll(() =>
-        page
-          .locator("[data-hero-current]")
-          .evaluate((image: HTMLImageElement) => image.currentSrc),
-      )
-      .toContain("/hero-mobile/hero-sigiriya-");
-    expect(wideSigiriyaRequests).toEqual([]);
-  }
+  await expect(page.locator("[data-hero-current]")).toHaveAttribute(
+    "data-hero-video",
+    "",
+  );
+  expect(
+    await page.locator("[data-hero-video]").getAttribute("src"),
+  ).toBeNull();
+  expect(wideSigiriyaRequests).toEqual([]);
   const coast = controls.getByRole("button", {
     name: "Show southern coast landscape",
   });
@@ -34,6 +32,12 @@ test("hero selection supports keyboard, touch and reduced motion", async ({
   );
   await expect(coast).toHaveAttribute("aria-pressed", "true");
   await coast.press("ArrowRight");
+  await expect(
+    controls.getByRole("button", { name: "Show Sri Lanka film" }),
+  ).toBeFocused();
+  await controls
+    .getByRole("button", { name: "Show Sri Lanka film" })
+    .press("ArrowRight");
   await expect(page.locator("[data-hero-current]")).toHaveAttribute(
     "data-photo",
     "hero-sigiriya",
@@ -70,37 +74,54 @@ test("hero selection supports keyboard, touch and reduced motion", async ({
   expect(parseFloat(transition)).toBeLessThanOrEqual(0.001);
 });
 
-test("hero advances automatically and pauses after manual selection", async ({
+test("video plays first, ends naturally, then all three images cycle without replaying it", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("/");
   await page.mouse.move(0, 0);
-  await expect(
-    page.getByRole("button", { name: "Pause slideshow" }),
-  ).toBeVisible();
+  const video = page.locator("[data-hero-video]");
+  await expect(video).toHaveAttribute("data-hero-current", "");
+  await expect(video).toHaveJSProperty("muted", true);
+  await expect(video).toHaveAttribute("playsinline", "");
+  await expect(video).toHaveJSProperty("loop", false);
+  await expect
+    .poll(
+      () =>
+        video.evaluate((v: HTMLVideoElement) => !v.paused && v.readyState >= 2),
+      { timeout: 20000 },
+    )
+    .toBe(true);
+  await page.getByRole("button", { name: "Pause hero playback" }).click();
+  await expect(video).toHaveJSProperty("paused", true);
+  await page.getByRole("button", { name: "Play hero playback" }).click();
+  await page.mouse.move(0, 0);
+  await expect
+    .poll(() => video.evaluate((v: HTMLVideoElement) => v.paused))
+    .toBe(false);
+  await expect(video).toHaveAttribute("data-hero-current", "");
+  // Seek near the end, preserving the real native ended event and controller handoff.
+  await video.evaluate((v: HTMLVideoElement) => {
+    v.currentTime = v.duration - 0.2;
+  });
   await expect(page.locator("[data-hero-current]")).toHaveAttribute(
     "data-photo",
-    "hill-country",
-    { timeout: 16000 },
+    "hero-sigiriya",
+    { timeout: 15000 },
   );
-  await page.getByRole("button", { name: "Pause slideshow" }).click();
-  await expect(
-    page.getByRole("button", { name: "Play slideshow" }),
-  ).toBeVisible();
-  await page.getByRole("button", { name: "Play slideshow" }).click();
-  await expect(
-    page.getByRole("button", { name: "Pause slideshow" }),
-  ).toBeVisible();
+  for (const name of ["hill-country", "southern-coast", "hero-sigiriya"]) {
+    await expect(page.locator("[data-hero-current]")).toHaveAttribute(
+      "data-photo",
+      name,
+      { timeout: 11000 },
+    );
+  }
+  await expect(video).toHaveJSProperty("paused", true);
   await page
     .getByRole("button", { name: "Show southern coast landscape" })
     .click();
-  await expect(page.locator("[data-hero-current]")).toHaveAttribute(
-    "data-photo",
-    "southern-coast",
-  );
   await expect(
-    page.getByRole("button", { name: "Play slideshow" }),
+    page.getByRole("button", { name: "Play hero playback" }),
   ).toBeVisible();
   await page.clock.install();
   await page.mouse.move(0, 0);
@@ -111,18 +132,68 @@ test("hero advances automatically and pauses after manual selection", async ({
   );
 });
 
-test("film is requested only on opening and pauses on dismissal", async ({
+test("film poster falls back to images when autoplay is blocked or loading fails", async ({
   page,
 }) => {
-  const filmRequests: string[] = [];
-  page.on("request", (request) => {
-    if (request.url().includes("/video/")) filmRequests.push(request.url());
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.addInitScript(() => {
+    const play = HTMLMediaElement.prototype.play;
+    HTMLMediaElement.prototype.play = function () {
+      return location.search.includes("blocked")
+        ? Promise.reject(
+            new DOMException("Autoplay blocked", "NotAllowedError"),
+          )
+        : play.call(this);
+    };
   });
+  await page.goto("/?blocked");
+  await expect(page.locator("[data-hero-video]")).toHaveAttribute(
+    "poster",
+    /island-film-poster.webp$/,
+  );
+  await expect(page.locator("[data-hero-current]")).toHaveAttribute(
+    "data-photo",
+    "hero-sigiriya",
+    { timeout: 18000 },
+  );
+  // Replace the document's hero source: native media networking is not exposed
+  // consistently through Playwright's request interception in every engine.
+  await page.route("**/?failed-film", async (route) => {
+    const response = await route.fetch();
+    const body = (await response.text()).replace(
+      'data-src="/assets/majestic-sri-lanka/video/island-film.mp4"',
+      'data-src="/missing-hero-film.mp4"',
+    );
+    await route.fulfill({ response, body });
+  });
+  await page.goto("/?failed-film");
+  await expect
+    .poll(
+      () =>
+        page
+          .locator("[data-hero-video]")
+          .evaluate((video: HTMLVideoElement) => video.error !== null),
+      { timeout: 15000 },
+    )
+    .toBe(true);
+  await expect(page.locator("[data-hero-current]")).toHaveAttribute(
+    "data-photo",
+    "hero-sigiriya",
+    { timeout: 18000 },
+  );
+});
+
+test("optional story player loads on opening and pauses on dismissal", async ({
+  page,
+}) => {
   await page.goto("/");
   const film = page.locator("[data-island-film]");
   expect(await film.getAttribute("src")).toBeNull();
   await expect(film).toHaveAttribute("preload", "none");
-  expect(filmRequests).toEqual([]);
+  await expect(page.locator("[data-hero-video]")).toHaveAttribute(
+    "src",
+    /island-film\.mp4$/,
+  );
   await page.getByRole("button", { name: "Watch Our Story" }).click();
   await expect(
     page.getByRole("dialog", { name: "More than a destination." }),
@@ -143,11 +214,6 @@ test("film is requested only on opening and pauses on dismissal", async ({
     new URL("/assets/majestic-sri-lanka/video/island-film.mp4", page.url())
       .href,
   );
-  await expect
-    .poll(() =>
-      filmRequests.some((url) => url.endsWith("island-film-poster.webp")),
-    )
-    .toBe(true);
   const close = page.getByRole("button", { name: "Close story" });
   await close.focus();
   await page.keyboard.press("Tab");
@@ -175,9 +241,11 @@ test("journey navigation tracks scrolling and links to all five experiences", as
   page,
 }) => {
   await page.goto("/experiences/");
-  const navigation = page.getByRole("navigation", {
-    name: "Your experience journey",
-  });
+  const compact = page.viewportSize()!.width <= 1100;
+  const navigation = page.locator(
+    compact ? ".experience-list" : "[data-journey-nav]",
+  );
+  const progressElement = page.locator("[data-journey-nav]");
   await expect(navigation.locator('[aria-current="location"]')).toHaveAttribute(
     "href",
     "#wildlife",
@@ -189,11 +257,10 @@ test("journey navigation tracks scrolling and links to all five experiences", as
       navigation.locator('[aria-current="location"]'),
     ).toHaveAttribute("href", `#${id}`);
     await expect(page.locator(`#${id} h2`)).toBeInViewport();
-    await expect(navigation).toBeInViewport();
   }
   await expect
     .poll(() =>
-      navigation.evaluate((element) =>
+      progressElement.evaluate((element) =>
         Number(
           (element as HTMLElement).style.getPropertyValue("--journey-progress"),
         ),
@@ -219,7 +286,7 @@ test("journey navigation tracks scrolling and links to all five experiences", as
     });
   });
   const progress = () =>
-    navigation.evaluate((element) =>
+    progressElement.evaluate((element) =>
       Number(
         (element as HTMLElement).style.getPropertyValue("--journey-progress"),
       ),
@@ -227,7 +294,8 @@ test("journey navigation tracks scrolling and links to all five experiences", as
   await expect.poll(progress).toBeGreaterThan(0.3);
   expect(await progress()).toBeLessThan(0.45);
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await expect(page.locator(".journey-traveller")).toBeHidden();
+  for (const traveller of await page.locator(".journey-traveller").all())
+    await expect(traveller).toBeHidden();
   await expect.poll(progress).toBe(0.25);
 });
 
@@ -326,14 +394,18 @@ test("experience journey and credits remain usable without JavaScript", async ({
   try {
     const page = await context.newPage();
     await page.goto("/experiences/");
-    await page.locator('[data-journey-link="tea"]').click();
+    await page.locator('[data-journey-link="tea"]:visible').click();
     await expect(page).toHaveURL(/#tea$/);
     await expect(page.locator("#tea h2")).toBeInViewport();
     await page.locator("#tea summary").click();
     await expect(page.locator("#tea .photo-credits ul")).toBeVisible();
     await page.goto("/");
     await expect(page.locator("[data-hero-controls]")).toBeHidden();
-    await expect(page.locator("[data-hero-image] img")).toBeVisible();
+    await expect(page.locator("[data-hero-video]")).toBeVisible();
+    await expect(page.locator("[data-hero-video]")).toHaveAttribute(
+      "poster",
+      /island-film-poster.webp$/,
+    );
   } finally {
     await context.close();
   }
