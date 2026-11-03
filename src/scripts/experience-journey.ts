@@ -11,7 +11,6 @@ if (navigation) {
   ];
   const spine = document.querySelector<HTMLElement>(".journey-spine")!;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const compact = window.matchMedia("(max-width: 1100px)");
   let positions: number[] = [];
   let stops: number[] = [];
   let frame = 0;
@@ -68,7 +67,7 @@ if (navigation) {
       (section) => section.getBoundingClientRect().top + window.scrollY,
     );
     navigation.style.setProperty("--journey-distance", "256px");
-    if (compact.matches) {
+    {
       const origin =
         spine.parentElement!.getBoundingClientRect().top + window.scrollY;
       stops = sections.map((section) => {
@@ -81,7 +80,7 @@ if (navigation) {
         "--journey-distance",
         `${stops.at(-1)! - stops[0]}px`,
       );
-    } else stops = positions;
+    }
     schedule();
   };
   window.addEventListener("scroll", schedule, { passive: true });

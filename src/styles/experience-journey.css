@@ -1,7 +1,5 @@
 .experience-journey {
-  display: grid;
-  grid-template-columns: 170px minmax(0, 1fr);
-  gap: 42px;
+  display: block;
   padding-top: 40px;
 }
 .experience-journey .experience-list {
@@ -14,12 +12,23 @@
   gap: 36px;
   scroll-margin-top: 35px;
   content-visibility: visible;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr);
+  position: relative;
+  align-items: center;
+  isolation: isolate;
 }
-.experience-journey .experience-detail > .experience-collage {
+.experience-journey .experience-detail > .experience-collage,
+.experience-journey .experience-detail:nth-of-type(even) > .experience-copy {
+  grid-column: 1;
+  grid-row: 1;
   order: 0;
 }
+.experience-journey .experience-detail > .experience-copy,
 .experience-journey .experience-detail:nth-of-type(even) > .experience-collage {
-  order: 2;
+  grid-column: 3;
+  grid-row: 1;
+  order: 0;
 }
 .experience-journey h2 {
   font-size: clamp(36px, 3.5vw, 48px);
@@ -69,6 +78,7 @@
   text-underline-offset: 3px;
 }
 .journey-nav {
+  display: none;
   --journey-progress: 0;
   position: sticky;
   top: 30px;
@@ -147,9 +157,47 @@
     0
   );
 }
-.journey-spine,
 .journey-marker {
-  display: none;
+  display: grid;
+  place-items: center;
+  grid-column: 2;
+  grid-row: 1;
+  width: 44px;
+  height: 44px;
+  justify-self: center;
+  z-index: 3;
+  border-radius: 50%;
+}
+.journey-marker .journey-stop {
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 0 0 4px var(--background);
+}
+.journey-spine {
+  display: block;
+  position: absolute;
+  left: calc(50% - 1px);
+  top: var(--journey-start, 0px);
+  height: var(--journey-distance, 0px);
+  width: 2px;
+  pointer-events: none;
+  z-index: 2;
+}
+.experience-detail::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  left: calc(50% - 1px);
+  top: 0;
+  bottom: 0;
+  background: var(--line);
+  z-index: -1;
+}
+.experience-detail:first-of-type::before {
+  top: 50%;
+}
+.experience-detail:last-of-type::before {
+  bottom: 50%;
 }
 
 /* Every marker belongs to its actual row. The line occupies a reserved column. */
