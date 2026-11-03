@@ -1,11 +1,11 @@
 {
-  "measuredAt": "2026-11-03T08:13:43.945Z",
+  "measuredAt": "2026-11-03T08:42:10.379Z",
   "directory": "dist",
   "summary": {
     "html": {
       "count": 8,
-      "bytes": 380631,
-      "gzipBytes": 73118
+      "bytes": 380969,
+      "gzipBytes": 73216
     },
     "js": {
       "count": 1,
@@ -28,9 +28,9 @@
       "gzipBytes": 8401394
     },
     "avif": {
-      "count": 4,
-      "bytes": 345993,
-      "gzipBytes": 346073
+      "count": 5,
+      "bytes": 397316,
+      "gzipBytes": 397404
     },
     "mp4": {
       "count": 1,
@@ -115,13 +115,13 @@
     },
     {
       "path": "plan-your-trip/index.html",
-      "bytes": 40557,
-      "gzipBytes": 8344
+      "bytes": 40726,
+      "gzipBytes": 8390
     },
     {
       "path": "tailor-made/index.html",
-      "bytes": 46060,
-      "gzipBytes": 9556
+      "bytes": 46229,
+      "gzipBytes": 9608
     },
     {
       "path": "tours/index.html",

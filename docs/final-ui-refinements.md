@@ -45,3 +45,13 @@ Full-resolution PNG captures and the three-landscape comparisons at 390, 768 and
 The PR's latest Website quality check is authoritative for its final head. The unchanged [workflow](../.github/workflows/quality.yml) runs formatting, lint, types, unit tests, dependency audit, build, SEO, budgets, all 264 browser cases, production checks and 42 Lighthouse audits (three per route/device), and retains the reports as a CI artifact. A pending check is not a pass. Final audit scores and the exact check link are reported in the PR and delivery response.
 
 Physical iOS/Android playback, client visual acceptance and real enquiry delivery remain human UAT. No message, deployment or merge was performed. Existing contact/domain/policy/testimonial verification requirements remain in the [launch checklist](uat-checklist.md).
+
+## Verified performance follow-up
+
+The first 14-audit local sweep passed every route/device except Tailor-Made mobile (89). Its three-run repeat scored 89, 87 and 87, median 87. These results are retained in [the complete single-run sweep](final-ui/lighthouse-sweep.json) and [the unsuccessful repeat](final-ui/lighthouse-tailor-before.json).
+
+Lighthouse identified image transfer as the largest opportunity. Added a phone-only 960×720 AVIF of the same approved reservoir image and central crop: 51,323 bytes versus the selected 109,002-byte WebP, a 52.9% reduction. Desktop continues to select its existing WebP; unsupported AVIF also falls back natively. The source is shared by Tailor-Made and Plan Your Trip. No geometry, text, photograph subject or desktop source changed. The preparation script reproduces this derivative from the original source. Total AVIF inventory is 397,316 bytes, below the unchanged 400,000-byte cap.
+
+The optimised local repeat scored **91, 92 and 95**, median **92**, with accessibility and best practices 100. [Measurements](final-ui/lighthouse-tailor-after.json), [native WebP/AVIF visual comparison](final-ui/reservoir-format-comparison.webp) (WebP left, AVIF right). Formatting, lint, types, build, budgets and all ten production checks passed again; the production test now covers AVIF decoding, unsupported-format fallback and return to the approved desktop source across all three relevant routes.
+
+The [first complete PR quality run](https://github.com/rizad-mohamed/Majestic-SriLanka/actions/runs/41603805607) passed on `aab12d8`: 264 browser checks, ten production checks and 42 Lighthouse audits. Three-run performance medians were 92–98 mobile and 99–100 desktop; homepage 98/100. This run precedes the encoding follow-up; the PR's latest check remains authoritative for the final head.
