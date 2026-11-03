@@ -1,11 +1,11 @@
 {
-  "measuredAt": "2026-11-02T23:21:57.509Z",
+  "measuredAt": "2026-11-03T00:30:39.811Z",
   "directory": "dist",
   "summary": {
     "html": {
       "count": 8,
-      "bytes": 381020,
-      "gzipBytes": 73789
+      "bytes": 382047,
+      "gzipBytes": 73954
     },
     "js": {
       "count": 1,
@@ -14,8 +14,8 @@
     },
     "css": {
       "count": 3,
-      "bytes": 70682,
-      "gzipBytes": 15520
+      "bytes": 70921,
+      "gzipBytes": 15563
     },
     "woff2": {
       "count": 14,
@@ -23,9 +23,9 @@
       "gzipBytes": 233574
     },
     "webp": {
-      "count": 111,
-      "bytes": 8303714,
-      "gzipBytes": 8308505
+      "count": 113,
+      "bytes": 8396532,
+      "gzipBytes": 8401394
     },
     "avif": {
       "count": 4,
@@ -61,8 +61,8 @@
     },
     {
       "path": "index.html",
-      "cssGzipBytes": 14327,
-      "javaScriptGzipBytes": 5013
+      "cssGzipBytes": 14370,
+      "javaScriptGzipBytes": 5063
     },
     {
       "path": "plan-your-trip/index.html",
@@ -84,13 +84,14 @@
     "existingWebPBytes": 7026984,
     "experienceWebPBytes": 1240206,
     "filmPosterBytes": 36524,
-    "filmBytes": 2684234
+    "filmBytes": 2684234,
+    "mobileHeroWebPBytes": 92818
   },
   "documents": [
     {
       "path": "404.html",
       "bytes": 29844,
-      "gzipBytes": 6002
+      "gzipBytes": 6003
     },
     {
       "path": "about-us/index.html",
@@ -100,7 +101,7 @@
     {
       "path": "contact-us/index.html",
       "bytes": 43489,
-      "gzipBytes": 8393
+      "gzipBytes": 8394
     },
     {
       "path": "experiences/index.html",
@@ -109,23 +110,23 @@
     },
     {
       "path": "index.html",
-      "bytes": 72002,
-      "gzipBytes": 12768
+      "bytes": 73029,
+      "gzipBytes": 12928
     },
     {
       "path": "plan-your-trip/index.html",
       "bytes": 46508,
-      "gzipBytes": 10075
+      "gzipBytes": 10076
     },
     {
       "path": "tailor-made/index.html",
       "bytes": 46060,
-      "gzipBytes": 9555
+      "gzipBytes": 9556
     },
     {
       "path": "tours/index.html",
       "bytes": 40814,
-      "gzipBytes": 7586
+      "gzipBytes": 7587
     }
   ],
   "scripts": [
@@ -142,9 +143,9 @@
       "gzipBytes": 1193
     },
     {
-      "path": "_astro/index.DsN10KVP.css",
-      "bytes": 1181,
-      "gzipBytes": 441
+      "path": "_astro/index.hy05-r5C.css",
+      "bytes": 1420,
+      "gzipBytes": 484
     },
     {
       "path": "_astro/Layout.DcoTq-PX.css",

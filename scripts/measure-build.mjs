@@ -68,7 +68,7 @@ const mediaInventories = {
     .filter(
       (file) =>
         file.path.endsWith(".webp") &&
-        !/\/(experiences|video)\//.test(file.path),
+        !/\/(experiences|video|hero-mobile)\//.test(file.path),
     )
     .reduce((sum, file) => sum + file.bytes, 0),
   experienceWebPBytes: files
@@ -78,6 +78,9 @@ const mediaInventories = {
     .filter((file) => /\/video\/.*\.webp$/.test(file.path))
     .reduce((sum, file) => sum + file.bytes, 0),
   filmBytes: summary.mp4.bytes,
+  mobileHeroWebPBytes: files
+    .filter((file) => /\/hero-mobile\/.*\.webp$/.test(file.path))
+    .reduce((sum, file) => sum + file.bytes, 0),
 };
 // Transfer estimates use gzip only as a consistent comparison, not measured host compression.
 const result = {
@@ -99,6 +102,7 @@ if (
   mediaInventories.experienceWebPBytes > 1300000 ||
   mediaInventories.filmPosterBytes > 50000 ||
   mediaInventories.filmBytes > 3000000 ||
+  mediaInventories.mobileHeroWebPBytes > 100000 ||
   summary.js.gzipBytes > 6000 ||
   result.styles.some((file) => file.gzipBytes > 14000) ||
   routes.some(
@@ -107,6 +111,6 @@ if (
   result.documents.some((file) => file.gzipBytes > 15000)
 )
   throw new Error(
-    "Build budget exceeded: each route JS (including inline code) 6KB gzip, CSS 16KB gzip, each stylesheet 14KB gzip, HTML 15KB gzip; fonts 240KB, existing WebP 7.4MB, documentary WebP 1.3MB, film poster 50KB, film 3MB. Review measured changes.",
+    "Build budget exceeded: each route JS (including inline code) 6KB gzip, CSS 16KB gzip, each stylesheet 14KB gzip, HTML 15KB gzip; fonts 240KB, existing WebP 7.4MB, documentary WebP 1.3MB, film poster 50KB, film 3MB, mobile hero WebP 100KB. Review measured changes.",
   );
 console.log(JSON.stringify(summary));

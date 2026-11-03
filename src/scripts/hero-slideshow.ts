@@ -43,33 +43,45 @@ if (hero) {
     )!;
     // Adopt into the live document so responsive sources can load before decode.
     // A clone alone retains the template's inert owner document.
-    const image = document.importNode(
-      template.content.querySelector("img")!,
+    const frame = document.importNode(
+      template.content.querySelector("picture")!,
       true,
     );
+    const image = frame.querySelector("img")!;
     const ticket = ++request;
     image.loading = "eager";
     image.className = "hero-frame";
+    frame.setAttribute("aria-hidden", "true");
+    // Attach the invisible frame so native picture media selection precedes decode.
+    stage.append(frame);
     try {
       await image.decode();
     } catch {
+      frame.remove();
       schedule();
       return;
     }
-    if (ticket !== request) return;
+    if (ticket !== request) {
+      frame.remove();
+      return;
+    }
     const previous = stage.querySelector<HTMLImageElement>(
       "[data-hero-current]",
     );
     previous?.removeAttribute("data-hero-current");
     image.setAttribute("data-hero-current", "");
-    stage.append(image);
+    frame.removeAttribute("aria-hidden");
     if (reduced.matches) image.classList.add("is-visible");
     else
       requestAnimationFrame(() =>
         requestAnimationFrame(() => image.classList.add("is-visible")),
       );
-    if (previous)
-      window.setTimeout(() => previous.remove(), reduced.matches ? 0 : 850);
+    const previousFrame = previous?.closest("picture") || previous;
+    if (previousFrame)
+      window.setTimeout(
+        () => previousFrame.remove(),
+        reduced.matches ? 0 : 850,
+      );
     current = index;
     buttons.forEach((button, i) =>
       button.setAttribute("aria-pressed", String(i === current)),

@@ -1,13 +1,17 @@
 ---
 import Photo from './Photo.astro';
 import { heroSlides } from '../data/hero-slides';
+import mobile from '../../public/assets/majestic-sri-lanka/hero-mobile/manifest.json';
+const mobileSrcset = mobile.variants.map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
 ---
-<div class="hero-photograph" data-hero-image aria-live="off"><Photo name="hero-sigiriya" alt={heroSlides[0].alt} eager sizes="100vw" width={1774} height={887} /></div>
-{heroSlides.map(slide => <template data-hero-template={slide.id}><Photo name={slide.id} alt={slide.alt} sizes="100vw" /></template>)}
+<div class="hero-photograph" data-hero-image aria-live="off"><picture><source media="(max-width: 700px)" srcset={mobileSrcset} sizes="100vw" width={mobile.crop.width} height={mobile.crop.height} /><Photo name="hero-sigiriya" alt={heroSlides[0].alt} eager sizes={heroSlides[0].sizes} width={1774} height={887} /></picture></div>
+{heroSlides.map(slide => <template data-hero-template={slide.id}><picture>{slide.id === 'hero-sigiriya' && <source media="(max-width: 700px)" srcset={mobileSrcset} sizes="100vw" width={mobile.crop.width} height={mobile.crop.height} />}<Photo name={slide.id} alt={slide.alt} sizes={slide.sizes} /></picture></template>)}
 <script>import '../scripts/hero-slideshow';</script>
 <style>
   .hero-photograph :global(img) { position: absolute; inset: 0; opacity: 1; }
   .hero-photograph :global(.hero-frame) { opacity: 0; transition: opacity 800ms ease; }
   .hero-photograph :global(.hero-frame.is-visible) { opacity: 1; }
+  @media (max-width: 1100px) { .hero-photograph :global([data-photo="hero-sigiriya"]) { object-position: 80% center; } }
+  @media (max-width: 700px) { .hero-photograph :global([data-photo="hero-sigiriya"]) { object-position: 84% center; } }
   @media (prefers-reduced-motion: reduce) { .hero-photograph :global(.hero-frame) { transition: none; } }
 </style>

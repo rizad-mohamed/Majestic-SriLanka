@@ -3,12 +3,27 @@ import { test, expect } from "@playwright/test";
 test("hero selection supports keyboard, touch and reduced motion", async ({
   page,
 }) => {
+  const wideSigiriyaRequests: string[] = [];
+  page.on("request", (request) => {
+    if (request.url().includes("/photography/hero-sigiriya-"))
+      wideSigiriyaRequests.push(request.url());
+  });
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   const controls = page.locator("[data-hero-controls]");
   await expect(
     controls.getByRole("button", { name: "Play slideshow" }),
   ).toBeVisible();
+  if (page.viewportSize()!.width <= 700) {
+    await expect
+      .poll(() =>
+        page
+          .locator("[data-hero-current]")
+          .evaluate((image: HTMLImageElement) => image.currentSrc),
+      )
+      .toContain("/hero-mobile/hero-sigiriya-");
+    expect(wideSigiriyaRequests).toEqual([]);
+  }
   const coast = controls.getByRole("button", {
     name: "Show southern coast landscape",
   });
@@ -26,15 +41,33 @@ test("hero selection supports keyboard, touch and reduced motion", async ({
   await expect(
     controls.getByRole("button", { name: "Show Sigiriya landscape" }),
   ).toBeFocused();
-  const transition = await page
-    .locator("[data-hero-current]")
-    .evaluate((image) => getComputedStyle(image).transitionDuration);
-  expect(parseFloat(transition)).toBeLessThanOrEqual(0.001);
   for (const button of await controls.getByRole("button").all()) {
     const box = await button.boundingBox();
     expect(box!.width).toBeGreaterThanOrEqual(44);
     expect(box!.height).toBeGreaterThanOrEqual(44);
   }
+  if (page.viewportSize()!.width <= 700) {
+    // Returning to Sigiriya keeps its portrait source and responds to resizing.
+    await expect
+      .poll(() =>
+        page
+          .locator("[data-hero-current]")
+          .evaluate((image: HTMLImageElement) => image.currentSrc),
+      )
+      .toContain("/hero-mobile/hero-sigiriya-");
+    await page.setViewportSize({ width: 900, height: 900 });
+    await expect
+      .poll(() =>
+        page
+          .locator("[data-hero-current]")
+          .evaluate((image: HTMLImageElement) => image.currentSrc),
+      )
+      .toContain("/photography/hero-sigiriya-");
+  }
+  const transition = await page
+    .locator("[data-hero-current]")
+    .evaluate((image) => getComputedStyle(image).transitionDuration);
+  expect(parseFloat(transition)).toBeLessThanOrEqual(0.001);
 });
 
 test("hero advances automatically and pauses after manual selection", async ({
