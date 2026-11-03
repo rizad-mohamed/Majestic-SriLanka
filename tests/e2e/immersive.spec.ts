@@ -120,7 +120,7 @@ test("film is requested only on opening and pauses on dismissal", async ({
   });
   await page.goto("/");
   const film = page.locator("[data-island-film]");
-  await expect(film).not.toHaveAttribute("src");
+  expect(await film.getAttribute("src")).toBeNull();
   await expect(film).toHaveAttribute("preload", "none");
   expect(filmRequests).toEqual([]);
   await page.getByRole("button", { name: "Watch Our Story" }).click();
@@ -148,6 +148,22 @@ test("film is requested only on opening and pauses on dismissal", async ({
       filmRequests.some((url) => url.endsWith("island-film-poster.webp")),
     )
     .toBe(true);
+  const close = page.getByRole("button", { name: "Close story" });
+  await close.focus();
+  await page.keyboard.press("Tab");
+  await expect
+    .poll(() => film.evaluate((video) => video.matches(":focus-within")))
+    .toBe(true);
+  // Preserve the native control tree rather than assuming a platform shortcut.
+  await page.keyboard.press("Tab");
+  expect(
+    await page.evaluate(
+      () => !!document.activeElement?.closest("#story-dialog[open]"),
+    ),
+  ).toBe(true);
+  await page.getByRole("link", { name: "Read Our Story" }).focus();
+  await page.keyboard.press("Tab");
+  await expect(close).toBeFocused();
   await page.keyboard.press("Escape");
   await expect(film).toHaveJSProperty("paused", true);
   await expect(

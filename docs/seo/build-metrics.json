@@ -1,16 +1,16 @@
 {
-  "measuredAt": "2026-11-03T00:30:39.811Z",
+  "measuredAt": "2026-11-03T00:43:13.637Z",
   "directory": "dist",
   "summary": {
     "html": {
       "count": 8,
       "bytes": 382047,
-      "gzipBytes": 73954
+      "gzipBytes": 73952
     },
     "js": {
       "count": 1,
-      "bytes": 10041,
-      "gzipBytes": 3949
+      "bytes": 10269,
+      "gzipBytes": 4020
     },
     "css": {
       "count": 3,
@@ -42,42 +42,42 @@
     {
       "path": "404.html",
       "cssGzipBytes": 13886,
-      "javaScriptGzipBytes": 3949
+      "javaScriptGzipBytes": 4020
     },
     {
       "path": "about-us/index.html",
       "cssGzipBytes": 13886,
-      "javaScriptGzipBytes": 3949
+      "javaScriptGzipBytes": 4020
     },
     {
       "path": "contact-us/index.html",
       "cssGzipBytes": 13886,
-      "javaScriptGzipBytes": 3949
+      "javaScriptGzipBytes": 4020
     },
     {
       "path": "experiences/index.html",
       "cssGzipBytes": 15079,
-      "javaScriptGzipBytes": 4581
+      "javaScriptGzipBytes": 4652
     },
     {
       "path": "index.html",
       "cssGzipBytes": 14370,
-      "javaScriptGzipBytes": 5063
+      "javaScriptGzipBytes": 5134
     },
     {
       "path": "plan-your-trip/index.html",
       "cssGzipBytes": 13886,
-      "javaScriptGzipBytes": 4314
+      "javaScriptGzipBytes": 4385
     },
     {
       "path": "tailor-made/index.html",
       "cssGzipBytes": 13886,
-      "javaScriptGzipBytes": 3949
+      "javaScriptGzipBytes": 4020
     },
     {
       "path": "tours/index.html",
       "cssGzipBytes": 13886,
-      "javaScriptGzipBytes": 3949
+      "javaScriptGzipBytes": 4020
     }
   ],
   "mediaInventories": {
@@ -91,7 +91,7 @@
     {
       "path": "404.html",
       "bytes": 29844,
-      "gzipBytes": 6003
+      "gzipBytes": 6002
     },
     {
       "path": "about-us/index.html",
@@ -126,14 +126,14 @@
     {
       "path": "tours/index.html",
       "bytes": 40814,
-      "gzipBytes": 7587
+      "gzipBytes": 7586
     }
   ],
   "scripts": [
     {
-      "path": "_astro/Layout.astro_astro_type_script_index_0_lang.D4YFT_tg.js",
-      "bytes": 10041,
-      "gzipBytes": 3949
+      "path": "_astro/Layout.astro_astro_type_script_index_0_lang.DT_pu8wI.js",
+      "bytes": 10269,
+      "gzipBytes": 4020
     }
   ],
   "styles": [
