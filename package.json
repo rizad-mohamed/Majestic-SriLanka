@@ -30,7 +30,7 @@
     "assets:video": "node scripts/prepare-hero-video.mjs"
   },
   "dependencies": {
-    "@lucide/astro": "^1.65.0",
+    "@lucide/astro": "^1.66.0",
     "astro": "^7.4.4"
   },
   "devDependencies": {
