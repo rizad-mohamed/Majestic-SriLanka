@@ -1,0 +1,10 @@
+---
+import { experiences } from '../data/content';
+import Icon from './Icon.astro';
+---
+<nav class="journey-nav" aria-label="Your experience journey" data-journey-nav>
+  <p class="journey-label">Your island journey</p>
+  <div class="journey-track" aria-hidden="true"><span class="journey-fill"></span><span class="journey-traveller"><Icon name="compass" size={18} /></span></div>
+  <ol>{experiences.map(item => <li><a href={`#${item.id}`} data-journey-link={item.id}><span class="journey-stop"><Icon name={item.icon} size={19} /></span><span class="journey-link-label">{item.title}</span></a></li>)}</ol>
+</nav>
+<script>import '../scripts/experience-journey';</script>

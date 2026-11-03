@@ -1,0 +1,15 @@
+{
+  "source": "Majestic Sri Lanka - Hero.mp4",
+  "sourceBytes": 14756415,
+  "sourceSha256": "79943ea48aabc68aa3fbe731e466bfc9cd27a0763288ec363f0a66a2c45c6093",
+  "provenance": "User-supplied silent film; full sequence retained, resized and re-encoded for on-demand playback.",
+  "output": "island-film.mp4",
+  "bytes": 2684234,
+  "width": 960,
+  "height": 540,
+  "framesPerSecond": 24,
+  "codec": "H.264",
+  "fastStart": true,
+  "audio": false,
+  "loading": "No source or poster assigned until the visitor opens the film."
+}

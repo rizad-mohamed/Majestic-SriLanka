@@ -1,21 +1,21 @@
 {
-  "measuredAt": "2026-11-02T15:16:01.375Z",
+  "measuredAt": "2026-11-03T00:43:13.637Z",
   "directory": "dist",
   "summary": {
     "html": {
       "count": 8,
-      "bytes": 348238,
-      "gzipBytes": 65268
+      "bytes": 382047,
+      "gzipBytes": 73952
     },
     "js": {
       "count": 1,
-      "bytes": 10711,
-      "gzipBytes": 4198
+      "bytes": 10269,
+      "gzipBytes": 4020
     },
     "css": {
-      "count": 1,
-      "bytes": 56570,
-      "gzipBytes": 12269
+      "count": 3,
+      "bytes": 70921,
+      "gzipBytes": 15563
     },
     "woff2": {
       "count": 14,
@@ -23,70 +23,134 @@
       "gzipBytes": 233574
     },
     "webp": {
-      "count": 85,
-      "bytes": 7026984,
-      "gzipBytes": 7030872
+      "count": 113,
+      "bytes": 8396532,
+      "gzipBytes": 8401394
     },
     "avif": {
       "count": 4,
       "bytes": 345993,
       "gzipBytes": 346073
+    },
+    "mp4": {
+      "count": 1,
+      "bytes": 2684234,
+      "gzipBytes": 2681679
     }
+  },
+  "routes": [
+    {
+      "path": "404.html",
+      "cssGzipBytes": 13886,
+      "javaScriptGzipBytes": 4020
+    },
+    {
+      "path": "about-us/index.html",
+      "cssGzipBytes": 13886,
+      "javaScriptGzipBytes": 4020
+    },
+    {
+      "path": "contact-us/index.html",
+      "cssGzipBytes": 13886,
+      "javaScriptGzipBytes": 4020
+    },
+    {
+      "path": "experiences/index.html",
+      "cssGzipBytes": 15079,
+      "javaScriptGzipBytes": 4652
+    },
+    {
+      "path": "index.html",
+      "cssGzipBytes": 14370,
+      "javaScriptGzipBytes": 5134
+    },
+    {
+      "path": "plan-your-trip/index.html",
+      "cssGzipBytes": 13886,
+      "javaScriptGzipBytes": 4385
+    },
+    {
+      "path": "tailor-made/index.html",
+      "cssGzipBytes": 13886,
+      "javaScriptGzipBytes": 4020
+    },
+    {
+      "path": "tours/index.html",
+      "cssGzipBytes": 13886,
+      "javaScriptGzipBytes": 4020
+    }
+  ],
+  "mediaInventories": {
+    "existingWebPBytes": 7026984,
+    "experienceWebPBytes": 1240206,
+    "filmPosterBytes": 36524,
+    "filmBytes": 2684234,
+    "mobileHeroWebPBytes": 92818
   },
   "documents": [
     {
       "path": "404.html",
-      "bytes": 29822,
-      "gzipBytes": 5882
+      "bytes": 29844,
+      "gzipBytes": 6002
     },
     {
       "path": "about-us/index.html",
-      "bytes": 43314,
-      "gzipBytes": 8423
+      "bytes": 45757,
+      "gzipBytes": 8952
     },
     {
       "path": "contact-us/index.html",
-      "bytes": 42279,
-      "gzipBytes": 8057
+      "bytes": 43489,
+      "gzipBytes": 8394
     },
     {
       "path": "experiences/index.html",
-      "bytes": 45358,
-      "gzipBytes": 8238
+      "bytes": 56546,
+      "gzipBytes": 10458
     },
     {
       "path": "index.html",
-      "bytes": 66356,
-      "gzipBytes": 11238
+      "bytes": 73029,
+      "gzipBytes": 12928
     },
     {
       "path": "plan-your-trip/index.html",
-      "bytes": 40677,
-      "gzipBytes": 8159
+      "bytes": 46508,
+      "gzipBytes": 10076
     },
     {
       "path": "tailor-made/index.html",
-      "bytes": 39966,
-      "gzipBytes": 7866
+      "bytes": 46060,
+      "gzipBytes": 9556
     },
     {
       "path": "tours/index.html",
-      "bytes": 40466,
-      "gzipBytes": 7405
+      "bytes": 40814,
+      "gzipBytes": 7586
     }
   ],
   "scripts": [
     {
-      "path": "_astro/Layout.astro_astro_type_script_index_0_lang.BAiENLdM.js",
-      "bytes": 10711,
-      "gzipBytes": 4198
+      "path": "_astro/Layout.astro_astro_type_script_index_0_lang.DT_pu8wI.js",
+      "bytes": 10269,
+      "gzipBytes": 4020
     }
   ],
   "styles": [
     {
-      "path": "_astro/Layout.DQmXvL4g.css",
-      "bytes": 56570,
-      "gzipBytes": 12269
+      "path": "_astro/experiences.z1AvYlwR.css",
+      "bytes": 3820,
+      "gzipBytes": 1193
+    },
+    {
+      "path": "_astro/index.hy05-r5C.css",
+      "bytes": 1420,
+      "gzipBytes": 484
+    },
+    {
+      "path": "_astro/Layout.DcoTq-PX.css",
+      "bytes": 65681,
+      "gzipBytes": 13886
     }
   ]
 }

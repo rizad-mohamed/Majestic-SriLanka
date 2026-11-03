@@ -64,11 +64,6 @@ for (const route of routes)
       "content",
       "noindex, nofollow",
     );
-    const measurements = await page.evaluate(() => ({
-      viewport: document.documentElement.clientWidth,
-      page: document.documentElement.scrollWidth,
-    }));
-    expect(measurements.page).toBeLessThanOrEqual(measurements.viewport + 1);
     await page.evaluate(async () => {
       for (const image of document.images) image.loading = "eager";
       await Promise.all(
@@ -76,7 +71,13 @@ for (const route of routes)
           image.decode().catch(() => {}),
         ),
       );
+      await document.fonts.ready;
     });
+    const measurements = await page.evaluate(() => ({
+      viewport: document.documentElement.clientWidth,
+      page: document.documentElement.scrollWidth,
+    }));
+    expect(measurements.page).toBeLessThanOrEqual(measurements.viewport + 1);
     for (const img of await page.locator("main img").all()) {
       await expect(img).toHaveJSProperty("complete", true);
       await expect(img).not.toHaveJSProperty("naturalWidth", 0);
@@ -259,9 +260,9 @@ test("hero selectors and featured tour controls respond", async ({ page }) => {
   await page
     .getByRole("button", { name: "Show hill country landscape" })
     .click();
-  await expect(page.locator("[data-hero-image] img")).toHaveAttribute(
-    "src",
-    /hill-country-1600/,
+  await expect(page.locator("[data-hero-current]")).toHaveAttribute(
+    "data-photo",
+    "hill-country",
   );
   await expect(
     page.getByRole("button", { name: "Show hill country landscape" }),
