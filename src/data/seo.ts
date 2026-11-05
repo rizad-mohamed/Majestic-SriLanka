@@ -13,7 +13,7 @@ export const pageSeo: Record<string, PageSeo> = {
     description:
       "Discover Sri Lanka through private tours and tailor-made experiences, thoughtfully planned by locals. Explore culture, wildlife, tea country and the coast.",
     image: "hero-sigiriya",
-    imageAlt: "Sigiriya rising above a misty green landscape",
+    imageAlt: "Sigiriya rock fortress above Sri Lankan forest at sunset",
     type: "WebPage",
     label: "Home",
   },

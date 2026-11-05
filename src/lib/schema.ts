@@ -1,12 +1,18 @@
 import { brand } from "../data/content";
 import type { PageSeo } from "../data/seo";
 import manifest from "../../public/assets/majestic-sri-lanka/manifest.json";
+import homepage from "../../public/assets/majestic-sri-lanka/homepage/manifest.json";
 
-export function socialImage(name: string, siteUrl: string) {
+export function socialImage(name: string, siteUrl: string, scope?: "homepage") {
   const asset = manifest.assets.find(
     (asset) => asset.name === name && "variants" in asset,
   );
-  const variants = asset && "variants" in asset ? asset.variants : [];
+  const variants =
+    scope === "homepage"
+      ? homepage.assets.find((item) => item.name === name)?.variants
+      : asset && "variants" in asset
+        ? asset.variants
+        : [];
   const image = variants?.at(-1);
   if (!image) throw new Error(`Missing social image: ${name}`);
   return {
@@ -25,7 +31,11 @@ export function pageSchema(
   const canonical = new URL(path, siteUrl).href;
   const organization = `${siteUrl}#organization`;
   const website = `${siteUrl}#website`;
-  const image = socialImage(page.image, siteUrl);
+  const image = socialImage(
+    page.image,
+    siteUrl,
+    path === "/" ? "homepage" : undefined,
+  );
   return {
     "@context": "https://schema.org",
     "@graph": [

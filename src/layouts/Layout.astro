@@ -24,7 +24,7 @@ const config = getSiteConfig(import.meta.env);
 const page = pageSeo[Astro.url.pathname];
 const title = siteTitle(page?.title || Astro.props.title || 'Page Not Found');
 const description = page?.description || Astro.props.description;
-const image = socialImage(page?.image || Astro.props.image || 'hero-sigiriya', config.siteUrl);
+const image = socialImage(page?.image || Astro.props.image || 'hero-sigiriya', config.siteUrl, Astro.url.pathname === '/' ? 'homepage' : undefined);
 const canonical = new URL(Astro.url.pathname, config.siteUrl);
 const indexable = config.indexable && !!page;
 const schema = page ? pageSchema(Astro.url.pathname, page, config.siteUrl, title) : undefined;

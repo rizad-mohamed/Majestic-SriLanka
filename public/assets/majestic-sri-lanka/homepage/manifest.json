@@ -1,0 +1,855 @@
+{
+  "collection": "Homepage documentary photography",
+  "verifiedOn": "2026-11-05",
+  "baselineCommit": "e5d432b9028563d0fbcf6f2fd5fdca48e64c084d",
+  "sourceCount": 11,
+  "assets": [
+    {
+      "name": "hero-sigiriya",
+      "alt": "Sigiriya rock fortress above Sri Lankan forest in warm evening light",
+      "sourceId": "sigiriya",
+      "photographer": "Anil Reddy",
+      "sourceUrl": "https://unsplash.com/photos/sunset-illuminates-sigiriya-rock-fortress-r-vUs1jhhLA",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "5c94e01d58d57035e7d9ac25885ea6240f02745b046216acca5440fc70bf3469",
+      "sourceCrop": {
+        "left": 0,
+        "top": 3400,
+        "width": 3500,
+        "height": 1750
+      },
+      "variants": [
+        {
+          "file": "homepage/photography/hero-sigiriya-240.webp",
+          "width": 240,
+          "height": 120,
+          "bytes": 2090
+        },
+        {
+          "file": "homepage/photography/hero-sigiriya-360.webp",
+          "width": 360,
+          "height": 180,
+          "bytes": 4254
+        },
+        {
+          "file": "homepage/photography/hero-sigiriya-480.webp",
+          "width": 480,
+          "height": 240,
+          "bytes": 6512
+        },
+        {
+          "file": "homepage/photography/hero-sigiriya-720.webp",
+          "width": 720,
+          "height": 360,
+          "bytes": 17094
+        },
+        {
+          "file": "homepage/photography/hero-sigiriya-960.webp",
+          "width": 960,
+          "height": 480,
+          "bytes": 28302
+        },
+        {
+          "file": "homepage/photography/hero-sigiriya-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "bytes": 75524
+        }
+      ],
+      "avifVariants": [
+        {
+          "file": "homepage/photography/hero-sigiriya-480.avif",
+          "width": 480,
+          "height": 240,
+          "bytes": 7350
+        },
+        {
+          "file": "homepage/photography/hero-sigiriya-720.avif",
+          "width": 720,
+          "height": 360,
+          "bytes": 14664
+        },
+        {
+          "file": "homepage/photography/hero-sigiriya-960.avif",
+          "width": 960,
+          "height": 480,
+          "bytes": 24542
+        },
+        {
+          "file": "homepage/photography/hero-sigiriya-1600.avif",
+          "width": 1600,
+          "height": 800,
+          "bytes": 63312
+        }
+      ]
+    },
+    {
+      "name": "cultural-triangle",
+      "alt": "Sigiriya rock fortress and forest at sunset",
+      "sourceId": "sigiriya",
+      "photographer": "Anil Reddy",
+      "sourceUrl": "https://unsplash.com/photos/sunset-illuminates-sigiriya-rock-fortress-r-vUs1jhhLA",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "5c94e01d58d57035e7d9ac25885ea6240f02745b046216acca5440fc70bf3469",
+      "sourceCrop": {
+        "left": 0,
+        "top": 3400,
+        "width": 3500,
+        "height": 1750
+      },
+      "variants": [
+        {
+          "file": "homepage/photography/cultural-triangle-240.webp",
+          "width": 240,
+          "height": 144,
+          "bytes": 2290
+        },
+        {
+          "file": "homepage/photography/cultural-triangle-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 4848
+        },
+        {
+          "file": "homepage/photography/cultural-triangle-480.webp",
+          "width": 480,
+          "height": 288,
+          "bytes": 7666
+        },
+        {
+          "file": "homepage/photography/cultural-triangle-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 19578
+        },
+        {
+          "file": "homepage/photography/cultural-triangle-960.webp",
+          "width": 960,
+          "height": 576,
+          "bytes": 33304
+        },
+        {
+          "file": "homepage/photography/cultural-triangle-1600.webp",
+          "width": 1478,
+          "height": 887,
+          "bytes": 83644
+        }
+      ],
+      "avifVariants": []
+    },
+    {
+      "name": "elephant",
+      "alt": "An Asian elephant among dense green foliage in Yala, Sri Lanka",
+      "sourceId": "elephant",
+      "photographer": "Yagyaansh Khaneja",
+      "sourceUrl": "https://www.pexels.com/photo/elephant-in-forest-26847447/",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "53aaf68366d715f4a44fce56f606d9b52035321d2011dde8a0cc05fdb6da618c",
+      "variants": [
+        {
+          "file": "homepage/photography/elephant-240.webp",
+          "width": 240,
+          "height": 300,
+          "bytes": 13362
+        },
+        {
+          "file": "homepage/photography/elephant-360.webp",
+          "width": 360,
+          "height": 450,
+          "bytes": 27016
+        },
+        {
+          "file": "homepage/photography/elephant-480.webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 42798
+        },
+        {
+          "file": "homepage/photography/elephant-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 94938
+        },
+        {
+          "file": "homepage/photography/elephant-960.webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 150700
+        },
+        {
+          "file": "homepage/photography/elephant-1600.webp",
+          "width": 1121,
+          "height": 1401,
+          "bytes": 192018
+        }
+      ],
+      "avifVariants": []
+    },
+    {
+      "name": "wildlife",
+      "alt": "An Asian elephant in the green foliage of Yala",
+      "sourceId": "elephant",
+      "photographer": "Yagyaansh Khaneja",
+      "sourceUrl": "https://www.pexels.com/photo/elephant-in-forest-26847447/",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "53aaf68366d715f4a44fce56f606d9b52035321d2011dde8a0cc05fdb6da618c",
+      "variants": [
+        {
+          "file": "homepage/photography/wildlife-240.webp",
+          "width": 240,
+          "height": 400,
+          "bytes": 16430
+        },
+        {
+          "file": "homepage/photography/wildlife-360.webp",
+          "width": 360,
+          "height": 600,
+          "bytes": 33776
+        },
+        {
+          "file": "homepage/photography/wildlife-480.webp",
+          "width": 480,
+          "height": 800,
+          "bytes": 52522
+        },
+        {
+          "file": "homepage/photography/wildlife-720.webp",
+          "width": 720,
+          "height": 1200,
+          "bytes": 118736
+        },
+        {
+          "file": "homepage/photography/wildlife-960.webp",
+          "width": 841,
+          "height": 1402,
+          "bytes": 151870
+        },
+        {
+          "file": "homepage/photography/wildlife-1600.webp",
+          "width": 841,
+          "height": 1402,
+          "bytes": 151870
+        }
+      ],
+      "avifVariants": []
+    },
+    {
+      "name": "hill-country",
+      "alt": "Green tea-covered hills and trees in the mist near Nuwara Eliya",
+      "sourceId": "tea-landscape",
+      "photographer": "Erik Esly",
+      "sourceUrl": "https://unsplash.com/photos/lush-green-tea-plantation-on-a-misty-hillside-ZWdrM9IBBIE",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "28806eab2eb1134e7f41d3c8b5a2b23e930d2bf059bb9c18638bc147e1b37880",
+      "variants": [
+        {
+          "file": "homepage/photography/hill-country-240.webp",
+          "width": 240,
+          "height": 180,
+          "bytes": 10336
+        },
+        {
+          "file": "homepage/photography/hill-country-360.webp",
+          "width": 360,
+          "height": 270,
+          "bytes": 21916
+        },
+        {
+          "file": "homepage/photography/hill-country-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 37424
+        },
+        {
+          "file": "homepage/photography/hill-country-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 93946
+        },
+        {
+          "file": "homepage/photography/hill-country-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 158514
+        },
+        {
+          "file": "homepage/photography/hill-country-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 323364
+        }
+      ],
+      "avifVariants": [
+        {
+          "file": "homepage/photography/hill-country-480.avif",
+          "width": 480,
+          "height": 360,
+          "bytes": 24418
+        },
+        {
+          "file": "homepage/photography/hill-country-720.avif",
+          "width": 720,
+          "height": 540,
+          "bytes": 52791
+        },
+        {
+          "file": "homepage/photography/hill-country-960.avif",
+          "width": 960,
+          "height": 720,
+          "bytes": 89900
+        },
+        {
+          "file": "homepage/photography/hill-country-1600.avif",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 187424
+        }
+      ]
+    },
+    {
+      "name": "tea-country",
+      "alt": "Tea terraces and trees on a misty Nuwara Eliya hillside",
+      "sourceId": "tea-landscape",
+      "photographer": "Erik Esly",
+      "sourceUrl": "https://unsplash.com/photos/lush-green-tea-plantation-on-a-misty-hillside-ZWdrM9IBBIE",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "28806eab2eb1134e7f41d3c8b5a2b23e930d2bf059bb9c18638bc147e1b37880",
+      "variants": [
+        {
+          "file": "homepage/photography/tea-country-240.webp",
+          "width": 240,
+          "height": 400,
+          "bytes": 24582
+        },
+        {
+          "file": "homepage/photography/tea-country-360.webp",
+          "width": 360,
+          "height": 600,
+          "bytes": 53534
+        },
+        {
+          "file": "homepage/photography/tea-country-480.webp",
+          "width": 480,
+          "height": 800,
+          "bytes": 90944
+        },
+        {
+          "file": "homepage/photography/tea-country-720.webp",
+          "width": 651,
+          "height": 1085,
+          "bytes": 177584
+        },
+        {
+          "file": "homepage/photography/tea-country-960.webp",
+          "width": 651,
+          "height": 1085,
+          "bytes": 177584
+        },
+        {
+          "file": "homepage/photography/tea-country-1600.webp",
+          "width": 651,
+          "height": 1085,
+          "bytes": 177584
+        }
+      ],
+      "avifVariants": []
+    },
+    {
+      "name": "blue-train",
+      "alt": "A blue passenger train crossing Nine Arch Bridge in Ella, Sri Lanka",
+      "sourceId": "blue-train",
+      "photographer": "Domenico Bertazzo",
+      "sourceUrl": "https://www.pexels.com/photo/nine-arch-bridge-in-demodara-sri-lanka-4769075/",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "d25f95362191bb275a99b1afaa00cce2f280e530385399dec64276392bdc837f",
+      "variants": [
+        {
+          "file": "homepage/photography/blue-train-240.webp",
+          "width": 240,
+          "height": 144,
+          "bytes": 5958
+        },
+        {
+          "file": "homepage/photography/blue-train-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 12666
+        },
+        {
+          "file": "homepage/photography/blue-train-480.webp",
+          "width": 480,
+          "height": 288,
+          "bytes": 21304
+        },
+        {
+          "file": "homepage/photography/blue-train-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 54196
+        },
+        {
+          "file": "homepage/photography/blue-train-960.webp",
+          "width": 960,
+          "height": 576,
+          "bytes": 91452
+        },
+        {
+          "file": "homepage/photography/blue-train-1600.webp",
+          "width": 1600,
+          "height": 960,
+          "bytes": 238382
+        }
+      ],
+      "avifVariants": []
+    },
+    {
+      "name": "southern-coast",
+      "alt": "Palm fronds framing the Indian Ocean at sunset in Matara, Sri Lanka",
+      "sourceId": "southern-coast",
+      "photographer": "Sameera Madusanka",
+      "sourceUrl": "https://www.pexels.com/photo/sunset-scenery-from-behind-a-palm-tree-13302116/",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "7a9378367823ffe7e1f2ede639ac34c5088453e93eb83d11113d2a1ab65a454a",
+      "sourceCrop": {
+        "left": 0,
+        "top": 2000,
+        "width": 3759,
+        "height": 2255
+      },
+      "variants": [
+        {
+          "file": "homepage/photography/southern-coast-240.webp",
+          "width": 240,
+          "height": 144,
+          "bytes": 2786
+        },
+        {
+          "file": "homepage/photography/southern-coast-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 5678
+        },
+        {
+          "file": "homepage/photography/southern-coast-480.webp",
+          "width": 480,
+          "height": 288,
+          "bytes": 8674
+        },
+        {
+          "file": "homepage/photography/southern-coast-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 18734
+        },
+        {
+          "file": "homepage/photography/southern-coast-960.webp",
+          "width": 960,
+          "height": 576,
+          "bytes": 28446
+        },
+        {
+          "file": "homepage/photography/southern-coast-1600.webp",
+          "width": 1600,
+          "height": 960,
+          "bytes": 57270
+        }
+      ],
+      "avifVariants": [
+        {
+          "file": "homepage/photography/southern-coast-480.avif",
+          "width": 480,
+          "height": 288,
+          "bytes": 7461
+        },
+        {
+          "file": "homepage/photography/southern-coast-720.avif",
+          "width": 720,
+          "height": 432,
+          "bytes": 13828
+        },
+        {
+          "file": "homepage/photography/southern-coast-960.avif",
+          "width": 960,
+          "height": 576,
+          "bytes": 21241
+        },
+        {
+          "file": "homepage/photography/southern-coast-1600.avif",
+          "width": 1600,
+          "height": 960,
+          "bytes": 39596
+        }
+      ]
+    },
+    {
+      "name": "reservoir-travellers",
+      "alt": "Randenigala Reservoir surrounded by wooded hills in Sri Lanka",
+      "sourceId": "reservoir",
+      "photographer": "Nalaka Thalagala",
+      "sourceUrl": "https://unsplash.com/photos/a-large-body-of-water-surrounded-by-mountains-vGep5cUfrXI",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "62e9cd9c6d3c4c09c018d6617fd310624bd3fdfffa4143d8b535f0727ba8a2d9",
+      "variants": [
+        {
+          "file": "homepage/photography/reservoir-travellers-240.webp",
+          "width": 240,
+          "height": 180,
+          "bytes": 1752
+        },
+        {
+          "file": "homepage/photography/reservoir-travellers-360.webp",
+          "width": 360,
+          "height": 270,
+          "bytes": 3306
+        },
+        {
+          "file": "homepage/photography/reservoir-travellers-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 5324
+        },
+        {
+          "file": "homepage/photography/reservoir-travellers-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 15138
+        },
+        {
+          "file": "homepage/photography/reservoir-travellers-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 27578
+        },
+        {
+          "file": "homepage/photography/reservoir-travellers-1600.webp",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 67594
+        }
+      ],
+      "avifVariants": []
+    },
+    {
+      "name": "culture",
+      "alt": "Ancient brick ruins and stone steps at Polonnaruwa, Sri Lanka",
+      "sourceId": "culture",
+      "photographer": "Alfred Franz",
+      "sourceUrl": "https://www.pexels.com/photo/ancient-ruins-in-polonnaruwa-sri-lanka-33171754/",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "d25d9385f39356577a6c50ca4d3cf2b5adeebf23b1181ea442090b79ffca44f4",
+      "variants": [
+        {
+          "file": "homepage/photography/culture-240.webp",
+          "width": 240,
+          "height": 400,
+          "bytes": 14240
+        },
+        {
+          "file": "homepage/photography/culture-360.webp",
+          "width": 360,
+          "height": 600,
+          "bytes": 29890
+        },
+        {
+          "file": "homepage/photography/culture-480.webp",
+          "width": 480,
+          "height": 800,
+          "bytes": 47660
+        },
+        {
+          "file": "homepage/photography/culture-720.webp",
+          "width": 720,
+          "height": 1200,
+          "bytes": 106386
+        },
+        {
+          "file": "homepage/photography/culture-960.webp",
+          "width": 960,
+          "height": 1600,
+          "bytes": 161318
+        },
+        {
+          "file": "homepage/photography/culture-1600.webp",
+          "width": 971,
+          "height": 1618,
+          "bytes": 165094
+        }
+      ],
+      "avifVariants": []
+    },
+    {
+      "name": "beaches",
+      "alt": "Coconut palms and the rocky shoreline of Mirissa, Sri Lanka",
+      "sourceId": "beaches",
+      "photographer": "Shafky Zubair",
+      "sourceUrl": "https://www.pexels.com/photo/scenic-view-of-mirissa-beach-with-palm-trees-35637889/",
+      "license": "Pexels License",
+      "licenseUrl": "https://www.pexels.com/license/",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "e3c1fe41c0f448b7dc42a9572c7c22a981a50f3acaeda8046a771119cccbe5c7",
+      "variants": [
+        {
+          "file": "homepage/photography/beaches-240.webp",
+          "width": 240,
+          "height": 400,
+          "bytes": 17300
+        },
+        {
+          "file": "homepage/photography/beaches-360.webp",
+          "width": 360,
+          "height": 600,
+          "bytes": 39604
+        },
+        {
+          "file": "homepage/photography/beaches-480.webp",
+          "width": 480,
+          "height": 800,
+          "bytes": 69778
+        },
+        {
+          "file": "homepage/photography/beaches-720.webp",
+          "width": 720,
+          "height": 1200,
+          "bytes": 173958
+        },
+        {
+          "file": "homepage/photography/beaches-960.webp",
+          "width": 960,
+          "height": 1600,
+          "bytes": 300978
+        },
+        {
+          "file": "homepage/photography/beaches-1600.webp",
+          "width": 971,
+          "height": 1618,
+          "bytes": 309634
+        }
+      ],
+      "avifVariants": []
+    },
+    {
+      "name": "sri-lankan-food",
+      "alt": "Sri Lankan vegetable curries and dhal served in Hikkaduwa",
+      "sourceId": "food",
+      "photographer": "Zoshua Colah",
+      "sourceUrl": "https://unsplash.com/photos/a-variety-of-delicious-appetizing-curry-dishes-i0Dd1oxMz6c",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "7189e49ac5a2b6752737a73ff2d133b55783178321ec6eadbfbb3f00120f35bc",
+      "variants": [
+        {
+          "file": "homepage/photography/sri-lankan-food-240.webp",
+          "width": 240,
+          "height": 400,
+          "bytes": 18180
+        },
+        {
+          "file": "homepage/photography/sri-lankan-food-360.webp",
+          "width": 360,
+          "height": 600,
+          "bytes": 33480
+        },
+        {
+          "file": "homepage/photography/sri-lankan-food-480.webp",
+          "width": 480,
+          "height": 800,
+          "bytes": 50558
+        },
+        {
+          "file": "homepage/photography/sri-lankan-food-720.webp",
+          "width": 720,
+          "height": 1200,
+          "bytes": 101340
+        },
+        {
+          "file": "homepage/photography/sri-lankan-food-960.webp",
+          "width": 960,
+          "height": 1600,
+          "bytes": 157182
+        },
+        {
+          "file": "homepage/photography/sri-lankan-food-1600.webp",
+          "width": 971,
+          "height": 1618,
+          "bytes": 159008
+        }
+      ],
+      "avifVariants": []
+    },
+    {
+      "name": "tea-pickers",
+      "alt": "A woman picking tea leaves at Talawakelle, Sri Lanka",
+      "sourceId": "tea-worker",
+      "photographer": "Asantha Abeysooriya",
+      "sourceUrl": "https://unsplash.com/photos/woman-picking-up-green-plants-in-field-during-daytime-beNiTTa8Pp8",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "fa514f43d50b52c737d3a329a6eefc568647be9adcd359ab9a217c0ba0665dd3",
+      "variants": [
+        {
+          "file": "homepage/photography/tea-pickers-240.webp",
+          "width": 240,
+          "height": 120,
+          "bytes": 8792
+        },
+        {
+          "file": "homepage/photography/tea-pickers-360.webp",
+          "width": 360,
+          "height": 180,
+          "bytes": 17562
+        },
+        {
+          "file": "homepage/photography/tea-pickers-480.webp",
+          "width": 480,
+          "height": 240,
+          "bytes": 27176
+        },
+        {
+          "file": "homepage/photography/tea-pickers-720.webp",
+          "width": 720,
+          "height": 360,
+          "bytes": 60606
+        },
+        {
+          "file": "homepage/photography/tea-pickers-960.webp",
+          "width": 960,
+          "height": 480,
+          "bytes": 95112
+        },
+        {
+          "file": "homepage/photography/tea-pickers-1600.webp",
+          "width": 1600,
+          "height": 800,
+          "bytes": 210906
+        }
+      ],
+      "avifVariants": []
+    },
+    {
+      "name": "tropical-cta",
+      "alt": "Turquoise water, coastal rocks and coconut palms at Mirissa Beach, Sri Lanka",
+      "sourceId": "tropical-cta",
+      "photographer": "Zoshua Colah",
+      "sourceUrl": "https://unsplash.com/photos/tropical-beach-with-rocks-palm-trees-and-clear-blue-ocean-v_s2z24cezg",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "attributionRequired": false,
+      "verifiedOn": "2026-11-05",
+      "sourceSha256": "1ca806e3a5620cc937deb7eae6885171d7ce18539fa9d9eb90130d534e4a3d90",
+      "variants": [
+        {
+          "file": "homepage/photography/tropical-cta-240.webp",
+          "width": 240,
+          "height": 80,
+          "bytes": 3080
+        },
+        {
+          "file": "homepage/photography/tropical-cta-360.webp",
+          "width": 360,
+          "height": 120,
+          "bytes": 6120
+        },
+        {
+          "file": "homepage/photography/tropical-cta-480.webp",
+          "width": 480,
+          "height": 160,
+          "bytes": 9832
+        },
+        {
+          "file": "homepage/photography/tropical-cta-720.webp",
+          "width": 720,
+          "height": 240,
+          "bytes": 23710
+        },
+        {
+          "file": "homepage/photography/tropical-cta-960.webp",
+          "width": 960,
+          "height": 320,
+          "bytes": 40386
+        },
+        {
+          "file": "homepage/photography/tropical-cta-1600.webp",
+          "width": 1600,
+          "height": 533,
+          "bytes": 103400
+        }
+      ],
+      "avifVariants": []
+    }
+  ],
+  "mobile": {
+    "crop": {
+      "width": 921,
+      "height": 1750,
+      "top": 0,
+      "left": 2166
+    },
+    "width": 467,
+    "height": 887,
+    "variants": [
+      {
+        "file": "homepage/hero-mobile/hero-sigiriya-360.webp",
+        "width": 360,
+        "height": 684,
+        "bytes": 20568,
+        "format": "webp"
+      },
+      {
+        "file": "homepage/hero-mobile/hero-sigiriya-360.avif",
+        "width": 360,
+        "height": 684,
+        "bytes": 16868,
+        "format": "avif"
+      },
+      {
+        "file": "homepage/hero-mobile/hero-sigiriya-467.webp",
+        "width": 467,
+        "height": 887,
+        "bytes": 36448,
+        "format": "webp"
+      },
+      {
+        "file": "homepage/hero-mobile/hero-sigiriya-467.avif",
+        "width": 467,
+        "height": 887,
+        "bytes": 28375,
+        "format": "avif"
+      }
+    ]
+  }
+}
