@@ -41,7 +41,7 @@ if (hero) {
     clearWatchdog();
     video.pause();
     status.textContent =
-      "The film could not start. Showing the Sri Lankan landscapes instead.";
+      "The film is unavailable. Showing a landscape instead.";
     void select(1);
   }
   function watchVideo() {
@@ -106,7 +106,7 @@ if (hero) {
       failedVideo = false;
       previous?.closest("picture")?.remove();
       current = 0;
-      status.textContent = "Sri Lanka film. Use Play hero playback to watch.";
+      status.textContent = "Sri Lanka film.";
     } else {
       const template = hero!.querySelector<HTMLTemplateElement>(
         `[data-hero-template="${buttons[index].dataset.slide}"]`,

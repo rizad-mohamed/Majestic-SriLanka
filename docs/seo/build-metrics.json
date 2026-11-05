@@ -1,11 +1,11 @@
 {
-  "measuredAt": "2026-11-05T14:11:57.944Z",
+  "measuredAt": "2026-11-05T14:15:19.646Z",
   "directory": "dist",
   "summary": {
     "html": {
       "count": 9,
-      "bytes": 500423,
-      "gzipBytes": 92224
+      "bytes": 500442,
+      "gzipBytes": 92216
     },
     "js": {
       "count": 1,
@@ -67,7 +67,7 @@
     {
       "path": "index.html",
       "cssGzipBytes": 14906,
-      "javaScriptGzipBytes": 5998
+      "javaScriptGzipBytes": 5991
     },
     {
       "path": "plan-your-trip/index.html",
@@ -122,8 +122,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 77192,
-      "gzipBytes": 14082
+      "bytes": 77211,
+      "gzipBytes": 14074
     },
     {
       "path": "plan-your-trip/index.html",
