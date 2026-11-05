@@ -13,7 +13,6 @@ const analyticsAvailable = /^G-[A-Z0-9]+$/.test(import.meta.env.PUBLIC_GA4_MEASU
   <p>Optional Google Analytics helps us understand page visits and interactions. Advertising features stay disabled. You can withdraw your choice here at any time.</p>
   {!analyticsAvailable && <p class="small">Analytics is not currently configured, so accepting will not load tracking.</p>}
   <div class="cookie-actions"><button type="button" data-cookie-save>Save preferences</button><button type="button" data-cookie-choice="reject">Reject optional</button></div>
-  <p class="small" data-cookie-status role="status"></p>
 </dialog>
 <style>
   .cookie-banner { position:fixed; z-index:90; bottom:20px; left:24px; right:90px; max-width:1180px; margin:auto; padding:24px; background:var(--ivory); color:var(--green); box-shadow:0 8px 32px #073e3326; border-radius:16px; display:flex; align-items:center; gap:28px; }
