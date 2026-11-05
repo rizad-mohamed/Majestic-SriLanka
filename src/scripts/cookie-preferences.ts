@@ -8,9 +8,9 @@ let allowed = false;
 
 function clearAnalyticsCookies() {
   const domains = location.hostname.split(".");
-  for (const entry of document.cookie.split(";")) {
-    const name = entry.trim().split("=")[0];
-    if (!/^_ga(?:_|$)|^_gid$|^_gat(?:_|$)/.test(name)) continue;
+  for (const entry of document.cookie.split("; ")) {
+    const name = entry.split("=")[0];
+    if (!/^_(ga|gid|gat)(_|$)/.test(name)) continue;
     const expired = `${name}=; Max-Age=0; Path=/; SameSite=Lax`;
     document.cookie = expired;
     for (let i = 0; i < domains.length - 1; i++) {
@@ -34,15 +34,7 @@ function save(value: boolean) {
     JSON.stringify({ version: 1, analytics: value }),
   );
   document.cookie = `${preferenceName}=${record}; Max-Age=15552000; Path=/; SameSite=Lax${location.protocol === "https:" ? "; Secure" : ""}`;
-  const stored = document.cookie
-    .split("; ")
-    .some((item) => item === `${preferenceName}=${record}`);
   if (banner) banner.hidden = true;
-  const status = document.querySelector<HTMLElement>("[data-cookie-status]");
-  if (status)
-    status.textContent = stored
-      ? "Preferences saved."
-      : "Preferences apply for this page. Your browser prevented saving them for future visits.";
   settings?.close();
 }
 
@@ -52,9 +44,7 @@ try {
     .split("; ")
     .find((item) => item.startsWith(`${preferenceName}=`));
   if (raw) {
-    const value = JSON.parse(
-      decodeURIComponent(raw.slice(preferenceName.length + 1)),
-    );
+    const value = JSON.parse(decodeURIComponent(raw.split("=")[1]));
     if (value.version === 1 && typeof value.analytics === "boolean") {
       apply(value.analytics);
       remembered = true;
