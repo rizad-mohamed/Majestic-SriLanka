@@ -11,6 +11,9 @@ export default defineConfig({
   site: siteUrl,
   output: "static",
   trailingSlash: "always",
+  redirects: {
+    "/tours": { destination: "/itineraries/", status: 301 },
+  },
   build: { inlineStylesheets: "never" },
   server: { port: 4321 },
 });

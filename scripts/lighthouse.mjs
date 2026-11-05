@@ -18,7 +18,7 @@ let routes = process.argv.includes("--home-only")
   ? ["/"]
   : [
       "/",
-      "/tours/",
+      "/itineraries/",
       "/tailor-made/",
       "/experiences/",
       "/about-us/",

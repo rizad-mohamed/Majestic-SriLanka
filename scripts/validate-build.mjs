@@ -5,7 +5,7 @@ import sharp from "sharp";
 const root = resolve(process.env.SEO_DIST_DIR || "dist");
 const routes = [
   "/",
-  "/tours/",
+  "/itineraries/",
   "/gallery/",
   "/tailor-made/",
   "/experiences/",
@@ -117,7 +117,7 @@ for (const [route, html] of documents) {
       ? "AboutPage"
       : route === "/contact-us/"
         ? "ContactPage"
-        : ["/tours/", "/experiences/", "/gallery/"].includes(route)
+        : ["/itineraries/", "/experiences/", "/gallery/"].includes(route)
           ? "CollectionPage"
           : "WebPage";
   const page = graph.find((node) => node["@type"] === pageType);
@@ -177,12 +177,22 @@ const rules = redirects
   .trim()
   .split(/\r?\n/)
   .map((line) => line.trim().split(/\s+/));
-assert.deepEqual(
-  rules,
-  routes
+assert.deepEqual(rules, [
+  ["/tours", "/itineraries/", "301"],
+  ["/tours/", "/itineraries/", "301"],
+  ...routes
     .filter((route) => route !== "/")
     .map((route) => [route.slice(0, -1), route, "301"]),
-);
+]);
+const legacy = await readFile(join(root, "tours/index.html"), "utf8");
+assert.match(legacy, /name="robots" content="noindex"/);
+assert.match(legacy, /http-equiv="refresh" content="0;url=\/itineraries\/"/);
+assert.ok(!sitemap.includes("/tours/"));
+for (const html of documents.values())
+  assert.ok(
+    !/href="[^"#]*\/tours(?:[/#?]|$)/.test(html),
+    "Legacy internal link remains",
+  );
 const manifest = JSON.parse(
   await readFile("public/assets/majestic-sri-lanka/manifest.json", "utf8"),
 );

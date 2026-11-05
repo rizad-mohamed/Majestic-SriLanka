@@ -26,7 +26,7 @@ export const pageSeo: Record<string, PageSeo> = {
     type: "WebPage",
     label: "Home",
   },
-  "/tours/": {
+  "/itineraries/": {
     title: "Sri Lanka Private Itineraries",
     description:
       "Explore suggested private Sri Lanka itineraries through the Cultural Triangle, tea country and the southern coast. Find a starting point for your personal journey.",
