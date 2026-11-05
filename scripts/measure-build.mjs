@@ -63,11 +63,23 @@ for (const document of files.filter((file) => file.path.endsWith(".html"))) {
       (inlineJavaScript ? gzipSync(inlineJavaScript).length : 0),
   });
 }
+const isHomepageFile = (file) => file.path.includes("/homepage/");
+const collectionBytes = (extension, homepage) =>
+  files
+    .filter(
+      (file) =>
+        file.path.endsWith(extension) && isHomepageFile(file) === homepage,
+    )
+    .reduce((sum, file) => sum + file.bytes, 0);
 const mediaInventories = {
+  existingAvifBytes: collectionBytes(".avif", false),
+  homepageWebPBytes: collectionBytes(".webp", true),
+  homepageAvifBytes: collectionBytes(".avif", true),
   existingWebPBytes: files
     .filter(
       (file) =>
         file.path.endsWith(".webp") &&
+        !isHomepageFile(file) &&
         !/\/(experiences|video|hero-mobile|guests)\//.test(file.path),
     )
     .reduce((sum, file) => sum + file.bytes, 0),
@@ -91,7 +103,12 @@ const mediaInventories = {
     .reduce((sum, file) => sum + file.bytes, 0),
   filmBytes: summary.mp4.bytes,
   mobileHeroWebPBytes: files
-    .filter((file) => /\/hero-mobile\/.*\.webp$/.test(file.path))
+    .filter(
+      (file) =>
+        file.path.includes("/hero-mobile/") &&
+        file.path.endsWith(".webp") &&
+        !isHomepageFile(file),
+    )
     .reduce((sum, file) => sum + file.bytes, 0),
 };
 // Transfer estimates use gzip only as a consistent comparison, not measured host compression.
@@ -108,7 +125,9 @@ const result = {
 await mkdir(join(output, ".."), { recursive: true });
 await writeFile(output, JSON.stringify(result, null, 2) + "\n");
 if (
-  summary.avif.bytes > 400000 ||
+  mediaInventories.existingAvifBytes > 400000 ||
+  mediaInventories.homepageWebPBytes > 6200000 ||
+  mediaInventories.homepageAvifBytes > 600000 ||
   summary.woff2.bytes > 240000 ||
   mediaInventories.existingWebPBytes > 7400000 ||
   mediaInventories.guestWebPBytes > 14000000 ||
@@ -126,6 +145,6 @@ if (
   result.documents.some((file) => file.gzipBytes > 15000)
 )
   throw new Error(
-    "Build budget exceeded: each route JS (including inline code) 6KB gzip, CSS 16KB gzip, each stylesheet 14KB gzip, HTML 15KB gzip; fonts 240KB, existing WebP 7.4MB, guest WebP 14MB full / 10MB cards / 400KB per photo, documentary WebP 1.3MB, film poster 50KB, film 3MB, mobile hero WebP 100KB. Review measured changes.",
+    "Build budget exceeded: each route JS (including inline code) 6KB gzip, CSS 16KB gzip, each stylesheet 14KB gzip, HTML 15KB gzip; fonts 240KB, existing WebP 7.4MB, guest WebP 14MB full / 10MB cards / 400KB per photo, documentary WebP 1.3MB, film poster 50KB, film 3MB, mobile hero WebP 100KB. Homepage responsive collection: WebP 6.2MB and AVIF 600KB; original AVIF 400KB. Review measured changes.",
   );
 console.log(JSON.stringify(summary));

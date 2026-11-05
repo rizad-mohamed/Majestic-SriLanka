@@ -1,11 +1,14 @@
 ---
 import Photo from './Photo.astro';
 import { heroSlides } from '../data/hero-slides';
-import mobile from '../../public/assets/majestic-sri-lanka/hero-mobile/manifest.json';
-const mobileSrcset = mobile.variants.map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
+import homepage from '../../public/assets/majestic-sri-lanka/homepage/manifest.json';
+const mobile = homepage.mobile;
+const mobileSrcset = mobile.variants.filter(variant => variant.format === 'webp').map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
+const mobileAvifSrcset = mobile.variants.filter(variant => variant.format === 'avif').map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
+const avifSrcset = (name: string) => homepage.assets.find(asset => asset.name === name)!.avifVariants.map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
 ---
 <div class="hero-photograph" data-hero-image aria-live="off"><video data-hero-video data-hero-current data-src="/assets/majestic-sri-lanka/video/island-film.mp4" poster="/assets/majestic-sri-lanka/video/island-film-poster.webp" muted playsinline preload="none" width="960" height="540" aria-hidden="true"></video></div>
-{heroSlides.map(slide => <template data-hero-template={slide.id}><picture>{slide.id === 'hero-sigiriya' && <source media="(max-width: 700px)" srcset={mobileSrcset} sizes="100vw" width={mobile.crop.width} height={mobile.crop.height} />}<Photo name={slide.id} alt={slide.alt} sizes={slide.sizes} /></picture></template>)}
+{heroSlides.map(slide => <template data-hero-template={slide.id}><picture>{slide.id === 'hero-sigiriya' && <><source type="image/avif" media="(max-width: 700px)" srcset={mobileAvifSrcset} sizes="100vw" width={mobile.width} height={mobile.height} /><source type="image/webp" media="(max-width: 700px)" srcset={mobileSrcset} sizes="100vw" width={mobile.width} height={mobile.height} /></>}<source type="image/avif" srcset={avifSrcset(slide.id)} sizes={slide.sizes} /><Photo name={slide.id} alt={slide.alt} sizes={slide.sizes} /></picture></template>)}
 <script>import '../scripts/hero-slideshow';</script>
 <style>
   .hero-photograph :global(img), .hero-photograph video { position: absolute; inset: 0; opacity: 1; }
