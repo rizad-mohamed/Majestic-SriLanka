@@ -1,20 +1,16 @@
 ---
-import Photo from './Photo.astro';
+import HeroStill from './HeroStill.astro';
 import { heroSlides } from '../data/hero-slides';
-import homepage from '../../public/assets/majestic-sri-lanka/homepage/manifest.json';
-const mobile = homepage.mobile;
-const mobileSrcset = mobile.variants.filter(variant => variant.format === 'webp').map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
-const mobileAvifSrcset = mobile.variants.filter(variant => variant.format === 'avif').map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
-const avifSrcset = (name: string) => homepage.assets.find(asset => asset.name === name)!.avifVariants.map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
 ---
-<div class="hero-photograph" data-hero-image aria-live="off"><video data-hero-video data-hero-current data-src="/assets/majestic-sri-lanka/video/island-film.mp4" poster="/assets/majestic-sri-lanka/video/island-film-poster.webp" muted playsinline preload="none" width="960" height="540" aria-hidden="true"></video></div>
-{heroSlides.map(slide => <template data-hero-template={slide.id}><picture>{slide.id === 'hero-sigiriya' && <><source type="image/avif" media="(max-width: 700px)" srcset={mobileAvifSrcset} sizes="100vw" width={mobile.width} height={mobile.height} /><source type="image/webp" media="(max-width: 700px)" srcset={mobileSrcset} sizes="100vw" width={mobile.width} height={mobile.height} /></>}<source type="image/avif" srcset={avifSrcset(slide.id)} sizes={slide.sizes} /><Photo name={slide.id} alt={slide.alt} sizes={slide.sizes} /></picture></template>)}
+<div class="hero-photograph" data-hero-image aria-live="off"><HeroStill name={heroSlides[0].id} active eager /><video data-hero-video data-src="/assets/majestic-sri-lanka/video/island-film.mp4" poster="/assets/majestic-sri-lanka/video/island-film-poster.webp" muted playsinline preload="none" width="960" height="540" aria-hidden="true"></video></div>
+{heroSlides.map(slide => <template data-hero-template={slide.id}><HeroStill name={slide.id} /></template>)}
 <script>import '../scripts/hero-slideshow';</script>
 <style>
   .hero-photograph :global(img), .hero-photograph video { position: absolute; inset: 0; opacity: 1; }
-  .hero-photograph video { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: opacity 800ms ease; }
-  .hero-photograph video.is-hidden { opacity: 0; }
-  .hero-photograph :global(.hero-frame) { opacity: 0; transition: opacity 800ms ease; }
+  .hero-photograph video { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: opacity 650ms ease; }
+  .hero-photograph video { opacity: 0; }
+  .hero-photograph video.is-visible { opacity: 1; }
+  .hero-photograph :global(.hero-frame) { opacity: 0; transition: opacity 650ms ease; }
   .hero-photograph :global(.hero-frame.is-visible) { opacity: 1; }
   @media (max-width: 1100px) { .hero-photograph :global([data-photo="hero-sigiriya"]) { object-position: 80% center; } }
   @media (max-width: 700px) { .hero-photograph :global([data-photo="hero-sigiriya"]) { object-position: 84% center; } }

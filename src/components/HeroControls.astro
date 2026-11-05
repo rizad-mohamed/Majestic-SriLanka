@@ -2,8 +2,8 @@
 import { heroSlides } from '../data/hero-slides';
 ---
 <div class="hero-playback" data-hero-controls hidden>
-  <div class="hero-slides" aria-label="Choose a hero slide"><button type="button" data-slide="film" aria-label="Show Sri Lanka film" aria-pressed="true">01</button>{heroSlides.map((slide, index) => <button type="button" data-slide={slide.id} aria-label={`Show ${slide.label} landscape`} aria-pressed="false">{String(index + 2).padStart(2, '0')}</button>)}</div>
-  <button type="button" class="slideshow-toggle" data-slideshow-toggle>Play hero playback</button>
+  <div class="hero-slides" aria-label="Choose a hero slide">{heroSlides.map((slide, index) => <button type="button" data-slide={slide.id} aria-label={`Show ${slide.label} landscape`} aria-pressed={index === 0 ? 'true' : 'false'}>{String(index + 1).padStart(2, '0')}</button>)}<button type="button" data-slide="film" aria-label="Show Sri Lanka film" aria-pressed="false">04</button></div>
+  <button type="button" class="slideshow-toggle" data-slideshow-toggle>Pause hero playback</button>
   <p class="sr-only" data-hero-status role="status"></p>
 </div>
 <style>
