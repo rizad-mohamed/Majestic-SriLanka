@@ -5,6 +5,7 @@ import {
   createEmailDraft,
 } from "../lib/planner.mjs";
 import "./analytics";
+import "./cookie-preferences";
 
 let lastDialogTrigger: HTMLElement | null = null;
 document.querySelectorAll<HTMLElement>("[data-dialog]").forEach((trigger) => {

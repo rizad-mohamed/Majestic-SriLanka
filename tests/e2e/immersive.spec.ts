@@ -1,5 +1,17 @@
 import { test, expect } from "@playwright/test";
 
+test.beforeEach(async ({ context, baseURL }) => {
+  await context.addCookies([
+    {
+      name: "majestic_consent",
+      value: encodeURIComponent(
+        JSON.stringify({ version: 1, analytics: false }),
+      ),
+      url: baseURL!,
+    },
+  ]);
+});
+
 test("hero selection supports keyboard, touch and reduced motion", async ({
   page,
 }) => {
