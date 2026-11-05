@@ -1,8 +1,10 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+
 const routes = [
   "/",
   "/tours/",
+  "/gallery/",
   "/tailor-made/",
   "/experiences/",
   "/about-us/",
@@ -13,6 +15,7 @@ const routes = [
 const routeHeadings: Record<string, RegExp> = {
   "/": /Extraordinary\s*Journeys,\s*Real Connections/,
   "/tours/": /Journeys to\s*Remember/,
+  "/gallery/": /Their journeys.\s*Real memories./,
   "/tailor-made/": /Your Sri Lanka.\s*Your Story/,
   "/experiences/": /Moments That\s*Stay With You/,
   "/about-us/": /Local People.\s*Meaningful Journeys/,
@@ -248,7 +251,9 @@ test("tour filters and itinerary preview lead to the correct planner choice", as
   await expect(page.locator("[data-filter-status]")).toHaveText(
     "1 journey to explore",
   );
-  await page.getByRole("button", { name: "View Tour", exact: true }).click();
+  await page
+    .getByRole("button", { name: "View Itinerary", exact: true })
+    .click();
   const dialog = page.getByRole("dialog", { name: "Southern Coast Escape" });
   await expect(dialog).toBeVisible();
   await dialog.getByRole("link", { name: "Make This Journey Yours" }).click();
@@ -354,7 +359,9 @@ test("navigation retains essential content without JavaScript", async ({
   const page = await context.newPage();
   await page.goto("/");
   await expect(page.locator("h1")).toContainText("Extraordinary");
-  await page.getByRole("link", { name: "Explore Tours", exact: true }).click();
+  await page
+    .getByRole("link", { name: "Explore Itineraries", exact: true })
+    .click();
   await expect(page.locator("h1")).toContainText("Journeys to");
   await context.close();
 });
@@ -401,7 +408,7 @@ test("experience links retain verified context without restoring visible interes
   await expect(page.getByRole("checkbox")).toHaveCount(1);
 });
 
-test("all seven pages reflow at 320px", async ({ page }) => {
+test("all pages reflow at 320px", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 800 });
   for (const route of routes) {
     await page.goto(route);

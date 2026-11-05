@@ -4,6 +4,7 @@ const origin = "https://seo-fixture.majesticsrilanka.com";
 const routes = [
   "/",
   "/tours/",
+  "/gallery/",
   "/tailor-made/",
   "/experiences/",
   "/about-us/",
@@ -38,7 +39,7 @@ test("production sitemap, crawl policy, redirects and true 404", async ({
 }) => {
   const sitemap = await request.get("/sitemap.xml");
   expect(sitemap.status()).toBe(200);
-  expect((await sitemap.text()).match(/<loc>/g)).toHaveLength(7);
+  expect((await sitemap.text()).match(/<loc>/g)).toHaveLength(routes.length);
   expect(await (await request.get("/robots.txt")).text()).toContain(
     `Sitemap: ${origin}/sitemap.xml`,
   );
