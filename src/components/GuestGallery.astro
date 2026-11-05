@@ -1,5 +1,5 @@
 ---
-import { guestPhotos as photos } from "../data/guest-photos";
+import { guestPhotos as photos, guestPhotoVersion } from "../data/guest-photos";
 
 ---
 <section class="guest-gallery" aria-labelledby="guest-gallery-title" data-guest-gallery>
@@ -14,7 +14,7 @@ import { guestPhotos as photos } from "../data/guest-photos";
   <div class="guest-gallery-window" tabindex="0" role="region" aria-label="Guest photo gallery. Scroll to browse photos.">
     <div class="guest-gallery-track">
       <div class="guest-gallery-group">
-        {photos.map(([id, alt]) => <figure class="guest-gallery-photo"><img src={`/assets/majestic-sri-lanka/guests/img_${id}.webp`} alt={alt} width="900" height="1100" loading="lazy" decoding="async" /></figure>)}
+        {photos.map(([id, alt]) => <figure class="guest-gallery-photo"><img src={`/assets/majestic-sri-lanka/guests/cards/img_${id}.webp?v=${guestPhotoVersion}`} alt={alt} width="620" height="820" loading="lazy" decoding="async" /></figure>)}
       </div>
     </div>
   </div>
@@ -42,14 +42,12 @@ import { guestPhotos as photos } from "../data/guest-photos";
   .guest-gallery-group { padding-left:20px; }
   .guest-gallery-track { gap:0; }
   .guest-gallery-photo { margin:0; width:310px; height:410px; flex-shrink:0; border-radius:24px; overflow:hidden; background:var(--ivory); }
-  .guest-gallery-photo:nth-child(3n + 2) { width:390px; }
-  .guest-gallery-photo img { width:100%; height:100%; object-fit:cover; }
+  .guest-gallery-photo img { width:100%; height:100%; object-fit:cover; object-position:right top; }
   @media(max-width:1000px) { .guest-gallery-heading { flex-wrap:wrap; } }
   @media(max-width:700px) {
     .guest-gallery { padding:16px 0 64px; }
     .guest-gallery-heading { align-items:start; flex-direction:column; margin-bottom:24px; }
-    .guest-gallery-photo { width:250px; height:340px; border-radius:20px; }
-    .guest-gallery-photo:nth-child(3n + 2) { width:290px; }
+    .guest-gallery-photo { width:250px; height:auto; aspect-ratio:31 / 41; border-radius:20px; }
     .guest-gallery-group { gap:14px; padding-left:14px; }
   }
 </style>

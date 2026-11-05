@@ -1,0 +1,31 @@
+import { chromium } from '@playwright/test';
+import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import assert from 'node:assert/strict';
+const manifest=JSON.parse(await readFile('docs/gallery/watermark-manifest.json','utf8'));
+const browser=await chromium.launch({channel:'msedge'});
+const context=await browser.newContext();
+await context.addCookies([{name:'majestic_consent',value:encodeURIComponent(JSON.stringify({version:1,analytics:false})),url:'http://127.0.0.1:4327'}]);
+const page=await context.newPage();const errors=[];page.on('pageerror',error=>errors.push(error.message));
+for(const width of [1440,768,390]){
+ await page.setViewportSize({width,height:900});await page.goto('http://127.0.0.1:4327/gallery/');
+ assert.equal(await page.locator('[data-gallery-photo]').count(),69);
+ const first=page.locator('[data-gallery-photo]').first();const url=await first.getAttribute('href');assert.match(url,/\?v=logo-v2$/);
+ const response=await page.request.get(new URL(url, page.url()).href);assert.equal(createHash('sha256').update(await response.body()).digest('hex'),manifest.photos[0].full.sha256);
+ await page.locator('.photo-wall img').evaluateAll(async images=>{await Promise.all(images.slice(0,4).map(i=>i.decode()));});
+ await page.screenshot({path:`docs/gallery/watermarked-page-${width}.png`});
+ await first.click();await page.locator('.lightbox-image').evaluate(i=>i.decode());
+ await page.screenshot({path:`docs/gallery/watermarked-viewer-${width}.png`});
+ await page.getByRole('button',{name:'Next photo',exact:true}).click();assert.equal(await page.locator('[data-photo-count]').textContent(),'2 / 69');await page.keyboard.press('Escape');
+ await page.goto('http://127.0.0.1:4327/tours/');await page.locator('[data-guest-gallery]').scrollIntoViewIfNeeded();await page.getByRole('button',{name:'Pause gallery',exact:true}).click();
+ const images=page.locator('.guest-gallery-group').first().locator('img');await images.evaluateAll(async images=>{await Promise.all(images.slice(0,5).map(i=>i.decode()));});
+ assert.match(await images.first().getAttribute('src'),/\/cards\/img_3766.webp\?v=logo-v2$/);
+ const sizes = await page.locator(".guest-gallery-group").first().locator("figure").evaluateAll(cards => cards.map(card => { const r=card.getBoundingClientRect(); return [r.width,r.height]; }));
+ assert.equal(new Set(sizes.map(size => size.join("x"))).size, 1, "All moving cards have equal dimensions");
+ assert.equal(sizes[0][0], width <= 700 ? 250 : 310);
+ console.log("uniform cards", width, sizes[0]);
+ await page.screenshot({path:`docs/gallery/watermarked-strip-${width}.png`});
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ console.log(width,'passed: 69 photos, marked downloads, viewer, cropped card sources, no overflow');
+}
+assert.deepEqual(errors,[]);await browser.close();

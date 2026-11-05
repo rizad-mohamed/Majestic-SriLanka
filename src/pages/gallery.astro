@@ -2,11 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
 import Icon from '../components/Icon.astro';
-import { guestPhotos } from '../data/guest-photos';
+import { guestPhotos, guestPhotoVersion } from '../data/guest-photos';
 import sharp from 'sharp';
+import { readFile } from 'node:fs/promises';
+// Do not retain open photo file handles while the asset pipeline replaces them.
+sharp.cache({ files: 0 });
 const photos = await Promise.all(guestPhotos.map(async ([id, alt]) => {
-  const src = `/assets/majestic-sri-lanka/guests/img_${id}.webp`;
-  const { width, height } = await sharp(`public${src}`).metadata();
+  const file = `/assets/majestic-sri-lanka/guests/img_${id}.webp`;
+  const src = `${file}?v=${guestPhotoVersion}`;
+  const { width, height } = await sharp(await readFile(`public${file}`)).metadata();
   return { src, alt, width, height };
 }));
 ---
