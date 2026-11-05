@@ -28,14 +28,7 @@ if (hero) {
     watchdog = undefined;
   }
   function videoFallback() {
-    if (
-      current !== 0 ||
-      !playing ||
-      failedVideo ||
-      !visible ||
-      (hovering && current !== 0) ||
-      document.hidden
-    )
+    if (current !== 0 || !playing || failedVideo || !visible || document.hidden)
       return;
     failedVideo = true;
     clearWatchdog();

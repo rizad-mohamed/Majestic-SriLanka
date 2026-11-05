@@ -1,3 +1,5 @@
+export {};
+
 const navigation = document.querySelector<HTMLElement>("[data-journey-nav]");
 if (navigation) {
   const links = [
