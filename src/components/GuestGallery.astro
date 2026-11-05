@@ -39,7 +39,8 @@ import { guestPhotos as photos, guestPhotoVersion } from "../data/guest-photos";
   .guest-gallery-window:focus-visible { -webkit-mask-image:none; mask-image:none; }
   .guest-gallery-window::-webkit-scrollbar { display:none; }
   .guest-gallery-track, .guest-gallery-group { display:flex; gap:20px; width:max-content; }
-  .guest-gallery-group { padding-left:20px; }
+  .guest-gallery-group { padding-left:20px; flex-shrink:0; }
+  .guest-gallery-track[data-animated] { will-change:transform; }
   .guest-gallery-track { gap:0; }
   .guest-gallery-photo { margin:0; width:310px; height:410px; flex-shrink:0; border-radius:24px; overflow:hidden; background:var(--ivory); }
   .guest-gallery-photo img { width:100%; height:100%; object-fit:cover; object-position:right top; }
@@ -52,43 +53,4 @@ import { guestPhotos as photos, guestPhotoVersion } from "../data/guest-photos";
   }
 </style>
 
-<script>
-  document.querySelectorAll<HTMLElement>('[data-guest-gallery]').forEach(gallery => {
-    const viewport = gallery.querySelector<HTMLElement>('.guest-gallery-window')!;
-    const track = gallery.querySelector<HTMLElement>('.guest-gallery-track')!;
-    const group = gallery.querySelector<HTMLElement>('.guest-gallery-group')!;
-    const button = gallery.querySelector<HTMLButtonElement>('.gallery-pause')!;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const copy = group.cloneNode(true) as HTMLElement;
-    copy.setAttribute('aria-hidden', 'true');
-    copy.querySelectorAll('img').forEach(img => img.alt = '');
-    track.append(copy);
-    button.hidden = false;
-    let paused = false, hovered = false, focused = false, touching = false, visible = false;
-    let previous = 0, position = viewport.scrollLeft;
-    button.addEventListener('click', () => {
-      paused = !paused;
-      button.setAttribute('aria-pressed', String(paused));
-      button.textContent = paused ? 'Play gallery' : 'Pause gallery';
-    });
-    viewport.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') hovered = true; });
-    viewport.addEventListener('pointerleave', () => { hovered = false; });
-    viewport.addEventListener('focusin', () => { focused = true; });
-    viewport.addEventListener('focusout', () => { focused = false; });
-    viewport.addEventListener('touchstart', () => { touching = true; }, { passive:true });
-    viewport.addEventListener('touchend', () => { touching = false; }, { passive:true });
-    viewport.addEventListener('touchcancel', () => { touching = false; }, { passive:true });
-    viewport.addEventListener('scroll', () => { if (hovered || focused || touching || paused || reduced.matches) position = viewport.scrollLeft; }, { passive:true });
-    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }).observe(gallery);
-    function frame(now: number) {
-      const elapsed = previous ? Math.min(now - previous, 50) : 0;
-      previous = now;
-      if (visible && !document.hidden && !reduced.matches && !paused && !hovered && !focused && !touching) {
-        position = (position + elapsed * 0.035) % group.offsetWidth;
-        viewport.scrollLeft = position;
-      } else position = viewport.scrollLeft;
-      requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  });
-</script>
+<script>import '../scripts/guest-gallery';</script>
