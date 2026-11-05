@@ -15,6 +15,8 @@ npm run dev
 
 The local address is `http://127.0.0.1:4321`. Build with `npm run build`; inspect the production output with `npm run preview`.
 
+TypeScript stays on the supported 6.0 release line. TypeScript 7 is deferred in Dependabot because `@astrojs/check` and `typescript-eslint` do not yet support it. Revisit that deferral when both tools declare compatible peer dependencies, then regenerate the lockfile and run the full quality workflow. Keep normal npm peer-dependency checks enabled.
+
 ## Structure and configuration
 
 - `src/pages`: Home, Tours, Tailor-Made, Experiences, About Us, Plan Your Trip and Contact Us, plus a 404 and SEO endpoints.
