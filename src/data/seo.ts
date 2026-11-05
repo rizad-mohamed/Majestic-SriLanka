@@ -8,6 +8,15 @@ export interface PageSeo {
 }
 
 export const pageSeo: Record<string, PageSeo> = {
+  "/gallery/": {
+    title: "Sri Lanka Guest Photo Gallery",
+    description:
+      "Explore moments from our guests’ Sri Lankan journeys, from waterfalls and hill country to shared meals and coastal views.",
+    image: "hero-sigiriya",
+    imageAlt: "Sigiriya rising above a green Sri Lankan landscape",
+    type: "CollectionPage",
+    label: "Gallery",
+  },
   "/": {
     title: "Private Tours in Sri Lanka",
     description:
@@ -18,13 +27,13 @@ export const pageSeo: Record<string, PageSeo> = {
     label: "Home",
   },
   "/tours/": {
-    title: "Sri Lanka Private Tours & Itineraries",
+    title: "Sri Lanka Private Itineraries",
     description:
       "Explore suggested private Sri Lanka itineraries through the Cultural Triangle, tea country and the southern coast. Find a starting point for your personal journey.",
     image: "hero-sigiriya",
     imageAlt: "Sigiriya rock above green forest at sunrise",
     type: "CollectionPage",
-    label: "Tours",
+    label: "Itineraries",
   },
   "/tailor-made/": {
     title: "Tailor-Made Sri Lanka Tours",

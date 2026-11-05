@@ -6,6 +6,7 @@ const root = resolve(process.env.SEO_DIST_DIR || "dist");
 const routes = [
   "/",
   "/tours/",
+  "/gallery/",
   "/tailor-made/",
   "/experiences/",
   "/about-us/",
@@ -116,7 +117,7 @@ for (const [route, html] of documents) {
       ? "AboutPage"
       : route === "/contact-us/"
         ? "ContactPage"
-        : ["/tours/", "/experiences/"].includes(route)
+        : ["/tours/", "/experiences/", "/gallery/"].includes(route)
           ? "CollectionPage"
           : "WebPage";
   const page = graph.find((node) => node["@type"] === pageType);
@@ -219,5 +220,5 @@ for (const variants of Object.values(formats))
   }
 assert.match(documents.get("/experiences/"), /<source type="image\/avif"/);
 console.log(
-  `PASS: seven ${indexing ? "indexable production" : "noindex preview"} pages; metadata, canonicals, schema graph, links/anchors, image metadata, sitemap, robots and 404.`,
+  `PASS: ${routes.length} ${indexing ? "indexable production" : "noindex preview"} pages; metadata, canonicals, schema graph, links/anchors, image metadata, sitemap, robots and 404.`,
 );

@@ -6,12 +6,12 @@ import {
 } from "../lib/planner.mjs";
 import "./analytics";
 
-let lastDialogTrigger: HTMLElement | null = null;
+const dialogTriggers = new WeakMap<HTMLDialogElement, HTMLElement>();
 document.querySelectorAll<HTMLElement>("[data-dialog]").forEach((trigger) => {
   trigger.addEventListener("click", () => {
     const dialog = document.getElementById(trigger.dataset.dialog || "");
     if (!(dialog instanceof HTMLDialogElement)) return;
-    lastDialogTrigger = trigger;
+    dialogTriggers.set(dialog, trigger);
     dialog.showModal();
     document.body.classList.add("dialog-is-open");
     if (dialog.id === "search-dialog")
@@ -77,7 +77,7 @@ document.querySelectorAll<HTMLDialogElement>("dialog").forEach((dialog) => {
   dialog.addEventListener("close", () => {
     if (!document.querySelector("dialog[open]"))
       document.body.classList.remove("dialog-is-open");
-    lastDialogTrigger?.focus();
+    dialogTriggers.get(dialog)?.focus();
   });
 });
 
