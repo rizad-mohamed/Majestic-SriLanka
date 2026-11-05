@@ -72,7 +72,10 @@ const mediaInventories = {
     )
     .reduce((sum, file) => sum + file.bytes, 0),
   guestWebPBytes: files
-    .filter((file) => /\/guests\/.*\.webp$/.test(file.path))
+    .filter((file) => /\/guests\/[^/]+\.webp$/.test(file.path))
+    .reduce((sum, file) => sum + file.bytes, 0),
+  guestCardWebPBytes: files
+    .filter((file) => /\/guests\/cards\/.*\.webp$/.test(file.path))
     .reduce((sum, file) => sum + file.bytes, 0),
   largestGuestWebPBytes: Math.max(
     0,
@@ -110,6 +113,7 @@ if (
   mediaInventories.existingWebPBytes > 7400000 ||
   mediaInventories.guestWebPBytes > 14000000 ||
   mediaInventories.largestGuestWebPBytes > 400000 ||
+  mediaInventories.guestCardWebPBytes > 10000000 ||
   mediaInventories.experienceWebPBytes > 1300000 ||
   mediaInventories.filmPosterBytes > 50000 ||
   mediaInventories.filmBytes > 3000000 ||
@@ -122,6 +126,6 @@ if (
   result.documents.some((file) => file.gzipBytes > 15000)
 )
   throw new Error(
-    "Build budget exceeded: each route JS (including inline code) 6KB gzip, CSS 16KB gzip, each stylesheet 14KB gzip, HTML 15KB gzip; fonts 240KB, existing WebP 7.4MB, guest WebP 14MB total / 400KB per photo, documentary WebP 1.3MB, film poster 50KB, film 3MB, mobile hero WebP 100KB. Review measured changes.",
+    "Build budget exceeded: each route JS (including inline code) 6KB gzip, CSS 16KB gzip, each stylesheet 14KB gzip, HTML 15KB gzip; fonts 240KB, existing WebP 7.4MB, guest WebP 14MB full / 10MB cards / 400KB per photo, documentary WebP 1.3MB, film poster 50KB, film 3MB, mobile hero WebP 100KB. Review measured changes.",
   );
 console.log(JSON.stringify(summary));

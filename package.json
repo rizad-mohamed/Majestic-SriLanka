@@ -27,7 +27,8 @@
     "assets:hero-mobile": "node scripts/prepare-mobile-hero.mjs",
     "assets:experiences": "node scripts/prepare-experience-assets.mjs",
     "assets:favicons": "node scripts/prepare-favicons.mjs",
-    "assets:video": "node scripts/prepare-hero-video.mjs"
+    "assets:video": "node scripts/prepare-hero-video.mjs",
+    "assets:guest-watermarks": "node scripts/prepare-guest-watermarks.mjs"
   },
   "dependencies": {
     "@lucide/astro": "^1.66.0",

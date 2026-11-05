@@ -1,21 +1,21 @@
 {
-  "measuredAt": "2026-11-05T14:15:19.646Z",
+  "measuredAt": "2026-11-05T19:42:30.818Z",
   "directory": "dist",
   "summary": {
     "html": {
       "count": 9,
-      "bytes": 500442,
-      "gzipBytes": 92216
+      "bytes": 513502,
+      "gzipBytes": 93248
     },
     "js": {
       "count": 1,
-      "bytes": 11594,
-      "gzipBytes": 4507
+      "bytes": 11615,
+      "gzipBytes": 4518
     },
     "css": {
       "count": 5,
-      "bytes": 81278,
-      "gzipBytes": 18267
+      "bytes": 82415,
+      "gzipBytes": 18519
     },
     "woff2": {
       "count": 14,
@@ -23,9 +23,9 @@
       "gzipBytes": 233574
     },
     "webp": {
-      "count": 182,
-      "bytes": 21264454,
-      "gzipBytes": 21274439
+      "count": 253,
+      "bytes": 28731828,
+      "gzipBytes": 28744111
     },
     "avif": {
       "count": 5,
@@ -41,54 +41,55 @@
   "routes": [
     {
       "path": "404.html",
-      "cssGzipBytes": 13946,
-      "javaScriptGzipBytes": 4507
+      "cssGzipBytes": 14000,
+      "javaScriptGzipBytes": 4518
     },
     {
       "path": "about-us/index.html",
-      "cssGzipBytes": 13946,
-      "javaScriptGzipBytes": 4507
+      "cssGzipBytes": 14000,
+      "javaScriptGzipBytes": 4518
     },
     {
       "path": "contact-us/index.html",
-      "cssGzipBytes": 13946,
-      "javaScriptGzipBytes": 4507
+      "cssGzipBytes": 14000,
+      "javaScriptGzipBytes": 4518
     },
     {
       "path": "experiences/index.html",
-      "cssGzipBytes": 15683,
-      "javaScriptGzipBytes": 5347
+      "cssGzipBytes": 15737,
+      "javaScriptGzipBytes": 5358
     },
     {
       "path": "gallery/index.html",
-      "cssGzipBytes": 14733,
-      "javaScriptGzipBytes": 4942
+      "cssGzipBytes": 14787,
+      "javaScriptGzipBytes": 4961
     },
     {
       "path": "index.html",
-      "cssGzipBytes": 14906,
-      "javaScriptGzipBytes": 5991
+      "cssGzipBytes": 15160,
+      "javaScriptGzipBytes": 5998
     },
     {
       "path": "plan-your-trip/index.html",
-      "cssGzipBytes": 13946,
-      "javaScriptGzipBytes": 4507
+      "cssGzipBytes": 14000,
+      "javaScriptGzipBytes": 4518
     },
     {
       "path": "tailor-made/index.html",
-      "cssGzipBytes": 13946,
-      "javaScriptGzipBytes": 4507
+      "cssGzipBytes": 14000,
+      "javaScriptGzipBytes": 4518
     },
     {
       "path": "tours/index.html",
-      "cssGzipBytes": 14783,
-      "javaScriptGzipBytes": 5113
+      "cssGzipBytes": 14835,
+      "javaScriptGzipBytes": 5124
     }
   ],
   "mediaInventories": {
-    "existingWebPBytes": 7026984,
-    "guestWebPBytes": 12867922,
-    "largestGuestWebPBytes": 345398,
+    "existingWebPBytes": 7157306,
+    "guestWebPBytes": 12436638,
+    "guestCardWebPBytes": 7768336,
+    "largestGuestWebPBytes": 334704,
     "experienceWebPBytes": 1240206,
     "filmPosterBytes": 36524,
     "filmBytes": 2684234,
@@ -97,55 +98,55 @@
   "documents": [
     {
       "path": "404.html",
-      "bytes": 33549,
-      "gzipBytes": 6682
+      "bytes": 34276,
+      "gzipBytes": 6742
     },
     {
       "path": "about-us/index.html",
-      "bytes": 49462,
-      "gzipBytes": 9624
+      "bytes": 50189,
+      "gzipBytes": 9691
     },
     {
       "path": "contact-us/index.html",
-      "bytes": 47194,
-      "gzipBytes": 9055
+      "bytes": 47921,
+      "gzipBytes": 9124
     },
     {
       "path": "experiences/index.html",
-      "bytes": 64832,
-      "gzipBytes": 11667
+      "bytes": 65559,
+      "gzipBytes": 11747
     },
     {
       "path": "gallery/index.html",
-      "bytes": 68421,
-      "gzipBytes": 10691
+      "bytes": 70562,
+      "gzipBytes": 10839
     },
     {
       "path": "index.html",
-      "bytes": 77211,
-      "gzipBytes": 14074
+      "bytes": 82006,
+      "gzipBytes": 14354
     },
     {
       "path": "plan-your-trip/index.html",
-      "bytes": 44431,
-      "gzipBytes": 9052
+      "bytes": 45158,
+      "gzipBytes": 9120
     },
     {
       "path": "tailor-made/index.html",
-      "bytes": 49934,
-      "gzipBytes": 10285
+      "bytes": 50661,
+      "gzipBytes": 10358
     },
     {
       "path": "tours/index.html",
-      "bytes": 65408,
-      "gzipBytes": 11086
+      "bytes": 67170,
+      "gzipBytes": 11273
     }
   ],
   "scripts": [
     {
-      "path": "_astro/Layout.astro_astro_type_script_index_0_lang.BWR_oVu-.js",
-      "bytes": 11594,
-      "gzipBytes": 4507
+      "path": "_astro/Layout.astro_astro_type_script_index_0_lang.wwhJ-nXq.js",
+      "bytes": 11615,
+      "gzipBytes": 4518
     }
   ],
   "styles": [
@@ -160,19 +161,19 @@
       "gzipBytes": 787
     },
     {
-      "path": "_astro/index.DKnWLVI7.css",
-      "bytes": 3575,
-      "gzipBytes": 960
+      "path": "_astro/index.DVCTU2-5.css",
+      "bytes": 4535,
+      "gzipBytes": 1160
     },
     {
-      "path": "_astro/Layout.Cd9psc09.css",
-      "bytes": 65563,
-      "gzipBytes": 13946
+      "path": "_astro/Layout.BwWLdiYk.css",
+      "bytes": 65844,
+      "gzipBytes": 14000
     },
     {
-      "path": "_astro/tours.CnJN2XaS.css",
-      "bytes": 2990,
-      "gzipBytes": 837
+      "path": "_astro/tours.CHbUuTPl.css",
+      "bytes": 2886,
+      "gzipBytes": 835
     }
   ]
 }

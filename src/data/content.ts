@@ -17,6 +17,7 @@ export const navigation = [
   { label: "Tailor-Made", href: "/tailor-made/" },
   { label: "Experiences", href: "/experiences/" },
   { label: "About Us", href: "/about-us/" },
+  { label: "Gallery", href: "/gallery/" },
 ];
 
 export const tours = [
