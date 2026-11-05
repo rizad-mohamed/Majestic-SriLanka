@@ -1,12 +1,14 @@
 {
   "baselineCommit": "e5d432b9028563d0fbcf6f2fd5fdca48e64c084d",
-  "sourcePhotographs": 11,
-  "photoTreatments": 14,
+  "sourcePhotographs": 10,
+  "retainedSourceMasters": 11,
+  "photoTreatments": 13,
+  "preservedOriginalPhotoTreatments": ["tropical-cta"],
   "sourceMasterBytes": 43958512,
   "photographyVariants": {
-    "previousWebPBytes": 7000776,
-    "currentWebPBytes": 5906962,
-    "reductionPercent": 15.62,
+    "previousWebPBytes": 6688118,
+    "currentWebPBytes": 5892892,
+    "reductionPercent": 11.89,
     "avifBytes": 546527
   },
   "mobileVariants": [

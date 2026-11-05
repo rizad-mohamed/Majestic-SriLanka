@@ -2,7 +2,7 @@
   "collection": "Homepage documentary photography",
   "verifiedOn": "2026-11-05",
   "baselineCommit": "e5d432b9028563d0fbcf6f2fd5fdca48e64c084d",
-  "sourceCount": 11,
+  "sourceCount": 10,
   "assets": [
     {
       "name": "hero-sigiriya",
@@ -507,51 +507,51 @@
     },
     {
       "name": "reservoir-travellers",
-      "alt": "Randenigala Reservoir surrounded by wooded hills in Sri Lanka",
-      "sourceId": "reservoir",
-      "photographer": "Nalaka Thalagala",
-      "sourceUrl": "https://unsplash.com/photos/a-large-body-of-water-surrounded-by-mountains-vGep5cUfrXI",
+      "alt": "Turquoise water, green coconut palms and golden sand at Mirissa Beach, Sri Lanka",
+      "sourceId": "tropical-cta",
+      "photographer": "Zoshua Colah",
+      "sourceUrl": "https://unsplash.com/photos/tropical-beach-with-rocks-palm-trees-and-clear-blue-ocean-v_s2z24cezg",
       "license": "Unsplash License",
       "licenseUrl": "https://unsplash.com/license",
       "attributionRequired": false,
       "verifiedOn": "2026-11-05",
-      "sourceSha256": "62e9cd9c6d3c4c09c018d6617fd310624bd3fdfffa4143d8b535f0727ba8a2d9",
+      "sourceSha256": "1ca806e3a5620cc937deb7eae6885171d7ce18539fa9d9eb90130d534e4a3d90",
       "variants": [
         {
-          "file": "homepage/photography/reservoir-travellers-240.webp",
+          "file": "homepage/photography/experience-mirissa-240.webp",
           "width": 240,
           "height": 180,
-          "bytes": 1752
+          "bytes": 5294
         },
         {
-          "file": "homepage/photography/reservoir-travellers-360.webp",
+          "file": "homepage/photography/experience-mirissa-360.webp",
           "width": 360,
           "height": 270,
-          "bytes": 3306
+          "bytes": 10104
         },
         {
-          "file": "homepage/photography/reservoir-travellers-480.webp",
+          "file": "homepage/photography/experience-mirissa-480.webp",
           "width": 480,
           "height": 360,
-          "bytes": 5324
+          "bytes": 16392
         },
         {
-          "file": "homepage/photography/reservoir-travellers-720.webp",
+          "file": "homepage/photography/experience-mirissa-720.webp",
           "width": 720,
           "height": 540,
-          "bytes": 15138
+          "bytes": 41282
         },
         {
-          "file": "homepage/photography/reservoir-travellers-960.webp",
+          "file": "homepage/photography/experience-mirissa-960.webp",
           "width": 960,
           "height": 720,
-          "bytes": 27578
+          "bytes": 67870
         },
         {
-          "file": "homepage/photography/reservoir-travellers-1600.webp",
+          "file": "homepage/photography/experience-mirissa-1600.webp",
           "width": 1448,
           "height": 1086,
-          "bytes": 67594
+          "bytes": 152208
         }
       ],
       "avifVariants": []
@@ -756,57 +756,6 @@
           "width": 1600,
           "height": 800,
           "bytes": 210906
-        }
-      ],
-      "avifVariants": []
-    },
-    {
-      "name": "tropical-cta",
-      "alt": "Turquoise water, coastal rocks and coconut palms at Mirissa Beach, Sri Lanka",
-      "sourceId": "tropical-cta",
-      "photographer": "Zoshua Colah",
-      "sourceUrl": "https://unsplash.com/photos/tropical-beach-with-rocks-palm-trees-and-clear-blue-ocean-v_s2z24cezg",
-      "license": "Unsplash License",
-      "licenseUrl": "https://unsplash.com/license",
-      "attributionRequired": false,
-      "verifiedOn": "2026-11-05",
-      "sourceSha256": "1ca806e3a5620cc937deb7eae6885171d7ce18539fa9d9eb90130d534e4a3d90",
-      "variants": [
-        {
-          "file": "homepage/photography/tropical-cta-240.webp",
-          "width": 240,
-          "height": 80,
-          "bytes": 3080
-        },
-        {
-          "file": "homepage/photography/tropical-cta-360.webp",
-          "width": 360,
-          "height": 120,
-          "bytes": 6120
-        },
-        {
-          "file": "homepage/photography/tropical-cta-480.webp",
-          "width": 480,
-          "height": 160,
-          "bytes": 9832
-        },
-        {
-          "file": "homepage/photography/tropical-cta-720.webp",
-          "width": 720,
-          "height": 240,
-          "bytes": 23710
-        },
-        {
-          "file": "homepage/photography/tropical-cta-960.webp",
-          "width": 960,
-          "height": 320,
-          "bytes": 40386
-        },
-        {
-          "file": "homepage/photography/tropical-cta-1600.webp",
-          "width": 1600,
-          "height": 533,
-          "bytes": 103400
         }
       ],
       "avifVariants": []

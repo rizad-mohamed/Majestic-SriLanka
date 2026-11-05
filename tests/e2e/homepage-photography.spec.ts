@@ -19,8 +19,10 @@ test("homepage photographs decode from the licensed collection, including every 
     for (const image of images) image.loading = "eager";
     await Promise.all(images.map((image) => image.decode()));
   });
-  const photos = page.locator("img[data-photo]");
-  expect(await photos.count()).toBeGreaterThanOrEqual(13);
+  const photos = page.locator(
+    'img[data-photo]:not([data-photo="tropical-cta"])',
+  );
+  expect(await photos.count()).toBeGreaterThanOrEqual(12);
   for (const photo of await photos.all()) {
     await expect(photo).toHaveAttribute("data-photo-collection", "homepage");
     await expect(photo).toHaveJSProperty("complete", true);
@@ -40,7 +42,18 @@ test("homepage photographs decode from the licensed collection, including every 
       await active.evaluate((image: HTMLImageElement) => image.currentSrc),
     ).toContain("/homepage/");
   }
-  expect(oldPhotoRequests).toEqual([]);
+  const footer = page.locator('.closing-cta img[data-photo="tropical-cta"]');
+  await expect(footer).toHaveAttribute(
+    "src",
+    "/assets/majestic-sri-lanka/photography/tropical-cta-720.webp",
+  );
+  expect(await footer.getAttribute("data-photo-collection")).toBeNull();
+  expect(oldPhotoRequests.length).toBeGreaterThan(0);
+  expect(
+    oldPhotoRequests.every((url) =>
+      /\/photography\/tropical-cta-\d+\.webp$/.test(url),
+    ),
+  ).toBe(true);
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
     "content",
     /\/homepage\/photography\/hero-sigiriya-/,

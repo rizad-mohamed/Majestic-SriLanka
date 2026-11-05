@@ -1,10 +1,11 @@
 ---
 import manifest from '../../public/assets/majestic-sri-lanka/manifest.json';
 import homepage from '../../public/assets/majestic-sri-lanka/homepage/manifest.json';
-interface Props { name: string; alt: string; class?: string; eager?: boolean; sizes?: string; width?: number; height?: number }
-const { name, alt, class: className, eager = false, sizes = '(max-width: 700px) 100vw, 50vw', width, height } = Astro.props;
-const homeAsset = Astro.url.pathname === '/' ? homepage.assets.find(asset => asset.name === name) : undefined;
-if (Astro.url.pathname === '/' && !homeAsset) throw new Error(`Missing licensed homepage photograph: ${name}`);
+interface Props { name: string; alt: string; class?: string; eager?: boolean; sizes?: string; width?: number; height?: number; collection?: 'original' }
+const { name, alt, class: className, eager = false, sizes = '(max-width: 700px) 100vw, 50vw', width, height, collection } = Astro.props;
+const useHomepage = Astro.url.pathname === '/' && collection !== 'original';
+const homeAsset = useHomepage ? homepage.assets.find(asset => asset.name === name) : undefined;
+if (useHomepage && !homeAsset) throw new Error(`Missing licensed homepage photograph: ${name}`);
 const base = `/assets/majestic-sri-lanka/photography/${name}`;
 const asset = manifest.assets.find(asset => asset.name === name && 'variants' in asset);
 const variants = homeAsset?.variants || (asset && 'variants' in asset ? asset.variants : []);
