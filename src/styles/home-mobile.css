@@ -1,0 +1,109 @@
+/* The desktop composition is approved. These refinements apply only to phones. */
+@media (max-width: 1100px) {
+  /* Botanical artwork can extend beyond its section without widening the page. */
+  .home-page main {
+    overflow-x: clip;
+  }
+}
+@media (max-width: 700px) {
+  .home-page .hero-inner {
+    padding-block: 32px 156px;
+  }
+  .home-page .hero-trust {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .home-page .hero .button-row {
+    gap: 12px;
+  }
+  .home-page .story-copy,
+  .home-page .why-copy,
+  .home-page .experience-content,
+  .home-page .tour-content,
+  .home-page .section-header,
+  .home-page .closing-cta .container {
+    text-align: center;
+  }
+  .home-page .story-collage,
+  .home-page .story-copy > p,
+  .home-page .why-picture,
+  .home-page .why-copy > p,
+  .home-page .experience-content > p {
+    margin-inline: auto;
+  }
+  .home-page .story-stamp {
+    width: 54px;
+    top: -34px;
+    right: 0;
+  }
+  .home-page .story-perks > div {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+  .home-page .section-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .home-page .section-actions,
+  .home-page .closing-cta .button-row {
+    justify-content: center;
+  }
+  .home-page .section-actions .text-link {
+    margin-right: 8px;
+  }
+  .home-page .closing-cta .button-row {
+    align-items: center;
+  }
+  .home-page .tour-content .button {
+    margin-inline: auto;
+  }
+  .home-page .benefit {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .home-page .benefit > div {
+    width: 100%;
+  }
+  .home-page .benefits-list {
+    gap: 24px;
+  }
+  .home-page .review-card blockquote {
+    text-align: center;
+    padding-left: 0;
+  }
+  .home-page .quote-mark {
+    position: static;
+    display: block;
+    height: 30px;
+    line-height: 1;
+  }
+  .home-page .review-card figcaption {
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .home-page .review-card .stars {
+    margin-left: 0;
+    width: 100%;
+  }
+  .home-page .review-notice {
+    text-align: center;
+  }
+  .home-page .footer-brand,
+  .home-page .footer-grid nav,
+  .home-page .footer-connect {
+    text-align: center;
+  }
+  .home-page .site-footer nav a,
+  .home-page .footer-contact {
+    justify-content: center;
+  }
+  .home-page .footer-brand img {
+    margin-inline: auto;
+  }
+}

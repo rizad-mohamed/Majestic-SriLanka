@@ -1,0 +1,32 @@
+[
+  {
+    "width": 1440,
+    "axis": {
+      "compact": false,
+      "line": {
+        "x": 720,
+        "y": -216.734375
+      },
+      "traveller": {
+        "x": 720,
+        "y": 325
+      }
+    },
+    "deviation": 0
+  },
+  {
+    "width": 390,
+    "axis": {
+      "compact": true,
+      "line": {
+        "x": 194.9921875,
+        "y": 57
+      },
+      "traveller": {
+        "x": 274.7423095703125,
+        "y": 57
+      }
+    },
+    "deviation": 0
+  }
+]
