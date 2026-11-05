@@ -1,9 +1,10 @@
 import { test, expect } from "@playwright/test";
 import { readFile } from "node:fs/promises";
+import { startRedirectHost } from "../helpers/redirect-host";
 const origin = "https://seo-fixture.majesticsrilanka.com";
 const routes = [
   "/",
-  "/tours/",
+  "/itineraries/",
   "/gallery/",
   "/tailor-made/",
   "/experiences/",
@@ -46,7 +47,7 @@ test("production sitemap, crawl policy, redirects and true 404", async ({
   const missing = await request.get("/this-page-does-not-exist/");
   expect(missing.status()).toBe(404);
   expect(await missing.text()).toContain("noindex, nofollow");
-  const slash = await request.get("/tours", { maxRedirects: 0 });
+  const slash = await request.get("/itineraries", { maxRedirects: 0 });
   // Astro's static preview does not apply host _redirects rules. Record that
   // limitation explicitly; real host redirects remain a launch verification.
   expect(slash.status()).toBe(404);
@@ -143,5 +144,32 @@ test("responsive AVIF hero retains a working native WebP fallback", async ({
       .toMatch(/\.webp$/);
     await hero.evaluate((image) => (image as HTMLImageElement).decode());
     await expect(hero).not.toHaveJSProperty("naturalWidth", 0);
+  }
+});
+
+test("production legacy redirects land on the sole itinerary canonical", async ({
+  request,
+  baseURL,
+}) => {
+  const host = await startRedirectHost(baseURL!, ".local/production-fixture");
+  try {
+    for (const path of ["/tours", "/tours/"]) {
+      const response = await request.get(host.url + path, { maxRedirects: 0 });
+      expect(response.status()).toBe(301);
+      expect(response.headers().location).toBe("/itineraries/");
+      const destination = await request.get(
+        host.url + response.headers().location,
+        { maxRedirects: 0 },
+      );
+      expect(destination.status()).toBe(200);
+      expect(await destination.text()).toContain(
+        'rel="canonical" href="' + origin + '/itineraries/"',
+      );
+    }
+    const xml = await (await request.get("/sitemap.xml")).text();
+    expect(xml).toContain(origin + "/itineraries/");
+    expect(xml).not.toContain("/tours/");
+  } finally {
+    await host.close();
   }
 });

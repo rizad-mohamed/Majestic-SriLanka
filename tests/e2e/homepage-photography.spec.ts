@@ -102,7 +102,7 @@ test("shared photos and social images on the six other routes retain their appro
   page,
 }) => {
   for (const route of [
-    "/tours/",
+    "/itineraries/",
     "/gallery/",
     "/tailor-made/",
     "/experiences/",
