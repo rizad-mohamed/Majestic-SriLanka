@@ -1,0 +1,95 @@
+{
+  "baselineCommit": "e5d432b9028563d0fbcf6f2fd5fdca48e64c084d",
+  "sourcePhotographs": 11,
+  "photoTreatments": 14,
+  "sourceMasterBytes": 43958512,
+  "photographyVariants": {
+    "previousWebPBytes": 7000776,
+    "currentWebPBytes": 5906962,
+    "reductionPercent": 15.62,
+    "avifBytes": 546527
+  },
+  "mobileVariants": [
+    {
+      "file": "homepage/hero-mobile/hero-sigiriya-360.webp",
+      "width": 360,
+      "height": 684,
+      "bytes": 20568,
+      "format": "webp"
+    },
+    {
+      "file": "homepage/hero-mobile/hero-sigiriya-360.avif",
+      "width": 360,
+      "height": 684,
+      "bytes": 16868,
+      "format": "avif"
+    },
+    {
+      "file": "homepage/hero-mobile/hero-sigiriya-467.webp",
+      "width": 467,
+      "height": 887,
+      "bytes": 36448,
+      "format": "webp"
+    },
+    {
+      "file": "homepage/hero-mobile/hero-sigiriya-467.avif",
+      "width": 467,
+      "height": 887,
+      "bytes": 28375,
+      "format": "avif"
+    }
+  ],
+  "largestHeroVariants": [
+    {
+      "name": "hero-sigiriya",
+      "webp": {
+        "file": "homepage/photography/hero-sigiriya-1600.webp",
+        "width": 1600,
+        "height": 800,
+        "bytes": 75524
+      },
+      "avif": {
+        "file": "homepage/photography/hero-sigiriya-1600.avif",
+        "width": 1600,
+        "height": 800,
+        "bytes": 63312
+      }
+    },
+    {
+      "name": "hill-country",
+      "webp": {
+        "file": "homepage/photography/hill-country-1600.webp",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 323364
+      },
+      "avif": {
+        "file": "homepage/photography/hill-country-1600.avif",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 187424
+      }
+    },
+    {
+      "name": "southern-coast",
+      "webp": {
+        "file": "homepage/photography/southern-coast-1600.webp",
+        "width": 1600,
+        "height": 960,
+        "bytes": 57270
+      },
+      "avif": {
+        "file": "homepage/photography/southern-coast-1600.avif",
+        "width": 1600,
+        "height": 960,
+        "bytes": 39596
+      }
+    }
+  ],
+  "preservation": {
+    "widths": [320, 375, 390, 768, 1024, 1440],
+    "layoutChanges": [],
+    "checkedFiles": 117,
+    "changedFiles": []
+  }
+}
