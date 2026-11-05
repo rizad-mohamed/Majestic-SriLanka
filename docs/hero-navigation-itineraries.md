@@ -9,7 +9,7 @@ Implemented against main `4621dcf8854085ef1be0004d31e943ae321ef2cf` on 6 Novembe
 - The independent story dialog loads its dependency-free, hashed native module only when requested. Its source has JavaScript type checking, formatting coverage and an explicit URL import declaration. No dependency or security-policy change is needed.
 - Header rules are consolidated in `src/styles/header.css`. The menu layout is used through 1100px; wider layouts scale spacing together. Phone alignment, desktop brand styling, visible focus and existing navigation controls remain intact. Tablet and phone search/menu controls have 44px targets.
 - `/itineraries/` replaces the full `/tours/` page with its content, cards, filters and photography preserved. All live internal links, search results, metadata mapping, breadcrumbs, schema URLs and sitemap entries use the new canonical route. Both legacy URL forms have direct 301 rules. The generated legacy fallback is noindex with a canonical pointing to the new route.
-- The Moments Along the Way gallery preserves its images, dimensions, masks and 35px/second pace. Native Web Animations translate two identical groups continuously. Width is measured on resize, not every frame. Animation stops for manual browsing, pause, hover/focus, touch, hidden tabs, offscreen content and reduced motion. Native scrolling is restored without changing the visible offset; reduced-motion/no-JavaScript browsing retains the original group.
+- The Moments Along the Way gallery preserves its images, dimensions, masks and 35px/second pace. Native Web Animations translate two identical groups continuously, with static edge fades preserving the original appearance without a moving alpha mask. Width is measured on resize, not every frame. Animation stops for manual browsing, pause, hover/focus, touch, hidden tabs, offscreen content and reduced motion. Native scrolling is restored without changing the visible offset; reduced-motion/no-JavaScript browsing retains the original group.
 
 ## Verification coverage
 
@@ -18,6 +18,8 @@ Implemented against main `4621dcf8854085ef1be0004d31e943ae321ef2cf` on 6 Novembe
 The redirect test helper applies the built `_redirects` rules through a local HTTP proxy because Astro's static preview does not apply hosting rules. It verifies one-hop HTTP 301 behavior against the built site; it is not evidence of a deployment to the external hosting platform. Astro's generated redirect page supplies a safe fallback where platform redirects are unavailable.
 
 Existing build budgets remain unchanged. Local browser simulations and automated audits are engineering checks; physical-device acceptance and sustained performance on a visitor's particular hardware require device testing. Native transform animation can follow the browser's refresh cadence without a JavaScript frame loop; no universal FPS guarantee is made.
+
+Measured frame evidence is recorded in [Gallery motion verification](gallery-motion-performance.md).
 
 ## Commands
 

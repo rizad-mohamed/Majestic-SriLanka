@@ -1,11 +1,11 @@
 {
-  "measuredAt": "2026-11-05T22:58:32.142Z",
+  "measuredAt": "2026-11-05T23:50:28.170Z",
   "directory": "dist",
   "summary": {
     "html": {
       "count": 10,
-      "bytes": 514296,
-      "gzipBytes": 93730
+      "bytes": 514359,
+      "gzipBytes": 93739
     },
     "js": {
       "count": 2,
@@ -14,8 +14,8 @@
     },
     "css": {
       "count": 5,
-      "bytes": 82359,
-      "gzipBytes": 18537
+      "bytes": 82698,
+      "gzipBytes": 18610
     },
     "woff2": {
       "count": 14,
@@ -71,7 +71,7 @@
     },
     {
       "path": "itineraries/index.html",
-      "cssGzipBytes": 14856,
+      "cssGzipBytes": 14929,
       "javaScriptGzipBytes": 5643
     },
     {
@@ -136,8 +136,8 @@
     },
     {
       "path": "itineraries/index.html",
-      "bytes": 67841,
-      "gzipBytes": 11799
+      "bytes": 67904,
+      "gzipBytes": 11808
     },
     {
       "path": "plan-your-trip/index.html",
@@ -184,9 +184,9 @@
       "gzipBytes": 1157
     },
     {
-      "path": "_astro/itineraries.xrjqLjox.css",
-      "bytes": 2983,
-      "gzipBytes": 858
+      "path": "_astro/itineraries.BJFOmWoG.css",
+      "bytes": 3322,
+      "gzipBytes": 931
     },
     {
       "path": "_astro/Layout.DiO2EqSU.css",
