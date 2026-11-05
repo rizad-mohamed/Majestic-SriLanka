@@ -9,10 +9,9 @@ if (hero) {
   const video = hero.querySelector<HTMLVideoElement>("[data-hero-video]")!;
   const status = hero.querySelector<HTMLElement>("[data-hero-status]")!;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-  const connection = (
-    navigator as Navigator & { connection?: { saveData?: boolean } }
-  ).connection;
-  let playing = !reduced.matches && !connection?.saveData;
+  // The poster is the initial hero on every device. Only an explicit Play
+  // action may attach the film source and start its download.
+  let playing = false;
   let visible = true;
   let hovering = false;
   let current = 0;
@@ -34,7 +33,7 @@ if (hero) {
       !playing ||
       failedVideo ||
       !visible ||
-      hovering ||
+      (hovering && current !== 0) ||
       document.hidden
     )
       return;
@@ -47,13 +46,18 @@ if (hero) {
   }
   function watchVideo() {
     clearWatchdog();
-    if (current === 0 && playing && visible && !hovering && !document.hidden)
+    if (current === 0 && playing && visible && !document.hidden)
       watchdog = window.setTimeout(videoFallback, 12000);
   }
   function synchronize() {
     clearTimeout(timer);
     toggle.textContent = playing ? "Pause hero playback" : "Play hero playback";
-    if (!playing || !visible || hovering || document.hidden) {
+    if (
+      !playing ||
+      !visible ||
+      (hovering && current !== 0) ||
+      document.hidden
+    ) {
       video.pause();
       clearWatchdog();
       return;
@@ -73,7 +77,7 @@ if (hero) {
         void video.play().catch(videoFallback);
       }
     } else {
-      // The film plays once automatically; image playback never loops back to it.
+      // After explicit playback, the film plays once; image playback never loops back to it.
       timer = window.setTimeout(() => {
         void select(current === buttons.length - 1 ? 1 : current + 1);
       }, 7000);
@@ -161,7 +165,14 @@ if (hero) {
   video.addEventListener("playing", clearWatchdog);
   buttons.forEach((button, index) =>
     button.addEventListener("click", () => {
-      void select(index, true);
+      void select(index, true).then(() => {
+        if (index === 0) {
+          playing = true;
+          failedVideo = false;
+          if (video.ended) video.currentTime = 0;
+          synchronize();
+        }
+      });
     }),
   );
   controls.addEventListener("keydown", (event) => {
@@ -173,9 +184,11 @@ if (hero) {
     buttons[next].focus();
     void select(next, true);
   });
-  toggle.addEventListener("click", () => {
+  toggle.addEventListener("click", async () => {
     if (playing) pause();
     else {
+      if (current !== 0) await select(0);
+      if (video.ended) video.currentTime = 0;
       playing = true;
       failedVideo = false;
       synchronize();

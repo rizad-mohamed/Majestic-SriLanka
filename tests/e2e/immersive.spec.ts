@@ -12,6 +12,30 @@ test.beforeEach(async ({ context, baseURL }) => {
   ]);
 });
 
+test("initial hero stays still and requests no video until a visitor acts", async ({
+  page,
+}) => {
+  const videoRequests: string[] = [];
+  page.on("request", (request) => {
+    if (/\.mp4(?:$|\?)/.test(request.url())) videoRequests.push(request.url());
+  });
+  await page.clock.install();
+  await page.goto("/");
+  await page.clock.runFor(20000);
+  expect(videoRequests).toEqual([]);
+  await expect(page.locator("[data-hero-video]")).toHaveJSProperty(
+    "paused",
+    true,
+  );
+  expect(
+    await page.locator("[data-hero-video]").getAttribute("src"),
+  ).toBeNull();
+  await expect(page.locator("[data-hero-current]")).toHaveAttribute(
+    "data-hero-video",
+    "",
+  );
+});
+
 test("hero selection supports keyboard, touch and reduced motion", async ({
   page,
 }) => {
@@ -86,7 +110,7 @@ test("hero selection supports keyboard, touch and reduced motion", async ({
   expect(parseFloat(transition)).toBeLessThanOrEqual(0.001);
 });
 
-test("video plays first, ends naturally, then all three images cycle without replaying it", async ({
+test("video waits for Play, ends naturally, then all three images cycle without replaying it", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
@@ -97,6 +121,9 @@ test("video plays first, ends naturally, then all three images cycle without rep
   await expect(video).toHaveJSProperty("muted", true);
   await expect(video).toHaveAttribute("playsinline", "");
   await expect(video).toHaveJSProperty("loop", false);
+  await expect(video).not.toHaveAttribute("autoplay", "");
+  expect(await video.getAttribute("src")).toBeNull();
+  await page.getByRole("button", { name: "Play hero playback" }).click();
   await expect
     .poll(
       () =>
@@ -144,7 +171,7 @@ test("video plays first, ends naturally, then all three images cycle without rep
   );
 });
 
-test("film poster falls back to images when autoplay is blocked or loading fails", async ({
+test("film poster falls back to images when requested playback is blocked or loading fails", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
@@ -159,6 +186,7 @@ test("film poster falls back to images when autoplay is blocked or loading fails
     };
   });
   await page.goto("/?blocked");
+  await page.getByRole("button", { name: "Play hero playback" }).click();
   await expect(page.locator("[data-hero-video]")).toHaveAttribute(
     "poster",
     /island-film-poster.webp$/,
@@ -179,6 +207,7 @@ test("film poster falls back to images when autoplay is blocked or loading fails
     await route.fulfill({ response, body });
   });
   await page.goto("/?failed-film");
+  await page.getByRole("button", { name: "Play hero playback" }).click();
   await expect
     .poll(
       () =>
@@ -202,10 +231,9 @@ test("optional story player loads on opening and pauses on dismissal", async ({
   const film = page.locator("[data-island-film]");
   expect(await film.getAttribute("src")).toBeNull();
   await expect(film).toHaveAttribute("preload", "none");
-  await expect(page.locator("[data-hero-video]")).toHaveAttribute(
-    "src",
-    /island-film\.mp4$/,
-  );
+  expect(
+    await page.locator("[data-hero-video]").getAttribute("src"),
+  ).toBeNull();
   await page.getByRole("button", { name: "Watch Our Story" }).click();
   await expect(
     page.getByRole("dialog", { name: "More than a destination." }),
