@@ -1,6 +1,19 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
+// General page tests use a returning visitor who rejected optional cookies.
+// Fresh-visitor consent behavior is covered separately in cookies.spec.ts.
+test.beforeEach(async ({ context, baseURL }) => {
+  await context.addCookies([
+    {
+      name: "majestic_consent",
+      value: encodeURIComponent(
+        JSON.stringify({ version: 1, analytics: false }),
+      ),
+      url: baseURL!,
+    },
+  ]);
+});
 const routes = [
   "/",
   "/tours/",

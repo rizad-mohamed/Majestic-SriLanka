@@ -5,6 +5,7 @@ import {
   createEmailDraft,
 } from "../lib/planner.mjs";
 import "./analytics";
+import "./cookie-preferences";
 
 const dialogTriggers = new WeakMap<HTMLDialogElement, HTMLElement>();
 document.querySelectorAll<HTMLElement>("[data-dialog]").forEach((trigger) => {

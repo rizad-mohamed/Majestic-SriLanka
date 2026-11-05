@@ -74,7 +74,7 @@ await writeFile(
       sourceBytes: original.length,
       sourceSha256: createHash("sha256").update(original).digest("hex"),
       provenance:
-        "User-supplied silent film; full sequence retained, resized and re-encoded for video-first hero and optional story playback.",
+        "User-supplied silent film; full sequence retained, resized and re-encoded for still-first hero and optional story playback.",
       output: "island-film.mp4",
       bytes: output.size,
       width: 960,
@@ -84,7 +84,7 @@ await writeFile(
       fastStart: true,
       audio: false,
       loading:
-        "Hero poster is pre-rendered; muted inline autoplay plays once before three image slides. Reduced motion and Save-Data keep the poster until Play. The optional story dialog loads on opening.",
+        "Hero poster is pre-rendered on every device. The film source is attached only after an explicit Play action. The optional story dialog loads on opening.",
     },
     null,
     2,

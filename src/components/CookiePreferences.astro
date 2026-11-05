@@ -1,0 +1,31 @@
+---
+import Icon from './Icon.astro';
+const analyticsAvailable = /^G-[A-Z0-9]+$/.test(import.meta.env.PUBLIC_GA4_MEASUREMENT_ID || '');
+---
+<aside class="cookie-banner" aria-labelledby="cookie-title" data-cookie-banner hidden>
+  <div><h2 id="cookie-title">Your privacy, your choice.</h2><p>We remember your cookie preferences. Optional analytics helps us understand how the site is used, only if you agree. <button class="cookie-privacy" type="button" data-dialog="privacy-dialog">Privacy information</button></p></div>
+  <div class="cookie-actions"><button type="button" data-cookie-choice="accept">Accept analytics</button><button type="button" data-cookie-choice="reject">Reject optional</button><button type="button" data-dialog="cookie-dialog">Settings</button></div>
+</aside>
+<dialog id="cookie-dialog" class="dialog cookie-dialog" aria-labelledby="cookie-settings-title">
+  <div class="dialog-heading"><h2 id="cookie-settings-title">Cookie preferences</h2><button class="icon-button" data-close aria-label="Close cookie preferences"><Icon name="close" /></button></div>
+  <h3>Essential preferences</h3><p>Always enabled. A first-party cookie remembers your choice for 180 days. It contains your preference and a version number, with no personal details.</p>
+  <label class="cookie-checkbox"><input type="checkbox" data-cookie-analytics /> Allow analytics</label>
+  <p>Optional Google Analytics helps us understand page visits and interactions. Advertising features stay disabled. You can withdraw your choice here at any time.</p>
+  {!analyticsAvailable && <p class="small">Analytics is not currently configured, so accepting will not load tracking.</p>}
+  <div class="cookie-actions"><button type="button" data-cookie-save>Save preferences</button><button type="button" data-cookie-choice="reject">Reject optional</button></div>
+</dialog>
+<style>
+  .cookie-banner { position:fixed; z-index:90; bottom:20px; left:24px; right:90px; max-width:1180px; margin:auto; padding:24px; background:var(--ivory); color:var(--green); box-shadow:0 8px 32px #073e3326; border-radius:16px; display:flex; align-items:center; gap:28px; }
+  .cookie-banner[hidden] { display:none; }
+  .cookie-banner h2 { font-size:28px; margin:0 0 8px; }
+  .cookie-banner p { font-size:14px; line-height:1.6; margin:0; max-width:600px; }
+  .cookie-privacy { color:var(--green); font:inherit; text-decoration:underline; text-underline-offset:3px; background:none; border:0; padding:0; cursor:pointer; }
+  .cookie-actions { display:flex; flex-wrap:wrap; gap:10px; flex-shrink:0; }
+  .cookie-actions button { min-height:44px; padding:10px 18px; border:1px solid var(--green); border-radius:999px; font:inherit; font-size:14px; color:var(--green); background:var(--white); cursor:pointer; }
+  .cookie-actions button:first-child { background:var(--green); color:var(--white); }
+  .cookie-checkbox { display:flex; align-items:center; gap:12px; font-weight:600; margin:24px 0 12px; min-height:44px; cursor:pointer; }
+  .cookie-checkbox input { width:22px; height:22px; accent-color:var(--green); }
+  .cookie-dialog h3 { font-size:24px; }
+  @media(max-width:1100px) { .cookie-banner { flex-direction:column; align-items:start; gap:16px; } }
+  @media(max-width:600px) { .cookie-banner { left:12px; right:12px; bottom:12px; padding:18px; max-height:70dvh; overflow:auto; } .cookie-actions { flex-shrink:1; } }
+</style>

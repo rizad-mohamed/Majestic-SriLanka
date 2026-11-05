@@ -10,6 +10,9 @@ export default defineConfig({
   ],
   outputDir: "test-results/production",
   use: {
+    ...(process.env.PLAYWRIGHT_CHANNEL
+      ? { channel: process.env.PLAYWRIGHT_CHANNEL }
+      : {}),
     baseURL: "http://127.0.0.1:4322",
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
