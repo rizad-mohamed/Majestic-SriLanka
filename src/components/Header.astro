@@ -21,12 +21,3 @@ const current = Astro.url.pathname;
   <nav aria-label="Expanded navigation">{[...navigation, { label: 'Plan Your Trip', href: '/plan-your-trip/' }, { label: 'Contact Us', href: '/contact-us/' }].map(item => <a href={item.href} aria-current={current === item.href ? 'page' : undefined}>{item.label}<Icon name="arrow" /></a>)}</nav>
   <p class="script">A little island. Endless possibilities.</p>
 </dialog>
-
-<style>
-  .desktop-nav a { white-space:nowrap; }
-  @media (min-width:1001px) and (max-width:1350px) {
-    .header-inner { gap:18px; }
-    .desktop-nav { gap:18px; }
-    .header-actions { margin-left:12px; gap:12px; }
-  }
-</style>

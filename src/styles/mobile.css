@@ -45,8 +45,7 @@
 @media (max-width: 700px) {
   /* One balanced reading frame for the header, sections and footer. */
   body { --mobile-gutter: clamp(20px, 6.15vw, 24px); }
-  .container,
-  .header-inner {
+  .container {
     width: calc(100% - var(--mobile-gutter) * 2);
     margin-inline: auto;
   }
@@ -82,14 +81,11 @@
     width: fit-content;
     margin-inline: auto;
   }
-  .header-actions { margin-left: 0; gap: 4px; }
-  .search-trigger, .menu-trigger, .circle-button {
+  .circle-button {
     width: 44px;
     height: 44px;
     flex-shrink: 0;
   }
-  .header-inner { gap: 8px; }
-  .brand img { width: clamp(145px, 42vw, 180px); }
 
   .hero { height: auto; min-height: 740px; }
   .hero-inner { padding-block: 36px 220px; }
