@@ -212,7 +212,27 @@ test("reduced-motion and no-JavaScript visitors can browse the original gallery"
   await expect(
     page.getByRole("button", { name: "Pause gallery" }),
   ).toBeHidden();
-  expect(await track.evaluate((el) => el.getAnimations().length)).toBe(0);
+  await expect
+    .poll(() => track.evaluate((el) => el.getAnimations().length))
+    .toBe(0);
+  const first = track.locator("img").first();
+  const still = (await first.boundingBox())!.x;
+  await page.waitForTimeout(250);
+  expect((await first.boundingBox())!.x).toBeCloseTo(still, 0);
+  // Media-query delivery and animation cancellation settle asynchronously in WebKit.
+  // Also verify changing the preference stops an already running gallery.
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.mouse.move(0, 0);
+  await expect
+    .poll(() => track.evaluate((el) => el.getAnimations().length))
+    .toBe(1);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect
+    .poll(() => track.evaluate((el) => el.getAnimations().length))
+    .toBe(0);
+  await expect(
+    page.getByRole("button", { name: "Pause gallery" }),
+  ).toBeHidden();
   await expect(
     page.locator('.guest-gallery-group[aria-hidden="true"]'),
   ).toBeHidden();
