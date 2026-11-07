@@ -1,0 +1,13 @@
+---
+import Photo from './Photo.astro';
+interface Props { name: string; active?: boolean; eager?: boolean }
+const { name, active = false, eager = false } = Astro.props;
+const slide = heroSlides.find(slide => slide.id === name)!;
+import { heroSlides } from '../data/hero-slides';
+import homepage from '../../public/assets/majestic-sri-lanka/homepage/manifest.json';
+const mobile = homepage.mobile;
+const mobileSrcset = mobile.variants.filter(variant => variant.format === 'webp').map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
+const mobileAvifSrcset = mobile.variants.filter(variant => variant.format === 'avif').map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
+const avifSrcset = homepage.assets.find(asset => asset.name === name)!.avifVariants.map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
+---
+<picture>{name === 'hero-sigiriya' && <><source type="image/avif" media="(max-width: 700px)" srcset={mobileAvifSrcset} sizes="100vw" width={mobile.width} height={mobile.height} /><source type="image/webp" media="(max-width: 700px)" srcset={mobileSrcset} sizes="100vw" width={mobile.width} height={mobile.height} /></>}<source type="image/avif" srcset={avifSrcset} sizes={slide.sizes} /><Photo name={name} alt={slide.alt} sizes={slide.sizes} eager={eager} class={active ? 'hero-frame is-visible' : 'hero-frame'} /></picture>

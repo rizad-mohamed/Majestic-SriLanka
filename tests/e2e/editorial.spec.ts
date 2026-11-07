@@ -109,7 +109,7 @@ test("content photographs keep a consistent landscape frame across routes", asyn
 }) => {
   for (const route of [
     "/",
-    "/tours/",
+    "/itineraries/",
     "/tailor-made/",
     "/experiences/",
     "/about-us/",

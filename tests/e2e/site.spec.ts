@@ -16,7 +16,7 @@ test.beforeEach(async ({ context, baseURL }) => {
 });
 const routes = [
   "/",
-  "/tours/",
+  "/itineraries/",
   "/gallery/",
   "/tailor-made/",
   "/experiences/",
@@ -27,7 +27,7 @@ const routes = [
 
 const routeHeadings: Record<string, RegExp> = {
   "/": /Extraordinary\s*Journeys,\s*Real Connections/,
-  "/tours/": /Journeys to\s*Remember/,
+  "/itineraries/": /Journeys to\s*Remember/,
   "/gallery/": /Their journeys.\s*Real memories./,
   "/tailor-made/": /Your Sri Lanka.\s*Your Story/,
   "/experiences/": /Moments That\s*Stay With You/,
@@ -258,7 +258,7 @@ test("menu navigates and restores keyboard focus when dismissed", async ({
 test("tour filters and itinerary preview lead to the correct planner choice", async ({
   page,
 }) => {
-  await page.goto("/tours/");
+  await page.goto("/itineraries/");
   await page.getByRole("button", { name: "Coast", exact: true }).click();
   await expect(page.locator("main .tour-card:visible")).toHaveCount(1);
   await expect(page.locator("[data-filter-status]")).toHaveText(

@@ -13,7 +13,7 @@ export const brand = {
 
 export const navigation = [
   { label: "Home", href: "/" },
-  { label: "Itineraries", href: "/tours/" },
+  { label: "Itineraries", href: "/itineraries/" },
   { label: "Tailor-Made", href: "/tailor-made/" },
   { label: "Experiences", href: "/experiences/" },
   { label: "About Us", href: "/about-us/" },
