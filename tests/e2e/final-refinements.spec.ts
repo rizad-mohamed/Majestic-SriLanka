@@ -4,10 +4,18 @@ test("requested widths use a desktop spine and compact horizontal navigation wit
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
+  // Stable scrollbar gutters reserve layout space even with overlay scrollbars.
+  // Compare against the content box rather than the outer browser viewport.
+  const contentCenter = () =>
+    page.locator("main").evaluate((el) => {
+      const box = el.getBoundingClientRect();
+      return box.x + box.width / 2;
+    });
   for (const width of [320, 375, 390, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/experiences/");
     await page.evaluate(() => document.fonts.ready);
+    const experienceCenter = await contentCenter();
     const sections = page.locator(".experience-detail");
     await expect(sections).toHaveCount(5);
     for (let index = 0; index < 5; index++) {
@@ -20,7 +28,9 @@ test("requested widths use a desktop spine and compact horizontal navigation wit
       if (width > 1100) {
         const marker = row.locator(".journey-marker");
         const box = (await marker.boundingBox())!;
-        expect(Math.abs(box.x + box.width / 2 - width / 2)).toBeLessThan(1);
+        expect(Math.abs(box.x + box.width / 2 - experienceCenter)).toBeLessThan(
+          1,
+        );
         expect(box.width).toBeGreaterThanOrEqual(44);
         expect(box.height).toBeGreaterThanOrEqual(44);
         const left = index % 2 === 0 ? photo : copy;
@@ -83,6 +93,8 @@ test("requested widths use a desktop spine and compact horizontal navigation wit
       await page.evaluate(() => document.documentElement.scrollWidth),
     ).toBeLessThanOrEqual(width);
     await page.goto("/");
+    await page.evaluate(() => document.fonts.ready);
+    const homeCenter = await contentCenter();
     await page.addStyleTag({
       content: ".deferred-section { content-visibility: visible !important; }",
     });
@@ -93,7 +105,7 @@ test("requested widths use a desktop spine and compact horizontal navigation wit
         .locator(".story-copy > .button, .closing-cta .button")
         .all()) {
         const box = (await button.boundingBox())!;
-        expect(Math.abs(box.x + box.width / 2 - width / 2)).toBeLessThan(1);
+        expect(Math.abs(box.x + box.width / 2 - homeCenter)).toBeLessThan(1);
       }
       await expect(page.locator(".review-card blockquote").first()).toHaveCSS(
         "text-align",
