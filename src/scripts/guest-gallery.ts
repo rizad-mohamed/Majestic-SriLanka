@@ -142,6 +142,10 @@
       (event) => {
         if (event.pointerType !== "mouse") {
           touching = true;
+          // Leave native touch momentum in control until an explicit Play action.
+          paused = true;
+          button.setAttribute("aria-pressed", "true");
+          button.textContent = "Play gallery";
           synchronize();
         }
       },

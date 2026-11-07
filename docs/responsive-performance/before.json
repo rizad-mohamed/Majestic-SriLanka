@@ -1,0 +1,21 @@
+[
+  {
+    "route": "/",
+    "mode": "mobile",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 2872.30335,
+      "cls": 0.001727810409200867,
+      "tbt": 0
+    },
+    "lighthouseVersion": "13.6.0",
+    "measuredAt": "2026-11-07T09:13:28.331Z",
+    "method": "Median performance run of 1 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure."
+  }
+]

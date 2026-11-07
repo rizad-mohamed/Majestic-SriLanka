@@ -1392,26 +1392,6 @@ body.dialog-is-open {
   color: var(--bronze-dark);
   margin-top: 28px;
 }
-.experience-detail {
-  display: grid;
-  align-items: center;
-  padding-block: 48px;
-  border-bottom: 1px solid var(--line);
-  scroll-margin-top: 30px;
-}
-
-.experience-detail h2 {
-  margin-bottom: 20px;
-}
-.experience-detail p {
-  margin-bottom: 18px;
-}
-.experience-detail .detail-tip {
-  font-size: 14px;
-  background: var(--ivory);
-  padding: 18px 22px;
-  border-radius: 8px;
-}
 .values-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

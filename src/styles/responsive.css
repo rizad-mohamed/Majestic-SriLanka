@@ -1,4 +1,50 @@
 /* One reading frame and consistent hero geometry across the primary routes. */
+html {
+  scrollbar-gutter: stable;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+/* Modal scrolling stays inside the dialog, including on short landscape screens. */
+dialog {
+  overscroll-behavior: contain;
+  scroll-padding-block: 20px;
+}
+.dialog-heading h2,
+.gallery-intro > div,
+.contact-grid > *,
+.field {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+.tour-grid[data-tour-track],
+.experience-cards {
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: 4px;
+}
+/* Touch tablets also need 16px fields to avoid browser zoom while typing. */
+@media (pointer: coarse) {
+  .search-input input, .field input, .field select, .field textarea {
+    font-size: max(16px, 1rem);
+  }
+  .circle-button, .icon-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .button:hover,
+  .tour-card:hover .tour-image img,
+  .experience-card:hover > img {
+    transform: none;
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .dialog, .gallery-lightbox {
+    max-height: calc(100dvh - 20px);
+  }
+  .cookie-banner {
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+  }
+}
 .page-hero {
   min-height: clamp(420px, 32vw, 480px);
   padding-block: 48px;
