@@ -1,0 +1,62 @@
+[
+  {
+    "route": "/",
+    "mode": "mobile",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "lcp": 2802.1749999999997,
+      "cls": 0.001727810409200867,
+      "tbt": 0
+    },
+    "lighthouseVersion": "13.6.0",
+    "measuredAt": "2026-11-07T09:22:33.588Z",
+    "method": "Median performance run of 3 independent audits; raw reports retained; no audits skipped.",
+    "indexingNote": "Preview is intentionally noindex. Raw SEO score includes the crawlability failure.",
+    "runs": [
+      {
+        "scores": {
+          "performance": 96,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2801.7080000000005,
+          "cls": 0.001727810409200867,
+          "tbt": 0
+        }
+      },
+      {
+        "scores": {
+          "performance": 96,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2802.1749999999997,
+          "cls": 0.001727810409200867,
+          "tbt": 0
+        }
+      },
+      {
+        "scores": {
+          "performance": 96,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 69
+        },
+        "metrics": {
+          "lcp": 2803.3729999999996,
+          "cls": 0.001727810409200867,
+          "tbt": 0
+        }
+      }
+    ]
+  }
+]

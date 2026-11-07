@@ -17,6 +17,7 @@ if (navigation) {
   let positions: number[] = [];
   let stops: number[] = [];
   let frame = 0;
+  let measurement = 0;
   let active = -1;
   const update = () => {
     frame = 0;
@@ -66,6 +67,7 @@ if (navigation) {
     if (!frame) frame = requestAnimationFrame(update);
   };
   const measure = () => {
+    measurement = 0;
     positions = sections.map(
       (section) => section.getBoundingClientRect().top + window.scrollY,
     );
@@ -107,11 +109,14 @@ if (navigation) {
     }
     schedule();
   };
+  const scheduleMeasurement = () => {
+    if (!measurement) measurement = requestAnimationFrame(measure);
+  };
   window.addEventListener("scroll", schedule, { passive: true });
-  window.addEventListener("resize", measure, { passive: true });
+  window.addEventListener("resize", scheduleMeasurement, { passive: true });
   reduced.addEventListener("change", schedule);
-  const observer = new ResizeObserver(measure);
+  const observer = new ResizeObserver(scheduleMeasurement);
   sections.forEach((section) => observer.observe(section));
-  document.fonts.ready.then(measure);
+  document.fonts.ready.then(scheduleMeasurement);
   measure();
 }

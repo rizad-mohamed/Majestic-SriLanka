@@ -65,30 +65,44 @@ import { guestPhotos as photos, guestPhotoVersion } from "../data/guest-photos";
     track.append(copy);
     button.hidden = false;
     let paused = false, hovered = false, focused = false, touching = false, visible = false;
-    let previous = 0, position = viewport.scrollLeft;
+    let previous = 0, position = viewport.scrollLeft, animation = 0;
+    let distance = group.offsetWidth;
+    const canPlay = () => visible && !document.hidden && !reduced.matches && !paused && !hovered && !focused && !touching;
+    function synchronize() {
+      cancelAnimationFrame(animation);
+      animation = 0;
+      previous = 0;
+      position = viewport.scrollLeft;
+      if (canPlay()) animation = requestAnimationFrame(frame);
+    }
+    // Cache geometry on resize instead of reading layout in every animation frame.
+    new ResizeObserver(() => { distance = group.offsetWidth; }).observe(group);
     button.addEventListener('click', () => {
       paused = !paused;
       button.setAttribute('aria-pressed', String(paused));
       button.textContent = paused ? 'Play gallery' : 'Pause gallery';
+      synchronize();
     });
-    viewport.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') hovered = true; });
-    viewport.addEventListener('pointerleave', () => { hovered = false; });
-    viewport.addEventListener('focusin', () => { focused = true; });
-    viewport.addEventListener('focusout', () => { focused = false; });
-    viewport.addEventListener('touchstart', () => { touching = true; }, { passive:true });
-    viewport.addEventListener('touchend', () => { touching = false; }, { passive:true });
-    viewport.addEventListener('touchcancel', () => { touching = false; }, { passive:true });
+    viewport.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') { hovered = true; synchronize(); } });
+    viewport.addEventListener('pointerleave', () => { hovered = false; synchronize(); });
+    viewport.addEventListener('focusin', () => { focused = true; synchronize(); });
+    viewport.addEventListener('focusout', () => { focused = false; synchronize(); });
+    viewport.addEventListener('touchstart', () => { touching = true; synchronize(); }, { passive:true });
+    // Keep momentum scrolling under the visitor's control until another Play action.
+    viewport.addEventListener('touchend', () => { touching = false; paused = true; button.setAttribute('aria-pressed', 'true'); button.textContent = 'Play gallery'; synchronize(); }, { passive:true });
+    viewport.addEventListener('touchcancel', () => { touching = false; synchronize(); }, { passive:true });
     viewport.addEventListener('scroll', () => { if (hovered || focused || touching || paused || reduced.matches) position = viewport.scrollLeft; }, { passive:true });
-    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }).observe(gallery);
+    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; synchronize(); }).observe(viewport);
+    document.addEventListener('visibilitychange', synchronize);
+    reduced.addEventListener('change', synchronize);
     function frame(now: number) {
+      animation = 0;
+      if (!canPlay() || !distance) return;
       const elapsed = previous ? Math.min(now - previous, 50) : 0;
       previous = now;
-      if (visible && !document.hidden && !reduced.matches && !paused && !hovered && !focused && !touching) {
-        position = (position + elapsed * 0.035) % group.offsetWidth;
-        viewport.scrollLeft = position;
-      } else position = viewport.scrollLeft;
-      requestAnimationFrame(frame);
+      position = (position + elapsed * 0.035) % distance;
+      viewport.scrollLeft = position;
+      animation = requestAnimationFrame(frame);
     }
-    requestAnimationFrame(frame);
   });
 </script>
