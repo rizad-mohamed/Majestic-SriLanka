@@ -1,3 +1,4 @@
+import storyPlayerUrl from "./story-player.js?no-inline&url";
 const hero = document.querySelector<HTMLElement>("[data-hero-carousel]");
 if (hero) {
   const controls = hero.querySelector<HTMLElement>("[data-hero-controls]")!;
@@ -9,56 +10,67 @@ if (hero) {
   const video = hero.querySelector<HTMLVideoElement>("[data-hero-video]")!;
   const status = hero.querySelector<HTMLElement>("[data-hero-status]")!;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-  // The poster is the initial hero on every device. Only an explicit Play
-  // action may attach the film source and start its download.
-  let playing = false;
+  const filmIndex = buttons.length - 1;
+  const duration = 5500;
+  let playing = !reduced.matches;
   let visible = true;
   let hovering = false;
+  let suspended = false;
   let current = 0;
   let request = 0;
-  let failedVideo = false;
   let timer: number | undefined;
   let watchdog: number | undefined;
+  let cleanup: number | undefined;
+  let failedVideo = false;
+  stage.querySelector("img")!.setAttribute("data-hero-current", "");
   video.muted = true;
-  video.loop = false;
   controls.hidden = false;
 
   function clearWatchdog() {
     clearTimeout(watchdog);
     watchdog = undefined;
   }
+  function stopTimer() {
+    clearTimeout(timer);
+  }
   function videoFallback() {
-    if (current !== 0 || !playing || failedVideo || !visible || document.hidden)
+    if (
+      current !== filmIndex ||
+      !playing ||
+      failedVideo ||
+      !visible ||
+      document.hidden ||
+      suspended
+    )
       return;
     failedVideo = true;
     clearWatchdog();
     video.pause();
-    status.textContent =
-      "The film is unavailable. Showing a landscape instead.";
-    void select(1);
+    status.textContent = "Film unavailable.";
+    void select(0);
   }
   function watchVideo() {
     clearWatchdog();
-    if (current === 0 && playing && visible && !document.hidden)
-      watchdog = window.setTimeout(videoFallback, 12000);
+    watchdog = window.setTimeout(videoFallback, 12000);
   }
   function synchronize() {
-    clearTimeout(timer);
+    stopTimer();
     toggle.textContent = playing ? "Pause hero playback" : "Play hero playback";
     if (
       !playing ||
       !visible ||
-      (hovering && current !== 0) ||
+      suspended ||
+      (hovering && current !== filmIndex) ||
       document.hidden
     ) {
       video.pause();
       clearWatchdog();
       return;
     }
-    if (current === 0) {
+    if (current === filmIndex) {
       if (failedVideo) return;
       if (video.ended) {
-        void select(1);
+        void select(0);
         return;
       }
       if (!video.getAttribute("src")) {
@@ -70,15 +82,17 @@ if (hero) {
         void video.play().catch(videoFallback);
       }
     } else {
-      // After explicit playback, the film plays once; image playback never loops back to it.
       timer = window.setTimeout(() => {
-        void select(current === buttons.length - 1 ? 1 : current + 1);
-      }, 7000);
+        void select((current + 1) % buttons.length);
+      }, duration);
     }
   }
   function pause() {
     playing = false;
     request++;
+    stage
+      .querySelectorAll("picture[aria-hidden]")
+      .forEach((frame) => frame.remove());
     synchronize();
   }
   function updateControls() {
@@ -86,21 +100,34 @@ if (hero) {
       button.setAttribute("aria-pressed", String(index === current)),
     );
   }
+  function tidyFrames() {
+    stage.querySelectorAll("picture:not([aria-hidden])").forEach((frame) => {
+      if (!frame.querySelector("[data-hero-current]")) frame.remove();
+    });
+    if (current !== filmIndex) video.classList.remove("is-visible");
+  }
   async function select(index: number, manual = false) {
-    if (manual) pause();
-    if (index === current) return;
+    if (manual) {
+      status.textContent = "";
+      pause();
+      if (index === filmIndex) {
+        playing = true;
+        failedVideo = false;
+        if (video.ended) video.currentTime = 0;
+      }
+    }
+    if (index === current) {
+      synchronize();
+      return;
+    }
+    stopTimer();
     const ticket = ++request;
+    stage
+      .querySelectorAll("picture[aria-hidden]")
+      .forEach((frame) => frame.remove());
     const previous = stage.querySelector<HTMLElement>("[data-hero-current]");
-    if (index === 0) {
-      previous?.removeAttribute("data-hero-current");
-      video.setAttribute("data-hero-current", "");
-      video.classList.remove("is-hidden");
-      if (video.readyState) video.currentTime = 0;
-      failedVideo = false;
-      previous?.closest("picture")?.remove();
-      current = 0;
-      status.textContent = "Sri Lanka film.";
-    } else {
+    let image: HTMLImageElement | undefined;
+    if (index !== filmIndex) {
       const template = hero!.querySelector<HTMLTemplateElement>(
         `[data-hero-template="${buttons[index].dataset.slide}"]`,
       )!;
@@ -108,7 +135,7 @@ if (hero) {
         template.content.querySelector("picture")!,
         true,
       );
-      const image = frame.querySelector("img")!;
+      image = frame.querySelector("img")!;
       image.loading = "eager";
       image.className = "hero-frame";
       frame.setAttribute("aria-hidden", "true");
@@ -117,55 +144,53 @@ if (hero) {
         await image.decode();
       } catch {
         frame.remove();
-        pause();
-        status.textContent =
-          "This landscape could not load. Please choose another slide.";
+        if (ticket === request) {
+          pause();
+          status.textContent = "Image unavailable.";
+        }
         return;
       }
       if (ticket !== request) {
         frame.remove();
         return;
       }
-      previous?.removeAttribute("data-hero-current");
-      image.setAttribute("data-hero-current", "");
       frame.removeAttribute("aria-hidden");
+    }
+    previous?.removeAttribute("data-hero-current");
+    current = index;
+    if (image) {
+      image.setAttribute("data-hero-current", "");
       if (reduced.matches) image.classList.add("is-visible");
       else
         requestAnimationFrame(() =>
-          requestAnimationFrame(() => image.classList.add("is-visible")),
+          requestAnimationFrame(() => {
+            if (image?.isConnected) image.classList.add("is-visible");
+          }),
         );
       video.pause();
       clearWatchdog();
-      const oldFrame = previous?.closest("picture");
-      window.setTimeout(
-        () => {
-          oldFrame?.remove();
-          if (current !== 0) video.classList.add("is-hidden");
-        },
-        reduced.matches ? 0 : 850,
-      );
-      current = index;
-      if (manual) status.textContent = image.alt;
+    } else {
+      // Keep the outgoing photograph beneath the poster until the film fades in.
+      stage.append(video);
+      video.setAttribute("data-hero-current", "");
+      video.currentTime = 0;
+      video.classList.add("is-visible");
+      failedVideo = false;
     }
+    clearTimeout(cleanup);
+    cleanup = window.setTimeout(tidyFrames, reduced.matches ? 0 : 700);
     updateControls();
     synchronize();
   }
   video.addEventListener("ended", () => {
-    if (current === 0 && playing) void select(1);
+    if (current === filmIndex && playing) void select(0);
   });
   video.addEventListener("error", videoFallback);
   video.addEventListener("waiting", watchVideo);
   video.addEventListener("playing", clearWatchdog);
   buttons.forEach((button, index) =>
     button.addEventListener("click", () => {
-      void select(index, true).then(() => {
-        if (index === 0) {
-          playing = true;
-          failedVideo = false;
-          if (video.ended) video.currentTime = 0;
-          synchronize();
-        }
-      });
+      void select(index, true);
     }),
   );
   controls.addEventListener("keydown", (event) => {
@@ -177,13 +202,12 @@ if (hero) {
     buttons[next].focus();
     void select(next, true);
   });
-  toggle.addEventListener("click", async () => {
+  toggle.addEventListener("click", () => {
     if (playing) pause();
     else {
-      if (current !== 0) await select(0);
-      if (video.ended) video.currentTime = 0;
       playing = true;
       failedVideo = false;
+      if (current === filmIndex && video.ended) video.currentTime = 0;
       synchronize();
     }
   });
@@ -204,35 +228,38 @@ if (hero) {
   reduced.addEventListener("change", () => {
     if (reduced.matches) pause();
   });
-  new IntersectionObserver(
-    (entries) => {
-      visible = entries[0].isIntersecting;
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      visible = entry.isIntersecting;
       synchronize();
     },
     { threshold: 0.1 },
-  ).observe(hero);
+  );
+  observer.observe(hero);
+  window.addEventListener("pagehide", (event) => {
+    suspended = true;
+    synchronize();
+    if (!event.persisted) {
+      request++;
+      clearTimeout(cleanup);
+      observer.disconnect();
+    }
+  });
+  window.addEventListener("pageshow", () => {
+    suspended = false;
+    synchronize();
+  });
 
-  // The existing optional full-size story player remains independent of the hero.
-  const film = document.querySelector<HTMLVideoElement>("[data-island-film]");
-  const dialog = document.getElementById("story-dialog");
   hero
     .querySelector('[data-dialog="story-dialog"]')
     ?.addEventListener("click", () => {
       pause();
-      if (!film) return;
-      if (!film.getAttribute("src")) {
-        film.src = film.dataset.src!;
-        film.poster = film.dataset.poster!;
-        film.load();
-      }
-      void film.play().catch(() => {
-        /* Native controls remain available. */
-      });
+      void import(/* @vite-ignore */ storyPlayerUrl)
+        .then(({ playStory }) => playStory())
+        .catch(() => {
+          document.querySelector<HTMLElement>("[data-film-error]")!.hidden =
+            false;
+        });
     });
-  dialog?.addEventListener("close", () => film?.pause());
-  film?.addEventListener("error", () => {
-    const message = dialog?.querySelector<HTMLElement>("[data-film-error]");
-    if (message) message.hidden = false;
-  });
   synchronize();
 }

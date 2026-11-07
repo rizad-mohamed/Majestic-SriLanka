@@ -258,77 +258,12 @@ main:focus {
   margin-right: 9px;
 }
 
-/* The original reference uses a full-width, normal-flow white header. */
-.site-header {
-  height: 89px;
-  background: #fff;
-  position: relative;
-  z-index: 10;
-}
-.header-inner {
-  width: min(1280px, calc(100% - 150px));
-  height: 100%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 36px;
-}
-.brand {
-  flex-shrink: 0;
-}
-.brand img {
-  width: 218px;
-  height: auto;
-}
 /* Frame the supplied square artwork without stretching it or showing its large transparent margins. */
 .brand img,
 .footer-brand img {
   aspect-ratio: 2.8;
   object-fit: cover;
   object-position: 50% 52%;
-}
-.desktop-nav {
-  display: flex;
-  align-items: center;
-  gap: 34px;
-  margin-left: auto;
-}
-.desktop-nav a {
-  font-size: 13px;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-.desktop-nav a[aria-current="page"]:after {
-  content: "";
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--green);
-}
-.desktop-nav a:hover {
-  color: var(--bronze-dark);
-}
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-left: 55px;
-}
-.search-trigger {
-  border: 1px solid var(--line);
-}
-.header-plan {
-  min-height: 44px;
-  padding: 10px 24px;
-  font-size: 12px;
-}
-.menu-trigger {
-  width: 30px;
 }
 
 .hero {
@@ -1457,26 +1392,6 @@ body.dialog-is-open {
   color: var(--bronze-dark);
   margin-top: 28px;
 }
-.experience-detail {
-  display: grid;
-  align-items: center;
-  padding-block: 48px;
-  border-bottom: 1px solid var(--line);
-  scroll-margin-top: 30px;
-}
-
-.experience-detail h2 {
-  margin-bottom: 20px;
-}
-.experience-detail p {
-  margin-bottom: 18px;
-}
-.experience-detail .detail-tip {
-  font-size: 14px;
-  background: var(--ivory);
-  padding: 18px 22px;
-  border-radius: 8px;
-}
 .values-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1730,20 +1645,7 @@ body.dialog-is-open {
   .container {
     width: calc(100% - 100px);
   }
-  .header-inner {
-    width: calc(100% - 80px);
-    gap: 24px;
-  }
-  .brand img {
-    width: 185px;
-  }
-  .desktop-nav {
-    gap: 23px;
-  }
-  .header-actions {
-    margin-left: 20px;
-    gap: 12px;
-  }
+
   .hero {
     height: 670px;
   }
@@ -1911,15 +1813,7 @@ body.dialog-is-open {
   }
 }
 @media (max-width: 1000px) {
-  .desktop-nav {
-    display: none;
-  }
-  .header-inner {
-    width: calc(100% - 70px);
-  }
-  .header-actions {
-    margin-left: auto;
-  }
+
   .hero h1 {
     font-size: 64px;
   }
@@ -2215,26 +2109,7 @@ body.dialog-is-open {
   .container {
     width: calc(100% - 40px);
   }
-  .site-header {
-    height: 78px;
-  }
-  .header-inner {
-    width: calc(100% - 36px);
-  }
-  .brand img {
-    height: auto;
-  }
-  .header-plan {
-    display: none;
-  }
-  .search-trigger {
-    width: 36px;
-    height: 36px;
-  }
-  .menu-trigger {
-    width: 34px;
-    height: 40px;
-  }
+
   .hero-inner {
     align-items: flex-start;
     padding-top: 47px;

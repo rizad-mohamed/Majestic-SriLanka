@@ -1,5 +1,15 @@
 # Responsive and performance review — 7 November 2026
 
+## Integration with current main
+
+The report below records the original `4303b9b` implementation and its local measurements. Integration preserves the newer hero sequence and compositor-driven gallery from PR #25. The first hero photograph already has eager loading and high fetch priority, so the old film-poster preload is not carried forward. The gallery keeps native transform animation, cached resize geometry and idle suspension; touching it now pauses playback until the visitor explicitly chooses Play. Responsive regression tests use `/itineraries/`, assert native animation state and verify there is no JavaScript frame loop during playback. The dialog, coarse-pointer, reflow and journey measurement improvements are retained.
+
+The measurements below describe the original commit, not fresh measurements of this combined version. The integration pull request records its own validation and CI results.
+
+The combined shared stylesheet initially exceeded its existing 14KB gzip budget. The italic display-font CSS is now imported by the homepage, its only consumer, instead of every layout. Experience-only base rules also live in the existing experience-route stylesheet. These changes retain the fonts, homepage preload and applicable style overrides while reducing shared CSS; no budget is raised.
+
+## Original implementation report
+
 Preserved the approved composition, photographs, forest green/bronze palette, masks, paper notes and botanical details. The existing static Astro architecture, responsive WebP/AVIF assets, lazy loading, self-hosted fonts and explicit video playback already provide a strong foundation. No new dependency or framework migration was needed.
 
 ## Changes

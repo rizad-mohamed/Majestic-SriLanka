@@ -25,7 +25,7 @@ test("pages reflow across intermediate widths and phone landscape", async ({
     await page.setViewportSize(viewport);
     for (const route of [
       "/",
-      "/tours/",
+      "/itineraries/",
       "/gallery/",
       "/tailor-made/",
       "/experiences/",
@@ -59,7 +59,7 @@ test("gallery schedules animation only while visible and playing", async ({
         callback(time);
       });
   });
-  await page.goto("/tours/");
+  await page.goto("/itineraries/");
   await page.emulateMedia({ reducedMotion: "no-preference" });
   const frames = async () => {
     await page.evaluate(() => performance.clearMarks("test-animation-frame"));
@@ -71,24 +71,42 @@ test("gallery schedules animation only while visible and playing", async ({
   await page.waitForTimeout(300);
   expect(await frames()).toBeLessThanOrEqual(2);
   const viewport = page.locator(".guest-gallery-window");
+  const track = page.locator(".guest-gallery-track");
+  const animations = () => track.evaluate((el) => el.getAnimations().length);
+  await expect.poll(animations).toBe(0);
   await viewport.scrollIntoViewIfNeeded();
   await page.mouse.move(0, 0);
-  await expect.poll(frames).toBeGreaterThan(2);
+  await expect.poll(animations).toBe(1);
+  expect(await frames()).toBeLessThanOrEqual(2);
   await page
     .getByRole("button", { name: "Pause gallery", exact: true })
     .click();
+  await expect.poll(animations).toBe(0);
   expect(await frames()).toBeLessThanOrEqual(2);
   await page.getByRole("button", { name: "Play gallery", exact: true }).click();
-  await expect.poll(frames).toBeGreaterThan(2);
+  await page.mouse.move(0, 0);
+  await expect.poll(animations).toBe(1);
+  expect(await frames()).toBeLessThanOrEqual(2);
   await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect.poll(animations).toBe(0);
   expect(await frames()).toBeLessThanOrEqual(2);
   await page.emulateMedia({ reducedMotion: "no-preference" });
-  await viewport.dispatchEvent("touchstart");
-  await viewport.dispatchEvent("touchend");
+  await expect.poll(animations).toBe(1);
+  await viewport.dispatchEvent("pointerdown", { pointerType: "touch" });
+  await page.evaluate(() =>
+    window.dispatchEvent(
+      new PointerEvent("pointerup", { pointerType: "touch" }),
+    ),
+  );
   await expect(
     page.getByRole("button", { name: "Play gallery", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");
+  await page.waitForTimeout(300);
+  await expect.poll(animations).toBe(0);
   expect(await frames()).toBeLessThanOrEqual(2);
+  await page.getByRole("button", { name: "Play gallery", exact: true }).click();
+  await page.mouse.move(0, 0);
+  await expect.poll(animations).toBe(1);
 });
 
 test("landscape dialogs fit the viewport and keep their controls reachable", async ({
