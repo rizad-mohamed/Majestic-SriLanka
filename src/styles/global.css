@@ -1233,13 +1233,11 @@ body.dialog-is-open {
 .search-results a:hover {
   color: var(--bronze-dark);
 }
-.story-dialog,
-.tour-dialog {
+.story-dialog {
   padding: 0;
   position: relative;
 }
-.story-dialog > img,
-.tour-dialog > img {
+.story-dialog > img {
   width: 100%;
   height: 270px;
   object-fit: cover;
@@ -2543,8 +2541,7 @@ body.dialog-is-open {
   .menu-dialog {
     margin: auto;
   }
-  .story-dialog > img,
-  .tour-dialog > img {
+  .story-dialog > img {
     height: 210px;
   }
   .dialog-body h2 {

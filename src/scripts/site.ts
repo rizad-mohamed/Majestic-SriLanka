@@ -14,6 +14,7 @@ document.querySelectorAll<HTMLElement>("[data-dialog]").forEach((trigger) => {
     if (!(dialog instanceof HTMLDialogElement)) return;
     dialogTriggers.set(dialog, trigger);
     dialog.showModal();
+    dialog.querySelector(".tour-dialog-content")?.scrollTo(0, 0);
     document.body.classList.add("dialog-is-open");
     if (dialog.id === "search-dialog")
       dialog.querySelector<HTMLInputElement>("input")?.focus();

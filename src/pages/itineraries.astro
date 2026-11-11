@@ -7,11 +7,9 @@ import GuestGallery from '../components/GuestGallery.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
 import { tours } from '../data/content';
 import Icon from '../components/Icon.astro';
-import experiencePhotos from '../../public/assets/majestic-sri-lanka/experiences/manifest.json';
-const credits = experiencePhotos.assets.filter(photo => tours.some(tour => tour.collection === 'experiences' && tour.image === photo.key));
 const filters = ['All', 'Culture', 'Nature', 'Coast', 'Couples'];
 ---
-<Layout><PageHero title="Journeys to<br />Remember" eyebrow="OUR PRIVATE ITINERARIES" description="A few thoughtfully crafted starting points. A world of possibilities to make them yours." image="hero-sigiriya" label="Itineraries" /><section class="container page-section itinerary-list-section" aria-labelledby="tour-list-title"><div class="page-intro tour-intro botanical-heading"><BotanicalAccent /><p class="eyebrow">FIND YOUR JOURNEY</p><h2 id="tour-list-title">An island. Your way.</h2><p>Culture, wildlife, time by the sea or a couples’ escape — choose what calls to you. Every journey can be shaped around your interests and pace.</p></div><div class="journey-controls"><div class="filter-row" aria-label="Filter journeys">{filters.map(filter => <button class="filter-button" data-filter={filter} aria-pressed={filter === 'All'}>{filter === 'All' ? 'All Journeys' : filter}</button>)}</div><div class="journey-arrows" data-journey-arrows hidden><button class="circle-button" type="button" data-journey-step="-1" aria-label="Previous journey" aria-controls="journey-slides"><Icon name="back" size={19} /></button><button class="circle-button" type="button" data-journey-step="1" aria-label="Next journey" aria-controls="journey-slides"><Icon name="arrow" size={19} /></button></div></div><div class="journey-slides" id="journey-slides" tabindex="0" role="region" aria-label="Journeys">{tours.map(tour => <TourCard tour={tour} />)}</div><p class="filter-status" data-filter-status aria-live="polite">{tours.length} journeys to explore</p><p class="itinerary-context">These are suggested itineraries to inspire your planning. Your final route, inclusions, accommodation and pricing are confirmed in a personal proposal. No booking or payment is taken here.</p><p class="itinerary-context">Find <a class="text-link" href="/experiences/">experiences for your journey</a> or learn about <a class="text-link" href="/tailor-made/">personalising an itinerary</a>.</p><details id="tour-photo-credits" class="photo-credits"><summary>Photography credits</summary><ul>{credits.map(photo => <li><a href={photo.source}>{photo.title}</a> by {photo.creator}, <a href={photo.licenseUrl}>{photo.license}</a>. Cropped and resized.</li>)}</ul></details></section><GuestGallery /><ClosingCTA /></Layout>
+<Layout><PageHero title="Journeys to<br />Remember" eyebrow="OUR PRIVATE ITINERARIES" description="A few thoughtfully crafted starting points. A world of possibilities to make them yours." image="hero-sigiriya" label="Itineraries" /><section class="container page-section itinerary-list-section" aria-labelledby="tour-list-title"><div class="page-intro tour-intro botanical-heading"><BotanicalAccent /><p class="eyebrow">FIND YOUR JOURNEY</p><h2 id="tour-list-title">An island. Your way.</h2><p>Culture, wildlife, time by the sea or a couples’ escape — choose what calls to you. Every journey can be shaped around your interests and pace.</p></div><div class="journey-controls"><div class="journey-filter" hidden><label for="journey-category">Journey type</label><div class="journey-select"><select id="journey-category" aria-controls="journey-slides">{filters.map(filter => <option value={filter}>{filter === 'All' ? 'All journeys' : filter}</option>)}</select><Icon name="down" size={16} /></div></div><div class="journey-arrows" data-journey-arrows hidden><button class="circle-button" type="button" data-journey-step="-1" aria-label="Previous journey" aria-controls="journey-slides"><Icon name="back" size={19} /></button><button class="circle-button" type="button" data-journey-step="1" aria-label="Next journey" aria-controls="journey-slides"><Icon name="arrow" size={19} /></button></div></div><div class="journey-slides" id="journey-slides" tabindex="0" role="region" aria-label="Journeys">{tours.map(tour => <TourCard tour={tour} />)}</div><p class="filter-status" data-filter-status aria-live="polite">{tours.length} journeys to explore</p><p class="itinerary-context">These are suggested itineraries to inspire your planning. Your final route, inclusions, accommodation and pricing are confirmed in a personal proposal. No booking or payment is taken here.</p><p class="itinerary-context">Find <a class="text-link" href="/experiences/">experiences for your journey</a> or learn about <a class="text-link" href="/tailor-made/">personalising an itinerary</a>.</p></section><GuestGallery /><ClosingCTA /></Layout>
 
 <script>
   const journeySlides = document.querySelector<HTMLElement>("#journey-slides");
@@ -61,57 +59,55 @@ const filters = ['All', 'Culture', 'Nature', 'Coast', 'Couples'];
     });
   }
 
-  document
-    .querySelectorAll<HTMLButtonElement>("[data-filter]")
-    .forEach((button) =>
-      button.addEventListener("click", () => {
-        const filter = button.dataset.filter;
-        let count = 0;
-        journeySlides
-          ?.querySelectorAll<HTMLElement>("[data-category]")
-          .forEach((card) => {
-            card.hidden = filter !== "All" && card.dataset.category !== filter;
-            if (!card.hidden) count++;
-          });
-        journeySlides?.scrollTo({ left: 0, behavior: "instant" });
-        updateJourneyArrows();
-        document
-          .querySelectorAll("[data-filter]")
-          .forEach((item) =>
-            item.setAttribute("aria-pressed", String(item === button)),
-          );
-        const status = document.querySelector("[data-filter-status]");
-        if (status)
-          status.textContent = `${count} ${count === 1 ? "journey" : "journeys"} to explore`;
-      }),
-    );
+  const category = document.querySelector<HTMLSelectElement>("#journey-category");
+  if (category && journeySlides) {
+    const status = document.querySelector("[data-filter-status]");
+    category.closest<HTMLElement>(".journey-filter")!.hidden = false;
+    category.addEventListener("change", () => {
+      const filter = category.value;
+      let count = 0;
+      journeySlides.querySelectorAll<HTMLElement>("[data-category]").forEach(card => {
+        card.hidden = filter !== "All" && card.dataset.category !== filter;
+        if (!card.hidden) count++;
+      });
+      journeySlides.scrollTo({ left: 0, behavior: "instant" });
+      updateJourneyArrows();
+      if (status) status.textContent = `${count} ${count === 1 ? "journey" : "journeys"} to explore`;
+    });
+  }
 </script>
 
 <style>
-.filter-row {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
-  width: 100%;
-  max-width: 700px;
-}
-.filter-button {
-  border: 1px solid var(--line);
-  border-radius: 100px;
-  padding: 11px 23px;
-  min-height: 44px;
-  font-size: 13px;
+.journey-filter {
   min-width: 0;
-  white-space: normal;
-  overflow-wrap: anywhere;
+  max-width: 230px;
+  flex: 1;
 }
-.filter-button[aria-pressed="true"] {
-  background: var(--green);
-  color: white;
-  border-color: var(--green);
+.journey-filter label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
-.filter-button:hover {
-  border-color: var(--green);
+.journey-select { position: relative; }
+.journey-select select {
+  appearance: none;
+  width: 100%;
+  min-height: 46px;
+  padding: 8px 40px 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+}
+.journey-select svg {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 .filter-status {
   margin-top: 25px;
@@ -119,7 +115,6 @@ const filters = ['All', 'Culture', 'Nature', 'Coast', 'Couples'];
 }
 
   .journey-controls { display:flex; justify-content:space-between; align-items:center; gap:18px; margin-bottom:18px; }
-  .journey-controls .filter-row { margin:0; }
   .journey-arrows:not([hidden]) { display:flex; gap:8px; }
   .journey-arrows button[aria-disabled="true"] { opacity:.45; cursor:default; }
   .journey-slides {
@@ -146,15 +141,13 @@ const filters = ['All', 'Culture', 'Nature', 'Coast', 'Couples'];
   .journey-slides :global(.tour-content > p) { margin-bottom:14px; }
   @media(max-width:1000px) { .journey-slides { --journey-width:calc((100% - var(--journey-gap)) / 2); } }
   @media(max-width:700px) {
-    .journey-controls { flex-wrap:wrap; gap:12px; }
-    .journey-controls .filter-row { grid-template-columns:repeat(3, minmax(0, 1fr)); }
-    .filter-button { padding-inline:12px; }
-    .journey-arrows { margin-inline-start:auto; }
+    .journey-controls { gap:12px; }
     .journey-slides { --journey-gap:14px; --journey-width:88%; }
     .journey-slides:has(.tour-card:not([hidden])):not(:has(.tour-card:not([hidden]) ~ .tour-card:not([hidden]))) { --journey-width:100%; }
   }
   .itinerary-list-section { padding-bottom:18px; }
   .itinerary-context { margin:12px 0 0; padding:0; max-width:960px; font-size:14px; line-height:1.6; color:var(--muted); }
+  .itinerary-context .text-link { display:inline; }
   .itinerary-context + .itinerary-context { margin-top:8px; }
   .itinerary-list-section > :last-child { margin-bottom:0; }
   @media(max-width:700px) {
