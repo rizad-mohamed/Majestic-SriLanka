@@ -14,15 +14,26 @@ env:
   PUBLIC_ALLOW_INDEXING: "false"
 jobs:
   build:
-    name: Build and production smoke tests
+    name: Build and static checks
     runs-on: ubuntu-24.04
     timeout-minutes: 20
+    outputs:
+      playwright_image: ${{ steps.playwright-image.outputs.image }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: 24
           cache: npm
+      - name: Resolve the Playwright image from the lockfile
+        id: playwright-image
+        run: |
+          node --input-type=commonjs <<'NODE'
+          const { appendFileSync } = require("node:fs");
+          const version = require("./package-lock.json").packages["node_modules/@playwright/test"]?.version;
+          if (!/^\d+\.\d+\.\d+$/.test(version)) throw new Error("Expected a stable Playwright version in package-lock.json");
+          appendFileSync(process.env.GITHUB_OUTPUT, "image=mcr.microsoft.com/playwright:v" + version + "-noble\n");
+          NODE
       - run: npm ci
       - run: npm run format:check
       - run: npm run lint
@@ -32,22 +43,21 @@ jobs:
       - run: npm run build
       - run: npm run test:seo
       - run: npm run measure:build
-      - run: npx playwright install --with-deps chromium
-      - run: npm run test:production
-      - name: Keep build and production evidence
+      - name: Keep build evidence
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: website-build-evidence
-          path: |
-            playwright-report/production/
-            test-results/production/
-            docs/seo/build-metrics.json
+          path: docs/seo/build-metrics.json
           retention-days: 14
 
   browsers:
-    name: Browser tests
+    name: Browser and production smoke tests
+    needs: build
     runs-on: ubuntu-24.04
+    container:
+      image: ${{ needs.build.outputs.playwright_image }}
+      options: --ipc=host
     timeout-minutes: 30
     env:
       CROSS_BROWSER: "true"
@@ -59,8 +69,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - run: npx playwright install --with-deps chromium firefox webkit
       - run: npm run test:e2e
+      - run: npm run test:production
       - name: Keep browser evidence
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
