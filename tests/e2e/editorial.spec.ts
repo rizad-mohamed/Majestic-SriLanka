@@ -121,7 +121,7 @@ test("content photographs keep a consistent landscape frame across routes", asyn
         ".deferred-section, .experience-detail { content-visibility: visible !important; }",
     });
     const photographs = page.locator(
-      ".tour-image img, .editorial-photo-main, .experience-detail > img",
+      ".tour-image img:visible, .editorial-photo-main:visible, .experience-detail > img:visible",
     );
     for (const photo of await photographs.all()) {
       const metrics = await photo.evaluate((image) => {

@@ -57,7 +57,7 @@ jobs:
     runs-on: ubuntu-24.04
     container:
       image: ${{ needs.build.outputs.playwright_image }}
-      options: --ipc=host
+      options: --user 1001 --ipc=host
     timeout-minutes: 30
     env:
       CROSS_BROWSER: "true"
