@@ -28,10 +28,26 @@
 .tour-image img[data-photo-collection="experiences"] {
   object-position: center;
 }
-.tour-dialog > img {
+.tour-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  padding: 0;
+  max-height: min(85dvh, calc(100dvh - 2 * max(16px, env(safe-area-inset-top), env(safe-area-inset-bottom))));
+  overflow: hidden;
+}
+.tour-dialog-content {
+  max-height: inherit;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.tour-dialog-content > img {
+  width: 100%;
   height: auto;
   aspect-ratio: var(--photo-landscape);
+  object-fit: cover;
 }
+.tour-dialog > .dialog-close { z-index: 1; }
 .editorial-photo {
   position: relative;
   isolation: isolate;

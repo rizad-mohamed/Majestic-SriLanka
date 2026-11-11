@@ -286,18 +286,32 @@ test("tour filters and itinerary preview lead to the correct planner choice", as
     );
     await card.getByRole("button", { name: "View Itinerary" }).click();
     const itinerary = page.getByRole("dialog", { name: title });
+    const bounds = await itinerary.boundingBox();
+    expect(bounds!.y).toBeGreaterThanOrEqual(0);
+    expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(
+      page.viewportSize()!.height,
+    );
+    const content = itinerary.locator(".tour-dialog-content");
+    await expect(content).toHaveJSProperty("scrollTop", 0);
+    await content.evaluate((element) => {
+      element.scrollTop = element.scrollHeight;
+    });
+    await expect(
+      itinerary.getByRole("button", { name: "Close itinerary" }),
+    ).toBeInViewport();
     await expect(itinerary.locator(".itinerary > li")).toHaveCount(days);
     await expect(itinerary.locator(".itinerary > li").last()).toContainText(
       "Bandaranaike International Airport",
     );
     await itinerary.getByRole("button", { name: "Close itinerary" }).click();
   }
-  await page.getByRole("button", { name: "Couples", exact: true }).click();
+  const category = page.getByLabel("Journey type");
+  await category.selectOption("Couples");
   await expect(page.locator("main .tour-card:visible")).toHaveCount(1);
   await expect(page.locator("main .tour-card:visible")).toContainText(
     "Romantic Island",
   );
-  await page.getByRole("button", { name: "Coast", exact: true }).click();
+  await category.selectOption("Coast");
   await expect(page.locator("main .tour-card:visible")).toHaveCount(1);
   await expect(page.locator("[data-filter-status]")).toHaveText(
     "1 journey to explore",
