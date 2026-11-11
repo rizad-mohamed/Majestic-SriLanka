@@ -8,22 +8,32 @@ permissions:
 concurrency:
   group: quality-${{ github.ref }}
   cancel-in-progress: true
+env:
+  ASTRO_TELEMETRY_DISABLED: "1"
+  PUBLIC_DEPLOYMENT_ENV: preview
+  PUBLIC_ALLOW_INDEXING: "false"
 jobs:
-  verify:
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
-    env:
-      ASTRO_TELEMETRY_DISABLED: "1"
-      PUBLIC_DEPLOYMENT_ENV: preview
-      PUBLIC_ALLOW_INDEXING: "false"
-      LIGHTHOUSE_RUNS: "3"
-      CROSS_BROWSER: "true"
+  build:
+    name: Build and static checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    outputs:
+      playwright_image: ${{ steps.playwright-image.outputs.image }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: 24
           cache: npm
+      - name: Resolve the Playwright image from the lockfile
+        id: playwright-image
+        run: |
+          node --input-type=commonjs <<'NODE'
+          const { appendFileSync } = require("node:fs");
+          const version = require("./package-lock.json").packages["node_modules/@playwright/test"]?.version;
+          if (!/^\d+\.\d+\.\d+$/.test(version)) throw new Error("Expected a stable Playwright version in package-lock.json");
+          appendFileSync(process.env.GITHUB_OUTPUT, "image=mcr.microsoft.com/playwright:v" + version + "-noble\n");
+          NODE
       - run: npm ci
       - run: npm run format:check
       - run: npm run lint
@@ -33,19 +43,80 @@ jobs:
       - run: npm run build
       - run: npm run test:seo
       - run: npm run measure:build
-      - run: npx playwright install --with-deps chromium firefox webkit
-      - run: npm run test:e2e
-      - run: npm run test:production
-      - name: Lighthouse audits
-        run: npm run test:lighthouse
-      - name: Keep browser and audit evidence
+      - name: Keep build evidence
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
-          name: website-quality-evidence
+          name: website-build-evidence
+          path: docs/seo/build-metrics.json
+          retention-days: 14
+
+  browsers:
+    name: Browser and production smoke tests
+    needs: build
+    runs-on: ubuntu-24.04
+    container:
+      image: ${{ needs.build.outputs.playwright_image }}
+      options: --user 1001 --ipc=host
+    timeout-minutes: 30
+    env:
+      CROSS_BROWSER: "true"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:e2e
+      - run: npm run test:production
+      - name: Keep browser evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: website-browser-evidence
           path: |
             playwright-report/
             test-results/
-            deliverables/lighthouse/
-            docs/seo/build-metrics.json
           retention-days: 14
+
+  lighthouse:
+    name: Lighthouse audits
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      LIGHTHOUSE_RUNS: "3"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:lighthouse
+      - name: Keep Lighthouse evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: website-lighthouse-evidence
+          path: deliverables/lighthouse/
+          retention-days: 14
+
+  verify:
+    needs: [build, browsers, lighthouse]
+    if: ${{ always() }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Require every quality job to pass
+        env:
+          BUILD_RESULT: ${{ needs.build.result }}
+          BROWSER_RESULT: ${{ needs.browsers.result }}
+          LIGHTHOUSE_RESULT: ${{ needs.lighthouse.result }}
+        run: |
+          printf 'Build: %s\nBrowsers: %s\nLighthouse: %s\n' "$BUILD_RESULT" "$BROWSER_RESULT" "$LIGHTHOUSE_RESULT"
+          test "$BUILD_RESULT" = success &&
+            test "$BROWSER_RESULT" = success &&
+            test "$LIGHTHOUSE_RESULT" = success

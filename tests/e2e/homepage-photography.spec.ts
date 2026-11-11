@@ -36,11 +36,17 @@ test("homepage photographs decode from the licensed collection, including every 
   );
   expect(await photos.count()).toBeGreaterThanOrEqual(11);
   for (const photo of await photos.all()) {
-    await expect(photo).toHaveAttribute("data-photo-collection", "homepage");
+    const isDocumentaryTourPhoto = await photo.evaluate(
+      (image) =>
+        Boolean(image.closest(".tour-image")) &&
+        ["wildlife", "culture"].includes(image.dataset.photo ?? ""),
+    );
+    const collection = isDocumentaryTourPhoto ? "experiences" : "homepage";
+    await expect(photo).toHaveAttribute("data-photo-collection", collection);
     await expect(photo).toHaveJSProperty("complete", true);
     expect(
       await photo.evaluate((image: HTMLImageElement) => image.currentSrc),
-    ).toContain("/homepage/");
+    ).toContain("/" + collection + "/");
   }
   for (const name of slides) {
     await page.locator(`[data-slide="${name}"]`).click();
@@ -98,7 +104,7 @@ test("all three photographs retain a working WebP fallback when AVIF is unavaila
   }
 });
 
-test("shared photos and social images on the six other routes retain their approved collection", async ({
+test("shared photos and social images on supporting routes retain their approved collection", async ({
   page,
 }) => {
   for (const route of [
@@ -111,11 +117,19 @@ test("shared photos and social images on the six other routes retain their appro
     "/contact-us/",
   ]) {
     await page.goto(route);
-    await expect(
-      page.locator('[data-photo-collection="homepage"]'),
-    ).toHaveCount(0);
-    for (const photo of await page.locator("img[data-photo]").all())
-      expect(await photo.getAttribute("src")).not.toContain("/homepage/");
+    const homepagePhotos = page.locator(
+      'img[data-photo-collection="homepage"]',
+    );
+    await expect(homepagePhotos).toHaveCount(route === "/itineraries/" ? 4 : 0);
+    for (const photo of await page.locator("img[data-photo]").all()) {
+      const source = await photo.getAttribute("src");
+      if (source?.includes("/homepage/")) {
+        expect(route).toBe("/itineraries/");
+        expect(source).toMatch(
+          /\/homepage\/photography\/(?:tea-country|southern-coast)-\d+\.webp$/,
+        );
+      }
+    }
     expect(
       await page.locator('meta[property="og:image"]').getAttribute("content"),
     ).not.toContain("/homepage/");
