@@ -305,13 +305,33 @@ test("tour filters and itinerary preview lead to the correct planner choice", as
     );
     await itinerary.getByRole("button", { name: "Close itinerary" }).click();
   }
-  const category = page.getByLabel("Journey type");
-  await category.selectOption("Couples");
+  const category = page.getByRole("combobox", { name: "Journey type" });
+  const allJourneys = page.getByRole("button", {
+    name: "All Journeys",
+    exact: true,
+  });
+  const mobile = page.viewportSize()!.width <= 700;
+  if (mobile) {
+    await expect(category).toBeVisible();
+    await expect(allJourneys).toBeHidden();
+  } else {
+    await expect(category).toBeHidden();
+    await expect(allJourneys).toHaveAttribute("aria-pressed", "true");
+  }
+  const selectCategory = async (value: string) => {
+    if (mobile) await category.selectOption(value);
+    else {
+      const button = page.getByRole("button", { name: value, exact: true });
+      await button.click();
+      await expect(button).toHaveAttribute("aria-pressed", "true");
+    }
+  };
+  await selectCategory("Couples");
   await expect(page.locator("main .tour-card:visible")).toHaveCount(1);
   await expect(page.locator("main .tour-card:visible")).toContainText(
     "Romantic Island",
   );
-  await category.selectOption("Coast");
+  await selectCategory("Coast");
   await expect(page.locator("main .tour-card:visible")).toHaveCount(1);
   await expect(page.locator("[data-filter-status]")).toHaveText(
     "1 journey to explore",
