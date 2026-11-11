@@ -114,29 +114,6 @@ document
     });
   });
 
-document
-  .querySelectorAll<HTMLButtonElement>("[data-filter]")
-  .forEach((button) =>
-    button.addEventListener("click", () => {
-      const filter = button.dataset.filter;
-      let count = 0;
-      document
-        .querySelectorAll<HTMLElement>("[data-category]")
-        .forEach((card) => {
-          card.hidden = filter !== "All" && card.dataset.category !== filter;
-          if (!card.hidden) count++;
-        });
-      document
-        .querySelectorAll("[data-filter]")
-        .forEach((item) =>
-          item.setAttribute("aria-pressed", String(item === button)),
-        );
-      const status = document.querySelector("[data-filter-status]");
-      if (status)
-        status.textContent = `${count} ${count === 1 ? "journey" : "journeys"} to explore`;
-    }),
-  );
-
 const form = document.querySelector<HTMLFormElement>("#trip-form");
 if (form) {
   form

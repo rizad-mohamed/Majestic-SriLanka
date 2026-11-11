@@ -25,6 +25,13 @@
 [data-photo="culture"] {
   --photo-position: 50% 46%;
 }
+.tour-image img[data-photo-collection="experiences"] {
+  object-position: center;
+}
+.tour-dialog > img {
+  height: auto;
+  aspect-ratio: var(--photo-landscape);
+}
 .editorial-photo {
   position: relative;
   isolation: isolate;

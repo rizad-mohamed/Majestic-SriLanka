@@ -25,11 +25,10 @@
   .experience-card-copy > strong { font-size: 14px; max-width: 110px; }
   .tour-grid[data-tour-track] { display: flex; overflow-x: auto; scroll-snap-type: x proximity; padding-block: 8px 20px; }
   [data-tour-track] .tour-card { flex: 0 0 300px; scroll-snap-align: start; }
-  .tour-grid.listing { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tour-content h3 { min-height: 0; }
   .carousel-side { display: none; }
   .circle-button { width: 44px; height: 44px; }
-  .tour-link, .filter-button { min-height: 44px; font-size: 14px; }
+  .tour-link { min-height: 44px; font-size: 14px; }
   .benefits-list { grid-template-columns: 1fr 1fr; gap: 24px; }
   .benefit { display: flex; gap: 12px; }
   .benefit h3 { font-size: 15px; }
@@ -154,9 +153,8 @@
   .breadcrumb { font-size: 13px; flex-wrap: wrap; }
 
   .tour-card { flex: 0 0 88%; min-width: 0; }
-  .tour-grid.listing .tour-card { flex-basis: auto; }
   .tour-content p { font-size: 16px; line-height: 1.5; }
-  .tour-link, .filter-button { min-height: 44px; font-size: 14px; }
+  .tour-link { min-height: 44px; font-size: 14px; }
   .section-actions .text-link, .experience-content > .text-link,
   .testimonials-section .text-link { font-size: 14px; }
   .experience-cards { grid-template-columns: repeat(5, 148px); }
@@ -202,15 +200,6 @@
   .form-summary { padding: 16px; overflow-wrap: anywhere; }
   /* Avoid section height estimates shifting the scroll position on phones. */
   .deferred-section { content-visibility: visible; }
-}
-
-@media (max-width: 700px) {
-  .filter-row { margin-inline: auto; }
-  .filter-button { padding-inline: 12px; }
-}
-
-@media (max-width: 540px) {
-  .filter-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 370px) {

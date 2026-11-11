@@ -2,9 +2,11 @@
 import Icon from './Icon.astro';
 import Photo from './Photo.astro';
 import { tours, experiences } from '../data/content';
+const isHome = Astro.url.pathname === '/';
+const isItineraries = Astro.url.pathname === '/itineraries/';
 const searchItems = [
   { title: 'Guest Photo Gallery', description: 'Real memories from our guests’ Sri Lankan journeys.', href: '/gallery/' },
-  ...tours.map(t => ({ title: t.title, description: t.description, href: `/itineraries/#${t.id}` })),
+  ...tours.map(t => ({ title: t.title, description: t.description, keywords: `${t.category} ${t.route} ${t.overview} ${t.highlights.join(" ")}`, href: `/itineraries/#${t.id}` })),
   ...experiences.map(e => ({ title: e.title, description: e.description, href: `/experiences/#${e.id}` })),
   { title: 'Plan a tailor-made trip', description: 'Create your personal Sri Lankan travel brief.', href: '/plan-your-trip/' },
   { title: 'Our story', description: 'Local people. Meaningful journeys.', href: '/about-us/' },
@@ -16,10 +18,35 @@ const searchItems = [
   <label class="field-label" for="site-search">Search itineraries, experiences and travel information</label>
   <div class="search-input"><Icon name="search" /><input id="site-search" type="search" placeholder="Try tea country, wildlife, beaches…" autocomplete="off" /></div>
   <p id="search-status" class="small" aria-live="polite">Explore our journeys</p>
-  <ul class="search-results">{searchItems.map(item => <li data-search={`${item.title} ${item.description}`.toLowerCase()}><a href={item.href}><span><strong>{item.title}</strong><small>{item.description}</small></span><Icon name="arrow" size={20} /></a></li>)}</ul>
+  <ul class="search-results">{searchItems.map(item => <li data-search={`${item.title} ${item.description} ${"keywords" in item ? item.keywords : ""}`.toLowerCase()}><a href={item.href}><span><strong>{item.title}</strong><small>{item.description}</small></span><Icon name="arrow" size={20} /></a></li>)}</ul>
 </dialog>
-<dialog id="story-dialog" class="dialog story-dialog film-dialog" aria-labelledby="story-title"><button class="icon-button dialog-close" data-close aria-label="Close story"><Icon name="close" /></button><video controls playsinline preload="none" width="960" height="540" data-island-film data-src="/assets/majestic-sri-lanka/video/island-film.mp4" data-poster="/assets/majestic-sri-lanka/video/island-film-poster.webp" aria-label="A silent journey through Sri Lanka's railway, tea hills and Sigiriya"></video><div class="dialog-body"><p class="eyebrow">SRI LANKA IN MOTION</p><h2 id="story-title">More than a destination.</h2><p>From the railway through green hills to the ancient rock of Sigiriya. A glimpse of the island, with room to imagine your own journey.</p><p class="small" data-film-error role="status" hidden>The film could not load. <a href="/assets/majestic-sri-lanka/video/island-film.mp4" download>Download the film</a> to watch it on your device.</p><p class="small">A 16-second silent film. Use the playback controls to pause or explore it at your own pace.</p><a class="button button--primary" href="/about-us/">Read Our Story <Icon name="arrow" size={18} /></a></div></dialog>
-{tours.map(tour => <dialog id={`tour-${tour.id}`} class="dialog tour-dialog" aria-labelledby={`title-${tour.id}`}><button class="icon-button dialog-close" data-close aria-label="Close itinerary"><Icon name="close" /></button><Photo name={tour.image} alt={tour.alt} /><div class="dialog-body"><p class="eyebrow">{tour.days} DAYS · A SUGGESTED JOURNEY</p><h2 id={`title-${tour.id}`}>{tour.title}</h2><p>{tour.route}</p><ol class="itinerary">{tour.itinerary.map(([title, copy]) => <li><h3>{title}</h3><p>{copy}</p></li>)}</ol><p class="small">An outline to inspire your plans. Dates, accommodation, inclusions, transport, pricing and availability are confirmed in your personal proposal.</p><a class="button button--primary" href={`/plan-your-trip/?journey=${tour.id}`}>Make This Journey Yours <Icon name="arrow" size={18} /></a></div></dialog>)}
+{isHome && <dialog id="story-dialog" class="dialog story-dialog film-dialog" aria-labelledby="story-title"><button class="icon-button dialog-close" data-close aria-label="Close story"><Icon name="close" /></button><video controls playsinline preload="none" width="960" height="540" data-island-film data-src="/assets/majestic-sri-lanka/video/island-film.mp4" data-poster="/assets/majestic-sri-lanka/video/island-film-poster.webp" aria-label="A silent journey through Sri Lanka's railway, tea hills and Sigiriya"></video><div class="dialog-body"><p class="eyebrow">SRI LANKA IN MOTION</p><h2 id="story-title">More than a destination.</h2><p>From the railway through green hills to the ancient rock of Sigiriya. A glimpse of the island, with room to imagine your own journey.</p><p class="small" data-film-error role="status" hidden>The film could not load. <a href="/assets/majestic-sri-lanka/video/island-film.mp4" download>Download the film</a> to watch it on your device.</p><p class="small">A 16-second silent film. Use the playback controls to pause or explore it at your own pace.</p><a class="button button--primary" href="/about-us/">Read Our Story <Icon name="arrow" size={18} /></a></div></dialog>}
+{(isHome || isItineraries) && tours.map(tour => (
+  <dialog id={`tour-${tour.id}`} class="dialog tour-dialog" aria-labelledby={`title-${tour.id}`}>
+    <button class="icon-button dialog-close" data-close aria-label="Close itinerary"><Icon name="close" /></button>
+    {isItineraries && <Photo name={tour.image} alt={tour.alt} collection={tour.collection} sizes="(max-width: 700px) 100vw, 700px" />}
+    <div class="dialog-body">
+      <p class="eyebrow">{tour.days} DAYS · A SUGGESTED JOURNEY</p>
+      <h2 id={`title-${tour.id}`}>{tour.title}</h2>
+      <p>{tour.overview}</p>
+      {isItineraries && <p>{tour.route}</p>}
+      {isItineraries && tour.collection === "experiences" && <p class="small"><a class="text-link" href={`/experiences/#${tour.image}`}>Photography credits</a></p>}
+      {isItineraries ? <>
+      <h3>Signature experiences</h3>
+      <ul>{tour.highlights.map(highlight => <li>{highlight}</li>)}</ul>
+      <p><strong>Ideal for</strong> {tour.idealFor}</p>
+      <h3>Day-by-day itinerary</h3>
+      <ol class="itinerary">
+        {tour.itinerary.map(([destination, copy]) => (
+          <li><h4>{destination}</h4><p>{copy}</p></li>
+        ))}
+      </ol>
+      </> : <p><a class="text-link" href={`/itineraries/#${tour.id}`}>See the full day-by-day itinerary</a></p>}
+      <p class="small">Dates, accommodation, inclusions, transport, pricing and availability are confirmed in your personal proposal.</p>
+      <a class="button button--primary" href={`/plan-your-trip/?journey=${tour.id}`}>Make This Journey Yours <Icon name="arrow" size={18} /></a>
+    </div>
+  </dialog>
+))}
 <dialog id="privacy-dialog" class="dialog policy-dialog" aria-labelledby="privacy-title"><div class="dialog-heading"><h2 id="privacy-title">Privacy information</h2><button class="icon-button" data-close aria-label="Close privacy information"><Icon name="close" /></button></div><p>This development preview does not transmit trip-planner entries to a server, store them in browser storage, or use analytics cookies unless you explicitly accept optional analytics and analytics is configured. A first-party preference cookie remembers your cookie choice for 180 days. You can change your choice through Cookie Settings in the footer. Downloading a brief saves a text file to your device. Downloading an email draft saves an .eml file with the brief attached; it does not send email. If a verified email or WhatsApp link is configured, choosing it opens that external service and its privacy terms apply.</p><p>The business’s full privacy policy, data controller details and retention terms must be supplied and reviewed before enabling online enquiry collection or launching publicly.</p></dialog>
 <dialog id="terms-dialog" class="dialog policy-dialog" aria-labelledby="terms-title"><div class="dialog-heading"><h2 id="terms-title">Booking information</h2><button class="icon-button" data-close aria-label="Close booking information"><Icon name="close" /></button></div><p>The journeys shown here are illustrative planning outlines, not confirmed packages or offers. No payment or booking is accepted through this preview.</p><p>Final itineraries, availability, inclusions, prices, cancellation rules and booking terms must be agreed with Majestic Sri Lanka before any booking. The business’s approved terms of service are still required before public launch.</p></dialog>
 <noscript><div class="container no-script"><p>Search and itinerary previews need JavaScript. Browse <a href="/itineraries/">Itineraries</a>, <a href="/experiences/">Experiences</a> or <a href="/contact-us/">Contact</a> directly to continue planning.</p></div></noscript>

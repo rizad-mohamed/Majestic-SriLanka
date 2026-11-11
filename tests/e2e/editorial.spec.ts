@@ -147,22 +147,20 @@ test("featured tour crops remain attached to the photograph when reordered", asy
   page,
 }) => {
   await page.goto("/");
-  const sigiriya = page.locator(
-    '[data-tour-track] [data-photo="cultural-triangle"]',
-  );
-  const before = await sigiriya.evaluate(
+  const wildlife = page.locator('[data-tour-track] [data-photo="wildlife"]');
+  const before = await wildlife.evaluate(
     (image) => getComputedStyle(image).objectPosition,
   );
   await page.getByRole("button", { name: "Next featured tour" }).click();
-  const after = await sigiriya.evaluate(
+  const after = await wildlife.evaluate(
     (image) => getComputedStyle(image).objectPosition,
   );
-  expect(before).toBe("74% 50%");
+  expect(before).toBe("50% 50%");
   expect(after).toBe(before);
   await expect(
     page
       .locator("[data-tour-track] article")
       .first()
       .locator(".tour-image img"),
-  ).toHaveCSS("object-position", "50% 56%");
+  ).toHaveAttribute("src", /experiences\/culture-720\.webp$/);
 });

@@ -6,6 +6,6 @@ interface Props { tour: (typeof tours)[number] }
 const { tour } = Astro.props;
 ---
 <article class="tour-card" id={tour.id} data-category={tour.category}>
-  <div class="tour-image"><Photo name={tour.image} alt={tour.alt} sizes="(max-width: 700px) 83vw, 30vw" /><span class="duration">{tour.days} Days</span></div>
+  <div class="tour-image"><Photo name={tour.image} alt={tour.alt} collection={tour.collection} sizes="(max-width: 700px) 83vw, (max-width: 1000px) 45vw, 30vw" /><span class="duration">{tour.days} Days</span></div>
   <div class="tour-content"><h3>{tour.title}</h3><p>{tour.description}</p><button class="tour-link" data-dialog={`tour-${tour.id}`}>View Itinerary <span><Icon name="arrow" size={17} /></span></button></div>
 </article>

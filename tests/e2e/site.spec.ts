@@ -120,7 +120,7 @@ test("search finds a journey and handles no results", async ({ page }) => {
   await expect(dialog).toBeVisible();
   await page.locator("#site-search").fill("hill country");
   await expect(
-    dialog.getByRole("link", { name: /Hill Country Explorer/ }),
+    dialog.getByRole("link", { name: /Tropical Bliss/ }),
   ).toBeVisible();
   await page.locator("#site-search").fill("not-a-real-place");
   await expect(page.locator("#search-status")).toContainText("No matches");
@@ -259,6 +259,44 @@ test("tour filters and itinerary preview lead to the correct planner choice", as
   page,
 }) => {
   await page.goto("/itineraries/");
+  await expect(page.locator("main .tour-card")).toHaveCount(4);
+  await expect(page.locator("[data-filter-status]")).toHaveText(
+    "4 journeys to explore",
+  );
+  const slides = page.locator("#journey-slides");
+  await page.getByRole("button", { name: "Next journey", exact: true }).click();
+  await expect
+    .poll(() => slides.evaluate((track) => track.scrollLeft))
+    .toBeGreaterThan(0);
+  await page
+    .getByRole("button", { name: "Previous journey", exact: true })
+    .click();
+  await expect.poll(() => slides.evaluate((track) => track.scrollLeft)).toBe(0);
+  for (const [title, days, photo] of [
+    ["Birds & Beasts", 16, "experiences/wildlife"],
+    ["Ancient Secrets", 14, "experiences/culture"],
+    ["Tropical Bliss", 14, "homepage/photography/tea-country"],
+    ["Romantic Island", 12, "homepage/photography/southern-coast"],
+  ] as const) {
+    const card = page.locator("main .tour-card").filter({ hasText: title });
+    await expect(card.locator(".duration")).toHaveText(`${days} Days`);
+    await expect(card.locator("img")).toHaveAttribute(
+      "src",
+      new RegExp(`^/assets/majestic-sri-lanka/${photo}-[0-9]+\\.webp$`),
+    );
+    await card.getByRole("button", { name: "View Itinerary" }).click();
+    const itinerary = page.getByRole("dialog", { name: title });
+    await expect(itinerary.locator(".itinerary > li")).toHaveCount(days);
+    await expect(itinerary.locator(".itinerary > li").last()).toContainText(
+      "Bandaranaike International Airport",
+    );
+    await itinerary.getByRole("button", { name: "Close itinerary" }).click();
+  }
+  await page.getByRole("button", { name: "Couples", exact: true }).click();
+  await expect(page.locator("main .tour-card:visible")).toHaveCount(1);
+  await expect(page.locator("main .tour-card:visible")).toContainText(
+    "Romantic Island",
+  );
   await page.getByRole("button", { name: "Coast", exact: true }).click();
   await expect(page.locator("main .tour-card:visible")).toHaveCount(1);
   await expect(page.locator("[data-filter-status]")).toHaveText(
@@ -267,10 +305,10 @@ test("tour filters and itinerary preview lead to the correct planner choice", as
   await page
     .getByRole("button", { name: "View Itinerary", exact: true })
     .click();
-  const dialog = page.getByRole("dialog", { name: "Southern Coast Escape" });
+  const dialog = page.getByRole("dialog", { name: "Tropical Bliss" });
   await expect(dialog).toBeVisible();
   await dialog.getByRole("link", { name: "Make This Journey Yours" }).click();
-  await expect(page.locator("#journey")).toHaveValue("southern-coast");
+  await expect(page.locator("#journey")).toHaveValue("tropical-bliss");
 });
 
 test("hero selectors and featured tour controls respond", async ({ page }) => {
@@ -288,7 +326,7 @@ test("hero selectors and featured tour controls respond", async ({ page }) => {
   await page.getByRole("button", { name: "Next featured tour" }).click();
   await expect(
     page.locator("[data-tour-track] article").first(),
-  ).toHaveAttribute("id", "hill-country");
+  ).toHaveAttribute("id", "ancient-secrets");
   await page.getByRole("button", { name: "Watch Our Story" }).click();
   await expect(
     page.getByRole("dialog", { name: "More than a destination." }),

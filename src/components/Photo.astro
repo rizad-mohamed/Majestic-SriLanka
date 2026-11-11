@@ -1,16 +1,19 @@
 ---
 import manifest from '../../public/assets/majestic-sri-lanka/manifest.json';
 import homepage from '../../public/assets/majestic-sri-lanka/homepage/manifest.json';
-interface Props { name: string; alt: string; class?: string; eager?: boolean; sizes?: string; width?: number; height?: number; collection?: 'original' }
+import experiences from '../../public/assets/majestic-sri-lanka/experiences/manifest.json';
+interface Props { name: string; alt: string; class?: string; eager?: boolean; sizes?: string; width?: number; height?: number; collection?: 'original' | 'homepage' | 'experiences' }
 const { name, alt, class: className, eager = false, sizes = '(max-width: 700px) 100vw, 50vw', width, height, collection } = Astro.props;
-const useHomepage = Astro.url.pathname === '/' && collection !== 'original';
+const useHomepage = collection === 'homepage' || (Astro.url.pathname === '/' && collection === undefined);
 const homeAsset = useHomepage ? homepage.assets.find(asset => asset.name === name) : undefined;
-if (useHomepage && !homeAsset) throw new Error(`Missing licensed homepage photograph: ${name}`);
+if (useHomepage && !homeAsset) throw new Error(`Missing licensed photograph: ${name}`);
+const experienceAsset = collection === 'experiences' ? experiences.assets.find(asset => asset.key === name) : undefined;
+if (collection === 'experiences' && !experienceAsset) throw new Error(`Missing experience photograph: ${name}`);
 const base = `/assets/majestic-sri-lanka/photography/${name}`;
 const asset = manifest.assets.find(asset => asset.name === name && 'variants' in asset);
-const variants = homeAsset?.variants || (asset && 'variants' in asset ? asset.variants : []);
+const variants = homeAsset?.variants || experienceAsset?.variants || (asset && 'variants' in asset ? asset.variants : []);
 const uniqueWidths = new Map(variants?.map(variant => [variant.width, variant]));
 const intrinsic = uniqueWidths.get(720) || [...uniqueWidths.values()].at(-1);
 const srcset = [...uniqueWidths.values()].map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', ');
 ---
-<img src={homeAsset ? `/assets/majestic-sri-lanka/${intrinsic!.file}` : `${base}-720.webp`} srcset={srcset} sizes={sizes} alt={alt && homeAsset ? homeAsset.alt : alt} width={width || intrinsic?.width} height={height || intrinsic?.height} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" class={className} data-photo={name} data-photo-collection={homeAsset ? 'homepage' : undefined} />
+<img src={intrinsic ? `/assets/majestic-sri-lanka/${intrinsic.file}` : `${base}-720.webp`} srcset={srcset} sizes={sizes} alt={alt && homeAsset ? homeAsset.alt : alt} width={width || intrinsic?.width} height={height || intrinsic?.height} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" class={className} data-photo={name} data-photo-collection={homeAsset ? 'homepage' : experienceAsset ? 'experiences' : undefined} />
