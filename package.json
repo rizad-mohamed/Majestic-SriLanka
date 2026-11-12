@@ -41,7 +41,7 @@
     "@fontsource-variable/dm-sans": "^5.2.8",
     "@fontsource/caveat": "^5.2.7",
     "@fontsource/cormorant-garamond": "^5.2.7",
-    "@playwright/test": "^1.56.0",
+    "@playwright/test": "^1.65.0",
     "archiver": "^8.0.0",
     "eslint": "^10.14.0",
     "eslint-plugin-astro": "^3.2.1",
