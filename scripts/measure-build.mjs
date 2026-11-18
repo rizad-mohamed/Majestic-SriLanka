@@ -80,7 +80,9 @@ const mediaInventories = {
       (file) =>
         file.path.endsWith(".webp") &&
         !isHomepageFile(file) &&
-        !/\/(experiences|video|hero-mobile|guests)\//.test(file.path),
+        !/\/(experiences|experience-updates|gallery-updates|updates|video|hero-mobile|guests)\//.test(
+          file.path,
+        ),
     )
     .reduce((sum, file) => sum + file.bytes, 0),
   guestWebPBytes: files
@@ -98,10 +100,24 @@ const mediaInventories = {
   experienceWebPBytes: files
     .filter((file) => /\/experiences\/.*\.webp$/.test(file.path))
     .reduce((sum, file) => sum + file.bytes, 0),
+  experienceUpdatesWebPBytes: files
+    .filter((file) => /\/experience-updates\/.*\.webp$/.test(file.path))
+    .reduce((sum, file) => sum + file.bytes, 0),
+  suppliedUpdatesWebPBytes: files
+    .filter((file) => /\/updates\/.*\.webp$/.test(file.path))
+    .reduce((sum, file) => sum + file.bytes, 0),
   filmPosterBytes: files
     .filter((file) => /\/video\/.*\.webp$/.test(file.path))
     .reduce((sum, file) => sum + file.bytes, 0),
-  filmBytes: summary.mp4.bytes,
+  galleryUpdatesWebPBytes: files
+    .filter((file) => /\/gallery-updates\/.*\.webp$/.test(file.path))
+    .reduce((sum, file) => sum + file.bytes, 0),
+  galleryVideoBytes: files
+    .filter((file) => /\/gallery-updates\/.*\.mp4$/.test(file.path))
+    .reduce((sum, file) => sum + file.bytes, 0),
+  filmBytes: files
+    .filter((file) => /\/video\/.*\.mp4$/.test(file.path))
+    .reduce((sum, file) => sum + file.bytes, 0),
   mobileHeroWebPBytes: files
     .filter(
       (file) =>
@@ -134,6 +150,10 @@ if (
   mediaInventories.largestGuestWebPBytes > 400000 ||
   mediaInventories.guestCardWebPBytes > 10000000 ||
   mediaInventories.experienceWebPBytes > 1300000 ||
+  mediaInventories.experienceUpdatesWebPBytes > 1000000 ||
+  mediaInventories.suppliedUpdatesWebPBytes > 1300000 ||
+  mediaInventories.galleryUpdatesWebPBytes > 600000 ||
+  mediaInventories.galleryVideoBytes > 1500000 ||
   mediaInventories.filmPosterBytes > 50000 ||
   mediaInventories.filmBytes > 3000000 ||
   mediaInventories.mobileHeroWebPBytes > 100000 ||
@@ -145,6 +165,6 @@ if (
   result.documents.some((file) => file.gzipBytes > 15000)
 )
   throw new Error(
-    "Build budget exceeded: each route JS (including inline code) 6KB gzip, CSS 16KB gzip, each stylesheet 14KB gzip, HTML 15KB gzip; fonts 240KB, existing WebP 7.4MB, guest WebP 14MB full / 10MB cards / 400KB per photo, documentary WebP 1.3MB, film poster 50KB, film 3MB, mobile hero WebP 100KB. Homepage responsive collection: WebP 6.2MB and AVIF 600KB; original AVIF 400KB. Review measured changes.",
+    "Build budget exceeded: each route JS (including inline code) 6KB gzip, CSS 16KB gzip, each stylesheet 14KB gzip, HTML 15KB gzip; fonts 240KB, existing WebP 7.4MB, guest WebP 14MB full / 10MB cards / 400KB per photo, original documentary WebP 1.3MB, new experience WebP 1MB, supplied updates WebP 1.3MB, gallery WebP 600KB, gallery video 1.5MB, film poster 50KB, film 3MB, mobile hero WebP 100KB. Homepage responsive collection: WebP 6.2MB and AVIF 600KB; original AVIF 400KB. Review measured changes.",
   );
 console.log(JSON.stringify(summary));

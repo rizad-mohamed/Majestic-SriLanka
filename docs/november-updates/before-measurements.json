@@ -1,0 +1,167 @@
+[
+  {
+    "route": "itineraries",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "broken": [],
+    "frames": [
+      {
+        "width": 398.65625,
+        "height": 239.1875
+      },
+      {
+        "width": 398.65625,
+        "height": 239.1875
+      },
+      {
+        "width": 398.65625,
+        "height": 239.1875
+      },
+      {
+        "width": 398.65625,
+        "height": 239.1875
+      }
+    ]
+  },
+  {
+    "route": "about-us",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "broken": [],
+    "frames": [
+      {
+        "width": 552,
+        "height": 331.1875
+      }
+    ]
+  },
+  {
+    "route": "experiences",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "broken": [],
+    "frames": [
+      {
+        "width": 524,
+        "height": 314.390625
+      }
+    ]
+  },
+  {
+    "route": "gallery",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "broken": [],
+    "frames": []
+  },
+  {
+    "route": "itineraries",
+    "width": 768,
+    "scrollWidth": 753,
+    "broken": [],
+    "frames": [
+      {
+        "width": 315.5,
+        "height": 189.296875
+      },
+      {
+        "width": 315.5,
+        "height": 189.296875
+      },
+      {
+        "width": 315.5,
+        "height": 189.296875
+      },
+      {
+        "width": 315.5,
+        "height": 189.296875
+      }
+    ]
+  },
+  {
+    "route": "about-us",
+    "width": 768,
+    "scrollWidth": 753,
+    "broken": [],
+    "frames": [
+      {
+        "width": 278.5,
+        "height": 167.09375
+      }
+    ]
+  },
+  {
+    "route": "experiences",
+    "width": 768,
+    "scrollWidth": 753,
+    "broken": [],
+    "frames": [
+      {
+        "width": 285.5,
+        "height": 171.296875
+      }
+    ]
+  },
+  {
+    "route": "gallery",
+    "width": 768,
+    "scrollWidth": 753,
+    "broken": [],
+    "frames": []
+  },
+  {
+    "route": "itineraries",
+    "width": 390,
+    "scrollWidth": 375,
+    "broken": [],
+    "frames": [
+      {
+        "width": 287.765625,
+        "height": 172.65625
+      },
+      {
+        "width": 287.765625,
+        "height": 172.65625
+      },
+      {
+        "width": 287.765625,
+        "height": 172.65625
+      },
+      {
+        "width": 287.765625,
+        "height": 172.65625
+      }
+    ]
+  },
+  {
+    "route": "about-us",
+    "width": 390,
+    "scrollWidth": 375,
+    "broken": [],
+    "frames": [
+      {
+        "width": 303.015625,
+        "height": 181.796875
+      }
+    ]
+  },
+  {
+    "route": "experiences",
+    "width": 390,
+    "scrollWidth": 375,
+    "broken": [],
+    "frames": [
+      {
+        "width": 163.5,
+        "height": 98.09375
+      }
+    ]
+  },
+  {
+    "route": "gallery",
+    "width": 390,
+    "scrollWidth": 375,
+    "broken": [],
+    "frames": []
+  }
+]

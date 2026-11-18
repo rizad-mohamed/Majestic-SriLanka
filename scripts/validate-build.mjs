@@ -40,6 +40,14 @@ const documents = new Map(
 );
 let site, indexing;
 for (const [route, html] of documents) {
+  const stylesheets = [...html.matchAll(/<link\s[^>]*>/g)]
+    .map((match) => attrs(match[0]))
+    .filter((item) => item.rel === "stylesheet");
+  assert.ok(stylesheets.length, `Production stylesheets present: ${route}`);
+  for (const stylesheet of stylesheets) {
+    assert.ok(stylesheet.href.startsWith("/"), `Local stylesheet: ${route}`);
+    await access(join(root, stylesheet.href));
+  }
   assert.equal(
     (html.match(/<h1(?:\s|>)/g) || []).length,
     1,

@@ -19,6 +19,7 @@ let routes = process.argv.includes("--home-only")
   : [
       "/",
       "/itineraries/",
+      "/gallery/",
       "/tailor-made/",
       "/experiences/",
       "/about-us/",

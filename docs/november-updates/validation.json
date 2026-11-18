@@ -1,0 +1,80 @@
+{
+  "validatedOn": "2026-11-18",
+  "reports": {
+    "broad": {
+      "startTime": "2026-11-17T21:54:37.240Z",
+      "duration": 913220.852,
+      "expected": 243,
+      "skipped": 3,
+      "unexpected": 6,
+      "flaky": 0
+    },
+    "reruns": {
+      "startTime": "2026-11-17T22:19:17.290Z",
+      "duration": 61203.002,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "galleryPlayback": {
+      "startTime": "2026-11-17T22:24:50.501Z",
+      "duration": 26407.765,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "production": {
+      "startTime": "2026-11-17T22:13:21.902Z",
+      "duration": 26526.93,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "crossBrowser": {
+      "startTime": "2026-11-17T22:13:09.087Z",
+      "duration": 175415.044,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 8,
+      "flaky": 0
+    },
+    "webkitFollowup": {
+      "startTime": "2026-11-17T22:23:55.471Z",
+      "duration": 34576.115,
+      "expected": 1,
+      "skipped": 1,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "unitTests": {
+    "passed": 16,
+    "failed": 0
+  },
+  "typeCheck": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "lighthouse": [
+    {
+      "route": "/experiences/",
+      "mode": "mobile",
+      "fetchedAt": "2026-11-17T22:27:00.045Z",
+      "scores": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 69
+      },
+      "metrics": {
+        "lcp": 3238.0779999999995,
+        "cls": 0,
+        "tbt": 91
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "route": "itineraries",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "broken": []
+  },
+  {
+    "route": "about-us",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "broken": []
+  },
+  {
+    "route": "gallery",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "broken": []
+  },
+  {
+    "route": "itineraries",
+    "width": 768,
+    "scrollWidth": 753,
+    "broken": []
+  },
+  {
+    "route": "about-us",
+    "width": 768,
+    "scrollWidth": 753,
+    "broken": []
+  },
+  {
+    "route": "gallery",
+    "width": 768,
+    "scrollWidth": 753,
+    "broken": []
+  },
+  {
+    "route": "itineraries",
+    "width": 390,
+    "scrollWidth": 375,
+    "broken": []
+  },
+  {
+    "route": "about-us",
+    "width": 390,
+    "scrollWidth": 375,
+    "broken": []
+  },
+  {
+    "route": "gallery",
+    "width": 390,
+    "scrollWidth": 375,
+    "broken": []
+  }
+]

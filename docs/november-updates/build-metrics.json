@@ -1,0 +1,201 @@
+{
+  "measuredAt": "2026-11-18T02:48:27.264Z",
+  "directory": "dist",
+  "summary": {
+    "html": {
+      "count": 10,
+      "bytes": 513986,
+      "gzipBytes": 94488
+    },
+    "js": {
+      "count": 2,
+      "bytes": 12097,
+      "gzipBytes": 4880
+    },
+    "css": {
+      "count": 5,
+      "bytes": 87176,
+      "gzipBytes": 20090
+    },
+    "woff2": {
+      "count": 14,
+      "bytes": 233320,
+      "gzipBytes": 233574
+    },
+    "webp": {
+      "count": 366,
+      "bytes": 36819666,
+      "gzipBytes": 36836748
+    },
+    "avif": {
+      "count": 19,
+      "bytes": 989086,
+      "gzipBytes": 989233
+    },
+    "mp4": {
+      "count": 2,
+      "bytes": 4036518,
+      "gzipBytes": 4022252
+    }
+  },
+  "routes": [
+    {
+      "path": "404.html",
+      "cssGzipBytes": 13957,
+      "javaScriptGzipBytes": 4423
+    },
+    {
+      "path": "about-us/index.html",
+      "cssGzipBytes": 13957,
+      "javaScriptGzipBytes": 4423
+    },
+    {
+      "path": "contact-us/index.html",
+      "cssGzipBytes": 13957,
+      "javaScriptGzipBytes": 4423
+    },
+    {
+      "path": "experiences/index.html",
+      "cssGzipBytes": 15906,
+      "javaScriptGzipBytes": 5321
+    },
+    {
+      "path": "gallery/index.html",
+      "cssGzipBytes": 14777,
+      "javaScriptGzipBytes": 4866
+    },
+    {
+      "path": "index.html",
+      "cssGzipBytes": 15679,
+      "javaScriptGzipBytes": 5897
+    },
+    {
+      "path": "itineraries/index.html",
+      "cssGzipBytes": 15599,
+      "javaScriptGzipBytes": 5992
+    },
+    {
+      "path": "plan-your-trip/index.html",
+      "cssGzipBytes": 13957,
+      "javaScriptGzipBytes": 4423
+    },
+    {
+      "path": "tailor-made/index.html",
+      "cssGzipBytes": 13957,
+      "javaScriptGzipBytes": 4423
+    },
+    {
+      "path": "tours/index.html",
+      "cssGzipBytes": 0,
+      "javaScriptGzipBytes": 0
+    }
+  ],
+  "mediaInventories": {
+    "existingAvifBytes": 397316,
+    "homepageWebPBytes": 5656758,
+    "homepageAvifBytes": 591770,
+    "existingWebPBytes": 7157306,
+    "guestWebPBytes": 12438430,
+    "guestCardWebPBytes": 7767868,
+    "largestGuestWebPBytes": 334704,
+    "experienceWebPBytes": 1240206,
+    "experienceUpdatesWebPBytes": 877344,
+    "suppliedUpdatesWebPBytes": 1219936,
+    "filmPosterBytes": 36524,
+    "galleryUpdatesWebPBytes": 332476,
+    "galleryVideoBytes": 1352284,
+    "filmBytes": 2684234,
+    "mobileHeroWebPBytes": 92818
+  },
+  "documents": [
+    {
+      "path": "404.html",
+      "bytes": 27467,
+      "gzipBytes": 5714
+    },
+    {
+      "path": "about-us/index.html",
+      "bytes": 43345,
+      "gzipBytes": 8846
+    },
+    {
+      "path": "contact-us/index.html",
+      "bytes": 41112,
+      "gzipBytes": 8250
+    },
+    {
+      "path": "experiences/index.html",
+      "bytes": 82033,
+      "gzipBytes": 13671
+    },
+    {
+      "path": "gallery/index.html",
+      "bytes": 65881,
+      "gzipBytes": 10264
+    },
+    {
+      "path": "index.html",
+      "bytes": 87971,
+      "gzipBytes": 14773
+    },
+    {
+      "path": "itineraries/index.html",
+      "bytes": 83039,
+      "gzipBytes": 14987
+    },
+    {
+      "path": "plan-your-trip/index.html",
+      "bytes": 38913,
+      "gzipBytes": 8217
+    },
+    {
+      "path": "tailor-made/index.html",
+      "bytes": 43858,
+      "gzipBytes": 9531
+    },
+    {
+      "path": "tours/index.html",
+      "bytes": 367,
+      "gzipBytes": 235
+    }
+  ],
+  "scripts": [
+    {
+      "path": "_astro/Layout.astro_astro_type_script_index_0_lang._eOBQMKp.js",
+      "bytes": 11235,
+      "gzipBytes": 4423
+    },
+    {
+      "path": "_astro/story-player.C2oHiHtn.js",
+      "bytes": 862,
+      "gzipBytes": 457
+    }
+  ],
+  "styles": [
+    {
+      "path": "_astro/experiences.DTn9Czm-.css",
+      "bytes": 7331,
+      "gzipBytes": 1949
+    },
+    {
+      "path": "_astro/gallery.80RGvJc3.css",
+      "bytes": 2985,
+      "gzipBytes": 820
+    },
+    {
+      "path": "_astro/index.RAR1yOxY.css",
+      "bytes": 6456,
+      "gzipBytes": 1722
+    },
+    {
+      "path": "_astro/itineraries.CKgUU8oy.css",
+      "bytes": 6601,
+      "gzipBytes": 1642
+    },
+    {
+      "path": "_astro/Layout.D88qYxCm.css",
+      "bytes": 63803,
+      "gzipBytes": 13957
+    }
+  ]
+}
