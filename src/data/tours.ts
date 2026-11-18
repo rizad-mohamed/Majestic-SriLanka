@@ -2,14 +2,15 @@ export const tours = [
   {
     id: "birds-and-beasts",
     title: "Birds & Beasts",
-    days: 16,
-    image: "wildlife",
-    collection: "experiences" as const,
-    alt: "A herd of elephants standing together in Yala National Park",
+    days: 18,
+    image: "birds-and-beasts",
+    collection: "updates" as const,
+    alt: "A Sri Lanka blue magpie with blue and chestnut plumage perched on a branch",
     category: "Nature",
     description:
       "Wildlife safaris, endemic birds and tropical rainforest walks.",
-    route: "Negombo · Wilpattu · Minneriya or Kaudulla · Sinharaja · Yala",
+    route:
+      "Negombo · Wilpattu · Habarana · Kandy · Nuwara Eliya · Ella · Yala · Sinharaja · Bentota",
     overview:
       "Discover the extraordinary biodiversity of Sri Lanka, from magnificent elephants and elusive leopards to endemic birds and tropical rainforests.",
     itinerary: [
@@ -34,42 +35,56 @@ export const tours = [
         "Journey to Habarana through Sri Lanka’s dry-zone landscapes; enjoy a nature experience.",
       ],
       [
-        "Minneriya / Kaudulla",
-        "Choose the most suitable national park for an elephant safari, depending on seasonal conditions.",
+        "Habarana",
+        "Enjoy a wildlife safari at Minneriya or Kaudulla National Park, renowned for their wild elephant populations.",
       ],
       [
-        "Sigiriya",
-        "Birdwatching around Sigiriya and explore the surrounding natural landscape.",
+        "Habarana",
+        "Explore magnificent Sigiriya Lion Rock, one of Sri Lanka’s most iconic historical landmarks.",
       ],
-      ["Kandy", "Travel to Kandy through the central landscapes."],
       [
         "Kandy",
-        "Explore Udawattakele Forest Reserve and the Royal Botanical Gardens.",
+        "Experience a traditional Kandyan cultural dance performance and visit the Temple of the Sacred Tooth Relic.",
       ],
       [
         "Nuwara Eliya",
-        "Scenic drive through tea country to the central highlands.",
+        "Travel to Nuwara Eliya, visiting the Royal Botanical Gardens, a tea plantation and Ramboda Waterfall along the way.",
       ],
       [
-        "Horton Plains",
-        "Early-morning visit to Horton Plains National Park for highland scenery and birdwatching.",
+        "Nuwara Eliya",
+        "Explore Horton Plains National Park on a scenic nature walk, with time for highland landscapes and birdwatching.",
       ],
-      ["Sinharaja", "Travel to the Sinharaja Rainforest region."],
+      [
+        "Ella",
+        "Enjoy a scenic train journey through the central highlands and visit Ella’s iconic Nine Arch Bridge.",
+      ],
+      [
+        "Yala",
+        "Discover Yala National Park’s remarkable wilderness on an evening wildlife safari.",
+      ],
+      [
+        "Yala",
+        "Begin the day with a morning safari, exploring Yala National Park’s wildlife and landscapes.",
+      ],
+      [
+        "Sinharaja",
+        "Travel towards Sinharaja, stopping at Bundala National Park for birdwatching along the way.",
+      ],
       [
         "Sinharaja",
         "Guided rainforest walk with a specialist naturalist to seek endemic birds and wildlife.",
       ],
       [
-        "Udawalawe",
-        "Visit the Elephant Transit Home where schedules permit, followed by an afternoon safari.",
+        "Bentota",
+        "Enjoy a scenic boat safari through the Madu River wetlands, with the option of a sunset river experience.",
       ],
       [
-        "Yala",
-        "Travel to Yala and enjoy a wildlife safari in search of leopards and other animals.",
+        "Bentota",
+        "Enjoy optional water sports and recreational activities along Bentota’s beautiful coastline.",
       ],
       [
-        "Airport",
-        "Transfer to Bandaranaike International Airport for departure.",
+        "Airport Transfer",
+        "Enjoy a comfortable transfer to Bandaranaike International Airport for your onward journey.",
       ],
     ],
     highlights: [
@@ -84,13 +99,13 @@ export const tours = [
   {
     id: "ancient-secrets",
     title: "Ancient Secrets",
-    days: 14,
-    image: "culture",
-    collection: "experiences" as const,
-    alt: "Sigiriya Rock Fortress rising above a forested plain",
+    days: 15,
+    image: "ancient-secrets",
+    collection: "updates" as const,
+    alt: "Ancient Buddhist sculpture and a stupa beneath Sigiriya Rock at sunset",
     category: "Culture",
     description: "Ancient capitals, sacred temples and living traditions.",
-    route: "Anuradhapura · Polonnaruwa · Sigiriya · Kandy · Galle",
+    route: "Anuradhapura · Polonnaruwa · Sigiriya · Kandy · Nuwara Eliya · Ella · Galle · Bentota",
     overview:
       "Travel through thousands of years of Sri Lankan history, exploring ancient kingdoms, sacred temples, remarkable architecture and living traditions.",
     itinerary: [
@@ -112,12 +127,12 @@ export const tours = [
         "Visit the iconic Sigiriya Rock Fortress and its historic gardens.",
       ],
       [
-        "Dambulla",
-        "Explore the Dambulla Cave Temple and its celebrated Buddhist murals and statues.",
+        "Sigiriya",
+        "Enjoy a traditional village experience and discover the charm of Sri Lankan rural life.",
       ],
       [
-        "Habarana",
-        "Enjoy a village experience and discover traditional rural life.",
+        "Sigiriya",
+        "Enjoy an elephant safari at Minneriya or Kaudulla National Park and explore historic Dambulla Cave Temple.",
       ],
       [
         "Kandy",
@@ -128,21 +143,28 @@ export const tours = [
         "Explore the city, traditional arts and crafts, and an evening cultural performance.",
       ],
       [
-        "Matale",
-        "Discover the spice-growing region and selected cultural attractions.",
+        "Nuwara Eliya",
+        "Travel through the central highlands to Nuwara Eliya and visit a tea plantation among the scenic hills.",
       ],
       [
-        "Nuwara Eliya",
-        "Travel into the hill country and enjoy tea landscapes and a scenic train journey where schedules allow.",
+        "Ella",
+        "Enjoy a scenic train journey through the highlands to Ella and visit the iconic Nine Arch Bridge.",
       ],
-      ["Galle", "Travel south towards the historic coastal city of Galle."],
       [
         "Galle",
-        "Explore Galle Fort, colonial architecture, museums and coastal heritage.",
+        "Explore historic Galle Fort and discover the city’s colonial heritage.",
       ],
       [
-        "Airport",
-        "Transfer to Bandaranaike International Airport for departure.",
+        "Galle",
+        "Choose optional whale watching and a visit to a traditional moonstone mine to discover Sri Lanka’s moonstone heritage.",
+      ],
+      [
+        "Bentota",
+        "Explore the Madu River wetlands on a relaxing boat safari through lush mangroves and waterways.",
+      ],
+      [
+        "Airport Transfer",
+        "Enjoy a comfortable airport transfer as your Sri Lankan journey comes to an end.",
       ],
     ],
     highlights: [
@@ -158,9 +180,9 @@ export const tours = [
     id: "tropical-bliss",
     title: "Tropical Bliss",
     days: 14,
-    image: "tea-country",
-    collection: "homepage" as const,
-    alt: "Tea terraces on a green hillside near Nuwara Eliya",
+    image: "tropical-bliss",
+    collection: "updates" as const,
+    alt: "Leafy branches framing a white sandy beach and turquoise water",
     category: "Coast",
     description: "Hill-country trains, waterfalls and southern beaches.",
     route: "Kandy · Nuwara Eliya · Ella · Yala · Mirissa · Galle",
@@ -234,9 +256,9 @@ export const tours = [
     id: "romantic-island",
     title: "Romantic Island",
     days: 12,
-    image: "southern-coast",
-    collection: "homepage" as const,
-    alt: "Palm fronds framing the Indian Ocean at sunset in Matara",
+    image: "romantic-island",
+    collection: "updates" as const,
+    alt: "A couple walking hand in hand towards Galle lighthouse beside the sea",
     category: "Couples",
     description:
       "Boutique stays, scenic train rides and sunsets on the southern coast.",
@@ -275,7 +297,7 @@ export const tours = [
       ],
       [
         "Yala",
-        "Travel to Yala and enjoy a private or small-group safari, subject to availability.",
+        "Travel to Yala for an evening safari at Yala National Park, followed by a special romantic dinner beside the lake.",
       ],
       [
         "Tangalle",

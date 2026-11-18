@@ -273,10 +273,10 @@ test("tour filters and itinerary preview lead to the correct planner choice", as
     .click();
   await expect.poll(() => slides.evaluate((track) => track.scrollLeft)).toBe(0);
   for (const [title, days, photo] of [
-    ["Birds & Beasts", 16, "experiences/wildlife"],
-    ["Ancient Secrets", 14, "experiences/culture"],
-    ["Tropical Bliss", 14, "homepage/photography/tea-country"],
-    ["Romantic Island", 12, "homepage/photography/southern-coast"],
+    ["Birds & Beasts", 18, "updates/birds-and-beasts"],
+    ["Ancient Secrets", 15, "updates/ancient-secrets"],
+    ["Tropical Bliss", 14, "updates/tropical-bliss"],
+    ["Romantic Island", 12, "updates/romantic-island"],
   ] as const) {
     const card = page.locator("main .tour-card").filter({ hasText: title });
     await expect(card.locator(".duration")).toHaveText(`${days} Days`);
@@ -301,7 +301,7 @@ test("tour filters and itinerary preview lead to the correct planner choice", as
     ).toBeInViewport();
     await expect(itinerary.locator(".itinerary > li")).toHaveCount(days);
     await expect(itinerary.locator(".itinerary > li").last()).toContainText(
-      "Bandaranaike International Airport",
+      /airport/i,
     );
     await itinerary.getByRole("button", { name: "Close itinerary" }).click();
   }

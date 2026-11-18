@@ -1,0 +1,134 @@
+{
+  "assets": [
+    {
+      "name": "birds-and-beasts",
+      "source": "assets/source/november-updates/birds-and-beasts.jpg",
+      "sourceSha256": "7a35f2a75603fc3a515e4c8883aac3f11206a6cec7f0200e34fa9e19659f247f",
+      "provenance": "User-supplied photograph; cropped, resized and encoded as WebP. Location and documentary authenticity not independently verified.",
+      "variants": [
+        {
+          "file": "updates/birds-and-beasts-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 5364
+        },
+        {
+          "file": "updates/birds-and-beasts-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 11818
+        },
+        {
+          "file": "updates/birds-and-beasts-1200.webp",
+          "width": 1200,
+          "height": 720,
+          "bytes": 22716
+        }
+      ]
+    },
+    {
+      "name": "ancient-secrets",
+      "source": "assets/source/november-updates/ancient-secrets.jpeg",
+      "sourceSha256": "1377a8d3c73ef182151bee988deeacbf207b37a6719cd3a305a00440e55d8dd4",
+      "provenance": "User-supplied photograph; cropped, resized and encoded as WebP. Location and documentary authenticity not independently verified.",
+      "variants": [
+        {
+          "file": "updates/ancient-secrets-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 24370
+        },
+        {
+          "file": "updates/ancient-secrets-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 91390
+        },
+        {
+          "file": "updates/ancient-secrets-1200.webp",
+          "width": 1200,
+          "height": 720,
+          "bytes": 211306
+        }
+      ]
+    },
+    {
+      "name": "romantic-island",
+      "source": "assets/source/november-updates/romantic-island.jpeg",
+      "sourceSha256": "1edc963678474def5091d63d711c7ab9f7355dda05944b6c2c0800271ac5c584",
+      "provenance": "User-supplied photograph; cropped, resized and encoded as WebP. Location and documentary authenticity not independently verified.",
+      "variants": [
+        {
+          "file": "updates/romantic-island-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 16554
+        },
+        {
+          "file": "updates/romantic-island-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 56634
+        },
+        {
+          "file": "updates/romantic-island-1200.webp",
+          "width": 1200,
+          "height": 720,
+          "bytes": 130748
+        }
+      ]
+    },
+    {
+      "name": "tropical-bliss",
+      "source": "assets/source/november-updates/tropical-bliss.png",
+      "sourceSha256": "335068e50cc60c4f95dc95e061dc864167280a1549515930a0d6eea19d9509f8",
+      "provenance": "User-supplied photograph; cropped, resized and encoded as WebP. Location and documentary authenticity not independently verified.",
+      "variants": [
+        {
+          "file": "updates/tropical-bliss-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 21648
+        },
+        {
+          "file": "updates/tropical-bliss-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 73724
+        },
+        {
+          "file": "updates/tropical-bliss-1200.webp",
+          "width": 1200,
+          "height": 720,
+          "bytes": 169110
+        }
+      ]
+    },
+    {
+      "name": "lasith-koralage",
+      "source": "assets/source/november-updates/lasith-koralage.jpeg",
+      "sourceSha256": "3acc35a1e36363acdc09a8880e149eab5deb32dd90712789844fcce8a0d0e2e6",
+      "provenance": "User-supplied photograph; cropped, resized and encoded as WebP. Location and documentary authenticity not independently verified.",
+      "variants": [
+        {
+          "file": "updates/lasith-koralage-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 32886
+        },
+        {
+          "file": "updates/lasith-koralage-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 113650
+        },
+        {
+          "file": "updates/lasith-koralage-1200.webp",
+          "width": 1200,
+          "height": 720,
+          "bytes": 238018
+        }
+      ]
+    }
+  ]
+}

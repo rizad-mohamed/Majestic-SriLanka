@@ -14,7 +14,7 @@ test.beforeEach(async ({ context, baseURL }) => {
 
 const slides = ["hero-sigiriya", "hill-country", "southern-coast"];
 
-test("homepage photographs decode from the licensed collection, including every slideshow image", async ({
+test("homepage photographs retain approved collections and supplied tour images decode", async ({
   page,
 }) => {
   const oldPhotoRequests: string[] = [];
@@ -36,12 +36,10 @@ test("homepage photographs decode from the licensed collection, including every 
   );
   expect(await photos.count()).toBeGreaterThanOrEqual(11);
   for (const photo of await photos.all()) {
-    const isDocumentaryTourPhoto = await photo.evaluate(
-      (image) =>
-        Boolean(image.closest(".tour-image")) &&
-        ["wildlife", "culture"].includes(image.dataset.photo ?? ""),
+    const isSuppliedTourPhoto = await photo.evaluate((image) =>
+      Boolean(image.closest(".tour-image")),
     );
-    const collection = isDocumentaryTourPhoto ? "experiences" : "homepage";
+    const collection = isSuppliedTourPhoto ? "updates" : "homepage";
     await expect(photo).toHaveAttribute("data-photo-collection", collection);
     await expect(photo).toHaveJSProperty("complete", true);
     expect(
@@ -120,7 +118,12 @@ test("shared photos and social images on supporting routes retain their approved
     const homepagePhotos = page.locator(
       'img[data-photo-collection="homepage"]',
     );
-    await expect(homepagePhotos).toHaveCount(route === "/itineraries/" ? 4 : 0);
+    await expect(homepagePhotos).toHaveCount(0);
+    await expect(
+      page.locator('img[data-photo-collection="updates"]'),
+    ).toHaveCount(
+      route === "/itineraries/" ? 8 : route === "/about-us/" ? 1 : 0,
+    );
     for (const photo of await page.locator("img[data-photo]").all()) {
       const source = await photo.getAttribute("src");
       if (source?.includes("/homepage/")) {

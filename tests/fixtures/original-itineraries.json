@@ -1,0 +1,234 @@
+{
+  "birds-and-beasts": [
+    [
+      "Negombo",
+      "Arrival, private transfer and time to relax. Optional Negombo Lagoon experience."
+    ],
+    [
+      "Wilpattu",
+      "Travel to Wilpattu and enjoy an afternoon wildlife safari."
+    ],
+    [
+      "Wilpattu",
+      "Explore the park on a full-day wildlife and birdwatching experience."
+    ],
+    [
+      "Anuradhapura",
+      "Travel to Anuradhapura and discover ancient reservoirs, wetlands and surrounding bird habitats."
+    ],
+    [
+      "Habarana",
+      "Journey to Habarana through Sri Lanka’s dry-zone landscapes; enjoy a nature experience."
+    ],
+    [
+      "Minneriya / Kaudulla",
+      "Choose the most suitable national park for an elephant safari, depending on seasonal conditions."
+    ],
+    [
+      "Sigiriya",
+      "Birdwatching around Sigiriya and explore the surrounding natural landscape."
+    ],
+    [
+      "Kandy",
+      "Travel to Kandy through the central landscapes."
+    ],
+    [
+      "Kandy",
+      "Explore Udawattakele Forest Reserve and the Royal Botanical Gardens."
+    ],
+    [
+      "Nuwara Eliya",
+      "Scenic drive through tea country to the central highlands."
+    ],
+    [
+      "Horton Plains",
+      "Early-morning visit to Horton Plains National Park for highland scenery and birdwatching."
+    ],
+    [
+      "Sinharaja",
+      "Travel to the Sinharaja Rainforest region."
+    ],
+    [
+      "Sinharaja",
+      "Guided rainforest walk with a specialist naturalist to seek endemic birds and wildlife."
+    ],
+    [
+      "Udawalawe",
+      "Visit the Elephant Transit Home where schedules permit, followed by an afternoon safari."
+    ],
+    [
+      "Yala",
+      "Travel to Yala and enjoy a wildlife safari in search of leopards and other animals."
+    ],
+    [
+      "Airport",
+      "Transfer to Bandaranaike International Airport for departure."
+    ]
+  ],
+  "ancient-secrets": [
+    [
+      "Negombo",
+      "Arrival, private transfer and relaxation."
+    ],
+    [
+      "Anuradhapura",
+      "Travel to the ancient capital and explore its sacred city and archaeological heritage."
+    ],
+    [
+      "Anuradhapura",
+      "Discover Mihintale, Isurumuniya and selected ancient monasteries and monuments."
+    ],
+    [
+      "Polonnaruwa",
+      "Explore the medieval capital, including the remarkable Gal Vihara complex."
+    ],
+    [
+      "Sigiriya",
+      "Visit the iconic Sigiriya Rock Fortress and its historic gardens."
+    ],
+    [
+      "Dambulla",
+      "Explore the Dambulla Cave Temple and its celebrated Buddhist murals and statues."
+    ],
+    [
+      "Habarana",
+      "Enjoy a village experience and discover traditional rural life."
+    ],
+    [
+      "Kandy",
+      "Travel to Kandy and visit the Temple of the Sacred Tooth Relic."
+    ],
+    [
+      "Kandy",
+      "Explore the city, traditional arts and crafts, and an evening cultural performance."
+    ],
+    [
+      "Matale",
+      "Discover the spice-growing region and selected cultural attractions."
+    ],
+    [
+      "Nuwara Eliya",
+      "Travel into the hill country and enjoy tea landscapes and a scenic train journey where schedules allow."
+    ],
+    [
+      "Galle",
+      "Travel south towards the historic coastal city of Galle."
+    ],
+    [
+      "Galle",
+      "Explore Galle Fort, colonial architecture, museums and coastal heritage."
+    ],
+    [
+      "Airport",
+      "Transfer to Bandaranaike International Airport for departure."
+    ]
+  ],
+  "tropical-bliss": [
+    [
+      "Negombo",
+      "Arrival, transfer and time to unwind by the coast."
+    ],
+    [
+      "Kandy",
+      "Travel to Kandy and explore the city and its scenic surroundings."
+    ],
+    [
+      "Kandy",
+      "Visit the Royal Botanical Gardens and enjoy cultural experiences at a relaxed pace."
+    ],
+    [
+      "Nuwara Eliya",
+      "Journey through tea plantations and mountain scenery to Nuwara Eliya."
+    ],
+    [
+      "Nuwara Eliya",
+      "Discover waterfalls, tea estates and the cool-climate landscapes of the highlands."
+    ],
+    [
+      "Ella",
+      "Enjoy a scenic train journey to Ella, subject to train schedules and seat availability."
+    ],
+    [
+      "Ella",
+      "Visit Nine Arch Bridge, Little Adam’s Peak and nearby waterfalls."
+    ],
+    [
+      "Yala",
+      "Travel to Yala and enjoy an afternoon safari, subject to arrival time."
+    ],
+    [
+      "Tangalle",
+      "Continue to the southern coast for a relaxed tropical beach stay."
+    ],
+    [
+      "Mirissa",
+      "Travel to Mirissa and enjoy the beach, with an optional seasonal whale-watching excursion."
+    ],
+    [
+      "Mirissa",
+      "Free time for swimming, snorkelling, surfing or relaxation, depending on sea conditions."
+    ],
+    [
+      "Unawatuna",
+      "Explore the southern coastline and enjoy the beaches around Unawatuna."
+    ],
+    [
+      "Galle / Bentota",
+      "Visit Galle Fort, then continue to a coastal resort area for the final night."
+    ],
+    [
+      "Airport",
+      "Transfer to Bandaranaike International Airport for departure."
+    ]
+  ],
+  "romantic-island": [
+    [
+      "Negombo",
+      "Arrival, private transfer and a romantic welcome at the hotel."
+    ],
+    [
+      "Sigiriya",
+      "Travel to Sigiriya and settle into a boutique or luxury nature retreat."
+    ],
+    [
+      "Sigiriya",
+      "Optional sunrise visit to Sigiriya Rock, followed by a special private dining experience."
+    ],
+    [
+      "Kandy",
+      "Travel to Kandy and enjoy a scenic cultural stop along the way."
+    ],
+    [
+      "Kandy",
+      "Explore the city and botanical gardens, with an optional couples’ spa experience."
+    ],
+    [
+      "Nuwara Eliya",
+      "Journey through tea plantations and mountain scenery."
+    ],
+    [
+      "Ella",
+      "Enjoy the scenic hill-country train journey to Ella, subject to schedules and seat availability."
+    ],
+    [
+      "Ella",
+      "Discover scenic viewpoints and waterfalls, with time to relax at a boutique hotel."
+    ],
+    [
+      "Yala",
+      "Travel to Yala and enjoy a private or small-group safari, subject to availability."
+    ],
+    [
+      "Tangalle",
+      "Continue to the southern coast and unwind at a luxury beachfront property."
+    ],
+    [
+      "Mirissa / Galle",
+      "Enjoy a relaxed coastal day, sunset views and an optional romantic dinner."
+    ],
+    [
+      "Airport",
+      "Private transfer to Bandaranaike International Airport for departure."
+    ]
+  ]
+}
