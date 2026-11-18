@@ -1,5 +1,5 @@
 {
-  "version": "logo-v2",
+  "version": "november-v3",
   "logoSha256": "cc84c551c1c8068f5f08aa5c3871569cda60984672af7ce58823e9bda75a0731",
   "placement": "upper-right",
   "backingOpacity": 0.78,
@@ -828,15 +828,18 @@
       "full": {
         "width": 825,
         "height": 1100,
-        "bytes": 277990,
-        "sha256": "12652fdaed6e062b548c3a9be461b547d6720e435166f1b296fce5da12f575a3"
+        "bytes": 279782,
+        "sha256": "06bfd27e5bb42072d89b6e7577d68fc0930c9812d8c14606c23b62efd28da8fd"
       },
       "card": {
         "width": 620,
         "height": 820,
-        "bytes": 161962,
-        "sha256": "fda1c55d42d0e485f8eeda8d513c960ae493e8e9d9f748d75dc52f45687ec422"
-      }
+        "bytes": 161494,
+        "sha256": "ed351460ea7aae76b138371c44c4402ad9d892a43643f7616ac695b0e551a8b7"
+      },
+      "editedSource": "assets/source/november-updates/gallery-8515-edited.png",
+      "editedSourceSha256": "d4f5e8dd55e2ae25a97c77e46ed7c073bda8c64f3afd38cef26508d96f06c1bc",
+      "edit": "Only the highlighted person removed; reconstructed background confined to gallery-8515-removal-mask.svg. Original retained in assets/source/november-updates/gallery-8515-original.webp."
     },
     {
       "id": "8536",

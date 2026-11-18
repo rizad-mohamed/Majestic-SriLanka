@@ -11,7 +11,8 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { createHash } from "node:crypto";
 import sharp from "sharp";
-import { guestPhotos } from "../src/data/guest-photos.ts";
+import { guestPhotos, guestPhotoVersion } from "../src/data/guest-photos.ts";
+import { watermarkPhoto as mark } from "./lib/guest-watermark.mjs";
 
 const run = promisify(execFile);
 const sourceDirectory = resolve(process.argv[2] || "../IMG");
@@ -21,44 +22,9 @@ const destination = preview
   : "public/assets/majestic-sri-lanka/guests";
 const sourceFiles = await readdir(sourceDirectory);
 const logoPath = "public/assets/majestic-sri-lanka/branding/logo.webp";
-const logo = await sharp(await readFile(logoPath))
-  .trim({ background: "#00000000" })
-  .png()
-  .toBuffer();
-const logoSize = await sharp(logo).metadata();
 await mkdir(join(destination, "cards"), { recursive: true });
 await mkdir(".local/guest-watermark", { recursive: true });
 const hash = (value) => createHash("sha256").update(value).digest("hex");
-
-async function mark(buffer) {
-  const { width, height } = await sharp(buffer).metadata();
-  const margin = Math.round(width * 0.025);
-  const badgeWidth = Math.round(width * 0.25);
-  const padding = Math.round(badgeWidth * 0.08);
-  const logoWidth = badgeWidth - padding * 2;
-  const logoHeight = Math.round((logoWidth * logoSize.height) / logoSize.width);
-  const badgeHeight = logoHeight + padding * 2;
-  const badge = Buffer.from(
-    `<svg width="${badgeWidth}" height="${badgeHeight}"><rect width="${badgeWidth}" height="${badgeHeight}" rx="${Math.round(padding * 0.7)}" fill="white" fill-opacity=".78"/></svg>`,
-  );
-  const badgeLogo = await sharp(logo)
-    .resize(logoWidth, logoHeight)
-    .png()
-    .toBuffer();
-  const overlay = await sharp(badge)
-    .composite([{ input: badgeLogo, left: padding, top: padding }])
-    .png()
-    .toBuffer();
-  const result = await sharp(buffer)
-    .composite([
-      { input: overlay, left: width - badgeWidth - margin, top: margin },
-    ])
-    .webp({ quality: 82, effort: 6 })
-    .toBuffer();
-  if (result.length > 400000)
-    throw new Error("Watermarked photo exceeds 400 KB");
-  return { buffer: result, width, height, bytes: result.length };
-}
 
 async function saveImage(path, buffer) {
   const temporary = path + ".tmp";
@@ -156,7 +122,7 @@ if (!preview)
     "docs/gallery/watermark-manifest.json",
     JSON.stringify(
       {
-        version: "logo-v2",
+        version: guestPhotoVersion,
         logoSha256: hash(await readFile(logoPath)),
         placement: "upper-right",
         backingOpacity: 0.78,
@@ -175,3 +141,4 @@ console.log(
     preview,
   }),
 );
+if (!preview) await import("./prepare-gallery-updates.mjs");

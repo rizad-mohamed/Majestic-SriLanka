@@ -5,14 +5,23 @@ import Icon from '../components/Icon.astro';
 import { guestPhotos, guestPhotoVersion } from '../data/guest-photos';
 import sharp from 'sharp';
 import { readFile } from 'node:fs/promises';
+import updates from '../../public/assets/majestic-sri-lanka/gallery-updates/manifest.json';
 // Do not retain open photo file handles while the asset pipeline replaces them.
 sharp.cache({ files: 0 });
 const photos = await Promise.all(guestPhotos.map(async ([id, alt]) => {
   const file = `/assets/majestic-sri-lanka/guests/img_${id}.webp`;
   const src = `${file}?v=${guestPhotoVersion}`;
   const { width, height } = await sharp(await readFile(`public${file}`)).metadata();
-  return { src, alt, width, height };
+  return { src, alt, width, height, srcset: undefined as string | undefined };
 }));
+const addedPhoto = updates.photo.variants.at(-1)!;
+photos.splice(4, 0, {
+  src: `/assets/majestic-sri-lanka/${addedPhoto.file}`,
+  alt: 'An elephant standing on a rocky shoreline beside trees and water',
+  width: addedPhoto.width,
+  height: addedPhoto.height,
+  srcset: updates.photo.variants.map(variant => `/assets/majestic-sri-lanka/${variant.file} ${variant.width}w`).join(', '),
+});
 ---
 <Layout>
   <section class="container gallery-page" aria-labelledby="gallery-title">
@@ -22,7 +31,7 @@ const photos = await Promise.all(guestPhotos.map(async ([id, alt]) => {
       <div><p>Shared meals, hilltop views and little moments in between. Explore our guests’ journeys through Sri Lanka.</p><a class="text-link" href="/itineraries/">Explore Itineraries <Icon name="arrow" size={18} /></a></div>
     </div>
     <div class="photo-wall">
-      {photos.map((photo, index) => <a class="gallery-image" href={photo.src} data-gallery-photo aria-label={`View photo: ${photo.alt}`}><img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading={index < 4 ? 'eager' : 'lazy'} decoding="async" /></a>)}
+      {photos.map((photo, index) => <Fragment><a class="gallery-image" href={photo.src} data-gallery-photo aria-label={`View photo: ${photo.alt}`}><img src={photo.src} srcset={photo.srcset} sizes={photo.srcset ? '(max-width: 600px) 45vw, (max-width: 900px) 46vw, 30vw' : undefined} alt={photo.alt} width={photo.width} height={photo.height} loading={index < 4 ? 'eager' : 'lazy'} decoding="async" /></a>{index === 4 && <figure class="gallery-image gallery-video"><video controls playsinline preload="none" poster={`/assets/majestic-sri-lanka/${updates.video.poster}`} width={updates.video.width} height={updates.video.height} aria-label="A crocodile resting on rocks beside the water. Silent wildlife video."><source src={`/assets/majestic-sri-lanka/${updates.video.file}`} type="video/mp4" /><a href={`/assets/majestic-sri-lanka/${updates.video.file}`}>Download the wildlife video</a></video><figcaption>A crocodile resting beside the water.<br />A quiet wildlife moment · Silent video</figcaption></figure>}</Fragment>)}
     </div>
   </section>
   <dialog class="gallery-lightbox" aria-labelledby="gallery-photo-caption">
@@ -43,6 +52,8 @@ const photos = await Promise.all(guestPhotos.map(async ([id, alt]) => {
   .gallery-image { display:block; break-inside:avoid; margin-bottom:22px; border-radius:18px; overflow:hidden; background:var(--ivory); }
   .gallery-image img { width:100%; height:auto; display:block; transition:transform 250ms ease; }
   .gallery-image:hover img { transform:scale(1.025); }
+  .gallery-video video { display:block; width:100%; height:auto; }
+  .gallery-video figcaption { padding:14px 16px; color:var(--green); font-size:14px; line-height:1.5; }
   .gallery-lightbox { padding:56px 24px 20px; width:min(1100px,95vw); max-width:95vw; max-height:94dvh; border:0; border-radius:18px; background:var(--green); color:var(--white); }
   .gallery-lightbox figure { margin:0; text-align:center; }
   .lightbox-image { display:block; max-width:100%; width:auto; height:auto; max-height:65dvh; object-fit:contain; margin:auto; }

@@ -1,0 +1,43 @@
+{
+  "photo": {
+    "source": "assets/source/november-updates/gallery-elephant.jpeg",
+    "sourceSha256": "a1a6d0f4835f1947b19fbc0d6b594129823fe562bc24f49f2ea24bcb3f425aaf",
+    "provenance": "User-supplied photograph; no specific location independently verified. Resized, branded and encoded as WebP.",
+    "variants": [
+      {
+        "file": "gallery-updates/elephant-on-rocky-shore-360.webp",
+        "width": 360,
+        "height": 270,
+        "bytes": 25530,
+        "sha256": "7d5e1d6f28b6338942f25852f3052c300cd3e3f83f00da1d28242b72919d3774"
+      },
+      {
+        "file": "gallery-updates/elephant-on-rocky-shore-720.webp",
+        "width": 720,
+        "height": 540,
+        "bytes": 90234,
+        "sha256": "b61911472f58b17d76fab129765d2af4e36a91d3e6226ebfc62481bfbea59386"
+      },
+      {
+        "file": "gallery-updates/elephant-on-rocky-shore-1100.webp",
+        "width": 1100,
+        "height": 825,
+        "bytes": 190874,
+        "sha256": "44d565296433df805e8f5c15276da1c1fe3c81a15808b2460ed938e971796569"
+      }
+    ]
+  },
+  "video": {
+    "source": "assets/source/november-updates/gallery-journey.mp4",
+    "sourceSha256": "0fcd108d6aca51ab4a4e28222313e43ba4a756fcab45b6b33c1141c478658237",
+    "file": "gallery-updates/crocodile-by-the-water.mp4",
+    "sha256": "742c6ea447088125d75748e13a20d31600c9da9ce1f24317a6a229606b3595fe",
+    "bytes": 1352284,
+    "width": 832,
+    "height": 464,
+    "duration": 20.6,
+    "changes": "H.264 Baseline level 3.1, 30 fps, CRF 28, fast start; audio removed for a silent wildlife clip. No autoplay.",
+    "poster": "gallery-updates/crocodile-by-the-water-poster.webp",
+    "posterBytes": 25838
+  }
+}

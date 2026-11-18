@@ -1,4 +1,4 @@
-export const guestPhotoVersion = "logo-v2";
+export const guestPhotoVersion = "november-v3";
 
 export const guestPhotos = [
   ["3766", "Guests spending time together in a shaded garden"],
