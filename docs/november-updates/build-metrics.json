@@ -1,11 +1,11 @@
 {
-  "measuredAt": "2026-11-18T02:48:27.264Z",
+  "measuredAt": "2026-11-18T03:03:12.175Z",
   "directory": "dist",
   "summary": {
     "html": {
       "count": 10,
-      "bytes": 513986,
-      "gzipBytes": 94488
+      "bytes": 515339,
+      "gzipBytes": 94640
     },
     "js": {
       "count": 2,
@@ -14,8 +14,8 @@
     },
     "css": {
       "count": 5,
-      "bytes": 87176,
-      "gzipBytes": 20090
+      "bytes": 86685,
+      "gzipBytes": 19971
     },
     "woff2": {
       "count": 14,
@@ -23,9 +23,9 @@
       "gzipBytes": 233574
     },
     "webp": {
-      "count": 366,
-      "bytes": 36819666,
-      "gzipBytes": 36836748
+      "count": 371,
+      "bytes": 36975372,
+      "gzipBytes": 36992604
     },
     "avif": {
       "count": 19,
@@ -56,7 +56,7 @@
     },
     {
       "path": "experiences/index.html",
-      "cssGzipBytes": 15906,
+      "cssGzipBytes": 15787,
       "javaScriptGzipBytes": 5321
     },
     {
@@ -99,7 +99,7 @@
     "guestCardWebPBytes": 7767868,
     "largestGuestWebPBytes": 334704,
     "experienceWebPBytes": 1240206,
-    "experienceUpdatesWebPBytes": 877344,
+    "experienceUpdatesWebPBytes": 1033050,
     "suppliedUpdatesWebPBytes": 1219936,
     "filmPosterBytes": 36524,
     "galleryUpdatesWebPBytes": 332476,
@@ -125,8 +125,8 @@
     },
     {
       "path": "experiences/index.html",
-      "bytes": 82033,
-      "gzipBytes": 13671
+      "bytes": 83386,
+      "gzipBytes": 13823
     },
     {
       "path": "gallery/index.html",
@@ -173,9 +173,9 @@
   ],
   "styles": [
     {
-      "path": "_astro/experiences.DTn9Czm-.css",
-      "bytes": 7331,
-      "gzipBytes": 1949
+      "path": "_astro/experiences.D5hp5kfd.css",
+      "bytes": 6840,
+      "gzipBytes": 1830
     },
     {
       "path": "_astro/gallery.80RGvJc3.css",

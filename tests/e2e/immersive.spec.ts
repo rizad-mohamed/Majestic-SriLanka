@@ -412,16 +412,10 @@ test("documentary collages expose image credits and preserve frame proportions",
   await page.goto("/experiences/");
   const collages = page.locator(".experience-collage");
   await expect(collages).toHaveCount(10);
+  await expect(
+    page.getByText("Photograph to follow", { exact: true }),
+  ).toHaveCount(0);
   for (const collage of await collages.all()) {
-    const placeholder = await collage
-      .locator(".experience-photo-placeholder")
-      .count();
-    if (placeholder) {
-      await expect(collage).toContainText("Photograph to follow");
-      await collage.getByText("Photography credits", { exact: true }).click();
-      await expect(collage).toContainText("No community photograph is shown.");
-      continue;
-    }
     const photos = collage.locator("img:not([aria-hidden])");
     await expect(photos).toHaveCount(2);
     for (const photo of await photos.all()) {
@@ -436,7 +430,7 @@ test("documentary collages expose image credits and preserve frame proportions",
     await expect(collage.locator(".photo-credits li")).toHaveCount(2);
     await expect(
       collage.locator(
-        '.photo-credits a[href*="commons.wikimedia.org"], .photo-credits a[href*="pexels.com/photo/"]',
+        '.photo-credits a[href*="commons.wikimedia.org"], .photo-credits a[href*="pexels.com/photo/"], .photo-credits a[href*="preprints.org/manuscript/"]',
       ),
     ).toHaveCount(2);
   }

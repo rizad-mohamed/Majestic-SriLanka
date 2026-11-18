@@ -5,7 +5,6 @@ export const experienceMedia: Record<
     caption: string;
     alt: string;
     insetAlt: string;
-    placeholder?: boolean;
   }
 > = {
   wildlife: {
@@ -67,9 +66,9 @@ export const experienceMedia: Record<
   },
   rathugala: {
     note: "Living traditions",
-    caption: "Rathugala · Community photograph to follow",
-    alt: "",
-    insetAlt: "",
-    placeholder: true,
+    caption: "Rathugala · Vedda Heritage Centre, 2025",
+    alt: "A community member with woven baskets at Rathugala’s Vedda Heritage Centre",
+    insetAlt:
+      "The stone entrance sign and wooded grounds of the Vedda Heritage Centre in Rathugala",
   },
 };

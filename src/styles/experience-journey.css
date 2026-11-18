@@ -99,30 +99,6 @@
   font-size: 12px;
   line-height: 1.6;
 }
-.experience-photo-placeholder {
-  aspect-ratio: 5 / 3;
-  background: var(--ivory);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 18px;
-}
-.experience-photo-placeholder img {
-  width: 25%;
-  height: 100%;
-  object-fit: contain;
-}
-.experience-photo-placeholder span {
-  color: var(--green);
-  font-family: var(--font-display);
-  font-size: clamp(16px, 2.5vw, 32px);
-}
-.experience-photo-placeholder small {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 12px;
-}
 .photo-credits a {
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -380,10 +356,6 @@
   }
   .experience-collage .editorial-photo-main {
     border-radius: 8px;
-  }
-  .experience-photo-placeholder {
-    padding: 10px 6px;
-    gap: 4px;
   }
   .experience-collage .editorial-photo-inset {
     position: relative;

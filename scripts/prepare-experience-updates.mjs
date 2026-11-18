@@ -14,15 +14,18 @@ for (const source of sources) {
   const variants = [];
   for (const width of inset ? [320, 640] : [360, 720, 960]) {
     const file = `experience-updates/${source.key}-${width}.webp`;
-    const result = await sharp(input)
-      .rotate(source.key === "upper-diyalumaInset" ? -90 : undefined)
+    const photograph = sharp(input).rotate(
+      source.key === "upper-diyalumaInset" ? -90 : undefined,
+    );
+    if (source.extract) photograph.extract(source.extract);
+    const result = await photograph
       .resize(width, Math.round(width / (inset ? 4 / 3 : 5 / 3)), {
         fit: "cover",
         position:
           source.key === "private-beach-partiesInset" ? "south" : "centre",
         withoutEnlargement: true,
       })
-      .webp({ quality: 78, effort: 6 })
+      .webp({ quality: source.quality ?? 78, effort: 6 })
       .toFile(`public/assets/majestic-sri-lanka/${file}`);
     variants.push({
       file,

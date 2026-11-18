@@ -67,7 +67,7 @@ test("new licensed photographs have reproducible local assets and unchanged fram
       "utf8",
     ),
   );
-  assert.equal(assets.length, 8);
+  assert.equal(assets.length, 10);
   for (const asset of assets) {
     assert.equal(asset.commercialUse, true);
     assert.ok(asset.source.startsWith("https://"));
@@ -89,7 +89,7 @@ test("new licensed photographs have reproducible local assets and unchanged fram
   }
   assert.equal(
     assets.some((asset) => asset.key.startsWith("rathugala")),
-    false,
+    true,
   );
 });
 

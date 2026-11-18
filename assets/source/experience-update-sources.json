@@ -23,7 +23,7 @@
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "changes": "Cropped, resized and encoded as WebP; derivative retains the source licence.",
-    "locationEvidence": "Pigeon Island National Park is one of the two marine national parks of Sri Lanka. The national park is situated 1 km off the coast of Nilaveli, a coastal town in Eastern Province, encompassing a total area of 471.429 hectares. The island\u0027s name derives from the rock pigeon which has colonized it.Th",
+    "locationEvidence": "Pigeon Island National Park is one of the two marine national parks of Sri Lanka. The national park is situated 1 km off the coast of Nilaveli, a coastal town in Eastern Province, encompassing a total area of 471.429 hectares. The island's name derives from the rock pigeon which has colonized it.Th",
     "verified": "2026-11-17",
     "localSource": "assets/source/experiences/snorkelling-divingInset.jpg",
     "attributionRequired": true,
@@ -93,7 +93,7 @@
     "key": "private-beach-parties",
     "title": "Beachfront Dining in Sri Lanka with Ocean Views",
     "source": "https://www.pexels.com/photo/beachfront-dining-in-sri-lanka-with-ocean-views-37355589/",
-    "download": "https://images.pexels.com/photos/37355589/pexels-photo-37355589.jpeg?auto=compress\u0026cs=tinysrgb\u0026w=1600",
+    "download": "https://images.pexels.com/photos/37355589/pexels-photo-37355589.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "creator": "Priyanshi Garg",
     "license": "Pexels License",
     "licenseUrl": "https://www.pexels.com/license/",
@@ -108,7 +108,7 @@
     "key": "private-beach-partiesInset",
     "title": "Beachfront Dining in Sri Lanka with Ocean Views",
     "source": "https://www.pexels.com/photo/beachfront-dining-in-sri-lanka-with-ocean-views-37355589/",
-    "download": "https://images.pexels.com/photos/37355589/pexels-photo-37355589.jpeg?auto=compress\u0026cs=tinysrgb\u0026w=1600",
+    "download": "https://images.pexels.com/photos/37355589/pexels-photo-37355589.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "creator": "Priyanshi Garg",
     "license": "Pexels License",
     "licenseUrl": "https://www.pexels.com/license/",
@@ -118,5 +118,51 @@
     "localSource": "assets/source/experiences/private-beach-parties.jpg",
     "attributionRequired": false,
     "commercialUse": true
+  },
+  {
+    "key": "rathugala",
+    "title": "Rathugala Heritage Centre — First Voices (2025)",
+    "source": "https://www.preprints.org/manuscript/202505.0239/v1",
+    "download": "https://www.preprints.org/frontend/picture/ms_xml/manuscript/763b8e5acd0c3746904a9a30a642f6a9/preprints-158279-g001.png",
+    "retrievedFrom": "https://web.archive.org/web/20251031004945id_/https://www.preprints.org/frontend/picture/ms_xml/manuscript/763b8e5acd0c3746904a9a30a642f6a9/preprints-158279-g001.png",
+    "creator": "Mudalige et al. (photograph credited to the authors)",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "One panel extracted, frame removed, cropped, resized and encoded as WebP. No affiliation or endorsement implied.",
+    "locationEvidence": "Publisher caption identifies Vedda’s Heritage Center, Rathugala, 2025, Photo – author. The entrance sign also identifies Rathugala. Article DOI: 10.20944/preprints202505.0239.v1.",
+    "verified": "2026-11-18",
+    "localSource": "assets/source/experiences/rathugala-heritage-centre.png",
+    "attributionRequired": true,
+    "commercialUse": true,
+    "quality": 72,
+    "extract": {
+      "left": 1675,
+      "top": 75,
+      "width": 1415,
+      "height": 1135
+    }
+  },
+  {
+    "key": "rathugalaInset",
+    "title": "Rathugala Heritage Centre — First Voices (2025)",
+    "source": "https://www.preprints.org/manuscript/202505.0239/v1",
+    "download": "https://www.preprints.org/frontend/picture/ms_xml/manuscript/763b8e5acd0c3746904a9a30a642f6a9/preprints-158279-g001.png",
+    "retrievedFrom": "https://web.archive.org/web/20251031004945id_/https://www.preprints.org/frontend/picture/ms_xml/manuscript/763b8e5acd0c3746904a9a30a642f6a9/preprints-158279-g001.png",
+    "creator": "Mudalige et al. (photograph credited to the authors)",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "One panel extracted, frame removed, cropped, resized and encoded as WebP. No affiliation or endorsement implied.",
+    "locationEvidence": "Publisher caption identifies Vedda’s Heritage Center, Rathugala, 2025, Photo – author. The entrance sign also identifies Rathugala. Article DOI: 10.20944/preprints202505.0239.v1.",
+    "verified": "2026-11-18",
+    "localSource": "assets/source/experiences/rathugala-heritage-centre.png",
+    "attributionRequired": true,
+    "commercialUse": true,
+    "quality": 72,
+    "extract": {
+      "left": 73,
+      "top": 128,
+      "width": 1420,
+      "height": 1110
+    }
   }
 ]

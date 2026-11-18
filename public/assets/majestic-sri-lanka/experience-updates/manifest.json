@@ -263,6 +263,88 @@
           "bytes": 45380
         }
       ]
+    },
+    {
+      "key": "rathugala",
+      "title": "Rathugala Heritage Centre — First Voices (2025)",
+      "source": "https://www.preprints.org/manuscript/202505.0239/v1",
+      "download": "https://www.preprints.org/frontend/picture/ms_xml/manuscript/763b8e5acd0c3746904a9a30a642f6a9/preprints-158279-g001.png",
+      "retrievedFrom": "https://web.archive.org/web/20251031004945id_/https://www.preprints.org/frontend/picture/ms_xml/manuscript/763b8e5acd0c3746904a9a30a642f6a9/preprints-158279-g001.png",
+      "creator": "Mudalige et al. (photograph credited to the authors)",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "changes": "One panel extracted, frame removed, cropped, resized and encoded as WebP. No affiliation or endorsement implied.",
+      "locationEvidence": "Publisher caption identifies Vedda’s Heritage Center, Rathugala, 2025, Photo – author. The entrance sign also identifies Rathugala. Article DOI: 10.20944/preprints202505.0239.v1.",
+      "verified": "2026-11-18",
+      "localSource": "assets/source/experiences/rathugala-heritage-centre.png",
+      "attributionRequired": true,
+      "commercialUse": true,
+      "quality": 72,
+      "extract": {
+        "left": 1675,
+        "top": 75,
+        "width": 1415,
+        "height": 1135
+      },
+      "sourceSha256": "3da85b72a450dcaf2af53cbc1fd70c697ac0f53c7fd103aabf73d77f5a6b8c55",
+      "variants": [
+        {
+          "file": "experience-updates/rathugala-360.webp",
+          "width": 360,
+          "height": 216,
+          "bytes": 16112
+        },
+        {
+          "file": "experience-updates/rathugala-720.webp",
+          "width": 720,
+          "height": 432,
+          "bytes": 34352
+        },
+        {
+          "file": "experience-updates/rathugala-960.webp",
+          "width": 960,
+          "height": 576,
+          "bytes": 47016
+        }
+      ]
+    },
+    {
+      "key": "rathugalaInset",
+      "title": "Rathugala Heritage Centre — First Voices (2025)",
+      "source": "https://www.preprints.org/manuscript/202505.0239/v1",
+      "download": "https://www.preprints.org/frontend/picture/ms_xml/manuscript/763b8e5acd0c3746904a9a30a642f6a9/preprints-158279-g001.png",
+      "retrievedFrom": "https://web.archive.org/web/20251031004945id_/https://www.preprints.org/frontend/picture/ms_xml/manuscript/763b8e5acd0c3746904a9a30a642f6a9/preprints-158279-g001.png",
+      "creator": "Mudalige et al. (photograph credited to the authors)",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "changes": "One panel extracted, frame removed, cropped, resized and encoded as WebP. No affiliation or endorsement implied.",
+      "locationEvidence": "Publisher caption identifies Vedda’s Heritage Center, Rathugala, 2025, Photo – author. The entrance sign also identifies Rathugala. Article DOI: 10.20944/preprints202505.0239.v1.",
+      "verified": "2026-11-18",
+      "localSource": "assets/source/experiences/rathugala-heritage-centre.png",
+      "attributionRequired": true,
+      "commercialUse": true,
+      "quality": 72,
+      "extract": {
+        "left": 73,
+        "top": 128,
+        "width": 1420,
+        "height": 1110
+      },
+      "sourceSha256": "3da85b72a450dcaf2af53cbc1fd70c697ac0f53c7fd103aabf73d77f5a6b8c55",
+      "variants": [
+        {
+          "file": "experience-updates/rathugalaInset-320.webp",
+          "width": 320,
+          "height": 240,
+          "bytes": 17088
+        },
+        {
+          "file": "experience-updates/rathugalaInset-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 41138
+        }
+      ]
     }
   ]
 }

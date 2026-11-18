@@ -76,5 +76,30 @@
         "tbt": 91
       }
     }
-  ]
+  ],
+  "rathugalaImageFix": {
+    "validatedOn": "2026-11-18",
+    "browserChecks": {
+      "startTime": "2026-11-18T03:02:25.863Z",
+      "duration": 90986.755,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "source": "https://www.preprints.org/manuscript/202505.0239/v1",
+    "license": "CC BY 4.0",
+    "responsiveVariants": 5,
+    "addedBytes": 155706,
+    "totalExperienceUpdateBytes": 1033050,
+    "inventoryCapBytes": 1200000,
+    "coreChecks": "Build, Astro check, ESLint, Prettier, 16 unit tests, static SEO and build budgets passed.",
+    "visualWidths": [
+      1440,
+      768,
+      390,
+      320
+    ],
+    "placeholderRemoved": true
+  }
 }
