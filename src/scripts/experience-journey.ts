@@ -61,6 +61,11 @@ if (navigation) {
         else link.removeAttribute("aria-current");
         link.dataset.complete = String(i < active);
       });
+      if (compact.matches) {
+        const link = links[active];
+        navigation.scrollLeft =
+          link.offsetLeft - (navigation.clientWidth - link.offsetWidth) / 2;
+      }
     }
   };
   const schedule = () => {
@@ -82,7 +87,7 @@ if (navigation) {
         .getBoundingClientRect();
       navigation.style.setProperty(
         "--journey-track-start",
-        `${first.left + first.width / 2 - origin.left}px`,
+        `${first.left + first.width / 2 - origin.left + navigation.scrollLeft}px`,
       );
       navigation.style.setProperty(
         "--journey-track-top",

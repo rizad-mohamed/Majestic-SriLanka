@@ -147,7 +147,9 @@ test("featured tour crops remain attached to the photograph when reordered", asy
   page,
 }) => {
   await page.goto("/");
-  const wildlife = page.locator('[data-tour-track] [data-photo="wildlife"]');
+  const wildlife = page.locator(
+    '[data-tour-track] [data-photo="birds-and-beasts"]',
+  );
   const before = await wildlife.evaluate(
     (image) => getComputedStyle(image).objectPosition,
   );
@@ -162,5 +164,5 @@ test("featured tour crops remain attached to the photograph when reordered", asy
       .locator("[data-tour-track] article")
       .first()
       .locator(".tour-image img"),
-  ).toHaveAttribute("src", /experiences\/culture-720\.webp$/);
+  ).toHaveAttribute("src", /updates\/ancient-secrets-720\.webp$/);
 });

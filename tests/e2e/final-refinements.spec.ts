@@ -17,8 +17,8 @@ test("requested widths use a desktop spine and compact horizontal navigation wit
     await page.evaluate(() => document.fonts.ready);
     const experienceCenter = await contentCenter();
     const sections = page.locator(".experience-detail");
-    await expect(sections).toHaveCount(5);
-    for (let index = 0; index < 5; index++) {
+    await expect(sections).toHaveCount(10);
+    for (let index = 0; index < 10; index++) {
       const row = sections.nth(index);
       const photo = (await row.locator(".experience-collage").boundingBox())!;
       const copy = (await row.locator(".experience-copy").boundingBox())!;
@@ -62,7 +62,7 @@ test("requested widths use a desktop spine and compact horizontal navigation wit
       await expect(page.locator(".journey-spine")).toBeHidden();
       await expect(navigation).toHaveCSS("position", "sticky");
       const links = navigation.locator("[data-journey-link]");
-      await expect(links).toHaveCount(5);
+      await expect(links).toHaveCount(10);
       const boxes = await links.evaluateAll((els) =>
         els.map((el) => {
           const b = el.getBoundingClientRect();
@@ -86,7 +86,7 @@ test("requested widths use a desktop spine and compact horizontal navigation wit
           }),
         );
       expect(Math.abs(track.x - stops[0].x)).toBeLessThan(1);
-      expect(Math.abs(track.x + track.width - stops[4].x)).toBeLessThan(1);
+      expect(Math.abs(track.x + track.width - stops.at(-1)!.x)).toBeLessThan(1);
       expect(Math.abs(track.y - stops[0].y)).toBeLessThan(1);
     }
     expect(

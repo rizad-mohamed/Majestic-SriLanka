@@ -85,17 +85,19 @@ document.querySelectorAll<HTMLDialogElement>("dialog").forEach((dialog) => {
 
 const search = document.querySelector<HTMLInputElement>("#site-search");
 search?.addEventListener("input", () => {
-  const query = search.value.toLocaleLowerCase().trim();
+  const query = search.value.toLowerCase().trim();
   let count = 0;
   document.querySelectorAll<HTMLElement>("[data-search]").forEach((item) => {
-    item.hidden = !item.dataset.search?.includes(query);
+    item.hidden = !`${item.textContent} ${item.dataset.search}`
+      .toLowerCase()
+      .includes(query);
     if (!item.hidden) count++;
   });
   const status = document.getElementById("search-status");
   if (status)
     status.textContent = count
       ? `${count} ${count === 1 ? "result" : "results"}${query ? ` for “${search.value.trim()}”` : ""}`
-      : "No matches. Try culture, tea, beaches or wildlife.";
+      : "No matches. Try a place or experience.";
 });
 
 const tourTrack = document.querySelector<HTMLElement>("[data-tour-track]");

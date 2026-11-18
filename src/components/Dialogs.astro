@@ -6,8 +6,8 @@ const isHome = Astro.url.pathname === '/';
 const isItineraries = Astro.url.pathname === '/itineraries/';
 const searchItems = [
   { title: 'Guest Photo Gallery', description: 'Real memories from our guests’ Sri Lankan journeys.', href: '/gallery/' },
-  ...tours.map(t => ({ title: t.title, description: t.description, keywords: `${t.category} ${t.route} ${t.overview} ${t.highlights.join(" ")}`, href: `/itineraries/#${t.id}` })),
-  ...experiences.map(e => ({ title: e.title, description: e.description, href: `/experiences/#${e.id}` })),
+  ...tours.map(t => ({ title: t.title, description: t.description, keywords: `${t.category} ${t.route} ${t.highlights.join(" ")}`, href: `/itineraries/#${t.id}` })),
+  ...experiences.map(e => ({ title: e.title, description: "searchDescription" in e ? e.searchDescription : e.description, href: `/experiences/#${e.id}` })),
   { title: 'Plan a tailor-made trip', description: 'Create your personal Sri Lankan travel brief.', href: '/plan-your-trip/' },
   { title: 'Our story', description: 'Local people. Meaningful journeys.', href: '/about-us/' },
   { title: 'Travel FAQ', description: 'Practical answers before your journey.', href: '/contact-us/#travel-faq' },
@@ -18,7 +18,7 @@ const searchItems = [
   <label class="field-label" for="site-search">Search itineraries, experiences and travel information</label>
   <div class="search-input"><Icon name="search" /><input id="site-search" type="search" placeholder="Try tea country, wildlife, beaches…" autocomplete="off" /></div>
   <p id="search-status" class="small" aria-live="polite">Explore our journeys</p>
-  <ul class="search-results">{searchItems.map(item => <li data-search={`${item.title} ${item.description} ${"keywords" in item ? item.keywords : ""}`.toLowerCase()}><a href={item.href}><span><strong>{item.title}</strong><small>{item.description}</small></span><Icon name="arrow" size={20} /></a></li>)}</ul>
+  <ul class="search-results">{searchItems.map(item => <li data-search={"keywords" in item ? item.keywords.toLowerCase() : ''}><a href={item.href}><span><strong>{item.title}</strong><small>{item.description}</small></span><Icon name="arrow" size={20} /></a></li>)}</ul>
 </dialog>
 {isHome && <dialog id="story-dialog" class="dialog story-dialog film-dialog" aria-labelledby="story-title"><button class="icon-button dialog-close" data-close aria-label="Close story"><Icon name="close" /></button><video controls playsinline preload="none" width="960" height="540" data-island-film data-src="/assets/majestic-sri-lanka/video/island-film.mp4" data-poster="/assets/majestic-sri-lanka/video/island-film-poster.webp" aria-label="A silent journey through Sri Lanka's railway, tea hills and Sigiriya"></video><div class="dialog-body"><p class="eyebrow">SRI LANKA IN MOTION</p><h2 id="story-title">More than a destination.</h2><p>From the railway through green hills to the ancient rock of Sigiriya. A glimpse of the island, with room to imagine your own journey.</p><p class="small" data-film-error role="status" hidden>The film could not load. <a href="/assets/majestic-sri-lanka/video/island-film.mp4" download>Download the film</a> to watch it on your device.</p><p class="small">A 16-second silent film. Use the playback controls to pause or explore it at your own pace.</p><a class="button button--primary" href="/about-us/">Read Our Story <Icon name="arrow" size={18} /></a></div></dialog>}
 {(isHome || isItineraries) && tours.map(tour => (

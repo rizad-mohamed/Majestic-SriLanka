@@ -7,8 +7,10 @@ export const brand = {
     import.meta.env.PUBLIC_CONTACTS_CONFIRMED === "true"
       ? import.meta.env.PUBLIC_CONTACT_EMAIL || ""
       : "",
-  whatsapp:
-    (import.meta.env.PUBLIC_WHATSAPP_NUMBER || "94740485072").replace(/\D/g, ""),
+  whatsapp: (import.meta.env.PUBLIC_WHATSAPP_NUMBER || "94740485072").replace(
+    /\D/g,
+    "",
+  ),
 };
 
 export const navigation = [
@@ -22,7 +24,7 @@ export const navigation = [
 
 export { tours } from "./tours";
 
-export const experiences = [
+export const featuredExperiences = [
   {
     id: "wildlife",
     alt: "An elephant among dense tropical greenery",
@@ -77,6 +79,64 @@ export const experiences = [
       "Fragrant spices, colourful curries and a deeper connection to the island through its food.",
     detail:
       "Share your dietary needs before planning. Food-focused experiences can be shaped around markets, local dishes and cooking traditions.",
+  },
+];
+
+export const experiences = [
+  ...featuredExperiences,
+  {
+    id: "snorkelling-diving",
+    title: "Snorkelling & Diving",
+    searchDescription:
+      "Coral reefs and marine life at Pigeon Island and Sri Lanka’s coast.",
+    icon: "beach",
+    description:
+      "Explore the underwater world beneath Sri Lanka’s turquoise waters. Discover colourful coral reefs and fascinating marine life on memorable snorkelling and diving experiences with experienced professionals.",
+    detail:
+      "Enjoy the reef with care. Follow your guide’s advice and observe marine life without touching coral or disturbing wildlife.",
+  },
+  {
+    id: "private-beach-parties",
+    title: "Private Beach Parties",
+    searchDescription:
+      "Private beach celebrations with dining, music and ocean views.",
+    icon: "sun",
+    description:
+      "Celebrate by the ocean with a private evening on a secluded tropical beach. Ocean views, delicious cuisine and music create a magical atmosphere under the stars.",
+    detail:
+      "Shape the celebration around your occasion. The photograph shows Sri Lankan beachfront dining for inspiration; it does not depict a Majestic Sri Lanka venue or event.",
+  },
+  {
+    id: "upper-diyaluma",
+    title: "Upper Diyaluma",
+    searchDescription:
+      "Nature walks, waterfall pools and mountain scenery at Upper Diyaluma.",
+    icon: "mountain",
+    description:
+      "A walk into paradise. Follow a scenic nature trail through lush landscapes to Upper Diyaluma’s natural infinity pools and sweeping mountain views, an escape for nature lovers and adventure seekers.",
+    detail:
+      "Take time to enjoy the waterfall scenery and follow local guidance around the pools and steep edges.",
+  },
+  {
+    id: "gal-oya",
+    title: "Gal Oya National Park",
+    searchDescription: "Boat safaris and wildlife around Senanayake Samudraya.",
+    icon: "wildlife",
+    description:
+      "Discover Sri Lanka’s hidden wilderness, from pristine landscapes to Gal Oya’s distinctive lake ecosystem. A boat safari offers a remarkable perspective on its wildlife, with elephants sometimes seen swimming between islands.",
+    detail:
+      "Allow the wildlife to set the pace. Elephant sightings and swimming encounters depend on natural conditions and cannot be guaranteed.",
+  },
+  {
+    id: "rathugala",
+    title: "Rathugala",
+    searchDescription:
+      "Living traditions shared by Rathugala’s Indigenous community.",
+    icon: "people",
+    description:
+      "Meet the Indigenous people of Sri Lanka in Rathugala. Learn about living traditions, ancestral knowledge and the community’s deep connection with nature through a respectful cultural encounter shaped by your hosts.",
+    detail:
+      "Let community members guide what they wish to share, and ask permission before taking photographs. This is a living heritage, shared on their terms.",
   },
 ];
 
